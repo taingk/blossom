@@ -1,0 +1,32 @@
+version: '2'
+services:
+    apache_projet_annuel:
+        build: ../build/.
+        container_name: apache_projet_annuel
+        restart: always
+        volumes:
+        - ../../app/:/var/www/html
+        links:
+        - mysql_projet_annuel
+        ports:
+        - 5000:80
+        privileged: true
+
+    mysql_projet_annuel:
+        image: mysql:latest
+        container_name: mysql_projet_annuel
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: app
+        privileged: true
+
+    phpmyadmin_projet_annuel:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin_projet_annuel
+        restart: always
+        ports:
+        - 5001:80
+        links:
+        - mysql_projet_annuel:db
+        privileged: true
