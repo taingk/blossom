@@ -72,7 +72,7 @@ Planification des tâches et objectifs grâce à [Trello](https://trello.com/b/e
 
 <br>
 
-- Macro pour nos commandes docker.
+- Macro pour nos commandes.
 
 <br>
 
