@@ -70,9 +70,21 @@ Planification des tâches et objectifs grâce à [Trello](https://trello.com/b/e
 ~/docker
 ```
 
+
 <br>
 
-- Macro pour nos commandes.
+- Script qui pull le projet à chaque webhooks.
+
+<br>
+
+```
+~/github/pull.php
+```
+
+
+<br>
+
+- Alias pour nos commandes.
 
 <br>
 
