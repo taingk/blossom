@@ -118,32 +118,20 @@ git clone https://github.com/taingk/annuel.git && cd annuel
 
 <br>
 
-- Installer nodejs et npm
+- Installe dépendances nodeJs et update si besoin (nodejs, npm, node-sass)
 
 <br>
 
 ```
-make nodejs
+make node_install
 ```
-
-<br>
-
-- Installer dépendances (comme node-sass)
-
-<br>
-
-```
-make sass_install
-```
-
-<br>
 
 - Compiler sass avec watch
 
 <br>
 
 ```
-make watch_sass
+make sass
 ```
 
 <br>

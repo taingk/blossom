@@ -1,8 +1,6 @@
-nodejs:
-	sudo apt-get install nodejs npm
-sass_install:
-	cd app/sass/ && npm install
-watch_sass:
+node_install:
+	sudo apt-get install nodejs npm && sudo npm i -g npm && cd app/sass/ && sudo npm install
+sass:
 	cd app/sass/ && npm run watch
 start:
 	docker-compose -f docker/compose/docker-compose.yml up --build
