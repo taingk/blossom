@@ -7,4 +7,5 @@ define('DBNAME', 'app');
 define('DBPORT', '3306');
 
 define('DS', DIRECTORY_SEPARATOR);
-define('DIRNAME', dirname($_SERVER['SCRIPT_NAME']).DS);
+$scriptName = (dirname($_SERVER["SCRIPT_NAME"]) == "/") ? "" : dirname($_SERVER["SCRIPT_NAME"]);
+define('DIRNAME', $scriptName.DS);
