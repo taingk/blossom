@@ -2,7 +2,7 @@
 
 <br>
 
-### Développeurs
+### Equipe Développeurs
 
 <br>
 
