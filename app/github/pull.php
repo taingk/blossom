@@ -1,7 +1,8 @@
 <?php
 
 if ($_POST['payload']) {
-    $exec = shell_exec( 'git reset --hard HEAD && git pull && cp ../../config/conf.inc.php ../' );
+    $exec = shell_exec( 'cd ../../ && git reset --hard HEAD && git pull' );
+    shell_exec('cp ../../config/conf.inc.php ../');
     echo $exec;
     echo "ok";
 }
