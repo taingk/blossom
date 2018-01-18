@@ -1,9 +1,9 @@
 <?php
 
-define('DBUSER', 'root');
-define('DBPASSWORD', 'root');
-define('DBHOST', 'mysql_simple');
-define('DBNAME', 'app');
+define('DBUSER', 'blossomofrannuel');
+define('DBPASSWORD', 'JOHNcena242');
+define('DBHOST', 'blossomofrannuel.mysql.db');
+define('DBNAME', 'blossomofrannuel');
 define('DBPORT', '3306');
 
 define('DS', DIRECTORY_SEPARATOR);
