@@ -1,8 +1,11 @@
 <?php
 
-define('DBUSER', 'blossomofrannuel');
-define('DBPASSWORD', 'JOHNcena242');
-define('DBHOST', 'blossomofrannuel.mysql.db');
-define('DBNAME', 'blossomofrannuel');
+define('DBUSER', 'root');
+define('DBPASSWORD', 'root');
+define('DBHOST', 'mysql_projet_annuel');
+define('DBNAME', 'app');
 define('DBPORT', '3306');
 
+define('DS', DIRECTORY_SEPARATOR);
+$scriptName = (dirname($_SERVER["SCRIPT_NAME"]) == "/") ? "" : dirname($_SERVER["SCRIPT_NAME"]);
+define('DIRNAME', $scriptName.DS);
