@@ -80,7 +80,7 @@ Planification des tâches et objectifs grâce à [Trello](https://trello.com/b/e
 <br>
 
 ```
-~/github/pull.php
+~/app/pull/pull.php
 ```
 
 
