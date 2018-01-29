@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteBase /public_html/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [L,QSA]
+RewriteRule ^(.*)$ app/index.php [L,QSA]
