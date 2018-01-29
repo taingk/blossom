@@ -1,6 +1,6 @@
 # Blossom
 
-Lien d'accès au site de production : https://blossoom.ovh/
+Lien d'accès au site de production [Blossom](https://blossoom.ovh/)
 
 <br>
 
@@ -32,7 +32,7 @@ Lien d'accès au site de production : https://blossoom.ovh/
 
 <br>
 
-Planification des tâches et objectifs grâce à [Trello](https://trello.com/b/ernITlk9/projet-annuel)
+Planification des tâches et objectifs grâce à [Trello](https://trello.com/b/ernITlk9/blossom)
 
 <br>
 
