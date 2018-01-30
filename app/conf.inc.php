@@ -2,8 +2,8 @@
 
 define('DBUSER', 'root');
 define('DBPASSWORD', 'root');
-define('DBHOST', 'localhost');
-define('DBNAME', 'blossom');
+define('DBHOST', 'mysql_projet_annuel');
+define('DBNAME', 'app');
 define('DBPORT', '3306');
 
 define('DS', DIRECTORY_SEPARATOR);
