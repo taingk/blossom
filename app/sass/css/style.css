@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../font/AvenirNextRegular.otf') format('truetype');
+    
+}
+
+* {
+    font-family: "Avenir";
+}
+
 .admin-bar {
-    border: 1px solid black;
+    height: 50px;
+    background-color: #D8475D;
+}
+
+.logo {
+    height: 35px;
+}
+
+.profile-picture {
+    height: 35px;
 }
