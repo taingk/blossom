@@ -14,7 +14,7 @@ body {
 .row {
     display: flex;
     width: 100%;
-    margin: 0 -20px;
+    /* margin: 0 -20px; */
     /* pour retourner à la ligne */
     flex-wrap: wrap;
 }
@@ -23,7 +23,7 @@ body {
     width: 100%;
 }
 
-@media (max-width: 575px) {
+@media (min-width: 575px) {
     .col-xs-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -73,8 +73,7 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) {
     .col-sm-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -124,8 +123,7 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) {
     .col-md-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -175,8 +173,7 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) {
     .col-lg-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -226,7 +223,6 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .col-xl-1 {
         max-width: calc(1/12*100%);
