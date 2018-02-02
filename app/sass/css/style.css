@@ -12,7 +12,7 @@ a {
     text-decoration: none;
 }
 
-.menu-bar {
+.menuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
@@ -26,7 +26,7 @@ textarea {
     border-left-style: none;
 }
 
-.image_search_input {
+.searchInput {
     background-image: url("../../img/searchIcon.png");
     height: 15px;
     width: 15px;
@@ -34,7 +34,7 @@ textarea {
     border: 1px solid #D8475D;
 }
 
-.image_panier_input {
+.cartInput {
     background-image: url("../../img/panierIcon.png");
     height: 30px;
     width: 30px;
@@ -42,7 +42,7 @@ textarea {
     border: 1px solid #D8475D;
 }
 
-.admin-bar {
+.adminBar {
     height: 50px;
     background-color: #D8475D;
 }
@@ -51,36 +51,33 @@ textarea {
     height: 35px;
 }
 
-.profile-picture {
+.profilePicture {
     height: 35px;
 }
 
-.imgPrincipaleIphoneX {
+.firstHomeImg {
     height: 100%;
 }
 
-.divImgPrincipale {
-    width: 100%;
-    height: 500px;
+.firstHomeContent {
     background-color: #FAFAFA;
-    text-align: center;
 }
 
 .empty {
     height: 15px;
 }
 
-.img1accueil {
+.firstColHome {
     width: 100%;
     height: 100%;
 }
 
-.img2accueil {
+.secondColHome {
     width: 100%;
     /* height: 100%; */
 }
 
-.img3accueil {
+.thirdColHome {
     width: 100%;
     height: 100%;
 }
@@ -90,7 +87,7 @@ textarea {
     display: block;
 }
 
-.sub-menu-list {
+.subMenuList {
     list-style: none;
     padding: 0;
     margin: 0;
