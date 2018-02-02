@@ -12,36 +12,7 @@ a {
     text-decoration: none;
 }
 
-.menuBar {
-    border: 1px solid #D8475D;
-    height: 50px;
-    background-color: #D8475D;
-}
-
-input,
-textarea {
-    background-color: #D8475D;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
-}
-
-.searchInput {
-    background-image: url("../../img/searchIcon.png");
-    height: 15px;
-    width: 15px;
-    background-size: cover;
-    border: 1px solid #D8475D;
-}
-
-.cartInput {
-    background-image: url("../../img/panierIcon.png");
-    height: 30px;
-    width: 30px;
-    background-size: cover;
-    border: 1px solid #D8475D;
-}
-
+/* A ne pas toucher */
 .adminBar {
     height: 50px;
     background-color: #D8475D;
@@ -55,33 +26,6 @@ textarea {
     height: 35px;
 }
 
-.firstHomeImg {
-    height: 100%;
-}
-
-.firstHomeContent {
-    background-color: #FAFAFA;
-}
-
-.empty {
-    height: 15px;
-}
-
-.firstColHome {
-    width: 100%;
-    height: 100%;
-}
-
-.secondColHome {
-    width: 100%;
-    /* height: 100%; */
-}
-
-.thirdColHome {
-    width: 100%;
-    height: 100%;
-}
-
 .title {
     margin: 0 auto;
     display: block;
@@ -93,7 +37,67 @@ textarea {
     margin: 0;
 }
 
-ul li a {
+.subMenuLink {
     float: left;
     padding: 10px;
 }
+
+/* A ne pas toucher */
+
+/* FRONT */
+
+.frontMenuBar {
+    border: 1px solid #D8475D;
+    height: 50px;
+    background-color: #D8475D;
+}
+
+.frontCartInput,
+.frontSearchIcon,
+.frontSearchInput {
+    background-color: #D8475D;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+}
+
+.frontSearchIcon {
+    background-image: url("../../img/searchIcon.png");
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    border: 1px solid #D8475D;
+}
+
+.frontCartInput {
+    background-image: url("../../img/panierIcon.png");
+    height: 40px;
+    width: 40px;
+    background-size: cover;
+    border: 1px solid #D8475D;
+}
+
+.frontFirstImg {
+    height: 100%;
+}
+
+.frontFirstContent {
+    background-color: #FAFAFA;
+}
+
+.frontFirstCol {
+    width: 100%;
+    height: 100%;
+}
+
+.frontSecondCol {
+    width: 100%;
+    height: 100%;
+}
+
+.frontThirdCol {
+    width: 100%;
+    height: 100%;
+}
+
+/* /FRONT */
