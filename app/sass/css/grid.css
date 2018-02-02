@@ -7,23 +7,76 @@ body {
 }
 
 .container {
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .row {
+    display: -ms-flexbox;
     display: flex;
-    width: 100%;
-    margin: 0 -20px;
-    /* pour retourner à la ligne */
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    /* margin-right: -15px; */
+    /* margin-left: -15px; */
+    text-align: center;
+    align-items: center;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .container-fluid {
     width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-@media (max-width: 575px) {
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 575px) {
     .col-xs-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -73,8 +126,8 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767px) {
+
+@media (min-width: 576px) {
     .col-sm-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -124,8 +177,8 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {
+
+@media (min-width: 768px) {
     .col-md-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -175,8 +228,8 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {
+
+@media (min-width: 992px) {
     .col-lg-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -226,7 +279,7 @@ body {
         flex: 0 0 calc(12/12*100%);
     }
 }
-/* // Extra large devices (large desktops, 1200px and up) */
+
 @media (min-width: 1200px) {
     .col-xl-1 {
         max-width: calc(1/12*100%);
