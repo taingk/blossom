@@ -13,6 +13,7 @@ a {
 }
 
 /* A ne pas toucher */
+
 .adminBar {
     height: 50px;
     background-color: #D8475D;
@@ -101,3 +102,42 @@ a {
 }
 
 /* /FRONT */
+
+.backHeaderBar {
+    background-color: #D8475D;
+    height: 130px;
+}
+
+.backMenu {
+    padding: 0;
+}
+
+.backLeftMenuBar {
+    background-color: #FDFBFB;
+    margin-top: 20px;
+}
+
+.backTDB {
+    background-color: #D8475D;
+    text-overflow: clip;
+}
+
+.backTitlePage {
+    color: black;
+}
+
+.backNoA {
+    color: black;
+    text-decoration: none;
+}
+
+.backMenu>.backMenuLink {
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.backMenuBar {
+    border: 1px solid #D8475D;
+    height: 50px;
+    background-color: #D8475D;
+}
