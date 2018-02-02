@@ -53,18 +53,15 @@ textarea {
 
 .profile-picture {
     height: 35px;
-    float: right;
-    padding-right: 10px;
 }
 
 .imgPrincipaleIphoneX {
-    width: 656px;
-    height: 370px;
+    height: 100%;
 }
 
 .divImgPrincipale {
     width: 100%;
-    height: 370px;
+    height: 500px;
     background-color: #FAFAFA;
     text-align: center;
 }
