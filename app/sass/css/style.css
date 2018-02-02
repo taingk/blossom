@@ -109,6 +109,7 @@ a {
 }
 
 .backMenu {
+    list-style: none;
     padding: 0;
 }
 
