@@ -1,143 +1,150 @@
 @font-face {
     font-family: 'Avenir';
     src: url('../../font/AvenirNextRegular.otf') format('truetype');
-}
-
-* {
+ }
+ 
+ * {
     font-family: "Avenir";
     color: #ffffff;
-}
-
-a {
+    margin: 0;
+    box-sizing: border-box;
+ }
+ 
+ a {
     text-decoration: none;
-}
-
-/* A ne pas toucher */
-
-.adminBar {
-    height: 50px;
+ }
+ 
+ /* A ne pas toucher */
+ 
+ .adminBar {
+    /* height: 50px; */
+    padding: 10px;
     background-color: #D8475D;
-}
-
-.logo {
+ }
+ 
+ .logo {
     height: 35px;
-}
-
-.profilePicture {
+ }
+ 
+ .profilePicture {
     height: 35px;
-}
-
-.title {
+ }
+ 
+ .title {
     margin: 0 auto;
     display: block;
-}
-
-.subMenuList {
+ }
+ 
+ .subMenuList {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.subMenuLink {
+ }
+ 
+ .subMenuLink {
     float: left;
     padding: 10px;
-}
-
-/* A ne pas toucher */
-
-/* FRONT */
-
-.frontMenuBar {
+ }
+ 
+ /* A ne pas toucher */
+ 
+ /* FRONT */
+ 
+ .frontMenuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
-}
-
-.frontCartInput,
-.frontSearchIcon,
-.frontSearchInput {
+ }
+ 
+ .frontCartInput,
+ .frontSearchIcon,
+ .frontSearchInput {
     background-color: #D8475D;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
-}
-
-.frontSearchIcon {
+ }
+ 
+ .frontSearchIcon {
     background-image: url("../../img/searchIcon.png");
     height: 20px;
     width: 20px;
     background-size: cover;
     border: 1px solid #D8475D;
-}
-
-.frontCartInput {
+ }
+ 
+ .frontCartInput {
     background-image: url("../../img/panierIcon.png");
     height: 40px;
     width: 40px;
     background-size: cover;
     border: 1px solid #D8475D;
-}
-
-.frontFirstImg {
+ }
+ 
+ .frontFirstImg {
     height: 100%;
-}
-
-.frontFirstContent {
+ }
+ 
+ .frontFirstContent {
     background-color: #FAFAFA;
-}
-
-.frontFirstCol {
+ }
+ 
+ .frontFirstCol {
     width: 100%;
     height: 100%;
-}
-
-.frontSecondCol {
+ }
+ 
+ .frontSecondCol {
     width: 100%;
     height: 100%;
-}
-
-.frontThirdCol {
+ }
+ 
+ .frontThirdCol {
     width: 100%;
     height: 100%;
-}
-
-/* /FRONT */
-
-.backHeaderBar {
+ }
+ 
+ /* /FRONT */
+ 
+ .backHeaderBar {
     background-color: #D8475D;
     height: 130px;
-}
-
-.backMenu {
+ }
+ 
+ .backMenu {
     padding: 0;
-}
-
-.backLeftMenuBar {
+ }
+ 
+ .backLeftMenuBar {
     background-color: #FDFBFB;
-    margin-top: 20px;
-}
-
-.backTDB {
+    /* margin-top: 20px; */
+ }
+ 
+ .backTDB {
     background-color: #D8475D;
     text-overflow: clip;
-}
-
-.backTitlePage {
+ }
+ 
+ .backTitlePage {
     color: black;
-}
-
-.backNoA {
+ }
+ 
+ .backNoA {
     color: black;
     text-decoration: none;
-}
-
-.backMenu>.backMenuLink {
+ }
+ 
+ .backMenu>.backMenuLink {
     padding-bottom: 5%;
     padding-top: 5%;
-}
-
-.backMenuBar {
+ }
+ 
+ .backMenuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
-}
+ }
+
+ .backTitleView {
+     color: #D8475D;
+ }
