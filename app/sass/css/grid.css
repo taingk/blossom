@@ -19,10 +19,12 @@ body {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    /* margin-right: -15px; */
-    /* margin-left: -15px; */
     text-align: center;
     align-items: center;
+}
+
+.gutters {
+    padding: 15px;
 }
 
 .no-gutters {
