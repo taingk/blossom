@@ -1,46 +1,46 @@
 @font-face {
-   font-family: 'Avenir';
-   src: url('../../font/AvenirNextRegular.otf') format('truetype');
+    font-family: 'Avenir';
+    src: url('../../public/font/AvenirNextRegular.otf') format('truetype');
 }
 
 * {
-   font-family: "Avenir";
-   color: #ffffff;
+    font-family: "Avenir";
+    color: #ffffff;
 }
 
 a {
-   text-decoration: none;
+    text-decoration: none;
 }
 
 /* A ne pas toucher */
 
 .adminBar {
-   height: 50px;
-   background-color: #D8475D;
+    height: 50px;
+    background-color: #D8475D;
 }
 
 .logo {
-   height: 35px;
+    height: 35px;
 }
 
 .profilePicture {
-   height: 35px;
+    height: 35px;
 }
 
 .title {
-   margin: 0 auto;
-   display: block;
+    margin: 0 auto;
+    display: block;
 }
 
 .subMenuList {
-   list-style: none;
-   padding: 0;
-   margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .subMenuLink {
-   float: left;
-   padding: 10px;
+    float: left;
+    padding: 10px;
 }
 
 /* A ne pas toucher */
@@ -48,57 +48,57 @@ a {
 /* FRONT */
 
 .frontMenuBar {
-   border: 1px solid #D8475D;
-   height: 50px;
-   background-color: #D8475D;
+    border: 1px solid #D8475D;
+    height: 50px;
+    background-color: #D8475D;
 }
 
 .frontCartInput,
 .frontSearchIcon,
 .frontSearchInput {
-   background-color: #D8475D;
-   border-top-style: none;
-   border-right-style: none;
-   border-left-style: none;
+    background-color: #D8475D;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
 }
 
 .frontSearchIcon {
-   background-image: url("../../img/searchIcon.png");
-   height: 20px;
-   width: 20px;
-   background-size: cover;
-   border: 1px solid #D8475D;
+    background-image: url("../../public/img/searchIcon.png");
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    border: 1px solid #D8475D;
 }
 
 .frontCartInput {
-   background-image: url("../../img/panierIcon.png");
-   height: 40px;
-   width: 40px;
-   background-size: cover;
-   border: 1px solid #D8475D;
+    background-image: url("../../public/img/panierIcon.png");
+    height: 40px;
+    width: 40px;
+    background-size: cover;
+    border: 1px solid #D8475D;
 }
 
 .frontFirstImg {
-   height: 100%;
+    height: 100%;
 }
 
 .frontFirstContent {
-   background-color: #FAFAFA;
+    background-color: #FAFAFA;
 }
 
 .frontFirstCol {
-   width: 100%;
-   height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .frontSecondCol {
-   width: 100%;
-   height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .frontThirdCol {
-   width: 100%;
-   height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 /* /FRONT */
@@ -111,72 +111,72 @@ a {
 .backMenu {
     list-style: none;
     padding: 0;
- }
- 
- .backLeftMenuBar {
+}
+
+.backLeftMenuBar {
     background-color: #FDFBFB;
     /* margin-top: 20px; */
- }
- 
- .backTDB {
+}
+
+.backTDB {
     background-color: #D8475D;
     text-overflow: clip;
- }
- 
- .backTitlePage {
+}
+
+.backTitlePage {
     color: black;
- }
- 
- .backNoA {
+}
+
+.backNoA {
     color: black;
     text-decoration: none;
- }
- 
- .backMenu>.backMenuLink {
+}
+
+.backMenu>.backMenuLink {
     padding-bottom: 5%;
     padding-top: 5%;
- }
- 
- .backMenuBar {
+}
+
+.backMenuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
 }
 
 .homeBar {
-  height: 70px;
-  background-color: #D8475D;
-  box-shadow: 10px 6px 12px grey;
+    height: 70px;
+    background-color: #D8475D;
+    box-shadow: 10px 6px 12px grey;
 }
 
-.homeFirstContent{
-  height: 700px;
-  background-image: url('../../img/BlossomHome.png');
-  background-position: center;
-  background-size: cover;
+.homeFirstContent {
+    height: 700px;
+    background-image: url('../../public/img/BlossomHome.png');
+    background-position: center;
+    background-size: cover;
 }
 
-.homeBtTelechargement{
-  width: 250px;
-  height: 85px;
-  background-color: #D8475D;
-  border-radius: 1em;
-  border-color: #D8475D;
+.homeBtTelechargement {
+    width: 250px;
+    height: 85px;
+    background-color: #D8475D;
+    border-radius: 1em;
+    border-color: #D8475D;
 }
 
-.homeTelecharger{
-  font-size: 22px;
+.homeTelecharger {
+    font-size: 22px;
 }
 
-.homeTextHomeBar{
-  font-size: 12px;
+.homeTextHomeBar {
+    font-size: 12px;
 }
 
-.homeDivTaille{
-  height: 550px;
-  width: 100%;
+.homeDivTaille {
+    height: 550px;
+    width: 100%;
 }
 
- .backTitleView {
-     color: #D8475D;
- }
+.backTitleView {
+    color: #D8475D;
+}
