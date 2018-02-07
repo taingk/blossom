@@ -111,33 +111,33 @@ a {
 .backMenu {
     list-style: none;
     padding: 0;
-}
-
-.backLeftMenuBar {
+ }
+ 
+ .backLeftMenuBar {
     background-color: #FDFBFB;
-    margin-top: 20px;
-}
-
-.backTDB {
+    /* margin-top: 20px; */
+ }
+ 
+ .backTDB {
     background-color: #D8475D;
     text-overflow: clip;
-}
-
-.backTitlePage {
+ }
+ 
+ .backTitlePage {
     color: black;
-}
-
-.backNoA {
+ }
+ 
+ .backNoA {
     color: black;
     text-decoration: none;
-}
-
-.backMenu>.backMenuLink {
+ }
+ 
+ .backMenu>.backMenuLink {
     padding-bottom: 5%;
     padding-top: 5%;
-}
-
-.backMenuBar {
+ }
+ 
+ .backMenuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
@@ -176,3 +176,7 @@ a {
   height: 550px;
   width: 100%;
 }
+
+ .backTitleView {
+     color: #D8475D;
+ }
