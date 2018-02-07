@@ -32,7 +32,7 @@ Lien d'accès au site de production [Blossom](https://blossoom.ovh/)
 
 <br>
 
-Planification des tâches et objectifs grâce à [Trello](https://trello.com/b/ernITlk9/blossom)
+Planification des tâches et objectifs grâce à [GitHub Projects](https://github.com/taingk/blossom/projects/1)
 
 <br>
 
