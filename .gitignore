@@ -2,3 +2,4 @@ data/backup.sql
 app/sass/node_modules/
 *.log
 config/*
+.DS_Store
