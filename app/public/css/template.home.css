@@ -1,0 +1,37 @@
+.homeBar {
+    height: 70px;
+    background-color: #D8475D;
+    box-shadow: 10px 6px 12px grey;
+}
+
+.homeFirstContent {
+    height: 700px;
+    background-image: url('../../public/img/BlossomHome.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.homeBtTelechargement {
+    width: 250px;
+    height: 85px;
+    background-color: #D8475D;
+    border-radius: 1em;
+    border-color: #D8475D;
+}
+
+.homeTelecharger {
+    font-size: 22px;
+}
+
+.homeTextHomeBar {
+    font-size: 12px;
+}
+
+.homeDivTaille {
+    height: 550px;
+    width: 100%;
+}
+
+.backTitleView {
+    color: #D8475D;
+}

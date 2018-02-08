@@ -1,0 +1,28 @@
+.adminBar {
+    height: 50px;
+    background-color: #D8475D;
+}
+
+.logo {
+    height: 35px;
+}
+
+.profilePicture {
+    height: 35px;
+}
+
+.title {
+    margin: 0 auto;
+    display: block;
+}
+
+.subMenuList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subMenuLink {
+    float: left;
+    padding: 10px;
+}
