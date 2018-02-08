@@ -10,41 +10,47 @@
     <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="../../public/css/template.back.css">
     <link rel="stylesheet" href="../../public/css/adminBar.css">
+
+    <style>
+
+    .backMenuLink > a {
+        color: #D8475D
+    }</style>
 </head>
 
 <body style="background-color: #F1F1F1; height: 100%;">
     <header>
-            <nav class="row adminBar">
-
-                    <div class="col-lg-1">
-                        <img class="logo" src="../../public/img/logo.png" alt="Logo">
-                    </div>
-                    <div class="col-lg-3">
-                        <ul class="subMenuList">
-                            <li><a class="subMenuLink" href="">Home</a></li>
-                            <li><a class="subMenuLink" href="">Créer</a></li>
-                            <li><a class="subMenuLink" href="">Editer</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-1"></div>
-                    <div class="title" class="col-lg-2">Blossom</div>
-                    <div class="col-lg-3"></div>
-
-                    <div class="col-lg-1">
-                        <img class="profilePicture" src="../../public/img/logo.png" alt="Image de profil">
-                    </div>
-
-                    <div class="col-lg-1">Doggo Shiba</div>
-            
-                </nav>
+        <nav class="row adminBar">
+            <div class="col-lg-1">
+                <!-- <img class="logo" src="../../public/img/logo.png" alt="Logo"> -->
+            </div>
+            <div class="col-lg-3">
+                <ul class="subMenuList">
+                    <li><a class="subMenuLink" href="">Home</a></li>
+                    <li><a class="subMenuLink" href="">Créer</a></li>
+                    <li><a class="subMenuLink" href="">Editer</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="title" class="col-lg-2"><img src="../../public/img/logo_blanc.png" alt="" width="110" style="padding: 10px;"></div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div style="display: inline-block;">
+                    <img class="profilePicture" src="../../public/img/logo.png" alt="Image de profil">
+                </div>
+                <div style="display: inline-block;">
+                    <span style="display: table-cell; padding: 2px;">Doggo Shiba</span>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </nav>
     </header>
-    <main>
-        <section class="row backView">
-            <nav class="col-xs-2 backLeftMenu">
+    <main style="height: 100%;">
+        <section class="row backView" style="height: 100%;">
+            <nav class="col-xs-2 backLeftMenu" style="height: 100%; background-color: white;">
                 <ul class="backMenu">
                     <li class="backMenuLink backTDB">
-                        <a class="" href="#">Tableau de bord</a>
+                        <a class="" href="#" style="color: white;">Tableau de bord</a>
                     </li>
                     <li class="backMenuLink">
                         <a class="" href="#">Categories</a>
