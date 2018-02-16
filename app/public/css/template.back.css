@@ -38,3 +38,30 @@
     height: 50px;
     background-color: #D8475D;
 }
+
+.backMenuLink > a {
+    color: #D8475D
+}
+
+body {
+    background: white;
+    height: 100%;
+}
+
+.backNavbarRight {
+    float: right;
+}
+
+.backInlineBlock {
+    display: inline-block
+}
+
+.backProfileName {
+    display: table-cell;
+    padding: 2px;
+}
+
+.backRedHeader {
+    height: 400px;
+    background: #D8475D;
+}
