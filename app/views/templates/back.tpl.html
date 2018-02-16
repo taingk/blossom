@@ -5,88 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blossom</title>
+    <title>Blossom | Page d'index</title>
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="../../public/css/template.back.css">
     <link rel="stylesheet" href="../../public/css/adminBar.css">
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
+    <script src="../../public/js/chart.back.js"></script>
 </head>
 
-<body style="background-color: #F1F1F1; height: 100%;">
+<body>
     <header>
-            <nav class="row adminBar">
-
-                    <div class="col-lg-1">
-                        <img class="logo" src="../../public/img/logo.png" alt="Logo">
-                    </div>
-                    <div class="col-lg-3">
-                        <ul class="subMenuList">
-                            <li><a class="subMenuLink" href="">Home</a></li>
-                            <li><a class="subMenuLink" href="">Créer</a></li>
-                            <li><a class="subMenuLink" href="">Editer</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-1"></div>
-                    <div class="title" class="col-lg-2">Blossom</div>
-                    <div class="col-lg-3"></div>
-
-                    <div class="col-lg-1">
+        <!-- Barre de navigation -->
+        <nav class="row adminBar">
+            <div class="col-lg-1"></div>
+            <!-- Menu -->
+            <div class="col-lg-3">
+                <ul class="subMenuList">
+                    <li><a class="subMenuLink" href="">Home</a></li>
+                    <li><a class="subMenuLink" href="">Créer</a></li>
+                    <li><a class="subMenuLink" href="">Editer</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-1"></div>
+            <!-- Logo -->
+            <div class="title" class="col-lg-2">
+                <img src="../../public/img/logo_blanc.png" alt="" width="110" style="padding: 10px;">
+            </div>
+            <div class="col-lg-1"></div>
+            <!-- Profile picture -->
+            <div class="col-lg-3">
+                <div class="backNavbarRight">
+                    <div class="backInlineBlock">
                         <img class="profilePicture" src="../../public/img/logo.png" alt="Image de profil">
                     </div>
-
-                    <div class="col-lg-1">Doggo Shiba</div>
-            
-                </nav>
+                    <div class="backInlineBlock">
+                        <span class="backProfileName">Doggo Shiba</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </nav>
+        <!-- Header rouge -->
+        <div class="backRedHeader">
+            <div style="height: 80%"></div>
+            <div style="height: 20%">
+                <span>Tableau de bord</span>
+            </div>
+        </div>
     </header>
-    <main>
-        <section class="row backView">
-            <nav class="col-xs-2 backLeftMenu">
-                <ul class="backMenu">
-                    <li class="backMenuLink backTDB">
-                        <a class="" href="#">Tableau de bord</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Categories</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Pages</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Produits</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Medias</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Commandes</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Commentaires</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Apparences</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Utilisateurs</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Réglages</a>
-                    </li>
+            
+
+    <main style="height: 100%;">
+        <section class="row backView" style="height: 100%;">
+            <nav class="col-xs-2 backLeftMenu" style="height: 100%; background-color: white;">
+                <ul class="backMenu" style="padding: 5% 0;">
+                    <li class="backMenuLink backTDB"><a class="" href="#" style="color: white;">Tableau de bord</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Categories</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Pages</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Produits</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Medias</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Commandes</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Commentaires</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Apparences</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Utilisateurs</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Réglages</a></li>
                 </ul>
             </nav>
-            <section class="col-xs-9" style="background-color: white; height: 100%; margin-left: auto; margin-right: auto; margin-bottom: auto;">
+            <section class="col-xs-9" style="background-color: white; height: 100%; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: -120px; border-radius: 20px;">
                 <article>
                     <div class="col-sm-6" style="display: inline; float: left; width: 100%;">
-                        <h1 class="backTitleView">Test1</h1>
+                        <h1 style="color:#D8475D">Ceci est un tableau de bord!</h1>
+                        <div id="container" style="width: 100%;">
+                            <canvas id="canvas" style="margin: 0 auto;"></canvas>
+                        </div>
                     </div>
-                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;">
-                        <h1 class="backTitleView">Test2</h1>
-                    </div>
+                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;"></div>
                 </article>
             </section>
         </section>
-
     </main>
 </body>
 
