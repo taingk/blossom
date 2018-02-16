@@ -34,24 +34,6 @@ var barChartData = {
 
 };
 
-window.onload = function() {
-    var ctx = document.getElementById("canvas").getContext("2d");
-    window.myBar = new Chart(ctx, {
-        type: 'bar',
-        data: barChartData,
-        options: {
-            responsive: true,
-            legend: {
-                position: 'bottom',
-            },
-            title: {
-                display: false,
-                text: 'Chart.js Bar Chart'
-            }
-        }
-    });
-
-};
 
 document.getElementById('randomizeData').addEventListener('click', function() {
     var zero = Math.random() < 0.2 ? true : false;

@@ -13,6 +13,9 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
     <script src="../../public/js/chart.back.js"></script>
+    <script src="../../public/js/chart2.back.js"></script>
+    <script src="../../public/js/chartOnLoad.back.js"></script>
+
 </head>
 
 <body>
@@ -49,11 +52,11 @@
         </nav>
         <!-- Header rouge -->
         
-        <div class="backHeaderBar">
-            <div class="row">
-                <span class="col-sm-2 backTitlePages">Tableau de bord</span>
+        <div class="backRedHeader">
+            <div style="height: 80%"></div>
+            <div style="height: 20%">
+                <span>Tableau de bord</span>
             </div>
-        </div>
         </div>
     
     </header>
@@ -83,7 +86,12 @@
                             <canvas id="canvas" style="margin: 0 auto;"></canvas>
                         </div>
                     </div>
-                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;"></div>
+                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;">
+                        <h1 style="color:#D8475D">Ceci est un tableau de bord!</h1>
+                        <div id="container" style="width: 100%;">
+                            <canvas id="canvass" style="margin: 0 auto;"></canvas>
+                        </div>
+                    </div>
                 </article>
             </section>
         </section>
