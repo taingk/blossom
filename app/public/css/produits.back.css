@@ -72,13 +72,13 @@ body {
 
 .backMarques{
     color: #444444;
-    float: left;
-    padding-left: 15%;
+    float: right;
+    padding-left: 15%; 
   
 }
 
 .backFiltreMarques{
-    margin-top: 30px; 
+    margin-top: 30px;
     float: left;
     margin: auto;
 }
@@ -90,71 +90,35 @@ body {
     text-align: center;
 }
 
-.backDiviphoneX{
+.backListingProduits{
     height: 25%;
     background-color: #FBFBFB;
     border-bottom: 1px solid #DADADA;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
-.backProduitsiphoneX{
+.backProduitsImg{
     width: 100px;
 }
 
-.backDecriptioniphoneX{
+.backDescription{
     color: #444444;
     float: left;
     display: block;
     margin: auto;
 }
 
-.backPrixiphoneX{
+.backPrixProduits{
     color: #444444;
     float: right;
-}
-
-.backDiviphone8{
-    height: 25%;
-    background-color: #FBFBFB;
-    border-bottom: 1px solid #DADADA;
-    padding-top: 15px;
-}
-
-.backProduitsiphone8{
-    width: 90px;
-}
-
-.backDecriptioniphone8{
-    color: #444444;
-    float: left;
-    display: block;
     margin: auto;
 }
 
-.backPrixiphone8{
-    color: #444444;
-    float: right;
+.backBtnAdd{
+    background-color: #D8475D;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
-.backDiviphone6{
-    height: 25%;
-    background-color: #FBFBFB;
-    border-bottom: 1px solid #DADADA;
-    padding-top: 15px;
-}
 
-.backProduitsiphone6{
-    width: 70%;
-}
-
-.backDecriptioniphone6{
-    color: #444444;
-    float: left;
-    display: block;
-    margin: auto;
-}
-
-.backPrixiphone6{
-    color: #444444;
-    float: right;
-}
