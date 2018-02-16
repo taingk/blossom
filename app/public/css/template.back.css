@@ -1,6 +1,7 @@
 .backHeaderBar {
     background-color: #D8475D;
     height: 130px;
+    
 }
 
 .backMenu {
@@ -19,8 +20,9 @@
     text-overflow: clip;
 }
 
-.backTitlePage {
-    color: black;
+.backTitlePages {
+    margin-top: 5%;
+    font-size: 25px;
 }
 
 .backNoA {
@@ -33,15 +35,23 @@
     padding-top: 5%;
 }
 
+.backLeftMenuBar >.backMenu > .backMenuLink:first-child{
+    color: white;
+}
+
 .backMenuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
 }
 
-.backMenuLink > a {
-    color: #D8475D
+
+
+.backMenuLink > a{
+    color: #444444;
 }
+
+
 
 body {
     background: white;
@@ -59,9 +69,4 @@ body {
 .backProfileName {
     display: table-cell;
     padding: 2px;
-}
-
-.backRedHeader {
-    height: 400px;
-    background: #D8475D;
 }
