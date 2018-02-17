@@ -8,7 +8,7 @@
     <title>Blossom | Page d'index</title>
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/template.back.css">
+    <link rel="stylesheet" href="../../public/css/produits.back.css">
     <link rel="stylesheet" href="../../public/css/adminBar.css">
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
@@ -60,14 +60,14 @@
             
 
     <main style="height: 100%; background-color: #F1F1F1">
-        <section class="row backView" style="height: 100%;">
-            <nav class="col-xs-2 backLeftMenu" style="height: 100%; background-color: white;">
-                <ul class="backMenu" style="padding: 5% 0;">
-                    <li class="backMenuLink backTDB"><a class="" href="#" style="color: white;">Tableau de bord</a></li>
+        <section class="row" style="height: 100%;">
+            <nav class="col-xs-2 backLeftMenu" >
+                <ul class="backMenu" style="background-color: #FBFBFB">
+                    <li class="backMenuLink"><a class="" href="back.tpl.html">Tableau de bord</a></li>
                     <li class="backMenuLink"><a class="" href="#">Categories</a></li>
                     <li class="backMenuLink"><a class="" href="#">Pages</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Produits</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Medias</a></li>
+                    <li class="backMenuLink backProduits"><a class="" href="#" style="color: #FBFBFB;">Produits</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Medias</a‡></li>
                     <li class="backMenuLink"><a class="" href="#">Commandes</a></li>
                     <li class="backMenuLink"><a class="" href="#">Commentaires</a></li>
                     <li class="backMenuLink"><a class="" href="#">Apparences</a></li>
@@ -75,18 +75,85 @@
                     <li class="backMenuLink"><a class="" href="#">Réglages</a></li>
                 </ul>
             </nav>
-            <section class="col-xs-9" style="background-color: white; height: 100%; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: -120px; border-radius: 20px;">
-                <article>
-                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;">
-                        <h1 style="color: black;">Marques :</h1>
-                        <select><option value="iPhone">iPhone</option></select>
-                        
-                        <div id="container" style="width: 100%;">
-                            
+          
+            <section class="col-lg-9 backView">
+                <article class="row backFiltreHeader">
+                        <div class="col-md-1">
+                            <p class="backMarques">Marques :</p>
                         </div>
-                    </div>
-                    
+                            <div class="col-md-2">
+                                <select class="backFiltreMarques">
+                                    <option value="iPhone">iPhone</option>
+                                    <option value="Samsung">Samsung</option>
+                                    <option value="HTC">HTC</option>
+                                    <option value="Huawei">Huawei</option>
+                                    <option value="LG">LG</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-1">
+                                    <p class="backMarques">Trier par :</p>
+                                </div>
+                            <div class="col-md-1">
+                                <select class="backFiltreMarques">
+                                        <option value="Prix">Prix</option>
+                                        <option value="Nom">Nom</option>
+                                        <option value="Date">Date</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6"></div>
+                            <div class="col-lg-1">
+                                <img src="../../public/img/search.png" alt="search" class="backSearch">
+                            </div>
+                    </article>
+
+                <article class="row backListingProduits">
+                        <div class="col-lg-2">
+                            <img src="../../public/img/iphoneXbackProduits.png" alt="" class="backProduitsImg">
+                        </div>
+                        <div class="col-lg-2">
+                            <p class="backDescription">iPhone X Noir 254Go</p>
+                        </div>
+                        <div class="col-md-5"></div>
+                        <div class="col-md-2">
+                            <p class="backPrixProduits">1299,99€</p>
+                        </div>
                 </article>
+
+                <article class="row backListingProduits">
+                            <div class="col-lg-2">
+                                <img src="../../public/img/iphone8backProduits.png" alt="" class="backProduitsImg">
+                            </div>  
+                            <div class="col-md-2">
+                                <p class="backDescription">iPhone 8 Noir 128Go</p>
+                            </div>
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2">
+                                <p class="backPrixProduits">799,99€</p>
+                            </div>
+                        </div>
+
+                </article>
+
+                <article class="row backListingProduits">
+                            <div class="col-lg-2">
+                                <img src="../../public/img/iphone7backProduits.png" alt="" class="backProduitsImg">
+                            </div>  
+                            <div class="col-md-2">
+                                <p class="backDescription">iPhone 7 Blanc 64Go</p>
+                            </div>
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2">
+                                <p class="backPrixProduits">699,99€</p>
+                            </div>
+                        
+                </article>
+                <article class="row">
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2">
+                        <a href="#" class="backBtnAdd">+</a>
+                    </div>
+               </article>
             </section>
         </section>
     </main>

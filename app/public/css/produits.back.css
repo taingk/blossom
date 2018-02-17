@@ -1,7 +1,6 @@
 .backHeaderBar {
     background-color: #D8475D;
     height: 130px;
-    
 }
 
 .backMenu {
@@ -39,17 +38,6 @@
     padding-top: 8%;
 }
 
-
-.backLeftMenuBar >.backMenu > .backMenuLink:first-child{
-    color: white;
-}
-
-.backMenuBar {
-    border: 1px solid #D8475D;
-    height: 50px;
-    background-color: #D8475D;
-}
-
 .backMenuLink > a{
     color: #444444;
 }
@@ -81,3 +69,63 @@ body {
     border-radius: 10px;
     margin-top: -100px;
 }
+
+.backMarques{
+    color: #444444;
+    float: right;
+    padding-left: 15%; 
+  
+}
+
+.backFiltreMarques{
+    margin-top: 30px;
+    margin: auto;
+}
+
+.backFiltreHeader{
+    height: 100px;
+    background-color: #F5F5F5;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+}
+
+.backListingProduits{
+    height: 25%;
+    background-color: #FBFBFB;
+    border-bottom: 1px solid #DADADA;
+    /* padding-top: 20px; */
+}
+
+.backProduitsImg{
+    width: 100px;
+}
+
+.backDescription{
+    color: #444444;
+    display: block;
+    margin: auto;
+}
+
+.backPrixProduits{
+    color: #444444;
+    margin: auto;
+}
+
+.backBtnAdd{
+    background-color: #D8475D;
+    font-size: 2.8em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: -100px;
+    position: fixed;
+    
+}
+
+.backSearch{
+    width: 40px;
+
+}
+
+
+
