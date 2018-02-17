@@ -13,6 +13,8 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
     <script src="../../public/js/chart.back.js"></script>
+    <script src="../../public/js/chart2.back.js"></script>
+    <script src="../../public/js/chartOnLoad.back.js"></script>
 </head>
 
 <body>
@@ -48,7 +50,8 @@
             <div class="col-lg-1"></div>
         </nav>
         <!-- Header rouge -->
-        <div class="backRedHeader">
+
+      <div class="backRedHeader">
             <div style="height: 80%"></div>
             <div style="height: 20%">
                 <span>Tableau de bord</span>
@@ -57,11 +60,11 @@
     </header>
             
 
-    <main style="height: 100%;">
+    <main style="height: 100%; background-color: #F1F1F1">
         <section class="row backView" style="height: 100%;">
             <nav class="col-xs-2 backLeftMenu" style="height: 100%; background-color: white;">
                 <ul class="backMenu" style="padding: 5% 0;">
-                    <li class="backMenuLink backTDB"><a class="" href="#" style="color: white;">Tableau de bord</a></li>
+                    <li class="backMenuLink backTDB"><a class="" href="#">Tableau de bord</a></li>
                     <li class="backMenuLink"><a class="" href="#">Categories</a></li>
                     <li class="backMenuLink"><a class="" href="#">Pages</a></li>
                     <li class="backMenuLink"><a class="" href="#">Produits</a></li>
@@ -79,6 +82,12 @@
                         <h1 style="color:#D8475D">Ceci est un tableau de bord!</h1>
                         <div id="container" style="width: 100%;">
                             <canvas id="canvas" style="margin: 0 auto;"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;">
+                        <h1 style="color:#D8475D">Ceci est un tableau de bord!</h1>
+                        <div id="container" style="width: 100%;">
+                            <canvas id="canvass" style="margin: 0 auto;"></canvas>
                         </div>
                     </div>
                     <div class="col-sm-6" style="display: inline; float: left; width: 100%;"></div>
