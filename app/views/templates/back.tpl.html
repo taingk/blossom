@@ -48,24 +48,26 @@
             <div class="col-lg-1"></div>
         </nav>
         <!-- Header rouge -->
-        <div class="backRedHeader">
-            <div style="height: 80%"></div>
-            <div style="height: 20%">
-                <span>Tableau de bord</span>
+        
+        <div class="backHeaderBar">
+            <div class="row">
+                <span class="col-sm-2 backTitlePages">Tableau de bord</span>
             </div>
         </div>
+        </div>
+    
     </header>
             
 
-    <main style="height: 100%;">
-        <section class="row backView" style="height: 100%;">
-            <nav class="col-xs-2 backLeftMenu" style="height: 100%; background-color: white;">
-                <ul class="backMenu" style="padding: 5% 0;">
-                    <li class="backMenuLink backTDB"><a class="" href="#" style="color: white;">Tableau de bord</a></li>
+    <main style="height: 100%; background-color: #F1F1F1">
+        <section class="row" style="height: 100%;">
+            <nav class="col-xs-2 backLeftMenu" >
+                <ul class="backMenu" style="background-color: #FBFBFB">
+                    <li class="backMenuLink backProduits"><a class="" href="back.tpl.html" style="color: #FBFBFB;">Tableau de bord</a></li>
                     <li class="backMenuLink"><a class="" href="#">Categories</a></li>
                     <li class="backMenuLink"><a class="" href="#">Pages</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Produits</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Medias</a></li>
+                    <li class="backMenuLink"><a class="" href="backProduits.tpl.html">Produits</a></li>
+                    <li class="backMenuLink"><a class="" href="#">Medias</a‡></li>
                     <li class="backMenuLink"><a class="" href="#">Commandes</a></li>
                     <li class="backMenuLink"><a class="" href="#">Commentaires</a></li>
                     <li class="backMenuLink"><a class="" href="#">Apparences</a></li>
@@ -73,15 +75,22 @@
                     <li class="backMenuLink"><a class="" href="#">Réglages</a></li>
                 </ul>
             </nav>
-            <section class="col-xs-9" style="background-color: white; height: 100%; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: -120px; border-radius: 20px;">
-                <article>
+            <section class="col-lg-9 backView">
+                <article class="backFiltreHeader">
                     <div class="col-sm-6" style="display: inline; float: left; width: 100%;">
                         <h1 style="color:#D8475D">Ceci est un tableau de bord!</h1>
                         <div id="container" style="width: 100%;">
                             <canvas id="canvas" style="margin: 0 auto;"></canvas>
                         </div>
                     </div>
-                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;"></div>
+                </article>
+                <article class="backFiltreHeader">
+                    <div class="col-sm-6" style="display: inline; float: left; width: 100%;">
+                        <h1 style="color:#D8475D">Ceci est un tableau de bord!</h1>
+                        <div id="container" style="width: 100%;">
+                            <canvas id="canvass" style="margin: 0 auto;"></canvas>
+                        </div>
+                    </div>
                 </article>
             </section>
         </section>
