@@ -1,7 +1,6 @@
 .backHeaderBar {
     background-color: #D8475D;
-    height: 130px;
-    
+    height: 130px;    
 }
 
 .backMenu {
@@ -40,15 +39,15 @@
 }
 
 
-.backLeftMenuBar >.backMenu > .backMenuLink:first-child{
+/* .backLeftMenuBar >.backMenu > .backMenuLink:first-child{
     color: white;
-}
+} */
 
-.backMenuBar {
+/* .backMenuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
-}
+} */
 
 .backMenuLink > a{
     color: #444444;
