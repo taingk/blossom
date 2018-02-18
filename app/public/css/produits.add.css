@@ -97,14 +97,13 @@ label textarea {
     height: 100px;
 }
 
-.col-lg-12 h1 {
+.col-lg-9 h1 {
     color: #444444;
     letter-spacing: 5px;
     font-size: 2em;
 }
 
 .blockImage {
-    height: 515px;
     border: 1px solid #444444;
 }
 
@@ -113,8 +112,7 @@ label textarea {
 }
 
 .elements {
-    min-height: 100%;
-    display: flex;
+    margin: 50% 0;
     align-items: center;
     padding: 15px;
 }
@@ -129,6 +127,16 @@ label textarea {
 }
 
 .elements span {
-    font-size: 20px;
+    font-size: 1rem;
     letter-spacing: 4px;
+}
+
+.btnValid {
+    background-color: #D8475D;
+    border: none;
+    border-radius: 3px;
+    height: 65px;
+    width: 170px;
+    font-size: larger;
+    letter-spacing: 3px;
 }
