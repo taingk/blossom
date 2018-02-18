@@ -51,7 +51,7 @@
   color: #4A4A4A;
 }
 
-.coucou{
+.homeTitleQuestion{
   font-size: 16px;
   color: #4A4A4A;
 }
@@ -80,15 +80,38 @@
   background-color: #FDFCFC;
 }
 
-.homePaint{
-  border-width:1px 0px 0px 1px;
+.homeGeneral{
   border-style:solid;
   border-color: #4A4A4A;
   height: 150px;
   width: 200px;
 }
 
-.homeBrushImg{
+.homeBrush{
+  border-width:0px 1px 1px 0px;
+}
+
+.homeSecurity{
+  border-width:0px 0px 0px 0px;
+}
+
+.homePerf{
+  border-width:0px 0px 0px 1px;
+}
+
+.homeThumbUp{
+  border-width:0px 0px 0px 0px;
+}
+
+.homeMouse{
+  border-width:1px 0px 0px 1px;
+}
+
+.homeMobile{
+  border-width:1px 0px 0px 1px;
+}
+
+.homeFeaturesImg{
     width: 40px;
     height: 40px;
 }
@@ -96,7 +119,4 @@
 figcaption{
   color: #4A4A4A;
   font-size: 16px;
-}
-
-.homeFigure{
 }
