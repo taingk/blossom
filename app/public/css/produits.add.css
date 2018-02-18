@@ -7,6 +7,7 @@
     list-style: none;
     padding: 0;
     margin-top: 50px;
+    background-color: #FBFBFB;
 }
 
 .backLeftMenu {
@@ -21,8 +22,8 @@
 
 .backProduits{
     background-color: #D8475D;
-
 }
+
 .backTitlePages {
     margin-top: 5%;
     font-size: 25px;
@@ -139,4 +140,45 @@ label textarea {
     width: 170px;
     font-size: larger;
     letter-spacing: 3px;
+}
+
+html {
+    height: 100%;
+}
+
+.logo {
+    padding: 10px;
+}
+
+main {
+    height: 100%; 
+    background-color: #F1F1F1
+}
+
+main > section:nth-child(1) {
+    height: 100%;
+}
+
+.floatingLeft {
+    display: inline;
+    float: left;
+    width: 100%;
+}
+
+.center-container {
+    float: none;
+    margin: auto;
+}
+
+.left {
+    text-align: left;
+}
+
+.titleForm {
+    color: #444444;
+}
+
+
+.backProduits a {
+    color: #F1F1F1;
 }
