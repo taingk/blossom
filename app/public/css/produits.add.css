@@ -69,3 +69,66 @@ body {
     border-radius: 10px;
     margin-top: -100px;
 }
+
+label
+{
+    display: block;
+    padding: 20px;
+}
+
+label span
+{
+    display: inline-block;
+    text-align: right;
+    width: 15%;
+    letter-spacing: 3px;
+}
+
+label input, label textarea {
+    color: #444444;
+    width: 70%;
+}
+
+label input {
+    height: 50px;
+}
+
+label textarea {
+    height: 100px;
+}
+
+.col-lg-12 h1 {
+    color: #444444;
+    letter-spacing: 5px;
+    font-size: 2em;
+}
+
+.blockImage {
+    height: 515px;
+    border: 1px solid #444444;
+}
+
+.blockImage span {
+    color: #444444
+}
+
+.elements {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.elements button {
+    border: none;
+    background-color: #d8475d;
+    height: 44px;
+    width: 50px;
+    border-radius: 200px;
+
+}
+
+.elements span {
+    font-size: 20px;
+    letter-spacing: 4px;
+}
