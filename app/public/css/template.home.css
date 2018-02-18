@@ -4,6 +4,13 @@
     box-shadow: 10px 6px 12px grey;
 }
 
+.homeLogoImg {
+  width: 200px;
+  height: 30px;
+  object-fit: cover;
+  object-position: left top;
+}
+
 .homeFirstContent {
     height: 700px;
     background-image: url('../../public/img/BlossomHome.png');
@@ -21,10 +28,12 @@
 
 .homeTelecharger {
     font-size: 22px;
+    color : #FFFFFF;
 }
 
 .homeTextHomeBar {
     font-size: 12px;
+    color : #FFFFFF;
 }
 
 .homeDivTaille {
@@ -32,6 +41,62 @@
     width: 100%;
 }
 
-.backTitleView {
-    color: #D8475D;
+.homeCitation{
+  background-color: #F3DCE0;
+  height: 200px;
+}
+
+.homeSlogan{
+  font-size: 24px;
+  color: #4A4A4A;
+}
+
+.coucou{
+  font-size: 16px;
+  color: #4A4A4A;
+}
+
+.homeCitationText{
+  font-size: 20px;
+  color: #9B9B9B;
+  font-style: italic;
+}
+
+.homeSignature{
+  color: #4B4B4B;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.homeTitleFeatures{
+  height: 150px;
+  width: 100%
+  background-color: #FDFCFC;
+}
+
+.homeFeatures{
+  height: 200px;
+  width: 100%
+  background-color: #FDFCFC;
+}
+
+.homePaint{
+  border-width:1px 0px 0px 1px;
+  border-style:solid;
+  border-color: #4A4A4A;
+  height: 150px;
+  width: 200px;
+}
+
+.homeBrushImg{
+    width: 40px;
+    height: 40px;
+}
+
+figcaption{
+  color: #4A4A4A;
+  font-size: 16px;
+}
+
+.homeFigure{
 }
