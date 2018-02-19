@@ -1,6 +1,6 @@
 .backHeaderBar {
     background-color: #D8475D;
-    height: 130px;    
+    height: 130px;
 }
 
 .backTDB {
@@ -8,7 +8,7 @@
     text-overflow: clip;
 }
 
-.backProduits{
+.backProduits {
     background-color: #D8475D;
 }
 
@@ -22,18 +22,15 @@
     text-decoration: none;
 }
 
-
-/* .backLeftMenuBar >.backMenu > .backMenuLink:first-child{
+.backLeftMenuBar>.backMenu>.backMenuLink:first-child {
     color: white;
-} */
+}
 
-/* .backMenuBar {
+.backMenuBar {
     border: 1px solid #D8475D;
     height: 50px;
     background-color: #D8475D;
-} */
-
-
+}
 
 body {
     background: #FBFBFB;
@@ -53,8 +50,8 @@ body {
     padding: 2px;
 }
 
-.backView{
-    background-color: #FBFBFB; 
+.backView {
+    background-color: #FBFBFB;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -96,4 +93,29 @@ main section:nth-child(1) {
 
 .backProduits a {
     color: #F1F1F1;
+}
+
+.conteneur_image1 {
+    width: 400px;
+    height: 200px;
+    background-image: url('../../public/img/graph1.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.conteneur_image2 {
+    width: 400px;
+    height: 200px;
+    background-image: url('../../public/img/graph2.png');
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (min-width: 800px){
+    .conteneur_image1{
+        width: 100%;
+    }
+    .conteneur_image2{
+        width: 100%;
+    }
 }
