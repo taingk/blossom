@@ -72,6 +72,7 @@ html {
     display: inline;
     float: left;
     width: 100%;
+    margin-top: 20px;
 }
 
 main {
@@ -98,6 +99,7 @@ main section:nth-child(1) {
 .conteneur_image1 {
     width: 400px;
     height: 200px;
+    margin-top: 20px;
     background-image: url('../../public/img/graph1.png');
     background-position: center;
     background-size: cover;
