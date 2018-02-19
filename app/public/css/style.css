@@ -15,3 +15,23 @@ a {
 .rose {
     color: #D8475D;
 }
+
+.left {
+    padding-left: 10px;
+    float: left;
+}
+
+.right {
+    padding-right: 10px;
+    float: right;
+}
+
+.position-fixed {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
