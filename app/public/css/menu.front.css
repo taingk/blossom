@@ -1,0 +1,44 @@
+.frontMenuBar {
+    height: 50px;
+    background-color: #D8475D;
+}
+
+.frontCartInput,
+.frontSearchIcon,
+.frontSearchInput {
+    background-color: #D8475D;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+}
+
+.frontSearchIcon {
+    background-image: url("../../public/img/searchIcon.png");
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    border: 1px solid #D8475D;
+}
+
+.frontCartInput {
+    background-image: url("../../public/img/panierIcon.png");
+    height: 40px;
+    width: 40px;
+    background-size: cover;
+    border: 1px solid #D8475D;
+}
+
+.logo {
+    height: 35px;
+}
+
+.frontPosition-fixedAfter {
+    position: fixed;
+    width: 100%;
+    top: 50px;
+}
+
+.frontPosition-fixed {
+    position: fixed;
+    width: 100%;
+}

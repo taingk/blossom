@@ -18,64 +18,80 @@
 <body>
     <header>
         <!-- Barre de navigation -->
-        <nav class="row adminBar">
-            <div class="col-lg-1"></div>
-            <!-- Menu -->
-            <div class="col-lg-3">
-                <ul class="subMenuList">
-                    <li><a class="subMenuLink" href="">Home</a></li>
-                    <li><a class="subMenuLink" href="">Créer</a></li>
-                    <li><a class="subMenuLink" href="">Editer</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-1"></div>
-            <!-- Logo -->
-            <div class="title" class="col-lg-2">
-                <img src="../../public/img/logo_blanc.png" alt="" width="110" class="logo">
-            </div>
-            <div class="col-lg-1"></div>
-            <!-- Profile picture -->
-            <div class="col-lg-3">
-                <div class="backNavbarRight">
-                    <div class="backInlineBlock">
-                        <img class="profilePicture" src="../../public/img/logo.png" alt="Image de profil">
-                    </div>
-                    <div class="backInlineBlock">
-                        <span class="backProfileName">Doggo Shiba</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
+        <nav class="adminBar">
+            <ul class="subMenuList row" id="menu">
+                <li class="col-xs-1">
+                    <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Logo">
+                </li>
+                <li class="col-xs-1">
+                    <a class="subMenuLink right" href="front.tpl.html">Site</a>
+                </li>
+                <li class="col-xs-1">
+                    <a class="subMenuLink" href="">Créer</a>
+                </li>
+                <li class="col-xs-1">
+                    <a class="left subMenuLink" href="">Editer</a>
+                </li>
+                <li class="col-xs-4">
+                    <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
+                </li>
+                <li class="col-xs-2">
+                    <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Image de profil">
+                </li>
+                <li class="col-xs-2">
+                    <a href="">Kai Shiba</a>
+                </li>
+            </ul>
         </nav>
         <!-- Header rouge -->
-        
+
         <div class="backHeaderBar">
             <div class="row">
                 <span class="col-sm-2 backTitlePages">Ajout d'articles</span>
             </div>
         </div>
         </div>
-    
+
     </header>
-            
+
 
     <main>
         <section class="row">
-            <nav class="col-xs-2 backLeftMenu" >
+            <nav class="col-xs-2 backLeftMenu">
                 <ul class="backMenu">
-                    <li class="backMenuLink"><a class="" href="back.tpl.html">Tableau de bord</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Categories</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Pages</a></li>
-                    <li class="backMenuLink backProduits"><a class="" href="#" >Produits</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Medias</a‡></li>
-                    <li class="backMenuLink"><a class="" href="#">Commandes</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Commentaires</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Apparences</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Utilisateurs</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Réglages</a></li>
+                    <li class="backMenuLink">
+                        <a class="" href="back.tpl.html">Tableau de bord</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Categories</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Pages</a>
+                    </li>
+                    <li class="backMenuLink backProduits">
+                        <a class="" href="#">Produits</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Medias</a‡>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Commandes</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Commentaires</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Apparences</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Utilisateurs</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Réglages</a>
+                    </li>
                 </ul>
             </nav>
-          
+
             <section class="col-lg-9 backView">
                 <article>
                     <div class="col-lg-12">
@@ -89,9 +105,9 @@
                                 <div class="blockImage">
                                     <div class="elements">
                                         <span>Séléctionnez votre image</span>
-                                        <button>+</button>        
+                                        <button>+</button>
                                     </div>
-                                </div>            
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -102,7 +118,7 @@
                             <form action="" method="post">
                                 <label for="title">
                                     <span class="titleForm">Titre : </span>
-                                    <input type="text" name="test" class="inputText">        
+                                    <input type="text" name="test" class="inputText">
                                 </label>
                                 <label for="description">
                                     <span class="titleForm">Description de l'article : </span>
@@ -110,19 +126,19 @@
                                 </label>
                                 <label for="price">
                                     <span class="titleForm">Prix : </span>
-                                    <input type="text" name="test" class="inputText">        
+                                    <input type="text" name="test" class="inputText">
                                 </label>
                                 <label for="technical">
                                     <span class="titleForm">Champ technique : </span>
-                                    <input type="text" name="test" class="inputText">        
+                                    <input type="text" name="test" class="inputText">
                                 </label>
                                 <label for="technical2">
                                     <span class="titleForm">Champ technique : </span>
-                                    <input type="text" name="test" class="inputText">                                        
+                                    <input type="text" name="test" class="inputText">
                                 </label>
                                 <button class="btnValid">Valider</button>
                             </form>
-                        </div>            
+                        </div>
                     </div>
                 </article>
             </section>

@@ -18,142 +18,158 @@
 <body>
     <header>
         <!-- Barre de navigation -->
-        <nav class="row adminBar">
-            <div class="col-lg-1"></div>
-            <!-- Menu -->
-            <div class="col-lg-3">
-                <ul class="subMenuList">
-                    <li><a class="subMenuLink" href="">Home</a></li>
-                    <li><a class="subMenuLink" href="">Créer</a></li>
-                    <li><a class="subMenuLink" href="">Editer</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-1"></div>
-            <!-- Logo -->
-            <div class="title" class="col-lg-2">
-                <img src="../../public/img/logo_blanc.png" alt="" width="110" style="padding: 10px;">
-            </div>
-            <div class="col-lg-1"></div>
-            <!-- Profile picture -->
-            <div class="col-lg-3">
-                <div class="backNavbarRight">
-                    <div class="backInlineBlock">
-                        <img class="profilePicture" src="../../public/img/logo.png" alt="Image de profil">
-                    </div>
-                    <div class="backInlineBlock">
-                        <span class="backProfileName">Doggo Shiba</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
+        <nav class="adminBar">
+            <ul class="subMenuList row" id="menu">
+                <li class="col-xs-1">
+                    <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Logo">
+                </li>
+                <li class="col-xs-1">
+                    <a class="subMenuLink right" href="front.tpl.html">Site</a>
+                </li>
+                <li class="col-xs-1">
+                    <a class="subMenuLink" href="">Créer</a>
+                </li>
+                <li class="col-xs-1">
+                    <a class="left subMenuLink" href="">Editer</a>
+                </li>
+                <li class="col-xs-4">
+                    <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
+                </li>
+                <li class="col-xs-2">
+                    <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Image de profil">
+                </li>
+                <li class="col-xs-2">
+                    <a href="">Kai Shiba</a>
+                </li>
+            </ul>
         </nav>
         <!-- Header rouge -->
-        
+
         <div class="backHeaderBar">
             <div class="row">
                 <span class="col-sm-2 backTitlePages">Tableau de bord</span>
             </div>
         </div>
         </div>
-    
+
     </header>
-            
+
 
     <main style="height: 100%; background-color: #F1F1F1">
         <section class="row" style="height: 100%;">
-            <nav class="col-xs-2 backLeftMenu" >
+            <nav class="col-xs-2 backLeftMenu">
                 <ul class="backMenu" style="background-color: #FBFBFB">
-                    <li class="backMenuLink"><a class="" href="back.tpl.html">Tableau de bord</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Categories</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Pages</a></li>
-                    <li class="backMenuLink backProduits"><a class="" href="#" style="color: #FBFBFB;">Produits</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Medias</a‡></li>
-                    <li class="backMenuLink"><a class="" href="#">Commandes</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Commentaires</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Apparences</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Utilisateurs</a></li>
-                    <li class="backMenuLink"><a class="" href="#">Réglages</a></li>
+                    <li class="backMenuLink">
+                        <a class="" href="back.tpl.html">Tableau de bord</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Categories</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Pages</a>
+                    </li>
+                    <li class="backMenuLink backProduits">
+                        <a class="" href="#" style="color: #FBFBFB;">Produits</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Medias</a‡>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Commandes</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Commentaires</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Apparences</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Utilisateurs</a>
+                    </li>
+                    <li class="backMenuLink">
+                        <a class="" href="#">Réglages</a>
+                    </li>
                 </ul>
             </nav>
-          
+
             <section class="col-lg-9 backView">
                 <article class="row backFiltreHeader">
-                        <div class="col-md-1">
-                            <p class="backMarques">Marques :</p>
-                        </div>
-                            <div class="col-md-2">
-                                <select class="backFiltreMarques">
-                                    <option value="iPhone">iPhone</option>
-                                    <option value="Samsung">Samsung</option>
-                                    <option value="HTC">HTC</option>
-                                    <option value="Huawei">Huawei</option>
-                                    <option value="LG">LG</option>
-                                </select>
-                            </div>
+                    <div class="col-md-1">
+                        <p class="backMarques">Marques :</p>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="backFiltreMarques">
+                            <option value="iPhone">iPhone</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="HTC">HTC</option>
+                            <option value="Huawei">Huawei</option>
+                            <option value="LG">LG</option>
+                        </select>
+                    </div>
 
-                            <div class="col-md-1">
-                                    <p class="backMarques">Trier par :</p>
-                                </div>
-                            <div class="col-md-1">
-                                <select class="backFiltreMarques">
-                                        <option value="Prix">Prix</option>
-                                        <option value="Nom">Nom</option>
-                                        <option value="Date">Date</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-6"></div>
-                            <div class="col-lg-1">
-                                <img src="../../public/img/search.png" alt="" class="backSearch">
-                            </div>
-                    </article>
-
-                <article class="row backListingProduits">
-                        <div class="col-lg-2">
-                            <img src="../../public/img/iphoneXbackProduits.png" alt="" class="backProduitsImg">
-                        </div>
-                        <div class="col-lg-2">
-                            <p class="backDescription">iPhone X Noir 254Go</p>
-                        </div>
-                        <div class="col-md-5"></div>
-                        <div class="col-md-2">
-                            <p class="backPrixProduits">1299,99€</p>
-                        </div>
+                    <div class="col-md-1">
+                        <p class="backMarques">Trier par :</p>
+                    </div>
+                    <div class="col-md-1">
+                        <select class="backFiltreMarques">
+                            <option value="Prix">Prix</option>
+                            <option value="Nom">Nom</option>
+                            <option value="Date">Date</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-1">
+                        <img src="../../public/img/search.png" alt="" class="backSearch">
+                    </div>
                 </article>
 
                 <article class="row backListingProduits">
-                            <div class="col-lg-2">
-                                <img src="../../public/img/iphone8backProduits.png" alt="" class="backProduitsImg">
-                            </div>  
-                            <div class="col-md-2">
-                                <p class="backDescription">iPhone 8 Noir 128Go</p>
-                            </div>
-                            <div class="col-md-5"></div>
-                            <div class="col-md-2">
-                                <p class="backPrixProduits">799,99€</p>
-                            </div>
-                        </div>
+                    <div class="col-lg-2">
+                        <img src="../../public/img/iphoneXbackProduits.png" alt="" class="backProduitsImg">
+                    </div>
+                    <div class="col-lg-2">
+                        <p class="backDescription">iPhone X Noir 254Go</p>
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <p class="backPrixProduits">1299,99€</p>
+                    </div>
+                </article>
+
+                <article class="row backListingProduits">
+                    <div class="col-lg-2">
+                        <img src="../../public/img/iphone8backProduits.png" alt="" class="backProduitsImg">
+                    </div>
+                    <div class="col-md-2">
+                        <p class="backDescription">iPhone 8 Noir 128Go</p>
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <p class="backPrixProduits">799,99€</p>
+                    </div>
+                    </div>
 
                 </article>
 
                 <article class="row backListingProduits">
-                            <div class="col-lg-2">
-                                <img src="../../public/img/iphone7backProduits.png" alt="" class="backProduitsImg">
-                            </div>  
-                            <div class="col-md-2">
-                                <p class="backDescription">iPhone 7 Blanc 64Go</p>
-                            </div>
-                            <div class="col-md-5"></div>
-                            <div class="col-md-2">
-                                <p class="backPrixProduits">699,99€</p>
-                            </div>
-                        
+                    <div class="col-lg-2">
+                        <img src="../../public/img/iphone7backProduits.png" alt="" class="backProduitsImg">
+                    </div>
+                    <div class="col-md-2">
+                        <p class="backDescription">iPhone 7 Blanc 64Go</p>
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <p class="backPrixProduits">699,99€</p>
+                    </div>
+
                 </article>
                 <article class="row">
                     <div class="col-md-10"></div>
                     <div class="col-md-2">
                         <a href="#" class="backBtnAdd">+</a>
                     </div>
-               </article>
+                </article>
             </section>
         </section>
     </main>
