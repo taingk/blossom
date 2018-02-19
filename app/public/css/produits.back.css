@@ -7,6 +7,7 @@
     list-style: none;
     padding: 0;
     margin-top: 50px;
+    background-color: #FBFBFB;
 }
 
 .backLeftMenu {
@@ -21,8 +22,8 @@
 
 .backProduits{
     background-color: #D8475D;
-
 }
+
 .backTitlePages {
     margin-top: 5%;
     font-size: 25px;
@@ -47,13 +48,19 @@ body {
     height: 100%;
 }
 
+section{
+    height: 100%;
+}
+
+main{
+    background-color: #F1F1F1;
+    height: 100%;
+}
+
 .backNavbarRight {
     float: right;
 }
 
-.backInlineBlock {
-    display: inline-block
-}
 
 .backProfileName {
     display: table-cell;
@@ -119,7 +126,6 @@ body {
     border-radius: 50%;
     margin-top: -100px;
     position: fixed;
-    
 }
 
 .backSearch{
@@ -127,4 +133,17 @@ body {
 }
 
 
+@media screen and (max-width: 800px){
+    .backHeaderBar{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 800px){
+    .backView, .backPrixProduits{
+        width: 80%;
+        margin-top: auto;
+    }
+}
 
