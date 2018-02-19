@@ -3,17 +3,8 @@
     background-color: #D8475D;
 }
 
-.logo {
-    height: 35px;
-}
-
-.profilePicture {
-    height: 35px;
-}
-
-.title {
-    margin: 0 auto;
-    display: block;
+.adminBarImg {
+    height: 50px;
 }
 
 .subMenuList {
@@ -23,6 +14,61 @@
 }
 
 .subMenuLink {
-    float: left;
     padding: 10px;
 }
+
+.blossom {
+    height: 25px;
+}
+
+/* @media screen and (max-width: 640px) {
+    * {
+        color: white;
+    }
+
+    ul {
+        list-style: none;
+        max-height: 0;
+        transition: all 0.5s linear;
+        overflow: hidden;
+        background-color: #D8475D;
+    }
+
+    li:first-child {
+        display: none;
+    }
+
+    li:nth-child(2) {
+        display: block;
+    }
+
+    li:nth-child(3) {
+        display: inline-block;
+    }
+
+    li:nth-child(5) {
+        display: none;
+    }
+
+    li:nth-child(6) {
+        display: none;
+    }
+
+    li:nth-child(7) {
+        display: block;
+    }
+
+    .btn_menu_mobile::before {
+        content: "Menu";
+        display: inline-block;
+        background-color: #D8475D;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    .ouvert {
+        max-height: 1000px;
+    }
+} */
