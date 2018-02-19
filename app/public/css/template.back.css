@@ -3,17 +3,9 @@
     height: 130px;    
 }
 
-.backMenu {
-    list-style: none;
-    padding: 0;
-    margin-top: 50px;
-    background-color: #FBFBFB
-}
 
-.backLeftMenu {
-    background-color: #FDFBFB;
-    height: 100%;
-}
+
+
 
 .backTDB {
     background-color: #D8475D;
@@ -23,7 +15,6 @@
 .backProduits{
     background-color: #D8475D;
 }
-
 
 .backTitlePages {
     margin-top: 5%;
@@ -35,10 +26,6 @@
     text-decoration: none;
 }
 
-.backMenu>.backMenuLink {
-    padding-bottom: 8%;
-    padding-top: 8%;
-}
 
 
 /* .backLeftMenuBar >.backMenu > .backMenuLink:first-child{
@@ -51,9 +38,7 @@
     background-color: #D8475D;
 } */
 
-.backMenuLink > a{
-    color: #444444;
-}
+
 
 body {
     background: #FBFBFB;
