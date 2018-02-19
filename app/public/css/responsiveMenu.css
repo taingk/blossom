@@ -128,4 +128,12 @@
         display: none;
     }
 
+    .homeBar li:nth-child(1) {
+        display: none;
+    }
+
+    .homeBar li:nth-child(2) {
+        display: none;
+    }
+
 }
