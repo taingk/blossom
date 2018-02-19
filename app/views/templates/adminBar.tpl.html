@@ -6,22 +6,27 @@
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="../../public/css/adminBar.css">
+    <link rel="stylesheet" href="../../public/css/reponsiveMenu.css">
     <script src="../../public/js/toggleMenu.js"></script>
 </head>
 
-<nav class="adminBar position-fixed">
-    <ul class="subMenuList row" id="menu">
+<nav class="headerBar">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn">
+        <span class="navicon"></span>
+    </label>
+    <ul class="subMenuList row menu">
         <li class="col-xs-1">
             <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Logo">
         </li>
         <li class="col-xs-1">
-            <a class="subMenuLink right" href="front.tpl.html">Site</a>
+            <a class="subMenuLink" href="front.tpl.html">Site</a>
         </li>
         <li class="col-xs-1">
             <a class="subMenuLink" href="">Créer</a>
         </li>
         <li class="col-xs-1">
-            <a class="left subMenuLink" href="">Editer</a>
+            <a class="subMenuLink" href="">Editer</a>
         </li>
         <li class="col-xs-4">
             <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
