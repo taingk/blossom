@@ -1,8 +1,11 @@
-.frontImg {
-    margin-top : 50px;
-    width: 100%;
-    height: auto;
+.frontImgHeader {
     background-color: #FAFAFA;
+}
+
+.frontImg {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
 }
 
 .frontFirstCol {
