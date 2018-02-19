@@ -211,3 +211,38 @@ footer span {
   vertical-align: middle;
   border: 0;
 }
+
+.adminBar {
+  height: 50px;
+  background-color: #D8475D;
+}
+
+.adminBarImg {
+  height: 50px;
+}
+
+.subMenuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subMenuLink {
+  padding: 10px;
+}
+
+.blossom {
+  height: 25px;
+}
+
+.homeBar .subMenuList {
+  height: 50px;
+}
+
+.subMenuList li a {
+  color: #eacfd4;
+}
+
+.subMenuList li a:hover {
+  color: white;
+}
