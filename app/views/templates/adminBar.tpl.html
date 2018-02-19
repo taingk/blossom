@@ -1,31 +1,41 @@
-<nav class="row adminBar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blossom | Admin Bar</title>
+    <link rel="stylesheet" href="../../public/css/grid.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/adminBar.css">
+    <link rel="stylesheet" href="../../public/css/reponsiveMenu.css">
+    <script src="../../public/js/toggleMenu.js"></script>
+</head>
 
-    <div class="col-lg-1">
-        <img class="logo" src="../../public/img/logo.png" alt="Logo">
-    </div>
-    <div class="col-lg-3">
-        <ul class="subMenuList">
-            <li>
-                <a class="subMenuLink" href="">Home</a>
-            </li>
-            <li>
-                <a class="subMenuLink" href="">Créer</a>
-            </li>
-            <li>
-                <a class="subMenuLink" href="">Editer</a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-lg-1"></div>
-    <div class="title" class="col-lg-2">
-        Blossom
-    </div>
-    <div class="col-lg-3"></div>
-    <div class="col-lg-1">
-        <img class="profilePicture" src="../../public/img/logo.png" alt="Image de profil">
-    </div>
-    <div class="col-lg-1">
-        Doggo Shiba
-    </div>
-
+<nav class="headerBar adminBar">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn">
+        <span class="navicon"></span>
+    </label>
+    <ul class="subMenuList row menu">
+        <li class="col-xs-1">
+            <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Logo">
+        </li>
+        <li class="col-xs-1">
+            <a class="subMenuLink" href="front.tpl.html">Site</a>
+        </li>
+        <li class="col-xs-1">
+            <a class="subMenuLink" href="">Créer</a>
+        </li>
+        <li class="col-xs-1">
+            <a class="subMenuLink" href="">Editer</a>
+        </li>
+        <li class="col-xs-4">
+            <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
+        </li>
+        <li class="col-xs-2">
+            <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Image de profil">
+        </li>
+        <li class="col-xs-2">
+            <a href="">Kai Shiba</a>
+        </li>
+    </ul>
 </nav>

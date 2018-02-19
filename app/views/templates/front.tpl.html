@@ -5,83 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Blossom | Accueil</title>
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/adminBar.css">
     <link rel="stylesheet" href="../../public/css/template.front.css">
+    <link rel="stylesheet" href="../../public/css/menu.front.css">
+    <link rel="stylesheet" href="../../public/css/reponsiveMenu.css">
+    <script src="../../public/js/toggleMenu.js"></script>
 </head>
 
 <body>
     <header>
 
-        <nav class="row adminBar">
-
-            <div class="col-lg-2">
-                <img class="logo" src="../../public/img/logo.png" alt="Logo">
-            </div>
-            <div class="col-lg-3">
-                <ul class="subMenuList">
-                    <li>
-                        <a class="subMenuLink" href="">Home</a>
-                    </li>
-                    <li>
-                        <a class="subMenuLink" href="">Créer</a>
-                    </li>
-                    <li>
-                        <a class="subMenuLink" href="">Editer</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-1"></div>
-            <div class="title" class="col-lg-2">
-                Blossom
-            </div>
-            <div class="col-lg-3"></div>
-            <div class="col-lg-1">
-                <img class="profilePicture" src="../../public/img/logo.png" alt="Image de profil">
-            </div>
-            <div class="col-lg-1">
-                Doggo Shiba
-            </div>
-
-        </nav>
-
-        <nav class="row frontMenuBar">
-
-            <div class="col-lg-3"></div>
-            <div class="col-lg-1">
-                <img class="logo" src="../../public/img/logo.png">
-            </div>
-            <div class="col-lg-1">
-                <a href="#">Téléphones</a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#">Accessoires</a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#">Assistance</a>
-            </div>
-            <div class="col-lg-2">
-                <form action="#">
+        <nav class="headerBar frontMenu frontPosition-fixed">
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn">
+                <span class="navicon"></span>
+            </label>
+            <ul class="subMenuList row menu">
+                <li class="col-xs-3">
+                </li>
+                <li class="col-xs-1">
+                    <img class="logo" src="../../public/img/logo.png">
+                </li>
+                <li class="col-xs-1">
+                    <a href="#">Téléphones</a>
+                </li>
+                <li class="col-xs-1">
+                    <a href="#">Accessoires</a>
+                </li>
+                <li class="col-xs-1">
+                    <a href="#">Assistance</a>
+                </li>
+                <li class="col-xs-1">
                     <input class="frontSearchInput" type="text" name="recherche">
+                </li>
+                <li class="col-xs-1">
                     <input class="frontSearchIcon" type="submit" name="search" value="" />
-            </div>
-            <form action='#'>
-                <input class="frontCartInput" type="submit" name="search" value="" />
-            </form>
-
+                </li>
+                <li class="col-xs-1">
+                    <input class="frontCartInput" type="submit" name="search" value="" />
+                </li>
+            </ul>
         </nav>
+        
     </header>
 
     <main>
 
-        <section class="row">
-            <div class="frontFirstContent col-lg-12">
-                <img class="frontFirstImg gutters" src="../../public/img/bigIphoneXaccueil.jpeg">
-            </div>
+        <section class="frontImgHeader row">
+            <img class="frontImg gutters" src="../../public/img/bigIphoneXaccueil.jpeg">
         </section>
-
 
         <section class="row">
             <div class="col-lg-4">
@@ -94,7 +68,6 @@
                 <img class="frontThirdCol gutters" src="../../public/img/iphone6accueil.jpg">
             </div>
         </section>
-
 
     </main>
 

@@ -1,7 +1,5 @@
-.homeBar {
-    height: 70px;
-    background-color: #D8475D;
-    box-shadow: 10px 6px 12px grey;
+nav {
+  background-color: #D8475D;
 }
 
 .homeLogoImg {
@@ -12,111 +10,204 @@
 }
 
 .homeFirstContent {
-    height: 700px;
-    background-image: url('../../public/img/BlossomHome.png');
-    background-position: center;
-    background-size: cover;
+  height: 700px;
+  background-image: url('../../public/img/BlossomHome.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .homeBtTelechargement {
-    width: 250px;
-    height: 85px;
-    background-color: #D8475D;
-    border-radius: 1em;
-    border-color: #D8475D;
+  width: 250px;
+  height: 85px;
+  background-color: #D8475D;
+  border-radius: 20em;
+  border: none;
+  margin: 0 auto;
 }
 
 .homeTelecharger {
-    font-size: 22px;
-    color : #FFFFFF;
+  font-size: 22px;
+  color: #FFFFFF;
 }
 
 .homeTextHomeBar {
-    font-size: 12px;
-    color : #FFFFFF;
+  font-size: 12px;
+  color: #FFFFFF;
 }
 
 .homeDivTaille {
-    height: 550px;
-    width: 100%;
+  height: 550px;
+  width: 100%;
 }
 
-.homeCitation{
+.homeCitation {
   background-color: #F3DCE0;
-  height: 200px;
+  padding: 35px;
 }
 
-.homeSlogan{
+.homeSlogan {
   font-size: 24px;
-  color: #4A4A4A;
+  margin: 0 auto;
 }
 
-.homeTitleQuestion{
+.homeTitleQuestion {
   font-size: 16px;
   color: #4A4A4A;
+  margin: 0 auto;
 }
 
-.homeCitationText{
+.homeSlogan span,
+.homeTitleQuestion span {
+  color: #4A4A4A;
+}
+
+.homeCitationText {
   font-size: 20px;
   color: #9B9B9B;
   font-style: italic;
 }
 
-.homeSignature{
+.homeSignature {
   color: #4B4B4B;
   font-size: 10px;
   font-style: italic;
 }
 
-.homeTitleFeatures{
-  height: 150px;
-  width: 100%
+.homeTitleFeatures {
+  padding: 35px;
+  background-color: #d8475d63;
+}
+
+.homeFeatures {
+  padding: 50px;
   background-color: #FDFCFC;
 }
 
-.homeFeatures{
-  height: 300px;
-  width: 100%
-  background-color: #FDFCFC;
-}
-
-.homeGeneral{
-  border-style:solid;
+.homeGeneral {
+  border-style: solid;
   border-color: #4A4A4A;
   height: 150px;
   width: 200px;
 }
 
-.homeBrush{
-  border-width:0px 1px 0px 0px;
+.homeBrush {
+  border-width: 0px 1px 0px 0px;
 }
 
-.homeSecurity{
-  border-width:0px 0px 0px 0px;
+.homeSecurity {
+  border-width: 0px 0px 0px 0px;
 }
 
-.homePerf{
-  border-width:0px 0px 0px 1px;
+.homePerf {
+  border-width: 0px 0px 0px 1px;
 }
 
-.homeThumbUp{
-  border-width:1px 1px 0px 0px;
+.homeThumbUp {
+  border-width: 1px 1px 0px 0px;
 }
 
-.homeMouse{
-  border-width:1px 0px 0px 0px;
+.homeMouse {
+  border-width: 1px 0px 0px 0px;
 }
 
-.homeMobile{
-  border-width:1px 0px 0px 1px;
+.homeMobile {
+  border-width: 1px 0px 0px 1px;
 }
 
-.homeFeaturesImg{
-    width: 40px;
-    height: 40px;
+@media screen and (min-width: 499px) and (max-width: 699px) {
+  .homeBrush {
+    border-width: 1px 1px 0px 0px;
+  }
+  .homeSecurity {
+    border-width: 1px 0px 0px 1px;
+  }
+  .homePerf {
+    border-width: 1px 0px 0px 0px;
+  }
+  .homeThumbUp {
+    border-width: 1px 1px 0px 0px;
+  }
+  .homeMouse {
+    border-width: 1px 0px 0px 1px;
+  }
+  .homeMobile {
+    border-width: 1px 0px 0px 0px;
+  }
 }
 
-figcaption{
+@media screen and (max-width: 499px) {
+  .homeBrush,
+  .homeSecurity,
+  .homePerf,
+  .homeThumbUp,
+  .homeMouse,
+  .homeMobile {
+    border-width: 0px 0px 0px 0px;
+  }
+}
+
+.homeFeaturesImg {
+  width: 40px;
+  height: 40px;
+}
+
+figcaption {
   color: #4A4A4A;
   font-size: 16px;
+}
+
+.horizontal {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.horizontal li {
+  float: left;
+}
+
+.horizontal li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.horizontal li:hover {
+  background-color: #94314063;
+}
+
+footer {
+  width: 100%;
+}
+
+footer .homeBar {
+  padding: 20px;
+}
+
+footer span {
+  font-size: smaller;
+}
+
+.image_logo {
+  float: left;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+.image_logo img {
+  height: 95%;
+  padding: 15px;
+  display: block;
+  width: auto;
+  vertical-align: middle;
+  border: 0;
 }

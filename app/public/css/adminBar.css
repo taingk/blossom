@@ -3,17 +3,8 @@
     background-color: #D8475D;
 }
 
-.logo {
-    height: 35px;
-}
-
-.profilePicture {
-    height: 35px;
-}
-
-.title {
-    margin: 0 auto;
-    display: block;
+.adminBarImg {
+    height: 50px;
 }
 
 .subMenuList {
@@ -23,6 +14,9 @@
 }
 
 .subMenuLink {
-    float: left;
     padding: 10px;
+}
+
+.blossom {
+    height: 25px;
 }
