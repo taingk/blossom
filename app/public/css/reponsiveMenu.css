@@ -1,7 +1,7 @@
 .headerBar {
     background-color: #D8475D;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
-    width: 100%;
+    height: 50px;
 }
 
 .headerBar ul {
@@ -105,15 +105,28 @@
         height: 35px;
     }
 
-    .headerBar li:nth-child(1) {
+    .adminBar li:nth-child(1) {
         display: none;
     }
 
-    .headerBar li:nth-child(5) {
+    .adminBar li:nth-child(5) {
         display: none;
     }
 
-    .headerBar li:nth-child(6) {
+    .adminBar li:nth-child(6) {
         display: none;
     }
+
+    .frontMenu li:nth-child(1) {
+        display: none;
+    }
+
+    .frontMenu li:nth-child(2) {
+        display: none;
+    }
+
+    .frontMenu li:nth-child(6) {
+        display: none;
+    }
+
 }
