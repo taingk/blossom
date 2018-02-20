@@ -43,10 +43,7 @@
     color: #444444;
 }
 
-/* body {
-    background: #FBFBFB;
-    height: 100%;
-} */
+
 
 section{
     height: 100%;
@@ -71,7 +68,6 @@ main{
     color: #444444;
     float: right;
     padding-left: 15%; 
-  
 }
 
 .backFiltreMarques{
@@ -90,7 +86,8 @@ main{
     height: 25%;
     background-color: #FBFBFB;
     border-bottom: 1px solid #DADADA;
-    /* padding-top: 20px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .backProduitsImg{
@@ -99,7 +96,6 @@ main{
 
 .backDescription{
     color: #444444;
-    display: block;
     margin: auto;
 }
 
@@ -114,7 +110,6 @@ main{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-top: -100px;
     position: fixed;
 }
 
