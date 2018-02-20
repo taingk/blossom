@@ -57,16 +57,6 @@ main{
     height: 100%;
 }
 
-.backView{
-    background-color: #FBFBFB; 
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    border-radius: 10px;
-    margin-top: -100px;
-}
-
 .backMarques{
     color: #444444;
     float: right;
@@ -129,10 +119,38 @@ main{
     }
 }
 
-@media screen and (max-width: 800px){
+/* @media screen and (max-width: 800px){
     .backView, .backPrixProduits{
-        width: 80%;
         margin-top: auto;
+    }
+} */
+
+
+@media screen and (max-width: 991px) {
+    .backView {
+        height: auto;
+    }
+
+    .backLeftMenu {
+        width: 100%;
+    }
+
+    .backMenuLink {
+        padding: 3% 0;
+    }
+
+    .floatingLeft {
+        margin-top: 0;
+        padding: 20px;
+    }
+
+    .backMenu {
+        margin-top: 50px;
     }
 }
 
+@media screen and (max-width: 574px){
+    .backLeftMenu {
+        height: auto;
+    }
+}

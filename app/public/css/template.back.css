@@ -97,20 +97,25 @@ main section:nth-child(1) {
 }
 
 .conteneur_image1 {
-    width: 400px;
-    height: 200px;
-    margin-top: 20px;
-    background-image: url('../../public/img/graph1.png');
-    background-position: center;
-    background-size: cover;
+    /* width: auto; */
+    /* height: 200px; */
+    /* margin-top: 20px; */
+    /* background-image: url('../../public/img/graph1.png'); */
+    /* background-position: center; */
+    /* background-size: cover; */
 }
 
 .conteneur_image2 {
-    width: 400px;
+    /* width: auto;
     height: 200px;
     background-image: url('../../public/img/graph2.png');
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+}
+
+.conteneur_image1 img, .conteneur_image2 img {
+    height: auto;
+    width: 100%;
 }
 
 @media screen and (min-width: 800px){
@@ -119,5 +124,11 @@ main section:nth-child(1) {
     }
     .conteneur_image2{
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 574px){
+    .backView {
+        margin-top: 0;
     }
 }
