@@ -34,7 +34,7 @@
     text-decoration: none;
 }
 
-.backMenu>.backMenuLink {
+.backMenuLink {
     padding-bottom: 8%;
     padding-top: 8%;
 }
@@ -43,10 +43,10 @@
     color: #444444;
 }
 
-body {
+/* body {
     background: #FBFBFB;
     height: 100%;
-}
+} */
 
 section{
     height: 100%;
@@ -55,16 +55,6 @@ section{
 main{
     background-color: #F1F1F1;
     height: 100%;
-}
-
-.backNavbarRight {
-    float: right;
-}
-
-
-.backProfileName {
-    display: table-cell;
-    padding: 2px;
 }
 
 .backView{
@@ -137,7 +127,6 @@ main{
     .backHeaderBar{
         display: none;
     }
-    
 }
 
 @media screen and (max-width: 800px){
