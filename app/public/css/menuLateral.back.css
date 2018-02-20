@@ -36,14 +36,14 @@ a:hover {
     left: -5px;
     cursor: pointer;
     opacity: 0;
-    /* hide this */
+    /* On cache */
     z-index: 2;
-    /* and place it over the hamburger */
+    /* Et on place sur le hamburger */
     -webkit-touch-callout: none;
 }
 
 /*
-  * Just a quick hamburger
+  * Hamburger
   */
 
 .menuToggle span {
@@ -68,8 +68,8 @@ a:hover {
 }
 
 /* 
-  * Transform all the slices of hamburger
-  * into a crossmark.
+  * Hamburger en croix
+  * 
   */
 
 .menuToggle input:checked~span {
@@ -79,7 +79,7 @@ a:hover {
 }
 
 /*
-  * But let's hide the middle one.
+  * On cache la barre du milieu
   */
 
 .menuToggle input:checked~span:nth-last-child(3) {
@@ -88,7 +88,7 @@ a:hover {
 }
 
 /*
-  * Ohyeah and the last one should go the other direction
+  * La derniere barre part en dans l'autre direction
   */
 
 .menuToggle input:checked~span:nth-last-child(2) {
@@ -96,8 +96,8 @@ a:hover {
 }
 
 /*
-  * Make this absolute positioned
-  * at the top left of the screen
+  * Bouton en haut a gauche
+  *
   */
 
 .backMenu {
@@ -118,7 +118,7 @@ a:hover {
 }
 
 /*
-  * And let's slide it in from the left
+  * Slide depuis la gauche
   */
 
 .menuToggle input:checked~ul {
