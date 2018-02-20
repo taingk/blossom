@@ -187,4 +187,8 @@ main section:nth-child(1) {
     .backView {
         margin-top: 0;
     }
+
+    .backMenu {
+        margin: 0;
+    }
 }
