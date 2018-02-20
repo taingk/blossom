@@ -11,7 +11,7 @@
     background-color: #D8475D;
 }
 
-/* hide menu */
+/* Cache menu */
 
 .headerBar .menu {
     clear: both;
@@ -85,10 +85,7 @@
     top: 0;
 }
 
-
-/* 48em = 768px */
-
-@media all and (min-width: 48em) {
+@media all and (min-width: 768px) {
     .headerBar .menu {
         max-height: none;
     }
@@ -97,7 +94,7 @@
     }
 }
 
-@media all and (max-width: 48em) {
+@media all and (max-width: 768px) {
     .headerBar li {
         max-width: calc(12/12*100%);
         flex: 0 0 calc(12/12*100%);
