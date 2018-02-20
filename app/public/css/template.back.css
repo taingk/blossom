@@ -132,3 +132,59 @@ main section:nth-child(1) {
         margin-top: 0;
     }
 }
+
+.backHeaderBar {
+    background-color: #D8475D;
+    height: 130px;
+}
+
+.backMenu {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+    background-color: #FBFBFB;
+}
+
+.backLeftMenu {
+    background-color: #FDFBFB;
+    height: 100%;
+}
+
+.backTDB {
+    background-color: #D8475D;
+    text-overflow: clip;
+}
+
+.backProduits{
+    background-color: #D8475D;
+}
+
+.backTitlePages {
+    margin-top: 5%;
+    font-size: 25px;
+}
+
+.backNoA {
+    color: black;
+    text-decoration: none;
+}
+
+.backMenuLink {
+    padding-bottom: 8%;
+    padding-top: 8%;
+}
+
+.backMenuLink > a{
+    color: #444444;
+}
+
+@media screen and (max-width: 768px) {
+    .backLeftMenu {
+        height: auto;
+        width: 100%
+    }
+
+    .backView {
+        margin-top: 0;
+    }
+}
