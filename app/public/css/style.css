@@ -16,6 +16,10 @@ a {
     color: #D8475D;
 }
 
+.rose-bg {
+    background-color: #D8475D;
+}
+
 .left {
     padding-left: 10px;
     float: left;
@@ -30,4 +34,12 @@ a {
     position: fixed;
     width: 100%;
     top: 0;
+}
+
+.center-content {
+    justify-content: center
+}
+
+.margin-auto {
+    margin: 0 auto;
 }

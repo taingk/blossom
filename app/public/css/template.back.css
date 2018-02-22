@@ -1,194 +1,29 @@
-.backHeaderBar {
-    background-color: #D8475D;
-    height: 130px;
-}
-
-.backTDB {
-    background-color: #D8475D;
-    text-overflow: clip;
-}
-
-.backProduits {
-    background-color: #D8475D;
-}
-
-.backTitlePages {
-    margin-top: 5%;
-    font-size: 25px;
-}
-
-.backNoA {
-    color: black;
-    text-decoration: none;
-}
-
-.backLeftMenuBar>.backMenu>.backMenuLink:first-child {
-    color: white;
-}
-
-.backMenuBar {
-    border: 1px solid #D8475D;
-    height: 50px;
-    background-color: #D8475D;
-}
-
-body {
-    background: #FBFBFB;
-    height: 100%;
-}
-
-.backNavbarRight {
-    float: right;
-}
-
-.backInlineBlock {
-    display: inline-block
-}
-
-.backProfileName {
-    display: table-cell;
-    padding: 2px;
-}
-
 .backView {
     background-color: #FBFBFB;
-    height: 100%;
+    height: 110%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: auto;
-    border-radius: 10px;
-    margin-top: -100px;
+    border-radius: 40px 40px 0 0;
+    margin-top: -10%;
 }
 
-html {
-    height: 100%;
-}
-
-.logo {
-    padding: 10px;
-}
-
-.floatingLeft {
-    display: inline;
-    float: left;
-    width: 100%;
-    margin-top: 20px;
-}
-
-main {
-    height: 100%;
+main > .back {
     background-color: #F1F1F1;
 }
 
-main section:nth-child(1) {
-    height: 100%;
-}
-
-.floatingLeft .container canvas {
-    margin: 0 auto;
-}
-
-.floatingLeft .container {
-    width: 100%;
-}
-
-.backProduits a {
-    color: #F1F1F1;
-}
-
-.conteneur_image1 {
-    /* width: auto; */
-    /* height: 200px; */
-    /* margin-top: 20px; */
-    /* background-image: url('../../public/img/graph1.png'); */
-    /* background-position: center; */
-    /* background-size: cover; */
-}
-
-.conteneur_image2 {
-    /* width: auto;
-    height: 200px;
-    background-image: url('../../public/img/graph2.png');
-    background-position: center;
-    background-size: cover; */
-}
-
-.conteneur_image1 img, .conteneur_image2 img {
-    height: auto;
-    width: 100%;
-}
-
-@media screen and (min-width: 800px){
-    .conteneur_image1{
-        width: 100%;
-    }
-    .conteneur_image2{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 574px){
-    .backView {
-        margin-top: 0;
-    }
-}
-
 .backHeaderBar {
     background-color: #D8475D;
-    height: 130px;
-}
-
-.backMenu {
-    list-style: none;
-    padding: 0;
-    margin-top: 50px;
-    background-color: #FBFBFB;
-}
-
-.backLeftMenu {
-    background-color: #FDFBFB;
-    height: 100%;
-}
-
-.backTDB {
-    background-color: #D8475D;
-    text-overflow: clip;
-}
-
-.backProduits{
-    background-color: #D8475D;
-}
-
-.backTitlePages {
-    margin-top: 5%;
-    font-size: 25px;
-}
-
-.backNoA {
-    color: black;
-    text-decoration: none;
-}
-
-.backMenuLink {
-    padding-bottom: 8%;
-    padding-top: 8%;
-}
-
-.backMenuLink > a{
-    color: #444444;
+    height: 150px;
 }
 
 @media screen and (max-width: 768px) {
-    .backLeftMenu {
-        height: auto;
-        width: 100%
-    }
-
     .backView {
         margin-top: 0;
     }
+}
 
-    .backMenu {
-        margin: 0;
+@media screen and (max-width: 574px) {
+    .backView {
+        margin-top: 0;
     }
 }
