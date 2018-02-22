@@ -1,70 +1,4 @@
-.backHeaderBar {
-    background-color: #D8475D;
-    height: 130px;
-}
-
-.backMenu {
-    list-style: none;
-    padding: 0;
-    margin-top: 50px;
-    background-color: #FBFBFB;
-}
-
-.backLeftMenu {
-    background-color: #FDFBFB;
-    height: 100%;
-}
-
-.backTDB {
-    background-color: #D8475D;
-    text-overflow: clip;
-}
-
-.backProduits{
-    background-color: #D8475D;
-}
-
-.backTitlePages {
-    margin-top: 5%;
-    font-size: 25px;
-}
-
-.backNoA {
-    color: black;
-    text-decoration: none;
-}
-
-.backMenuLink {
-    padding-bottom: 8%;
-    padding-top: 8%;
-}
-
-.backMenuLink > a{
-    color: #444444;
-}
-
-
-
-section{
-    height: 100%;
-}
-
-main{
-    background-color: #F1F1F1;
-    height: 100%;
-}
-
-.backView{
-    background-color: #FBFBFB; 
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    border-radius: 10px;
-    margin-top: -100px;
-}
-
-.backMarques{
+.backMarques {
     color: #444444;
     float: right;
     padding-left: 15%; 
@@ -87,12 +21,10 @@ main{
     background-color: #FBFBFB;
     border-bottom: 1px solid #DADADA;
     padding-top: 20px;
-    
 }
 
 .backProduitsImg{
     width: 100px;
-
 }
 
 .backDescription{
@@ -119,15 +51,8 @@ main{
     width: 30px;
 }
 
-
 @media screen and (max-width: 800px){
-    .backHeaderBar{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 800px){
-    .backView, .backPrixProduits{
+    .backPrixProduits{
         width: 80%;
         margin-top: auto;
     }

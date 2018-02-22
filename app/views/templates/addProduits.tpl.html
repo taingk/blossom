@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="../../public/css/addProduits.back.css">
+    <link rel="stylesheet" href="../../public/css/menuLateral.back.css">
+    <link rel="stylesheet" href="../../public/css/template.back.css">
     <link rel="stylesheet" href="../../public/css/adminBar.css">
     <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
 </head>
@@ -47,22 +49,19 @@
         </nav>
         <!-- Header rouge -->
 
-        <div class="backHeaderBar">
-            <div class="row">
-                <span class="col-sm-2 backTitlePages">Ajout d'articles</span>
-            </div>
-        </div>
-        </div>
+        <div class="backHeaderBar"></div>
 
     </header>
 
 
     <main>
-        <section class="row">
+        <section class="row back">
+
+            <!-- Menu latéral -->
             <nav class="col-xs-2 backLeftMenu">
                 <ul class="backMenu">
                     <li class="backMenuLink">
-                        <a class="" href="back.tpl.html">Tableau de bord</a>
+                        <a class="" href="back.tpl.html" >Tableau de bord</a>
                     </li>
                     <li class="backMenuLink">
                         <a class="" href="#">Categories</a>
@@ -70,8 +69,8 @@
                     <li class="backMenuLink">
                         <a class="" href="#">Pages</a>
                     </li>
-                    <li class="backMenuLink backProduits">
-                        <a class="" href="backProduits.tpl.html">Produits</a>
+                    <li class="backMenuLink rose-bg">
+                        <a class="" href="backProduits.tpl.html" style="color:white;">Produits</a>
                     </li>
                     <li class="backMenuLink">
                         <a class="" href="#">Medias</a‡>
@@ -83,13 +82,7 @@
                         <a class="" href="#">Commentaires</a>
                     </li>
                     <li class="backMenuLink">
-                        <a class="" href="#">Apparences</a>
-                    </li>
-                    <li class="backMenuLink">
                         <a class="" href="#">Utilisateurs</a>
-                    </li>
-                    <li class="backMenuLink">
-                        <a class="" href="#">Réglages</a>
                     </li>
                 </ul>
             </nav>
@@ -116,7 +109,7 @@
                 </article>
                 <article class="row">
                     <div class="col-lg-6 floatingLeft">
-                        <div class="container left">
+                        <div class="container text-left">
                             <form action="" method="post">
                                 <label for="title">
                                     <span class="titleForm">Titre : </span>
