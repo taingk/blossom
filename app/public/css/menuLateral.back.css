@@ -2,6 +2,22 @@
     color: #444444;
 }
 
+.backMenuLink {
+    padding: 8%;
+}
+
+.backLeftMenu {
+    background-color: #FDFBFB;
+    text-align: left;
+}
+
+.backMenu {
+    list-style: none;
+    padding: 0;
+    background-color: #FBFBFB;
+    margin: 0;
+}
+
 @media screen and (max-width: 768px) {
     .backLeftMenu {
         height: auto;
@@ -10,23 +26,5 @@
     .backMenu {
         margin: 0;
     }
-
-}
-
-.backMenuLink {
-    padding-bottom: 8%;
-    padding-top: 8%;
-}
-
-.backLeftMenu {
-    background-color: #FDFBFB;
-    height: 100%;
-}
-
-.backMenu {
-    list-style: none;
-    padding: 0;
-    margin-top: 50px;
-    background-color: #FBFBFB;
 }
 
