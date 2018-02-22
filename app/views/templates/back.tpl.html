@@ -8,60 +8,59 @@
     <title>Blossom | Page Tableau de bord</title>
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/template.back.css">
-    <!-- <link rel="stylesheet" href="../../public/css/produits.back.css"> -->
     <link rel="stylesheet" href="../../public/css/adminBar.css">
+    <link rel="stylesheet" href="../../public/css/menuLateral.back.css">
     <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
+    <link rel="stylesheet" href="../../public/css/template.back.css">
 </head>
 
 <body>
     <header>
+
         <!-- Barre de navigation -->
         <nav class="headerBar adminBar position-fixed">
-                <input class="menu-btn" type="checkbox" id="menu-btn" />
-                <label class="menu-icon" for="menu-btn">
-                    <span class="navicon"></span>
-                </label>
-                <ul class="subMenuList row menu">
-                    <li class="col-xs-1">
-                        <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Logo">
-                    </li>
-                    <li class="col-xs-1">
-                        <a class="subMenuLink" href="front.tpl.html">Site</a>
-                    </li>
-                    <li class="col-xs-1">
-                        <a class="subMenuLink" href="">Créer</a>
-                    </li>
-                    <li class="col-xs-1">
-                        <a class="subMenuLink" href="">Editer</a>
-                    </li>
-                    <li class="col-xs-4">
-                        <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
-                    </li>
-                    <li class="col-xs-2">
-                        <img class="subMenuLink adminBarImg right" src="../../public/img/doge.jpg" alt="Image de profil">
-                    </li>
-                    <li class="col-xs-2">
-                        <a href="">Kai Shiba</a>
-                    </li>
-                </ul>
-            </nav>
-        <!-- Header rouge -->
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn">
+                <span class="navicon"></span>
+            </label>
+            <ul class="subMenuList row menu">
+                <li class="col-xs-1">
+                    <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Logo">
+                </li>
+                <li class="col-xs-1">
+                    <a class="subMenuLink" href="front.tpl.html">Site</a>
+                </li>
+                <li class="col-xs-1">
+                    <a class="subMenuLink" href="">Créer</a>
+                </li>
+                <li class="col-xs-1">
+                    <a class="subMenuLink" href="">Editer</a>
+                </li>
+                <li class="col-xs-4">
+                    <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
+                </li>
+                <li class="col-xs-2">
+                    <img class="subMenuLink adminBarImg right" src="../../public/img/doge.jpg" alt="Image de profil">
+                </li>
+                <li class="col-xs-2">
+                    <a href="">Kai Shiba</a>
+                </li>
+            </ul>
+        </nav>
 
-        <div class="backHeaderBar">
-            <div class="row">
-                <span class="col-sm-2 backTitlePages">Tableau de bord</span>
-            </div>
-        </div>
+        <!-- Header rouge -->
+        <div class="backHeaderBar"></div>
+
     </header>
 
 
     <main>
-        <section class="row">
+
+        <section class="row back">
 
             <nav class="col-xs-2 backLeftMenu">
                 <ul class="backMenu">
-                    <li class="backMenuLink backProduits">
+                    <li class="backMenuLink rose-bg">
                         <a class="" href="back.tpl.html" style="color:white;">Tableau de bord</a>
                     </li>
                     <li class="backMenuLink">
@@ -94,24 +93,38 @@
                 </ul>
             </nav>
 
-            <section class="col-lg-9 backView">
-                    <div class="col-sm-6 floatingLeft">
-                        <h1 class="rose">Tableau de bord 1</h1>
-                        <div class="conteneur_image1">
-                            <img src="../../public/img/graph1.png" alt="" srcset="" height="500">
-                        </div>
-                    </div>
+            <section class="col-lg-9 row backView">
+
+                <article class="col-sm-6">
+                    <h1 class="rose">Statistique utilisateurs</h1>
+
                 </article>
-                    <div class="col-sm-6 floatingLeft">
-                        <h1 class="rose">Tableau de bord 2</h1>
-                        <div class="conteneur_image2">
-                            <img src="../../public/img/graph2.png" alt="" srcset="" height="500">
-                        </div>
-                    </div>
+
+                <article class="col-sm-6">
+                    <h1 class="rose">Statistique produits</h1>
+
                 </article>
+
+                <article class="col-sm-6">
+                    <h1 class="rose">Statistique ventes</h1>
+
+                </article>
+
+                <article class="col-sm-6">
+                    <h1 class="rose">Statistique visibilités</h1>
+
+                </article>
+
             </section>
+
         </section>
+
     </main>
+
+    <footer>
+
+    </footer>
+
 </body>
 
 </html>
