@@ -8,8 +8,8 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/template.home.css">
     <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
+    <link rel="stylesheet" href="../../public/css/template.home.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                 <label class="menu-icon" for="menu-btn">
                     <span class="navicon"></span>
                 </label>
-                <ul class="subMenuList row menu">
+                <ul class="subMenuList row menu align-center">
                     <li class="col-xs-4"></li>
                     <li class="col-xs-4">
                         <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
@@ -36,7 +36,7 @@
                 </ul>
             </nav>
 
-            <section class="row homeDivTaille">
+            <section class="row homeDivTaille align-center">
                 <button class="homeBtTelechargement" type="button" href="#">
                     <p class="homeTelecharger">Télécharger</p>
                 </button>
