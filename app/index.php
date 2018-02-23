@@ -24,9 +24,8 @@ $aUriExploded = explode("/", $aUri[0]);
 $sController = (empty($aUriExploded[0])? "index" : $aUriExploded[0]);
 $sAction = (empty($aUriExploded[1])? "index" : $aUriExploded[1]);
 
-
-$sController = ucfirst(strtolower($aUriExploded[0])) . "Controller";
-$sAction = strtolower($aUriExploded[1]) . "Action";
+$sController = ucfirst(strtolower($sController)) . "Controller";
+$sAction = strtolower($sAction) . "Action";
 
 unset($aUriExploded[0]);
 unset($aUriExploded[1]);
