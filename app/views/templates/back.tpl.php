@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blossom | Page Tableau de bord</title>
+    <title>Blossom | Back-office</title>
+
+    <!-- General CSS -->
     <link rel="stylesheet" href="../../public/css/grid.css">
     <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
     <link rel="stylesheet" href="../../public/css/template.back.css">
+
+    <!-- Back-office CSS -->
+    <link rel="stylesheet" href="../../public/css/back/adminBar.css">
+    <link rel="stylesheet" href="../../public/css/back/sideMenu.css">
+    <link rel="stylesheet" href="../../public/css/back/addProducts.css">
+    <link rel="stylesheet" href="../../public/css/back/products.css">
+    <link rel="stylesheet" href="../../public/css/back/dashboard.css">
+    <link rel="stylesheet" href="../../public/css/back/footer.css">
 </head>
 
 <body>
-    <header>
+    <header>        
+        <!-- Admin Bar -->
         <?php include("../back/modules/adminBar.php") ?>
 
         <!-- Header rouge -->
@@ -23,14 +34,16 @@
 
     <main>
         <section class="row back">
-
+            <!-- Side Menu -->
             <?php include("../back/modules/sideMenu.php") ?>
-            <?php include("../back/dashboard.view.php") ?>
 
+            <!-- Main View -->
+            <?php include("../back/dashboard.view.php") ?>
         </section>
     </main>
 
     <footer>
+        <!-- Footer -->
         <?php include("../back/footer.view.php")?>
     </footer>
 
