@@ -16,3 +16,5 @@ restore:
 	cat data/backup.sql | docker exec -i mysql_projet_annuel /usr/bin/mysql -u root --password=root app
 r_apache:
 	docker exec apache_projet_annuel service apache2 restart
+pull:
+	git pull && cp config/conf.inc.php app/conf.inc.php
