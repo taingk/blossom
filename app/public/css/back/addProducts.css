@@ -1,18 +1,17 @@
-label
-{
+label {
     display: block;
     padding: 20px;
 }
 
-label span
-{
+label span {
     display: inline-block;
     text-align: right;
     width: 15%;
     letter-spacing: 3px;
 }
 
-label input, label textarea {
+label input,
+label textarea {
     color: #444444;
     width: 70%;
 }
@@ -23,12 +22,6 @@ label input {
 
 label textarea {
     height: 100px;
-}
-
-.col-lg-9 h1 {
-    color: #444444;
-    letter-spacing: 5px;
-    font-size: 2em;
 }
 
 .blockImage {
@@ -51,7 +44,6 @@ label textarea {
     height: 44px;
     width: 50px;
     border-radius: 200px;
-
 }
 
 .elements span {
