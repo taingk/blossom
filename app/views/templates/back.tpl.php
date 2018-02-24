@@ -15,9 +15,6 @@
 <body>
     <header>
         <?php include("../back/modules/adminBar.php") ?>
-
-        <!-- Header rouge -->
-        <div class="backHeaderBar"></div>
     </header>
 
 
