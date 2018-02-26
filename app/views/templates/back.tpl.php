@@ -35,7 +35,7 @@
             <?php include("../back/modules/sideMenu.php") ?>
 
             <!-- Main View -->
-            <?php include("../back/dashboard.view.php") ?>
+            <?php include("../back/products.view.php") ?>
         </section>
     </main>
 
