@@ -1,15 +1,26 @@
 <nav class="col-xs-2 backLeftMenu">
     <ul class="backMenu">
         <li class="backMenuLink profile">
-            <span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Julie_Delpy_Cannes.jpg" alt="">
-            </span>
-            <span>
-                <a href="">Lavan <strong>PREPANANTHA</strong></a>            
-            </span>
-            <span>
-                <a href=""><em>> Retour sur le site</em></a>
-            </span>
+            <div class="row">
+                <div class="col-xs-10">
+                    <span>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Julie_Delpy_Cannes.jpg" alt="" class="profilePicture">
+                    </span>
+                    <span>
+                        <a href="">Lavan <strong>PREPANANTHA</strong></a>            
+                    </span>                
+                    <span>
+                        <a href=""><em>> Retour sur le site</em></a>
+                    </span>                
+                </div>
+                <div class="col-xs-2">
+                    <span>
+                        <a href="">
+                            <img src="../../../public/img/icons8-menu-100.png" alt="" height="30px" width="30px">
+                        </a>
+                    </span>
+                </div>
+            </div>
         </li>
         <li class="backMenuLink rose-bg">
             <a class="" href="back.tpl.html" style="color:white;">Tableau de bord</a>

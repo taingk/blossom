@@ -21,16 +21,33 @@
     <link rel="stylesheet" href="../../public/css/back/dashboard.css">
     <link rel="stylesheet" href="../../public/css/back/footer.css">
 
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="../../public/js/chartjs1.js"></script>
+    <script src="../../public/js/chartjs2.js"></script>
+    <script src="../../public/js/chartjs3.js"></script>
+    <script src="../../public/js/chartjs4.js"></script>
+    <script src="../../public/js/onloadchartjs.js"></script>
+
     <style>    
         body {
             background-color: #F1F1F1;
         }
 
-        header, .backLeftMenu, .backMenu {
+        header {
+            height: 150px;
+            background-color: #D8475D;
+        }
+
+        .backLeftMenu {
+            margin-top: -150px;
+        }
+
+        .backLeftMenu, .backMenu, main .row {
             height: 100%;
         }
 
-        .backMenuLink img {
+        .profilePicture {
             height: 70px;
             width: 70px;
             border-radius: 50px;
@@ -48,19 +65,50 @@
                      rgba(20,20,20, .5)),
                      url("https://www.cheapflights.co.uk/news/wp-content/uploads/2016/03/11-photos-that-prove-cherry-blossom-season-is-the-01-620x414.jpg");
         }
+
+        .backMenuLink .row .col-xs-10 {
+            text-align: left;
+        }
+
+        main .row section {
+            height: calc(100% - 50px);
+        }
+        
+        .mainMenuContent {
+            margin-left:  auto;
+            margin-right: auto;
+            height: 100%;
+            background-color: white;
+            box-shadow: 1px 1px 12px #555;
+            margin-top: -75px;
+        }
+
+        .mainMenuContent .row article {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        canvas {
+            padding: 30px;
+        }
+
     </style>
+    
 </head>
 
 <body>
-    <header>        
-        <!-- Side Menu -->
-        <?php include("../back/modules/sideMenu2.php") ?>
+    <header>
+        <div class="col-xs-12"></div>        
     </header>
 
 
     <main>
-        <!-- Main View -->
-        <?php include("../back/dashboard2.view.php") ?>
+        <div class="row">
+            <!-- Side Menu -->
+            <?php include("../back/modules/sideMenu2.php") ?>
+            <!-- Main View -->
+            <?php include("../back/dashboard2.view.php") ?>
+        </div>
     </main>
 
     <footer>
