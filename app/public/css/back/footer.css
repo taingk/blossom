@@ -1,0 +1,17 @@
+.bgFooter{
+    background-color: #D8475D;
+    height: 20%;
+    padding: 10px;
+    
+}
+
+.copyright{
+    font-size: smaller;
+    text-align: right;
+    padding-right: 3%;
+}
+
+.langue{
+    text-align: right;
+    font-size: smaller;
+}
