@@ -1,5 +1,5 @@
-<section class="col-lg-10">
-    <div class="col-lg-8 mainMenuContent">
+<section class="col-lg-10" id="mainMenu">
+    <div class="col-lg-9 mainMenuContent">
         <div class="row">
             <article class="col-sm-6">
                 <h1 class="rose">Statistique utilisateurs</h1>

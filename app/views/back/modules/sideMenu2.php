@@ -14,11 +14,11 @@
                     </span>                
                 </div>
                 <div class="col-xs-2">
-                    <span>
+                    <!-- <span>
                         <a href="">
                             <img src="../../../public/img/icons8-menu-100.png" alt="" height="30px" width="30px">
                         </a>
-                    </span>
+                    </span> -->
                 </div>
             </div>
         </li>
