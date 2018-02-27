@@ -25,20 +25,20 @@
 <body>
     <header>
 
-        <?php include("../back/modules/adminBar.php") ?>
-        <?php include("../front/modules/mainMenu.php") ?>
+        <?php include("views/back/modules/adminBar.php") ?>
+        <?php include("views/front/modules/mainMenu.php") ?>
 
     </header>
 
     <main>
 
-        <?php include("../front/homePage.view.php") ?>
+        <?php include("views/front/" . $this->sView) ?>
 
     </main>
 
     <footer>
 
-        <?php include("../front/footer.view.php")?>
+        <?php include("views/front/footer.view.php")?>
 
     </footer>
 
