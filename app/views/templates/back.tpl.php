@@ -13,12 +13,14 @@
     <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
     <link rel="stylesheet" href="../../public/css/template.back.css">
 
-    <!-- Back-office CSS -->
+    <!-- Module CSS -->
     <link rel="stylesheet" href="../../public/css/back/adminBar.css">
     <link rel="stylesheet" href="../../public/css/back/sideMenu.css">
-    <link rel="stylesheet" href="../../public/css/back/addProducts.css">
-    <link rel="stylesheet" href="../../public/css/back/products.css">
-    <link rel="stylesheet" href="../../public/css/back/dashboard.css">
+
+    <!-- Back-office CSS -->
+    <link rel="stylesheet" href="../../public/css/back/<?php echo $this->sView ?>.css">
+
+    <!-- Footer CSS -->
     <link rel="stylesheet" href="../../public/css/back/footer.css">
 </head>
 
@@ -34,7 +36,7 @@
             <!-- Side Menu -->
             <?php include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <?php include("views/back/" . $this->sView) ?>
+            <?php include("views/back/" . $this->sView . ".view.php"); ?>
         </section>
     </main>
 
