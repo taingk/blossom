@@ -123,11 +123,13 @@
     <script>
         $("img#hideBtn").click(function() {
             if($(".backLeftMenu").is(':visible')) {
-                $(".backLeftMenu").hide();
-                $("#mainMenu").removeClass('col-lg-10').addClass('col-lg-12');                
+                $(".backLeftMenu").hide('slow');
+                $("#mainMenu").removeClass('col-lg-10').addClass('col-lg-12');
+                $("#redHeader .col-xs-2").remove()
             } else {
-                $(".backLeftMenu").show();
+                $(".backLeftMenu").show('slow');
                 $("#mainMenu").removeClass('col-lg-12').addClass('col-lg-10');                
+                $('<div class="col-xs-2"></div>').insertBefore('#menuStyle');
             }
         });
     </script>
