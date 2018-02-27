@@ -23,7 +23,7 @@
 
     <main>
         <!-- Main View -->
-        <?php include("views/home/" . $this->sView); ?>
+        <?php include("views/home/" . $this->sView . ".view.php"); ?>
     </main> 
 
     <footer>

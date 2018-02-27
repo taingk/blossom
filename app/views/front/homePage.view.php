@@ -1,5 +1,4 @@
 <section class="frontImgHeader row">
-
     <img class="frontImg gutters" src="../../public/img/bigIphoneXaccueil.jpeg">
 </section>
 

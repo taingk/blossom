@@ -13,13 +13,15 @@
     <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
     <link rel="stylesheet" href="../../public/css/template.front.css">
 
-    <!-- AdminBar CSS -->
+    <!-- Modules CSS -->
     <link rel="stylesheet" href="../../public/css/back/adminBar.css">
+    <link rel="stylesheet" href="../../public/css/front/mainMenu.css">
 
     <!-- Front-office CSS -->
-    <link rel="stylesheet" href="../../public/css/front/mainMenu.css">
+    <link rel="stylesheet" href="../../public/css/front/<?php echo $this->sView ?>.css">
+
+    <!-- Footer CSS -->
     <link rel="stylesheet" href="../../public/css/front/footer.css">
-    <link rel="stylesheet" href="../../public/css/front/homePage.css">
 </head>
 
 <body>
@@ -32,8 +34,10 @@
     </header>
 
     <main>
-        <!-- Main View -->
-        <?php include("views/front/" . $this->sView) ?>
+        <section class="container">
+            <!-- Main View -->
+            <?php include("views/front/" . $this->sView . ".view.php"); ?>
+        </section>
     </main>
 
     <footer>
