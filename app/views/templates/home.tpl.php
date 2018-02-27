@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <header>
         <!-- Header Bar -->
         <?php include("views/home/modules/headerBar.php"); ?>

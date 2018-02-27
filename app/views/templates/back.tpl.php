@@ -23,17 +23,16 @@
 </head>
 
 <body>
+
     <header>        
         <!-- Admin Bar -->
         <?php include("views/back/modules/adminBar.php") ?>
     </header>
 
-
     <main>
         <section class="row back">
             <!-- Side Menu -->
             <?php include("views/back/modules/sideMenu.php") ?>
-
             <!-- Main View -->
             <?php include("views/back/" . $this->sView) ?>
         </section>

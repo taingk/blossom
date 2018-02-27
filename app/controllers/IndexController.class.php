@@ -3,7 +3,7 @@
 class IndexController {
 
     public function indexAction( $aParams ) {
-        echo 'IndexController';
+        $oView = new View("home", "home");
     }
 
 }
