@@ -34,10 +34,8 @@
     </header>
 
     <main>
-        <section class="container">
-            <!-- Main View -->
-            <?php include("views/front/" . $this->sView . ".view.php"); ?>
-        </section>
+        <!-- Main View -->
+        <?php include("views/front/" . $this->sView . ".view.php"); ?>
     </main>
 
     <footer>

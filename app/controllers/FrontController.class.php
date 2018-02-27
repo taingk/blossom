@@ -9,5 +9,4 @@ class FrontController {
     public function homePageAction( $aParams ) {
         $oView = new View("homePage", "front");
     }
-
 }
