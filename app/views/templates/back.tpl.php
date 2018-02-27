@@ -23,25 +23,24 @@
 </head>
 
 <body>
+
     <header>        
         <!-- Admin Bar -->
-        <?php include("../back/modules/adminBar.php") ?>
+        <?php include("views/back/modules/adminBar.php") ?>
     </header>
-
 
     <main>
         <section class="row back">
             <!-- Side Menu -->
-            <?php include("../back/modules/sideMenu.php") ?>
-
+            <?php include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <?php include("../back/products.view.php") ?>
+            <?php include("views/back/" . $this->sView) ?>
         </section>
     </main>
 
     <footer>
         <!-- Footer -->
-        <?php include("../back/footer.view.php")?>
+        <?php include("views/back/footer.view.php")?>
     </footer>
 
 </body>

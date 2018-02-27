@@ -23,23 +23,22 @@
 </head>
 
 <body>
+
     <header>
-
-        <?php include("../back/modules/adminBar.php") ?>
-        <?php include("../front/modules/mainMenu.php") ?>
-
+        <!-- Admin Bar -->
+        <?php include("views/back/modules/adminBar.php") ?>
+        <!-- Main Menu -->
+        <?php include("views/front/modules/mainMenu.php") ?>
     </header>
 
     <main>
-
-        <?php include("../front/homePage.view.php") ?>
-
+        <!-- Main View -->
+        <?php include("views/front/" . $this->sView) ?>
     </main>
 
     <footer>
-
-        <?php include("../front/footer.view.php")?>
-
+        <!-- Footer -->
+        <?php include("views/front/footer.view.php")?>
     </footer>
 
 </body>
