@@ -7,13 +7,14 @@
 
 .backLeftMenu {
     margin-top: -150px;
+    height: 100vh;
     transition: all 0.5s ease-out;
     background-color: #FDFBFB;
     text-align: left;
 }
-.backLeftMenu, .backMenu, main .row {
+/* .backLeftMenu, .backMenu, main .row {
     height: 100%;
-}
+} */
 .profilePicture {
     height: 70px;
     width: 70px;
@@ -48,7 +49,7 @@ main .row section {
 .mainMenuContent {
     margin-left:  auto;
     margin-right: auto;
-    height: 100%;
+    /* height: 100%; */
     background-color: white;
     box-shadow: 1px 1px 12px #555;
     margin-top: -75px;
