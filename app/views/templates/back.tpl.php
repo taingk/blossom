@@ -8,20 +8,20 @@
     <title>Blossom | Back-office</title>
 
     <!-- General CSS -->
-    <link rel="stylesheet" href="../../public/css/grid.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
-    <link rel="stylesheet" href="../../public/css/template.back.css">
+    <link rel="stylesheet" href="/public/css/grid.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/responsiveMenu.css">
+    <link rel="stylesheet" href="/public/css/template.back.css">
 
     <!-- Module CSS -->
-    <link rel="stylesheet" href="../../public/css/back/adminBar.css">
-    <link rel="stylesheet" href="../../public/css/back/sideMenu.css">
+    <link rel="stylesheet" href="/public/css/back/adminBar.css">
+    <link rel="stylesheet" href="/public/css/back/sideMenu.css">
 
     <!-- Back-office CSS -->
-    <link rel="stylesheet" href="../../public/css/back/<?php echo $this->sView ?>.css">
+    <link rel="stylesheet" href="/public/css/back/<?php echo $this->sView ?>.css">
 
     <!-- Footer CSS -->
-    <link rel="stylesheet" href="../../public/css/back/footer.css">
+    <link rel="stylesheet" href="/public/css/back/footer.css">
 </head>
 
 <body>
@@ -45,6 +45,8 @@
         <?php include("views/back/footer.view.php")?>
     </footer>
 
+    <script src="/public/js/lib/jquery.min.js"></script>
+    <script src="/public/js/iconManager.js"></script>
 </body>
 
 </html>

@@ -8,10 +8,10 @@
     <title>Blossom | Accueil</title>
 
     <!-- General CSS -->
-    <link rel="stylesheet" href="../../public/css/grid.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
-    <link rel="stylesheet" href="../../public/css/template.home.css">
+    <link rel="stylesheet" href="/public/css/grid.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/responsiveMenu.css">
+    <link rel="stylesheet" href="/public/css/template.home.css">
 </head>
 
 <body>
@@ -31,6 +31,8 @@
         <?php include("views/home/footer.view.php"); ?>
     </footer>
 
+    <script src="/public/js/lib/jquery.min.js"></script>
+    <script src="/public/js/iconManager.js"></script>
 </body>
 
 </html>

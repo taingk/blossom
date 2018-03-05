@@ -8,20 +8,20 @@
     <title>Blossom | Front-Office</title>
 
     <!-- General CSS -->
-    <link rel="stylesheet" href="../../public/css/grid.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
-    <link rel="stylesheet" href="../../public/css/template.front.css">
+    <link rel="stylesheet" href="/public/css/grid.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/responsiveMenu.css">
+    <link rel="stylesheet" href="/public/css/template.front.css">
 
     <!-- Modules CSS -->
-    <link rel="stylesheet" href="../../public/css/back/adminBar.css">
-    <link rel="stylesheet" href="../../public/css/front/mainMenu.css">
+    <link rel="stylesheet" href="/public/css/back/adminBar.css">
+    <link rel="stylesheet" href="/public/css/front/mainMenu.css">
 
     <!-- Front-office CSS -->
-    <link rel="stylesheet" href="../../public/css/front/<?php echo $this->sView ?>.css">
+    <link rel="stylesheet" href="/public/css/front/<?php echo $this->sView ?>.css">
 
     <!-- Footer CSS -->
-    <link rel="stylesheet" href="../../public/css/front/footer.css">
+    <link rel="stylesheet" href="/public/css/front/footer.css">
 </head>
 
 <body>
@@ -43,6 +43,8 @@
         <?php include("views/front/footer.view.php")?>
     </footer>
 
+    <script src="/public/js/lib/jquery.min.js"></script>
+    <script src="/public/js/iconManager.js"></script>
 </body>
 
 </html>
