@@ -4,7 +4,7 @@
         <label class="menu-icon" for="menu-btn">
             <span class="navicon"></span>
         </label>
-        <ul class="subMenuList row menu align-center">
+        <ul class="subMenuList row menu ">
             <li class="col-xs-4"></li>
             <li class="col-xs-4">
                 <img class="blossom" src="../../public/img/logo_blanc.png" alt="Logo">
@@ -17,7 +17,7 @@
             </li>
         </ul>
     </nav>
-    <section class="row homeDivTaille align-center">
+    <section class="row homeDivTaille ">
         <button class="homeBtTelechargement" type="button" href="#">
             <p class="homeTelecharger">Télécharger</p>
         </button>

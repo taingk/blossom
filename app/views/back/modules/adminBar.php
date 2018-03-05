@@ -5,7 +5,7 @@
         <label class="menu-icon" for="menu-btn">
             <span class="navicon"></span>
         </label>
-        <ul class="subMenuList row menu align-center">
+        <ul class="subMenuList row menu ">
             <li class="col-xs-1">
                 <img class="subMenuLink adminBarImg right" src="../../public/img/logo.png" alt="Logo">
             </li>
