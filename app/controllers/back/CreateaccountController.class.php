@@ -1,14 +1,13 @@
 <?php
 
-class CreateaccountController {
-    private $aNotInclude = ["createAccount", "logIn"];
+class CreateaccountController {    
     
     public function indexAction() {
-        $this->getView("createAccount", "back");
+        $oView = new View("createAccount", "back");
     }
 
     public function addUserAction() {
-        $this->getView("createAccount", "back");
+        $oView = new View("createAccount", "back");
 
         $oUser = new Users();
         // $oUser->setFirstname("Kevin");
@@ -21,10 +20,4 @@ class CreateaccountController {
 		// $oUser->save();
 
     }
-
-    public function getView($sView, $sTpl) {
-        $oView = new View($sView, $sTpl);
-        $oView->assign("notInclude", $this->aNotInclude);
-    }
-
 }
