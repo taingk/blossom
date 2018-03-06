@@ -28,13 +28,13 @@
 
     <header>        
         <!-- Admin Bar -->
-        <?php include("views/back/modules/adminBar.php") ?>
+        <?php in_array($this->sView, $this->aData['notInclude']) ? : include("views/back/modules/adminBar.php"); print_r($this->aData['notInclude']); ?>
     </header>
 
     <main>
         <section class="row back">
             <!-- Side Menu -->
-            <?php include("views/back/modules/sideMenu.php") ?>
+            <?php $this->sView === "createAccount" ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
             <?php include("views/back/" . $this->sView . ".view.php"); ?>
         </section>
@@ -42,7 +42,7 @@
 
     <footer>
         <!-- Footer -->
-        <?php include("views/back/footer.view.php")?>
+        <?php $this->sView === "createAccount" ? : include("views/back/footer.view.php")?>
     </footer>
 
     <script src="/public/js/lib/jquery.min.js"></script>
