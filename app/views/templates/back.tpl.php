@@ -28,7 +28,7 @@
 
     <header>        
         <!-- Admin Bar -->
-        <?php in_array($this->sView, $this->aData['notInclude']) ? : include("views/back/modules/adminBar.php"); ?>
+        <?php in_array($this->sView, $this->aData['notInclude']) ? : include("views/back/modules/adminBar.php"); print_r($this->aData['notInclude']); ?>
     </header>
 
     <main>

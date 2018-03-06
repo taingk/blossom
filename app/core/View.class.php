@@ -19,7 +19,7 @@ class View {
     
 	public function __destruct(){
 		extract($this->aData);
-		// print_r($this->aData);
+
 		include("views/templates/" . $this->sTpl . ".tpl.php");
 	}
 	
