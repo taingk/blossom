@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/public/css/template.back.css">
 
     <!-- Module CSS -->
-    <link rel="stylesheet" href="/public/css/back/adminBar.css">
+    <link rel="stylesheet" href="/public/css/back/redBar.css">
     <link rel="stylesheet" href="/public/css/back/sideMenu.css">
 
     <!-- Back-office CSS -->
@@ -27,26 +27,36 @@
 <body>
 
     <header>        
-        <!-- Admin Bar -->
-        <?php in_array($this->sView, $this->aData['notInclude']) ? : include("views/back/modules/adminBar.php"); ?>
+        <!-- Red Bar -->
+        <?php in_array($this->sView, $this->aData['notInclude']) ? : include("views/back/modules/redBar.php") ?>
     </header>
 
     <main>
-        <section class="row back">
+        <section class="row">
             <!-- Side Menu -->
             <?php $this->sView === "createAccount" ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <?php include("views/back/" . $this->sView . ".view.php"); ?>
+            <section class="col-lg-10">
+                <div class="col-lg-11 viewContent">
+                    <div class="row">
+                        <?php include("views/back/" . $this->sView . ".view.php") ?>
+                    </div>
+                </div>
+            </section>
+
         </section>
-    </main>
+</main>
 
     <footer>
         <!-- Footer -->
         <?php $this->sView === "createAccount" ? : include("views/back/footer.view.php")?>
     </footer>
 
+    <!-- Jquery -->
     <script src="/public/js/lib/jquery.min.js"></script>
+
     <script src="/public/js/iconManager.js"></script>
+    <script src="/public/js/sideMenu.js"></script>
 </body>
 
 </html>

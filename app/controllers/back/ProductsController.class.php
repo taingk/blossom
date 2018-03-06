@@ -9,5 +9,5 @@ class ProductsController {
     public function productsAction( $aParams ) {
         $oView = new View("products", "back");
     }
-
+    
 }

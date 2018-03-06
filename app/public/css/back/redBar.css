@@ -1,0 +1,11 @@
+body {
+    background-color: #F1F1F1;
+}
+
+header {
+    height: 150px;
+    background-color: #D8475D;
+}
+header .col-xs-12, header .col-xs-12 .row {
+    height: 150px;
+}

@@ -1,6 +1,6 @@
-html, body, main {
+/* html, body, main {
   height: 100%;
-}
+} */
 
 body {
   margin: 0;
@@ -23,6 +23,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    /* align-items: center; */
+}
+
+.align-center {
     align-items: center;
 }
 

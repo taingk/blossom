@@ -101,18 +101,6 @@
         padding: 10px;
     }
 
-    .adminBar li:nth-child(1) {
-        display: none;
-    }
-
-    .adminBar li:nth-child(5) {
-        display: none;
-    }
-
-    .adminBar li:nth-child(6) {
-        display: none;
-    }
-
     .frontMenu li:nth-child(1) {
         display: none;
     }
