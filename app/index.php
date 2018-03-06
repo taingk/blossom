@@ -21,14 +21,17 @@ $sUri = ltrim($sUri, "/");
 $aUri = explode("?", $sUri);
 $aUriExploded = explode("/", $aUri[0]);
 
-$sController = (empty($aUriExploded[0])? "index" : $aUriExploded[0]);
-$sAction = (empty($aUriExploded[1])? "index" : $aUriExploded[1]);
+$sStructure = (empty($aUriExploded[0]) ? "front" : $aUriExploded[0]);
+$sController = (empty($aUriExploded[1]) ? "index" : $aUriExploded[1]);
+$sAction = (empty($aUriExploded[2]) ? "index" : $aUriExploded[2]);
 
+$sStructure = strtolower($sStructure);
 $sController = ucfirst(strtolower($sController)) . "Controller";
 $sAction = strtolower($sAction) . "Action";
 
 unset($aUriExploded[0]);
 unset($aUriExploded[1]);
+unset($aUriExploded[2]);
 
 $aUriExploded = array_values($aUriExploded);
 
@@ -38,8 +41,8 @@ $aParams = [
     "URL" => $aUriExploded
 ];
 
-if ( file_exists( "controllers/" . $sController . ".class.php" ) ) {
-    include "controllers/" . $sController . ".class.php";
+if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.php" ) ) {
+    include "controllers/" . $sStructure . "/" . $sController . ".class.php";
     
     if ( class_exists( $sController ) ) {
         $oController = new $sController();

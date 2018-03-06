@@ -8,40 +8,43 @@
     <title>Blossom | Front-Office</title>
 
     <!-- General CSS -->
-    <link rel="stylesheet" href="../../public/css/grid.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/responsiveMenu.css">
-    <link rel="stylesheet" href="../../public/css/template.front.css">
+    <link rel="stylesheet" href="/public/css/grid.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/responsiveMenu.css">
+    <link rel="stylesheet" href="/public/css/template.front.css">
 
-    <!-- AdminBar CSS -->
-    <link rel="stylesheet" href="../../public/css/back/adminBar.css">
+    <!-- Modules CSS -->
+    <link rel="stylesheet" href="/public/css/back/adminBar.css">
+    <link rel="stylesheet" href="/public/css/front/mainMenu.css">
 
     <!-- Front-office CSS -->
-    <link rel="stylesheet" href="../../public/css/front/mainMenu.css">
-    <link rel="stylesheet" href="../../public/css/front/footer.css">
-    <link rel="stylesheet" href="../../public/css/front/homePage.css">
+    <link rel="stylesheet" href="/public/css/front/<?php echo $this->sView ?>.css">
+
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="/public/css/front/footer.css">
 </head>
 
 <body>
+
     <header>
-
-        <?php include("../back/modules/adminBar.php") ?>
-        <?php include("../front/modules/mainMenu.php") ?>
-
+        <!-- Admin Bar -->
+        <?php include("views/back/modules/adminBar.php") ?>
+        <!-- Main Menu -->
+        <?php include("views/front/modules/mainMenu.php") ?>
     </header>
 
     <main>
-
-        <?php include("../front/homePage.view.php") ?>
-
+        <!-- Main View -->
+        <?php include("views/front/" . $this->sView . ".view.php"); ?>
     </main>
 
     <footer>
-
-        <?php include("../front/footer.view.php")?>
-
+        <!-- Footer -->
+        <?php include("views/front/footer.view.php")?>
     </footer>
 
+    <script src="/public/js/lib/jquery.min.js"></script>
+    <script src="/public/js/iconManager.js"></script>
 </body>
 
 </html>

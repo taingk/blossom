@@ -3,7 +3,6 @@
 class IndexController {
 
     public function indexAction( $aParams ) {
-        echo "Index";
+        $oView = new View("homePage", "front");
     }
-
 }
