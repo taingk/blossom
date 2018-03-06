@@ -1,8 +1,8 @@
 <nav class="col-xs-2 backLeftMenu visible">
     <ul class="backMenu">
-        <li class="backMenuLink profile">
-            <div class="row">
-                <div class="col-xs-10">
+        <li class="backMenuLink profile" style="padding: 0">
+            <div class="row" style="height: 100%">
+                <div class="col-xs-10" style="margin: auto;padding: 0 20px;">
                     <span>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Julie_Delpy_Cannes.jpg" alt="" class="profilePicture">
                     </span>

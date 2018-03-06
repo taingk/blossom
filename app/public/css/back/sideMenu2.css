@@ -26,6 +26,7 @@
 }
 .profile {
     /* background-color: black; */
+    height: 150px;
     background: linear-gradient(
              rgba(20,20,20, .5), 
              rgba(20,20,20, .5)),
@@ -45,14 +46,14 @@
 }
 main .row section {
     height: calc(100% - 50px);
+    margin-bottom: auto;
+    margin-top: auto;
 }
 .mainMenuContent {
     margin-left:  auto;
     margin-right: auto;
-    /* height: 100%; */
     background-color: white;
     box-shadow: 1px 1px 12px #555;
-    margin-top: -75px;
 }
 .mainMenuContent .row article {
     margin-top: auto;
