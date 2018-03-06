@@ -58,16 +58,6 @@
 
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
-
-    <!-- Chartjs -->
-    <script src="/public/js/lib/Chart.bundle.min.js"></script>
-    <script src="/public/js/lib/Chart.min.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
-    <script src="/public/js/chartjs1.js"></script>
-    <script src="/public/js/chartjs2.js"></script>
-    <script src="/public/js/chartjs3.js"></script>
-    <script src="/public/js/chartjs4.js"></script>
-    <script src="/public/js/onloadchartjs.js"></script>
 </body>
 
 </html>
