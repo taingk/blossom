@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/public/css/template.front.css">
 
     <!-- Modules CSS -->
-    <link rel="stylesheet" href="/public/css/back/adminBar.css">
     <link rel="stylesheet" href="/public/css/front/mainMenu.css">
 
     <!-- Front-office CSS -->
@@ -27,8 +26,6 @@
 <body>
 
     <header>
-        <!-- Admin Bar -->
-        <?php include("views/back/modules/adminBar.php") ?>
         <!-- Main Menu -->
         <?php include("views/front/modules/mainMenu.php") ?>
     </header>

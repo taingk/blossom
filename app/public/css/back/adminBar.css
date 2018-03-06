@@ -1,25 +1,11 @@
-.adminBar {
-    height: 50px;
+body {
+    background-color: #F1F1F1;
+}
+
+header {
+    height: 150px;
     background-color: #D8475D;
 }
-
-.adminBarImg {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.subMenuList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.subMenuLink {
-    padding: 10px;
-}
-
-.blossom {
-    height: 25px;
+header .col-xs-12, header .col-xs-12 .row {
+    height: 150px;
 }

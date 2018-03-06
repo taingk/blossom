@@ -1,16 +1,3 @@
-.backMenuLink > a {
-    color: #444444;
-}
-
-.backMenuLink {
-    padding: 8%;
-}
-
-.backLeftMenu {
-    background-color: #FDFBFB;
-    text-align: left;
-}
-
 .backMenu {
     list-style: none;
     padding: 0;
@@ -18,13 +5,70 @@
     margin: 0;
 }
 
-@media screen and (max-width: 768px) {
-    .backLeftMenu {
-        height: auto;
-        width: 100%
-    }
-    .backMenu {
-        margin: 0;
-    }
+.backLeftMenu {
+    margin-top: -150px;
+    height: 100vh;
+    transition: all 0.5s ease-out;
+    background-color: #FDFBFB;
+    text-align: left;
 }
-
+/* .backLeftMenu, .backMenu, main .row {
+    height: 100%;
+} */
+.profilePicture {
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    border: 2px solid white;
+}
+.backMenuLink span {
+    display: block; 
+}
+.profile {
+    /* background-color: black; */
+    height: 150px;
+    background: linear-gradient(
+             rgba(20,20,20, .5), 
+             rgba(20,20,20, .5)),
+             url("https://www.cheapflights.co.uk/news/wp-content/uploads/2016/03/11-photos-that-prove-cherry-blossom-season-is-the-01-620x414.jpg");
+}
+.backMenuLink > a {
+    color: #444444;
+}
+.backMenuLink {
+    padding: 8%;
+}
+.backMenuLink .row .col-xs-10 {
+    text-align: left;
+}
+.backMenuLink .row .col-xs-2 {
+    text-align: right;
+}
+main .row section {
+    height: calc(100% - 50px);
+    margin-bottom: auto;
+    margin-top: auto;
+}
+.mainMenuContent {
+    margin-left:  auto;
+    margin-right: auto;
+    background-color: white;
+    box-shadow: 1px 1px 12px #555;
+}
+.mainMenuContent .row article {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+canvas {
+    padding: 30px;
+}
+#menuStyle {
+    text-align: left;
+    margin-bottom: auto;
+    margin-top: auto;
+    padding: 30px;
+}
+.not-visible {
+    visibility: hidden;
+    transform: translate(-100%, 0px);
+}

@@ -1,9 +1,9 @@
-<nav class="headerBar frontMenu frontPosition-fixedAfter">
+<nav class="headerBar frontMenu frontPosition-fixed">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
     </label>
-    <ul class="subMenuList row menu ">
+    <ul class="row align-center">
         <li class="col-xs-3">
         </li>
         <li class="col-xs-1">

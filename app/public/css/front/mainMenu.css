@@ -27,13 +27,11 @@
     height: 35px;
 }
 
-.frontPosition-fixedAfter {
-    position: fixed;
-    width: 100%;
-    top: 50px;
-}
-
 .frontPosition-fixed {
     position: fixed;
     width: 100%;
+}
+
+.frontMenu {
+    padding: 6px;
 }

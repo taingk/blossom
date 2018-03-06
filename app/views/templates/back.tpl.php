@@ -32,11 +32,12 @@
     </header>
 
     <main>
-        <section class="row back">
+        <section class="row">
             <!-- Side Menu -->
             <?php include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <?php include("views/back/" . $this->sView . ".view.php"); ?>
+            <?php include("views/back/" . $this->sView . ".view.php") ?>
+
         </section>
     </main>
 
@@ -45,8 +46,20 @@
         <?php include("views/back/footer.view.php")?>
     </footer>
 
+    <!-- Jquery -->
     <script src="/public/js/lib/jquery.min.js"></script>
+
     <script src="/public/js/iconManager.js"></script>
+    <script src="/public/js/sideMenu.js"></script>
+
+    <!-- Chartjs -->
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="/public/js/chartjs1.js"></script>
+    <script src="/public/js/chartjs2.js"></script>
+    <script src="/public/js/chartjs3.js"></script>
+    <script src="/public/js/chartjs4.js"></script>
+    <script src="/public/js/onloadchartjs.js"></script>
 </body>
 
 </html>
