@@ -27,15 +27,14 @@
 <body>
 
     <header>        
-        <!-- Admin Bar -->
-        <?php include("views/back/modules/redBar.php") ?>
+        <!-- Red Bar -->
+        <?php in_array($this->sView, $this->aData['notInclude']) ? : include("views/back/modules/redBar.php") ?>
     </header>
 
     <main>
         <section class="row">
             <!-- Side Menu -->
-            <?php include("views/back/modules/sideMenu.php") ?>
-
+            <?php $this->sView === "createAccount" ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
             <section class="col-lg-10">
                 <div class="col-lg-11 viewContent">
@@ -50,7 +49,7 @@
 
     <footer>
         <!-- Footer -->
-        <?php include("views/back/footer.view.php")?>
+        <?php $this->sView === "createAccount" ? : include("views/back/footer.view.php")?>
     </footer>
 
     <!-- Jquery -->

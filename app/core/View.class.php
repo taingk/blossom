@@ -3,7 +3,8 @@
 class View {
     private $sView;
 	private $sTpl;
-    
+	private $aData = [];
+
 	public function __construct( $sView, $sTpl ) {
 		$this->sView = $sView;
 		$this->sTpl = $sTpl;
@@ -17,6 +18,13 @@ class View {
     }
     
 	public function __destruct(){
+		extract($this->aData);
+		// print_r($this->aData);
 		include("views/templates/" . $this->sTpl . ".tpl.php");
-    }
+	}
+	
+	public function assign($sKey, $sValue){
+		// Prends en paramètre une clée et une valeur et insert dans $aData
+		$this->aData[$sKey] = $sValue;
+	}
 }
