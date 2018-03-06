@@ -16,7 +16,7 @@ function autoloader( $sClass ) {
 
 spl_autoload_register("autoloader");
 
-$sUri = substr(urldecode($_SERVER["REQUEST_URI"]), strlen(dirname($_SERVER["SCRIPT_NAME"])));
+$sUri = urldecode($_SERVER["REQUEST_URI"]);
 $sUri = ltrim($sUri, "/");
 $aUri = explode("?", $sUri);
 $aUriExploded = explode("/", $aUri[0]);
