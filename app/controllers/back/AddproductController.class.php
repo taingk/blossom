@@ -1,7 +1,7 @@
 <?php
 
 class AddProductController {
-
+    
     public function indexAction( $aParams ) {
         $oView = new View("addProduct", "back");
     }

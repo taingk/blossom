@@ -4,6 +4,7 @@ class View {
     private $sView;
 	private $sTpl;
 	private $aData = [];
+	private $aNoInclude = ["createAccount", "logIn"];
 
 	public function __construct( $sView, $sTpl ) {
 		$this->sView = $sView;
@@ -19,7 +20,7 @@ class View {
     
 	public function __destruct(){
 		extract($this->aData);
-		// print_r($this->aData);
+
 		include("views/templates/" . $this->sTpl . ".tpl.php");
 	}
 	

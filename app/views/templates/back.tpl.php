@@ -28,13 +28,13 @@
 
     <header>        
         <!-- Red Bar -->
-        <?php in_array($this->sView, $this->aData['notInclude']) ? : include("views/back/modules/redBar.php") ?>
+        <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/redBar.php") ?>
     </header>
 
     <main>
         <section class="row">
             <!-- Side Menu -->
-            <?php $this->sView === "createAccount" ? : include("views/back/modules/sideMenu.php") ?>
+            <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
             <section class="col-lg-10">
                 <div class="col-lg-11 viewContent">
@@ -49,7 +49,7 @@
 
     <footer>
         <!-- Footer -->
-        <?php $this->sView === "createAccount" ? : include("views/back/footer.view.php")?>
+        <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/footer.view.php")?>
     </footer>
 
     <!-- Jquery -->
