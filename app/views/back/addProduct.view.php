@@ -1,4 +1,4 @@
-<section class="col-lg-9 backView">
+<section class="col-lg-12">
 
     <article>
         <div class="col-lg-12">

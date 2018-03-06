@@ -49,13 +49,13 @@ main .row section {
     margin-bottom: auto;
     margin-top: auto;
 }
-.mainMenuContent {
+.viewContent {
     margin-left:  auto;
     margin-right: auto;
     background-color: white;
     box-shadow: 1px 1px 12px #555;
 }
-.mainMenuContent .row article {
+.viewContent .row article {
     margin-top: auto;
     margin-bottom: auto;
 }

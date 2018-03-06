@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/public/css/template.back.css">
 
     <!-- Module CSS -->
-    <link rel="stylesheet" href="/public/css/back/adminBar.css">
+    <link rel="stylesheet" href="/public/css/back/redBar.css">
     <link rel="stylesheet" href="/public/css/back/sideMenu.css">
 
     <!-- Back-office CSS -->
@@ -28,18 +28,25 @@
 
     <header>        
         <!-- Admin Bar -->
-        <?php include("views/back/modules/adminBar.php") ?>
+        <?php include("views/back/modules/redBar.php") ?>
     </header>
 
     <main>
         <section class="row">
             <!-- Side Menu -->
             <?php include("views/back/modules/sideMenu.php") ?>
+
             <!-- Main View -->
-            <?php include("views/back/" . $this->sView . ".view.php") ?>
+            <section class="col-lg-10">
+                <div class="col-lg-11 viewContent">
+                    <div class="row">
+                        <?php include("views/back/" . $this->sView . ".view.php") ?>
+                    </div>
+                </div>
+            </section>
 
         </section>
-    </main>
+</main>
 
     <footer>
         <!-- Footer -->
@@ -53,7 +60,8 @@
     <script src="/public/js/sideMenu.js"></script>
 
     <!-- Chartjs -->
-    <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
+    <script src="/public/js/lib/Chart.bundle.min.js"></script>
+    <script src="/public/js/lib/Chart.min.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="/public/js/chartjs1.js"></script>
     <script src="/public/js/chartjs2.js"></script>
