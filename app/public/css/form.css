@@ -1,0 +1,19 @@
+.formTpl {
+    margin: 0 auto;
+}
+
+.formTpl > label > p {
+    text-align: left;
+}
+
+.formTpl > label > p > input {
+    border: 0;
+    border-bottom: 1px solid;
+    width: 100%;
+    padding: 10px;
+}
+
+.formTpl > p > input {
+    width: 100%;
+    padding: 5px;
+}

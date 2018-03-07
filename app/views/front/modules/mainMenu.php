@@ -1,4 +1,4 @@
-<nav class="headerBar frontMenu frontPosition-fixed">
+<nav class="headerBar frontMenu">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
