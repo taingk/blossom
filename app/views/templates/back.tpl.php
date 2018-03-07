@@ -10,7 +10,7 @@
     <!-- General CSS -->
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/responsiveMenu.css">
+    <link rel="stylesheet" href="/public/css/form.css">
     <link rel="stylesheet" href="/public/css/template.back.css">
 
     <!-- Module CSS -->
@@ -36,8 +36,8 @@
             <!-- Side Menu -->
             <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <section class="col-lg-10">
-                <div class="col-lg-11 viewContent">
+            <section class="col-lg-10 <?php if (in_array($this->sView, $this->aNoInclude)) echo 'margin-auto'; ?>">
+                <div class="<?php if (in_array($this->sView, $this->aNoInclude)) echo 'col-lg-4'; else echo 'col-lg-11'; ?> viewContent">
                     <div class="row">
                         <?php include("views/back/" . $this->sView . ".view.php") ?>
                     </div>

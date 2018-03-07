@@ -6,8 +6,8 @@ class ProductsController {
         $oView = new View("products", "back");
     }
 
-    public function productsAction( $aParams ) {
-        $oView = new View("products", "back");
+    public function formAction( $aParams ) {
+        $oView = new View("productsForm", "back");
     }
     
 }
