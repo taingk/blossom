@@ -1,13 +1,13 @@
 <?php
 
-class ProductsController {
+class CommentsController {
 
     public function indexAction( $aParams ) {
-        $oView = new View("products", "back");
+
     }
 
     public function formAction( $aParams ) {
-        $oView = new View("productsForm", "back");
+
     }
     
     public function addAction( $aParams ) {
