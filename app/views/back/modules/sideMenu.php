@@ -20,25 +20,19 @@
             <a class="" href="/back" style="color:white;">Tableau de bord</a>
         </li>
         <li class="backMenuLink">
-            <a class="" href="#">Categories</a>
-        </li>
-        <li class="backMenuLink">
-            <a class="" href="#">Pages</a>
+            <a class="" href="/back/categories">Categories</a>
         </li>
         <li class="backMenuLink">
             <a class="" href="/back/products">Produits</a>
         </li>
         <li class="backMenuLink">
-            <a class="" href="#">Medias</a‡>
+            <a class="" href="/back/orders">Commandes</a>
         </li>
         <li class="backMenuLink">
-            <a class="" href="#">Commandes</a>
+            <a class="" href="/back/comments">Commentaires</a>
         </li>
         <li class="backMenuLink">
-            <a class="" href="#">Commentaires</a>
-        </li>
-        <li class="backMenuLink">
-            <a class="" href="#">Utilisateurs</a>
+            <a class="" href="/back/users">Utilisateurs</a>
         </li>
     </ul>
 </nav>
