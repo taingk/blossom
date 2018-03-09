@@ -1,4 +1,4 @@
-<nav class="col-xs-2 backLeftMenu visible">
+<nav id="backMenu" class="col-xs-2 backLeftMenu visible">
     <ul class="backMenu">
         <li class="backMenuLink profile" style="padding: 0">
             <div class="row" style="height: 100%">
