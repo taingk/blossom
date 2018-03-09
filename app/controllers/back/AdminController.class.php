@@ -32,4 +32,8 @@ class AdminController {
 
     }
 
+    public function profileAction( $aParams ) {
+
+    }
+
 }

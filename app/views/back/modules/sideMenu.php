@@ -1,29 +1,23 @@
-<nav id="backMenu" class="col-xs-2 backLeftMenu visible">
+<nav class="col-xs-2 backLeftMenu visible">
     <ul class="backMenu">
-        <li class="backMenuLink profile" style="padding: 0">
-            <div class="row" style="height: 100%">
-                <div class="col-xs-10" style="margin: auto;padding: 0 20px;">
+        <li class="backMenuLink profile">
+            <div class="row">
+                <div class="col-xs-10 margin-auto">
                     <span>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Julie_Delpy_Cannes.jpg" alt="" class="profilePicture">
                     </span>
+                    <br>
                     <span>
-                        <a href="">Lavan <strong>PREPANANTHA</strong></a>            
-                    </span>                
+                        <a href="/back/admin/profile">Lavan <strong>PREPANANTHA</strong></a>            
+                    </span>
                     <span>
-                        <a href=""><em>> Retour sur le site</em></a>
+                        <a href="/"><em>> Retour sur le site</em></a>
                     </span>                
-                </div>
-                <div class="col-xs-2">
-                    <!-- <span>
-                        <a href="">
-                            <img src="../../../public/img/icons8-menu-100.png" alt="" height="30px" width="30px">
-                        </a>
-                    </span> -->
                 </div>
             </div>
         </li>
         <li class="backMenuLink rose-bg">
-            <a class="" href="back.tpl.html" style="color:white;">Tableau de bord</a>
+            <a class="" href="/back" style="color:white;">Tableau de bord</a>
         </li>
         <li class="backMenuLink">
             <a class="" href="#">Categories</a>
@@ -32,7 +26,7 @@
             <a class="" href="#">Pages</a>
         </li>
         <li class="backMenuLink">
-            <a class="" href="backProduits.tpl.html">Produits</a>
+            <a class="" href="/back/products">Produits</a>
         </li>
         <li class="backMenuLink">
             <a class="" href="#">Medias</a‡>
