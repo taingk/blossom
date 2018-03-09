@@ -27,11 +27,6 @@
     height: 35px;
 }
 
-.frontPosition-fixed {
-    position: fixed;
-    width: 100%;
-}
-
 .frontMenu {
     padding: 6px;
 }
