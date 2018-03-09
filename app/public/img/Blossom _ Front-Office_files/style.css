@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../public/font/AvenirNextRegular.otf') format('truetype');
+}
+
+* {
+    font-family: "Avenir";
+    color: #FDFBFB;
+}
+
+a {
+    text-decoration: none;
+}
+
+.rose {
+    color: #D8475D; 
+}
+
+.rose-bg {
+    background-color: #D8475D;
+}
+
+.left {
+    padding-left: 10px;
+    float: left;
+}
+
+.right {
+    padding-right: 10px;
+    float: right;
+}
+
+.position-fixed {
+    position: fixed;
+    width: 100%;
+    /* top: 0; */
+    height: 100%;
+}
+
+.center-content {
+    justify-content: center
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
