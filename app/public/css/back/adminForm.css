@@ -1,3 +1,7 @@
 * {
     color: black;   
 }
+
+header {
+    height: 0px;
+}

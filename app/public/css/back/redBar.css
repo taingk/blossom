@@ -1,11 +1,35 @@
-body {
-    background-color: #F1F1F1;
-}
-
-header {
-    height: 150px;
+.redHeader {
+    height: 75px;
     background-color: #D8475D;
 }
-header .col-xs-12, header .col-xs-12 .row {
-    height: 150px;
+
+.headerMenu {
+    margin: auto 30px auto calc(2/11*100%);
+    width: 100%;
+}
+
+@keyframes dHeader {
+    from {
+        height: 150px;
+    }
+    to {
+        height: 50px;
+    }
+}
+
+@keyframes uHeader {
+    from {
+        height: 50px;
+    }
+    to {
+        height: 150px;
+    }
+}
+
+.dHeader {
+    animation: dHeader 0.5s;
+}
+
+.uHeader {
+    animation: uHeader 0.5s;
 }

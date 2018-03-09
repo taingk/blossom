@@ -6,69 +6,83 @@
 }
 
 .backLeftMenu {
-    margin-top: -150px;
-    height: 100vh;
+    margin-top: -75px;
     transition: all 0.5s ease-out;
     background-color: #FDFBFB;
     text-align: left;
+    box-shadow: 1px 1px 12px #555;
 }
-/* .backLeftMenu, .backMenu, main .row {
-    height: 100%;
-} */
+
 .profilePicture {
     height: 70px;
     width: 70px;
     border-radius: 50px;
     border: 2px solid white;
 }
+
 .backMenuLink span {
-    display: block; 
+    display: block;
 }
+
 .profile {
-    /* background-color: black; */
-    height: 150px;
-    background: linear-gradient(
-             rgba(20,20,20, .5), 
-             rgba(20,20,20, .5)),
-             url("https://www.cheapflights.co.uk/news/wp-content/uploads/2016/03/11-photos-that-prove-cherry-blossom-season-is-the-01-620x414.jpg");
+    height: 200px;
+    background: linear-gradient( rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url("https://www.cheapflights.co.uk/news/wp-content/uploads/2016/03/11-photos-that-prove-cherry-blossom-season-is-the-01-620x414.jpg");
 }
-.backMenuLink > a {
+
+.backMenuLink>a {
     color: #444444;
 }
+
 .backMenuLink {
     padding: 8%;
 }
-.backMenuLink .row .col-xs-10 {
-    text-align: left;
-}
-.backMenuLink .row .col-xs-2 {
-    text-align: right;
-}
+
 main .row section {
     height: calc(100% - 50px);
     margin-bottom: auto;
     margin-top: auto;
 }
+
 .viewContent {
-    margin-left:  auto;
+    margin-left: auto;
     margin-right: auto;
     background-color: white;
     box-shadow: 1px 1px 12px #555;
 }
+
 .viewContent .row article {
     margin-top: auto;
     margin-bottom: auto;
 }
-canvas {
-    padding: 30px;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-#menuStyle {
-    text-align: left;
-    margin-bottom: auto;
-    margin-top: auto;
-    padding: 30px;
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
+
 .not-visible {
-    visibility: hidden;
-    transform: translate(-100%, 0px);
+    display: none;
+    animation: fadeOut 1s;
+}
+
+.visible {
+    animation: fadeIn 1s;
+}
+
+.fixed {
+    position: fixed;
+    height: 100%;
 }
