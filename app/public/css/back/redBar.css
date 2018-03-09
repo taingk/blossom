@@ -7,29 +7,3 @@
     margin: auto 30px auto calc(2/11*100%);
     width: 100%;
 }
-
-@keyframes dHeader {
-    from {
-        height: 150px;
-    }
-    to {
-        height: 50px;
-    }
-}
-
-@keyframes uHeader {
-    from {
-        height: 50px;
-    }
-    to {
-        height: 150px;
-    }
-}
-
-.dHeader {
-    animation: dHeader 0.5s;
-}
-
-.uHeader {
-    animation: uHeader 0.5s;
-}
