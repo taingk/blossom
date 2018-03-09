@@ -1,0 +1,85 @@
+.bg-color{
+    background-color: white;
+    height: 100%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+main, body{
+    background-color:#ECE1E1;
+}
+
+h1{
+    color: #4A4A4A;
+}
+
+hr{
+    height: 0.1px;
+    width: 100%;
+}
+
+p{
+    color: #4A4A4A;
+}
+
+.PanierImg{
+    width: 121px;
+    height: 121px;
+}
+
+.captionProduct{
+    text-align: left;
+    line-height: 10px;
+}
+
+.captionPrice{
+    text-align: left;
+    line-height: 20px;
+}
+
+.carreHeight{
+    line-height: 30px;
+}
+
+.carre{
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #4A4A4A;
+    height: 50px;
+    width: 50px;
+    align-content: center;
+}
+
+.iphone8 {
+    font-weight: bold;
+}
+
+.priceTotal{
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+.capaciter{
+    color: 
+}
+
+.garantie{
+    color: #B9B5B5;
+}
+
+.Ref{
+    text-align: left;
+    color: #B9B5B5;
+}
+
+.numRef{
+    color: #B9B5B5;
+}
+
+.Sup{
+    color: red;
+}
+
+.Total{
+    right: 0;
+}
