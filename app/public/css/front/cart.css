@@ -1,0 +1,68 @@
+* {
+    color: black;
+}
+
+.bg-color {
+    background-color: white;
+    height: 100%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+main,
+body {
+    background-color: #F1F1F1;
+}
+
+h1 {
+    color: #4A4A4A;
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    border-color: #B9B5B5;
+}
+
+p {
+    color: #4A4A4A;
+}
+
+.PanierImg {
+    width: 121px;
+    height: 121px;
+}
+
+.captionProduct {
+    text-align: left;
+    line-height: 0px;
+}
+
+.btnPayer {
+    background: #D8475D;
+    color: #F1F1F1;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 110%;
+}
+
+.btn {
+    padding: 30px;
+    padding-left: 120px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+}
+
+.responsiveTable {
+    overflow-x:auto;
+    width: 100%;
+}
