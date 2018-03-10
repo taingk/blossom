@@ -19,15 +19,11 @@ function makeInvisible() {
 function btnLeft() {
     $('.hideBtn').removeClass('right');
     $('.hideBtn').addClass('left');
-    // $('.redHeader').addClass('uHeader');
-    // $('.redHeader').removeClass('dHeader');
 }
 
 function btnRight() {
     $('.hideBtn').removeClass('left');
     $('.hideBtn').addClass('right');
-    // $('.redHeader').addClass('dHeader');
-    // $('.redHeader').removeClass('uHeader');
 }
 
 $(".hideBtn").click(function() {

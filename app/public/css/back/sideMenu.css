@@ -43,18 +43,6 @@ main .row section {
     margin-top: auto;
 }
 
-.viewContent {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    box-shadow: 1px 1px 12px #555;
-}
-
-.viewContent .row article {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;

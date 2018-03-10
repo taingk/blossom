@@ -5,10 +5,11 @@
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
+    width: 100%;
 }
 
 .frontSearchIcon {
-    background-image: url("../../public/img/searchIcon.png");
+    background-image: url("/public/img/searchIcon.png");
     height: 20px;
     width: 20px;
     background-size: cover;
@@ -16,7 +17,7 @@
 }
 
 .frontCartInput {
-    background-image: url("../../public/img/panierIcon.png");
+    background-image: url("/public/img/panierIcon.png");
     height: 40px;
     width: 40px;
     background-size: cover;
@@ -29,4 +30,8 @@
 
 .frontMenu {
     padding: 6px;
+}
+
+ul li a {
+    font-size: smaller;
 }

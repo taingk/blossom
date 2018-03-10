@@ -1,11 +1,11 @@
 window.onload = function() {
-    var ctx = document.getElementById("canvas").getContext("2d");
+    var ctx = document.getElementById("canvas1").getContext("2d");
     window.myLine = new Chart(ctx, config);
 
-    var ctx2 = document.getElementById("chart-area").getContext("2d");
+    var ctx2 = document.getElementById("canvas2").getContext("2d");
     window.myPie = new Chart(ctx2, config2);
 
-    var ctx3 = document.getElementById("canvas2").getContext("2d");
+    var ctx3 = document.getElementById("canvas3").getContext("2d");
     window.myMixedChart = new Chart(ctx3, {
         type: 'bar',
         data: chartData,
@@ -22,6 +22,6 @@ window.onload = function() {
         }
     });
 
-    var ctx4 = document.getElementById("chart-area2");
+    var ctx4 = document.getElementById("canvas4");
     window.myPolarArea = Chart.PolarArea(ctx4, config3);
 };
