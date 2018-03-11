@@ -94,6 +94,11 @@
     }
 }
 
+.frontPosition-fixed {
+    position:fixed;
+    width: 100%;    
+}
+
 @media all and (max-width: 768px) {
     .headerBar li {
         max-width: calc(12/12*100%);
