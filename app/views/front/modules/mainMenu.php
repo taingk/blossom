@@ -7,7 +7,7 @@
         <li class="col-sm-1 col-lg-3">
         </li>
         <li class="col-sm-1">
-            <a href="/back/">
+            <a href="/">
                 <img class="logo" src="../../public/img/logo.png">
             </a>
         </li>
