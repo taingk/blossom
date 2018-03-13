@@ -10,8 +10,8 @@
 
 .frontSearchIcon {
     background-image: url("/public/img/searchIcon.png");
-    height: 20px;
-    width: 20px;
+    height: 27px;
+    width: 27px;
     background-size: cover;
     border: 1px solid #D8475D;
 }

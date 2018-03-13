@@ -1,13 +1,13 @@
-th, strong {
+th,
+strong {
     color: black;
 }
 
-.bg-color {
+.mainView {
     background-color: white;
     height: 100%;
     margin-top: 5%;
-    margin-bottom: 5%;
-    border-radius: 10px;
+    margin-bottom: 3%;
 }
 
 main,
@@ -23,10 +23,6 @@ hr {
     height: 1px;
     width: 100%;
     border-color: #B9B5B5;
-}
-
-p {
-    color: #4A4A4A;
 }
 
 .PanierImg {
@@ -47,15 +43,12 @@ p {
     cursor: pointer;
     border-radius: 5px;
     font-size: 110%;
+    padding-left: 15px;
+    margin-right: 5%;
 }
 
 .btn {
     padding: 30px;
-    padding-left: 120px;
-}
-
-table {
-    width: 100%;
 }
 
 th {
@@ -63,7 +56,51 @@ th {
     padding: 15px;
 }
 
-.responsiveTable {
-    overflow-x:auto;
+.responsiveTable, .responsiveTable > table {
     width: 100%;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+    }
+    
+    tr > th {
+        display: none;
+    }
+
+    tr {
+        line-height: 0px;
+        border-bottom: 1px solid #B9B5B5;
+    }
+
+    hr {
+        width: 0px;
+    }
+
+    .text-left {
+        text-align: right;
+    }
+
+    .responsive-center {
+        text-align: center;
+    }
+
+    .left{
+        float:none;
+        text-align: right;
+    }
+
+    p {
+        padding: 5px;
+    }
+
+    .mainView {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
 }
