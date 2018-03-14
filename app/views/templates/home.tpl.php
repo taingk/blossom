@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/responsiveMenu.css">
     <link rel="stylesheet" href="/public/css/template.home.css">
+
+    <style>
+        header {
+            background-image: url('http://hdwallpapers4us.com/wp-content/uploads/2018/02/4k-Wallpapers-Free.jpg');
+            background-position: center center;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+
+
 </head>
 
 <body>
