@@ -15,7 +15,7 @@
 
     <style>
         header {
-            background-image: url('http://hdwallpapers4us.com/wp-content/uploads/2018/02/4k-Wallpapers-Free.jpg');
+            background-image: url('https://cdn-images-1.medium.com/max/2000/1*ZeixM2OCyy_xUEKMnSp_bQ.png');
             background-position: center center;
             background-size: cover;
             height: 100vh;
