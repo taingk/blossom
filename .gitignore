@@ -3,3 +3,4 @@ app/sass/node_modules/
 *.log
 config/*
 .DS_Store
+.htpasswd
