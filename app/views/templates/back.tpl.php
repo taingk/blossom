@@ -51,9 +51,6 @@
         <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/footer.view.php")?>
     </footer>
 
-    <!-- Jquery -->
-    <script src="/public/js/lib/jquery.min.js"></script>
-
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
 </body>

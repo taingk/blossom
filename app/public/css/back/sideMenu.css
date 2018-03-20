@@ -5,14 +5,6 @@
     margin: 0;
 }
 
-.backLeftMenu {
-    margin-top: -75px;
-    transition: all 0.5s ease-out;
-    background-color: #FDFBFB;
-    text-align: left;
-    box-shadow: 1px 1px 12px #555;
-}
-
 .profilePicture {
     height: 70px;
     width: 70px;
@@ -43,6 +35,15 @@ main .row section {
     margin-top: auto;
 }
 
+.backLeftMenu {
+    margin-top: -75px;
+    background-color: #FDFBFB;
+    text-align: left;
+    box-shadow: 1px 1px 12px #555;
+    max-width: calc(2/12*100%);
+    flex: 0 0 calc(2/12*100%);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -55,6 +56,7 @@ main .row section {
 @keyframes fadeOut {
     from {
         opacity: 1;
+        visibility: visible;
     }
     to {
         opacity: 0;
@@ -62,15 +64,30 @@ main .row section {
 }
 
 .not-visible {
-    display: none;
     animation: fadeOut 1s;
+    visibility: hidden;
 }
 
 .visible {
     animation: fadeIn 1s;
 }
 
-.fixed {
-    position: fixed;
-    height: 100%;
+
+@media (max-width: 975px) {
+    #toggleMenu {
+        float: right;
+    }
+
+    .backLeftMenu {
+        visibility: hidden;
+        position: fixed;
+        max-width: calc(5/12*100%);
+        flex: 0 0 calc(5/12*100%);
+    }
+
+    #backView {
+        max-width: calc(12/12*100%);
+        flex: 0 0 calc(12/12*100%);
+    }
+
 }
