@@ -36,8 +36,8 @@
             <!-- Side Menu -->
             <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <section id="backView" class="col-xs-10 <?php if (in_array($this->sView, $this->aNoInclude)) echo 'col-sm-6 col-md-5 col-lg-12 margin-auto'; ?>">
-                <div class="<?php if (in_array($this->sView, $this->aNoInclude)) echo 'col-xs-4 col-sm-12 col-md-12 col-lg-4'; else echo 'col-lg-11'; ?> viewContent">
+            <section id="backView" class="<?php if (in_array($this->sView, $this->aNoInclude)) echo ' margin-auto'; else echo 'col-xs-10' ?>">
+                <div class="<?php if (in_array($this->sView, $this->aNoInclude)) echo ''; else echo 'col-lg-11'; ?> viewContent">
                     <div class="row">
                         <?php include("views/back/" . $this->sView . ".view.php") ?>
                     </div>
