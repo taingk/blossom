@@ -6,8 +6,8 @@ document.getElementById('toggleMenu').addEventListener("click", () => {
         leftMenu.classList.add('visible');
         leftMenu.classList.remove('not-visible');
         leftMenu.style.visibility = "visible";
+        leftMenu.style.display = "block";
         if ( window.innerWidth > 975 ) {
-            leftMenu.style.display = "block";
             backView.classList.add('col-xs-10');
             backView.classList.remove('col-xs-12');
         }
@@ -15,14 +15,13 @@ document.getElementById('toggleMenu').addEventListener("click", () => {
         leftMenu.classList.remove('visible');
         leftMenu.classList.add('not-visible');
         leftMenu.style.visibility = "hidden";
-        // if ( window.innerWidth > 975 ) {
-        //     leftMenu.style.display = "none";
-        //     backView.classList.remove('col-xs-10');
-        //     backView.classList.add('col-xs-12');
-        // } else {
-            leftMenu.style.display = "none";
-            backView.classList.remove('col-xs-10');
-            backView.classList.add('col-xs-12');
-        // }
+        leftMenu.style.display = "none";
+        backView.classList.remove('col-xs-10');
+        backView.classList.add('col-xs-12');
     }
 });
+
+// if ( window.innerWidth > 975 ) {
+//     document.getElementById('backView').classList.remove('col-xs-12');
+//     document.getElementById('backView').classList.add('col-xs-10');
+// }

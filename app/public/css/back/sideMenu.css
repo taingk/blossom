@@ -81,6 +81,7 @@ main .row section {
     .backLeftMenu {
         visibility: hidden;
         position: fixed;
+        height: 100%;
         max-width: calc(5/12*100%);
         flex: 0 0 calc(5/12*100%);
     }
