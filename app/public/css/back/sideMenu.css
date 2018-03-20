@@ -75,11 +75,11 @@ main .row section {
 
 @media (max-width: 975px) {
     #toggleMenu {
+        display: block;
         float: right;
     }
 
     .backLeftMenu {
-        visibility: hidden;
         position: fixed;
         height: 100%;
         max-width: calc(5/12*100%);

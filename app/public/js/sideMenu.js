@@ -1,27 +1,32 @@
-document.getElementById('toggleMenu').addEventListener("click", () => {
-    const leftMenu = document.getElementsByClassName("backLeftMenu")[0];
-    const backView = document.getElementById('backView');
-
-    if ( !leftMenu.classList.contains('visible') ) {
-        leftMenu.classList.add('visible');
-        leftMenu.classList.remove('not-visible');
-        leftMenu.style.visibility = "visible";
-        leftMenu.style.display = "block";
-        if ( window.innerWidth > 975 ) {
-            backView.classList.add('col-xs-10');
-            backView.classList.remove('col-xs-12');
-        }
-    } else {
-        leftMenu.classList.remove('visible');
-        leftMenu.classList.add('not-visible');
-        leftMenu.style.visibility = "hidden";
-        leftMenu.style.display = "none";
-        backView.classList.remove('col-xs-10');
-        backView.classList.add('col-xs-12');
+class sideMenu {
+    constructor() {
+        this.leftMenu = document.getElementsByClassName("backLeftMenu")[0];
+        this.onWidth();
     }
-});
 
-// if ( window.innerWidth > 975 ) {
-//     document.getElementById('backView').classList.remove('col-xs-12');
-//     document.getElementById('backView').classList.add('col-xs-10');
-// }
+    onWidth() {
+        if ( window.innerWidth <= 975 ) {
+            this.leftMenu.classList.remove('visible');
+            this.leftMenu.classList.add('not-visible');
+        } else {
+            this.leftMenu.classList.add('visible');
+            this.leftMenu.classList.remove('not-visible');        
+        }    
+    }
+
+    onClick() {
+        if ( !this.leftMenu.classList.contains('visible') ) {
+            this.leftMenu.classList.add('visible');
+            this.leftMenu.classList.remove('not-visible');
+        } else {
+            this.leftMenu.classList.remove('visible');
+            this.leftMenu.classList.add('not-visible');
+        }    
+    }
+
+}
+
+const oSideMenu = new sideMenu();
+
+window.addEventListener('resize', () => oSideMenu.onWidth());
+document.getElementById('toggleMenu').addEventListener('click', () => oSideMenu.onClick());
