@@ -47,10 +47,3 @@
 </div>
 
 <script src="/public/js/scrollDown.js"></script>
-
-<style>
-    @keyframes {
-
-    }
-
-</style>

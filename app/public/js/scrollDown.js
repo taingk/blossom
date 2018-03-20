@@ -5,14 +5,13 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     var element =  document.getElementById('navBar');
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        element.style.transition = "opacity 2s ease-in";
         element.style.backgroundColor = "white";
     } else {
-        element.style.transition = "opacity 2s ease-out";
         element.style.backgroundColor = "transparent";
     }
 }
 
+// regarde si l'élement existe - à mettre après
 var element =  document.getElementById('navBar');
 if (typeof(element) != 'undefined' && element != null)
 {
