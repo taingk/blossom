@@ -15,7 +15,7 @@
 
     <!-- Module CSS -->
     <link rel="stylesheet" href="/public/css/back/redBar.css">
-    <link rel="stylesheet" href="/public/css/back/sideMenu.css">
+    <?php if ( !in_array($this->sView, $this->aNoInclude) ) echo '<link rel="stylesheet" href="/public/css/back/sideMenu.css">'; ?>
 
     <!-- Back-office CSS -->
     <link rel="stylesheet" href="/public/css/back/<?php echo $this->sView ?>.css">
@@ -36,8 +36,8 @@
             <!-- Side Menu -->
             <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <section id="backView" class="<?php if (in_array($this->sView, $this->aNoInclude)) echo ' margin-auto'; else echo 'col-xs-10' ?>">
-                <div class="<?php if (in_array($this->sView, $this->aNoInclude)) echo ''; else echo 'col-lg-11'; ?> viewContent">
+            <section id="backView" class="<?php if ( in_array($this->sView, $this->aNoInclude) ) echo 'margin-auto'; else echo 'col-xxs-10' ?>">
+                <div class="<?php if ( !in_array($this->sView, $this->aNoInclude) ) echo 'col-lg-11'; ?> viewContent">
                     <div class="row">
                         <?php include("views/back/" . $this->sView . ".view.php") ?>
                     </div>
@@ -51,8 +51,9 @@
         <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/footer.view.php")?>
     </footer>
 
+    <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
-    <script src="/public/js/sideMenu.js"></script>
+    <?php if ( !in_array($this->sView, $this->aNoInclude) ) echo '<script src="/public/js/sideMenu.js"></script>'; ?>
 </body>
 
 </html>
