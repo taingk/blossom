@@ -63,7 +63,7 @@ main .row section {
     }
 }
 
-.not-visible {
+.invisible {
     animation: fadeOut 1s;
     visibility: hidden;
 }
