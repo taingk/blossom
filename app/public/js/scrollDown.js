@@ -3,19 +3,20 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    var element =  document.getElementById('navBar');
+    var navbar =  document.getElementById('navBar');
+    var documentation = document.getElementById('documentation');
+    var whoarewe = document.getElementById('whoarewe')
+    var logoBlossom = document.getElementById('logoBlossom');
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        element.style.backgroundColor = "white";
+        navbar.classList.add('navSlideAnimation');
+        documentation.classList.add('blackLink');
+        whoarewe.classList.add('blackLink');
+        logoBlossom.src = "../../public/img/logo_noir.png";
+        $("#imageID").attr('src', 'srcImage.jpg');
     } else {
-        element.style.backgroundColor = "transparent";
+        navbar.classList.remove('navSlideAnimation');
+        documentation.classList.remove('blackLink');
+        whoarewe.classList.remove('blackLink')
+        logoBlossom.src = "../../public/img/logo_blanc.png";
     }
-}
-
-// regarde si l'élement existe - à mettre après
-var element =  document.getElementById('navBar');
-if (typeof(element) != 'undefined' && element != null)
-{
-  console.log("aaaa")
-} else {
-    console.log("bbbb");
 }

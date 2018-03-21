@@ -5,10 +5,13 @@
 
 .headerBar ul {
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     list-style: none;
-    overflow: hidden;
-    background-color: #D8475D;
+    /* overflow: hidden; */
+    /* background-color: #D8475D; */
+    background-color: transparent;
+    height: 100%;
+    padding: 15px 0;
 }
 
 /* Cache menu */

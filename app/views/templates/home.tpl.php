@@ -12,17 +12,6 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/responsiveMenu.css">
     <link rel="stylesheet" href="/public/css/template.home.css">
-
-    <style>
-        header {
-            background-image: url('https://cdn-images-1.medium.com/max/2000/1*ZeixM2OCyy_xUEKMnSp_bQ.png');
-            background-position: center center;
-            background-size: cover;
-            height: 100vh;
-        }
-    </style>
-
-
 </head>
 
 <body>

@@ -1,221 +1,278 @@
-nav {
-    /* background-color: #D8475D; */
-}
+header {
+    background-image:url(https://cdn-images-1.medium.com/max/2000/1*ZeixM2OCyy_xUEKMnSp_bQ.png);
+    background-position:center center;
+    background-size:cover;
+    height:950px
+    }
+    
+    nav {
+    position:fixed;
+    width:100%;
+    z-index:1
+    }
+    
+    nav .container {
+    height:100%
+    }
+    
+    nav .navbarBrand,nav .navbarMenu {
+    display:inline-block;
+    height:100%
+    }
 
-.homeLogoImg {
-    width: 200px;
-    height: 30px;
-    object-fit: cover;
-    object-position: left top;
-}
+    nav #logoBlossom {
+        height:100%;
+        padding:15px 0
+    }
 
-.homeFirstContent {
-    height: 700px;
-    background-image: url('../../public/img/BlossomHome.png');
-    background-position: center;
-    background-size: cover;
-}
+    nav .navMenuList {
+        float:left;
+        padding: 0 10px;
+    }
 
-.homeBtTelechargement {
-    width: 250px;
-    height: 85px;
-    background-color: #D8475D;
-    border-radius: 20em;
-    border: none;
-    margin: 0 auto;
-}
+    .navSlideAnimation {
+        animation: navSlideDown 420ms cubic-bezier(.165,.84,.44,1);
+        background-color: white;
+    }
 
-.homeTelecharger {
-    font-size: 22px;
-    color: #FFFFFF;
-}
+    nav .blackLink {
+        color: black;
+    }
 
-.homeTextHomeBar {
-    font-size: 12px;
-    color: #FFFFFF;
-}
+    .navSlideDown {
+        -webkit-animation-name: navSlideDown;
+        animation-name: navSlideDown;
+    }
 
-.homeDivTaille {
-    height: 550px;
-    width: 100%;
-}
+    @keyframes navSlideDown{
+        0%{
+            transform:translateY(-100%)
+        }
+        100%{
+            transform:translateY(0)
+        }
+    }
 
-.homeCitation {
-    background-color: #F3DCE0;
-    padding: 35px;
-}
+    #container-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-.homeSlogan {
-    font-size: 24px;
-    margin: 0 auto;
-}
+    #container-center .col-sm-10 {
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-.homeTitleQuestion {
-    font-size: 16px;
-    color: #4A4A4A;
-    margin: 0 auto;
-}
-
-.homeSlogan span,
-.homeTitleQuestion span {
-    color: #4A4A4A;
-}
-
-.homeCitationText {
-    font-size: 20px;
-    color: #9B9B9B;
-    font-style: italic;
-}
-
-.homeSignature {
-    color: #4B4B4B;
-    font-size: 10px;
-    font-style: italic;
-}
-
-.homeTitleFeatures {
-    padding: 35px;
-    background-color: #d8475d63;
-}
-
-.homeFeatures {
-    padding: 50px;
-    background-color: #FDFCFC;
-}
-
-.homeGeneral {
-    border-style: solid;
-    border-color: #4A4A4A;
-    height: 150px;
-    width: 200px;
-}
-
-.homeBrush {
-    border-width: 0px 1px 0px 0px;
-}
-
-.homeSecurity {
-    border-width: 0px 0px 0px 0px;
-}
-
-.homePerf {
-    border-width: 0px 0px 0px 1px;
-}
-
-.homeThumbUp {
-    border-width: 1px 1px 0px 0px;
-}
-
-.homeMouse {
-    border-width: 1px 0px 0px 0px;
-}
-
-.homeMobile {
-    border-width: 1px 0px 0px 1px;
-}
-
-@media screen and (min-width: 499px) and (max-width: 699px) {
+    #container-center a {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 1.3rem;
+        padding: 1.5em 2em;
+        background: #FC4348;
+        color: white;
+        -webkit-box-shadow: 0 4px 20px rgba(252,67,72,0.5);
+        box-shadow: 0 4px 20px rgba(252,67,72,0.5);
+        display: inline-block;
+        padding: .8em 1.5em;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+        border-radius: 50em;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+    
+    /* .homeLogoImg {
+    width:200px;
+    height:30px;
+    object-fit:cover;
+    object-position:left top
+    }
+    
+    .homeFirstContent {
+    height:700px;
+    background-image:url(../../public/img/BlossomHome.png);
+    background-position:center;
+    background-size:cover
+    }
+    
+    .homeBtTelechargement {
+    width:250px;
+    height:85px;
+    background-color:#D8475D;
+    border-radius:20em;
+    border:none;
+    margin:0 auto
+    } */
+    
+    /* .homeTelecharger {
+    font-size:22px;
+    color:#FFF
+    } */
+    
+    /* .homeTextHomeBar {
+    font-size:12px;
+    color:#FFF
+    } */
+    
+    /* .homeDivTaille {
+    height:550px;
+    width:100%
+    } */
+    
+    .homeCitation {
+    background-color:#F3DCE0;
+    padding:35px
+    }
+    
+    .homeSlogan {
+    font-size:24px;
+    margin:0 auto
+    }
+    
+    .homeTitleQuestion {
+    font-size:16px;
+    color:#4A4A4A;
+    margin:0 auto
+    }
+    
+    .homeSlogan span,.homeTitleQuestion span {
+    color:#4A4A4A
+    }
+    
+    .homeCitationText {
+    font-size:20px;
+    color:#9B9B9B;
+    font-style:italic
+    }
+    
+    .homeSignature {
+    color:#4B4B4B;
+    font-size:10px;
+    font-style:italic
+    }
+    
+    .homeTitleFeatures {
+    padding:35px;
+    background-color:#d8475d63
+    }
+    
+    .homeFeatures {
+    padding:50px;
+    background-color:#FDFCFC
+    }
+    
+    .homeGeneral {
+    border-style:solid;
+    border-color:#4A4A4A;
+    height:150px;
+    width:200px
+    }
+    
     .homeBrush {
-        border-width: 1px 1px 0px 0px;
+    border-width:0 1px 0 0
     }
+    
     .homeSecurity {
-        border-width: 1px 0px 0px 1px;
+    border-width:0
     }
+    
     .homePerf {
-        border-width: 1px 0px 0px 0px;
+    border-width:0 0 0 1px
     }
+    
     .homeThumbUp {
-        border-width: 1px 1px 0px 0px;
+    border-width:1px 1px 0 0
     }
+    
     .homeMouse {
-        border-width: 1px 0px 0px 1px;
+    border-width:1px 0 0
     }
+    
     .homeMobile {
-        border-width: 1px 0px 0px 0px;
+    border-width:1px 0 0 1px
     }
-}
-
-@media screen and (max-width: 499px) {
-    .homeBrush,
-    .homeSecurity,
-    .homePerf,
-    .homeThumbUp,
-    .homeMouse,
+    
+    @media screen and (min-width: 499px) and (max-width: 699px) {
+    .homeBrush {
+    border-width:1px 1px 0 0
+    }
+    
+    .homeSecurity {
+    border-width:1px 0 0 1px
+    }
+    
+    .homePerf {
+    border-width:1px 0 0
+    }
+    
+    .homeThumbUp {
+    border-width:1px 1px 0 0
+    }
+    
+    .homeMouse {
+    border-width:1px 0 0 1px
+    }
+    
     .homeMobile {
-        border-width: 0px 0px 0px 0px;
+    border-width:1px 0 0
     }
-}
-
-.homeFeaturesImg {
-    width: 40px;
-    height: 40px;
-}
-
-figcaption {
-    color: #4A4A4A;
-    font-size: 16px;
-}
-
-.horizontal {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.horizontal li {
-    float: left;
-}
-
-.horizontal li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.horizontal li:hover {
-    background-color: #94314063;
-}
-
-footer {
-    width: 100%;
-}
-
-footer .homeBar {
-    padding: 20px;
-}
-
-footer span {
-    font-size: smaller;
-}
-
-.image_logo {
-    float: left;
-}
-
-.navbar-brand {
-    float: left;
-    height: 50px;
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-}
-
-.image_logo img {
-    height: 95%;
-    padding: 15px;
-    display: block;
-    width: auto;
-    vertical-align: middle;
-    border: 0;
-}
-
-.homeBar .subMenuList {
-    height: 50px;
-}
-
-.blossom {
-    height: 25px;
-}
+    }
+    
+    @media screen and (max-width: 499px) {
+    .homeBrush,.homeSecurity,.homePerf,.homeThumbUp,.homeMouse,.homeMobile {
+    border-width:0
+    }
+    }
+    
+    .homeFeaturesImg {
+    width:40px;
+    height:40px
+    }
+    
+    figcaption {
+    color:#4A4A4A;
+    font-size:16px
+    }
+    
+    .horizontal {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden
+    }
+    
+    .horizontal li {
+    float:left
+    }
+    
+    .horizontal li a {
+    display:inline-block;
+    color:#fff;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none
+    }
+    
+    .horizontal li:hover {
+    background-color:#94314063
+    }
+    
+    footer {
+    width:100%
+    }
+    
+    footer .homeBar {
+    padding:20px
+    }
+    
+    footer span {
+    font-size:smaller
+    }
+    
+    .homeBar .subMenuList {
+    height:50px
+    }
+    
+ 
