@@ -1,6 +1,7 @@
 .headerBar {
     background-color: #FBFBFB;
     height: 50px;
+    position: relative;
 }
 
 .headerBar ul {
@@ -49,7 +50,28 @@
     padding: 6px;
 }
 
-ul li a {
+.link{
     font-size: smaller;
+    color: #444444;
+    border: none;
+}
+
+.divLink{
+    padding: 10px;
+    margin-top: auto;
+    width: 200px;
+    cursor: pointer;
+
+}
+.content{
+    background-color: grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a{
+    color: #444444;
+}
+
+span{
     color: #444444;
 }

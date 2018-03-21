@@ -13,6 +13,6 @@
         <img class="frontSecondCol gutters" src="../../public/img/lg.jpg">
     </div>
     <div class="iconfront">
-        <img class="frontIconCole" src="../../public/img/iconfront.png">
+        <img class="frontIconCol" src="../../public/img/iconfront.png">
     </div>
 </section>
