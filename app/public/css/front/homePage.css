@@ -18,7 +18,17 @@
     height: 100%;
 }
 
-.frontThirdCol {
-    width: 100%;
+.savoir-plus{
+    color: black;
+}
+
+.frontIconCol{
+    width: 65%;
     height: 100%;
+}
+
+ul li a:hover{
+    position: absolute;
+    width: 200px;
+    display: none;
 }

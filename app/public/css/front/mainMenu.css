@@ -1,3 +1,16 @@
+.headerBar {
+    /* background-color: #FBFBFB; */
+    height: 50px;
+}
+
+.headerBar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+
 .frontCartInput,
 .frontSearchIcon,
 .frontSearchInput {
