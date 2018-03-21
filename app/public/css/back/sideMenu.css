@@ -21,7 +21,7 @@
     background: linear-gradient( rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url("https://www.cheapflights.co.uk/news/wp-content/uploads/2016/03/11-photos-that-prove-cherry-blossom-season-is-the-01-620x414.jpg");
 }
 
-.backMenuLink>a {
+.backMenuLink > a {
     color: #444444;
 }
 
