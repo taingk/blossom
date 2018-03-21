@@ -1,10 +1,53 @@
-<div class="row homeCitation col-lg-12">
+<div>
     <div class="homeSlogan">
-        <span>Créer, éditer, supprimer rapidement en toute simplicité.</span>
-        <p class="homeCitationText">« Fleurissez avec Blossom »</p>
-        <p class="homeSignature">
-            - L’équipe Blossom.
-        </p>
+        <h2 style="text-align: center; color: black">Six raisons d'utiliser <span style="color: #fc4348">Blossom</span></h2>
+        <hr style="width: 30%">
+        <div class="sixReasons col-lg-6" style="margin: 0 auto;">
+            <div class="row">
+                <div class="col-lg-3 boxFigure">
+                    <div class="content">
+                        <figure class="homeFigure">
+                            <img src="../../public/img/brushIcon.png" class="homeFeaturesImg" alt=".." title="...">
+                            <figcaption>De nombreux design</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-3 boxFigure">
+                    <div class="content">
+                        <figure class="homeFigure">
+                            <img src="../../public/img/securityIcon.png" class="homeFeaturesImg" alt=".." title="...">
+                            <figcaption>De la sécurité</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-3 boxFigure">
+                    <div class="content">
+                        <figure class="homeFigure">
+                            <img src="../../public/img/perfIcon.png" class="homeFeaturesImg" alt=".." title="...">
+                            <figcaption>Des performances</figcaption>
+                        </figure>
+                    </div>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-lg-3 boxFigure">
+                    <div class="content">
+                        <figure class="homeFigure">
+                            <img src="../../public/img/thumbUpIcon.png" class="homeFeaturesImg" alt=".." title="...">
+                            <figcaption>Facile d’utilisation</figcaption>
+                        </figure>                
+                    </div>
+                </div>
+                <div class="col-lg-3 boxFigure">
+                    <div class="content">
+                    </div>
+                </div>
+                <div class="col-lg-3 boxFigure">
+                    <div class="content">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
