@@ -3,6 +3,7 @@
 class OrdersController {
 
     public function indexAction( $aParams ) {
+        $oView = new View("orders", "back");
 
     }
 

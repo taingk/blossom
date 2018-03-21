@@ -3,7 +3,8 @@
 class CommentsController {
 
     public function indexAction( $aParams ) {
-
+        $oView = new View("comments", "back");
+        
     }
 
     public function formAction( $aParams ) {

@@ -3,6 +3,7 @@
 class UsersController {
 
     public function indexAction( $aParams ) {
+        $oView = new View("users", "back");
 
     }
 
