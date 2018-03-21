@@ -1,5 +1,5 @@
 .headerBar {
-    /* background-color: #FBFBFB; */
+    background-color: #FBFBFB;
     height: 50px;
 }
 
@@ -14,10 +14,11 @@
 .frontCartInput,
 .frontSearchIcon,
 .frontSearchInput {
-    background-color: #D8475D;
+    background-color: #FBFBFB;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
+    border-bottom: 1px solid #444444;
     width: 100%;
 }
 
@@ -26,7 +27,7 @@
     height: 27px;
     width: 27px;
     background-size: cover;
-    border: 1px solid #D8475D;
+    border: 1px solid #FBFBFB;
     cursor: pointer;
 }
 
@@ -35,7 +36,7 @@
     height: 40px;
     width: 40px;
     background-size: cover;
-    border: 1px solid #D8475D;
+    border: 1px solid #FBFBFB;
     cursor: pointer;
 }
 
@@ -50,4 +51,5 @@
 
 ul li a {
     font-size: smaller;
+    color: #444444;
 }

@@ -22,13 +22,16 @@
     color: black;
 }
 
-.frontIconCol{
+.iconfront{
     width: 65%;
-    height: 100%;
 }
 
 ul li a:hover{
     position: absolute;
     width: 200px;
     display: none;
+}
+
+body{
+    background-color: black;
 }
