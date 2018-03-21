@@ -40,10 +40,18 @@
                 </div>
                 <div class="col-lg-3 boxFigure">
                     <div class="content">
+                        <figure class="homeFigure">
+                            <img src="../../public/img/mouseIcon.png" class="homeFeaturesImg" alt=".." title="...">
+                            <figcaption>Prêt en un clic</figcaption>
+                        </figure>
                     </div>
                 </div>
                 <div class="col-lg-3 boxFigure">
                     <div class="content">
+                        <figure class="homeFigure homeMobile">
+                            <img src="../../public/img/phoneIcon.png" class="homeFeaturesImg" alt=".." title="...">
+                            <figcaption>Responsive mobile</figcaption>
+                        </figure>            
                     </div>
                 </div>
             </div>
