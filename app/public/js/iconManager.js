@@ -4,14 +4,14 @@ class iconManager {
     }
 
     setIcon() {
-        document.querySelectorAll('[data-icon]').forEach(oElement => {
-            let sIcon = oElement.dataset.icon;
+        document.querySelectorAll('[data-icon]').forEach(element => {
+            let sIcon = element.dataset.icon;
 
-            oElement.style.backgroundImage = `url(/public/icon/${sIcon}.svg)`;
-            oElement.style.backgroundRepeat = `no-repeat`;
-            oElement.style.backgroundSize = `cover`;
-            oElement.style.height = '40px';
-            oElement.style.width = '40px';
+            element.style.backgroundImage = `url(/public/icon/${sIcon}.svg)`;
+            element.style.backgroundRepeat = `no-repeat`;
+            element.style.backgroundSize = `cover`;
+            element.style.height = '40px';
+            element.style.width = '40px';
         });
     }
 }

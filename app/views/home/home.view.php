@@ -17,7 +17,7 @@
 </div>
 
 <div class="row homeFeatures col-lg-12">
-    <div class="col-lg-12 col-sm-12 col-xs-12 margin-auto">
+    <div class="col-xxs-12 margin-auto">
         <div class="row center-content">
             <div class="homeGeneral homeBrush">
                 <figure class="homeFigure">
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-12 col-sm-12 col-xs-12 margin-auto">
+    <div class="col-xxs-12 margin-auto">
         <div class="row center-content">
             <div class="homeGeneral homeThumbUp">
                 <figure class="homeFigure">
