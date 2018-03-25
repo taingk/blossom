@@ -11,6 +11,7 @@
             <ul>
                 <li class="navMenuList"><a href="" id="documentation">Documentation</a></li>
                 <li class="navMenuList"><a href="" id="whoarewe">Qui sommes-nous ?</a></li>
+                <li class="navMenuList"><a href="" id="download">Télécharger</a></li>
             </ul>
         </div>        
     </div>
@@ -23,9 +24,9 @@
         <div class="col-sm-10">
             <span>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</span>
         </div>
-        <div class="col-sm-10">
+        <!-- <div class="col-sm-10">
             <a href="">Download</a>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- <div class="container">
