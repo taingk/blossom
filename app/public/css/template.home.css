@@ -33,6 +33,7 @@ header {
     .navSlideAnimation {
         animation: navSlideDown 420ms cubic-bezier(.165,.84,.44,1);
         background-color: white;
+        box-shadow: 0 1px 1px rgba(0,0,0,.15);
     }
 
     nav .blackLink {
@@ -97,6 +98,11 @@ header {
         background-color: #fbfaf4;
         min-height: 175px;
         box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
+        padding: 0 20px;
+    }
+
+    .homeFigure {
+        margin: 0;
         padding: 20px;
     }
 
@@ -277,8 +283,38 @@ header {
     background-color:#94314063
     }
     
+    #example2 {
+        background-image: url('https://bertoost.com/assets/images/header-2-bg.jpg');
+        background-position: center center;
+        background-size: cover;
+        height: 600px;
+    }
+
+
+    #example2 .windowsFrame {
+        height: 18px;
+        padding: 0 7px;
+        border-radius: 4px 4px 0 0;
+        background: #DDD;
+        cursor: default;
+    }
+
+    #example2 .windowsControl {
+        float: left;
+        width: 6px;
+        height: 6px;
+        margin-top: 7px;
+        margin-right: 3px;
+        border-radius: 50%;
+        background: #AEA2A3;
+    }
+
+    #example2 .windowsContent img {
+        max-width: 100%;
+    }
+
     footer {
-    width:100%
+        width:100%
     }
     
     footer .homeBar {
