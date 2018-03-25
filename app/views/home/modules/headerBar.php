@@ -19,7 +19,7 @@
 <div class="container" id="container-center">
     <div class="row">
         <div class="col-sm-10" style="font-size: 3rem;">
-            <span>YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES</span>
+            <span>ICI ON VA METTRE NOTRE PHRASE D'ACCROCHE....</span>
         </div>
         <div class="col-sm-10">
             <span>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</span>

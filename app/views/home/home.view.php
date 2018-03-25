@@ -3,7 +3,7 @@
     <hr style="width: 30%">
     <div class="sixReasons col-lg-6" style="margin: 0 auto;">
         <div class="row">
-            <div class="col-lg-3 boxFigure">
+            <div class="col-lg-4 boxFigure">
                 <div class="content">
                     <figure class="homeFigure">
                         <img src="../../public/img/brushIcon.png" class="homeFeaturesImg" alt=".." title="...">
@@ -13,7 +13,7 @@
                     <p style="color: black;font-size: 14px;text-align: justify;">Referente penetrali timebantur in disceret conscii timebantur Marcio susurrasset vitae in interdum Amphiarao disceret etiam disceret susurrasset arcanorum susurrasset postridie Marcio referente secreto velut vitae secreto nullo secreto praesente vatibus quondam postridie conscii ut vitae conscii postridie aurem siquid paterfamilias velut siquid inclitis vatibus aut parietes timebantur aurem parietes ideoque.</p>
                 </div>
             </div>
-            <div class="col-lg-3 boxFigure">
+            <div class="col-lg-4 boxFigure">
                 <div class="content">
                     <figure class="homeFigure">
                         <img src="../../public/img/securityIcon.png" class="homeFeaturesImg" alt=".." title="...">
@@ -23,7 +23,7 @@
                     <p style="color: black;font-size: 14px;text-align: justify;">Referente penetrali timebantur in disceret conscii timebantur Marcio susurrasset vitae in interdum Amphiarao disceret etiam disceret susurrasset arcanorum susurrasset postridie Marcio referente secreto velut vitae secreto nullo secreto praesente vatibus quondam postridie conscii ut vitae conscii postridie aurem siquid paterfamilias velut siquid inclitis vatibus aut parietes timebantur aurem parietes ideoque.</p>
                 </div>
             </div>
-            <div class="col-lg-3 boxFigure">
+            <div class="col-lg-4 boxFigure">
                 <div class="content">
                     <figure class="homeFigure">
                         <img src="../../public/img/perfIcon.png" class="homeFeaturesImg" alt=".." title="...">
@@ -35,7 +35,7 @@
             </div>                
         </div>
         <div class="row">
-            <div class="col-lg-3 boxFigure">
+            <div class="col-lg-4 boxFigure">
                 <div class="content">
                     <figure class="homeFigure">
                         <img src="../../public/img/thumbUpIcon.png" class="homeFeaturesImg" alt=".." title="...">
@@ -45,7 +45,7 @@
                     <p style="color: black;font-size: 14px;text-align: justify;">Referente penetrali timebantur in disceret conscii timebantur Marcio susurrasset vitae in interdum Amphiarao disceret etiam disceret susurrasset arcanorum susurrasset postridie Marcio referente secreto velut vitae secreto nullo secreto praesente vatibus quondam postridie conscii ut vitae conscii postridie aurem siquid paterfamilias velut siquid inclitis vatibus aut parietes timebantur aurem parietes ideoque.</p>
                 </div>
             </div>
-            <div class="col-lg-3 boxFigure">
+            <div class="col-lg-4 boxFigure">
                 <div class="content">
                     <figure class="homeFigure">
                         <img src="../../public/img/mouseIcon.png" class="homeFeaturesImg" alt=".." title="...">
@@ -55,7 +55,7 @@
                     <p style="color: black;font-size: 14px;text-align: justify;">Referente penetrali timebantur in disceret conscii timebantur Marcio susurrasset vitae in interdum Amphiarao disceret etiam disceret susurrasset arcanorum susurrasset postridie Marcio referente secreto velut vitae secreto nullo secreto praesente vatibus quondam postridie conscii ut vitae conscii postridie aurem siquid paterfamilias velut siquid inclitis vatibus aut parietes timebantur aurem parietes ideoque.</p>
                 </div>
             </div>
-            <div class="col-lg-3 boxFigure">
+            <div class="col-lg-4 boxFigure">
                 <div class="content">
                     <figure class="homeFigure homeMobile">
                         <img src="../../public/img/phoneIcon.png" class="homeFeaturesImg" alt=".." title="...">
