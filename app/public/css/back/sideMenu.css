@@ -5,14 +5,6 @@
     margin: 0;
 }
 
-.backLeftMenu {
-    margin-top: -75px;
-    transition: all 0.5s ease-out;
-    background-color: #FDFBFB;
-    text-align: left;
-    box-shadow: 1px 1px 12px #555;
-}
-
 .profilePicture {
     height: 70px;
     width: 70px;
@@ -29,7 +21,7 @@
     background: linear-gradient( rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url("https://www.cheapflights.co.uk/news/wp-content/uploads/2016/03/11-photos-that-prove-cherry-blossom-season-is-the-01-620x414.jpg");
 }
 
-.backMenuLink>a {
+.backMenuLink > a {
     color: #444444;
 }
 
@@ -41,6 +33,15 @@ main .row section {
     height: calc(100% - 50px);
     margin-bottom: auto;
     margin-top: auto;
+}
+
+.backLeftMenu {
+    margin-top: -75px;
+    background-color: #FDFBFB;
+    text-align: left;
+    box-shadow: 1px 1px 12px #555;
+    max-width: calc(2/12*100%);
+    flex: 0 0 calc(2/12*100%);
 }
 
 @keyframes fadeIn {
@@ -55,22 +56,39 @@ main .row section {
 @keyframes fadeOut {
     from {
         opacity: 1;
+        visibility: visible;
     }
     to {
         opacity: 0;
     }
 }
 
-.not-visible {
-    display: none;
+.invisible {
     animation: fadeOut 1s;
+    visibility: hidden;
 }
 
 .visible {
     animation: fadeIn 1s;
 }
 
-.fixed {
-    position: fixed;
-    height: 100%;
+
+@media (max-width: 975px) {
+    #toggleMenu {
+        display: block;
+        float: right;
+    }
+
+    .backLeftMenu {
+        position: fixed;
+        height: 100%;
+        max-width: calc(5/12*100%);
+        flex: 0 0 calc(5/12*100%);
+    }
+
+    #backView {
+        max-width: calc(12/12*100%);
+        flex: 0 0 calc(12/12*100%);
+    }
+
 }

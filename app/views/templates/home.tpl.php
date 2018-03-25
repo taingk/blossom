@@ -31,7 +31,6 @@
         <?php include("views/home/footer.view.php"); ?>
     </footer>
 
-    <script src="/public/js/lib/jquery.min.js"></script>
     <script src="/public/js/iconManager.js"></script>
 </body>
 

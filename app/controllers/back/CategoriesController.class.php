@@ -3,6 +3,7 @@
 class CategoriesController {
 
     public function indexAction( $aParams ) {
+        $oView = new View("categories", "back");
 
     }
 

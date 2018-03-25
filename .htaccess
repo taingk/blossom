@@ -1,3 +1,7 @@
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !^/app/
 RewriteRule ^(.*)$ /app/$1 [QSA]
+AuthName "Page d'administration"
+AuthType Basic
+AuthUserFile "/home/dev.blossoom.ovh/public_html/.htpasswd"
+Require valid-user
