@@ -2,6 +2,9 @@
 
 class UsersController {
 
+    /*
+    * View listing d'un utilisateur 
+    */ 
     public function indexAction( $aParams ) {
         $oView = new View("users", "back");
 
@@ -32,6 +35,20 @@ class UsersController {
     * Update d'un utilisateur en bdd 
     */ 
     public function updateAction( $aParams ) {
+
+    }
+
+    /*
+    * Formulaire d'édition des droits utilisateur 
+    */ 
+    public function updateFormRightsAction( $aParams ) {
+
+    }
+
+    /*
+    * Update des droits utilisateur en bdd 
+    */ 
+    public function updateRightsAction( $aParams ) {
 
     }
 
