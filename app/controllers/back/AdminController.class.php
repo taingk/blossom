@@ -3,14 +3,10 @@
 class AdminController {    
     
     /*
-    * Formulaire connexion admnistrateur
-    */
+    * View profil administrateur dans la bdd
+    */ 
     public function indexAction( $aParams ) {
-        $oView = new View("adminLogIn", "back");
 
-        if ($_POST['email'] && $_POST['pwd']) {
-            header('Location: /back/'); 
-        }
     }
 
     /*
@@ -48,13 +44,6 @@ class AdminController {
     * Update de l'administrateur dans la bdd
     */ 
     public function updateAction( $aParams ) {
-
-    }
-
-    /*
-    * View profil administrateur dans la bdd
-    */ 
-    public function profileAction( $aParams ) {
 
     }
 
