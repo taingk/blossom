@@ -1,6 +1,6 @@
 .headerBar {
-    background-color: #FBFBFB;
-    height: 50px;
+    background-color: #D8475D;
+    height: 59px;
     position: relative;
 }
 
@@ -15,11 +15,11 @@
 .frontCartInput,
 .frontSearchIcon,
 .frontSearchInput {
-    background-color: #FBFBFB;
+    background-color: #D8475D;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
-    border-bottom: 1px solid #444444;
+    border-bottom: 1px solid #FBFBFB;
     width: 100%;
 }
 
@@ -28,7 +28,7 @@
     height: 27px;
     width: 27px;
     background-size: cover;
-    border: 1px solid #FBFBFB;
+    border: 1px solid #D8475D;
     cursor: pointer;
 }
 
@@ -37,7 +37,7 @@
     height: 40px;
     width: 40px;
     background-size: cover;
-    border: 1px solid #FBFBFB;
+    border: 1px solid #D8475D;
     cursor: pointer;
 }
 
@@ -52,26 +52,62 @@
 
 .link{
     font-size: smaller;
-    color: #444444;
     border: none;
+    background-color: #D8475D;
+    cursor: pointer;
 }
 
 .divLink{
+    padding: 20px;
+}
+
+.menuSlideDownLeft{
+    background-color: #E16074;
+    text-align: right;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.menuSlideDownRight{
+    background-color:#E16074;
+    text-align: left;
+    /* padding-top: 5%;
+    padding-bottom: 5%; */
+}
+
+/* .menuSlideDownLeft,
+.menuSlideDownRight,
+.menuSlideDownLeft > div > span,
+.menuSlideDownRight > a{
+    display: none;
+} */
+
+.divLink:hover, 
+.link:hover,
+.menuSlideDownLeft > div > span,
+.menuSlideDownRight > a {
+    background-color: #E16074;
+    /* display: block;  */
+}
+
+hr{
+    position: absolute;
+    transform: rotate(90deg);
+    width: 8%;
+    right: 50%;
+}
+
+.frontMenuIcon1{
+    width: 90px;
     padding: 10px;
-    margin-top: auto;
-    width: 200px;
-    cursor: pointer;
-
-}
-.content{
-    background-color: grey;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-a{
-    color: #444444;
 }
 
-span{
-    color: #444444;
+.frontMenuIcon2{
+    width: 95px;
+    padding: 10px;
+}
+
+.frontMenuIcon3{
+    width: 120px;
+    padding: 10px;
 }

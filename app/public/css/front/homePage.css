@@ -19,10 +19,15 @@
 }
 
 .savoir-plus{
-    color: black;
-}
-
-.frontIconCol{
-    width: 65%;
+    position: absolute;
+    color: #66BBFF;
+    left: 40%;
+    right: 40%;
+    width: 20%;
+    top: 90%;
+    height: 8%;
+    font-size: 1.1em;
+    background-color: #FAFAFA;
+    border-radius: 25px;
 }
 
