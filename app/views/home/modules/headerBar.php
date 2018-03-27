@@ -19,7 +19,7 @@
 <div class="container" id="container-center">
     <div class="row">
         <div class="col-sm-10">
-            <span>Vivez l'expérience <span class="rose">Blossom</span></span>
+            <span>Vivez l'expérience Blossom</span>
         </div>
         <div class="col-sm-10">
             <span>Imaginez, Créez, Sublimez</span>
