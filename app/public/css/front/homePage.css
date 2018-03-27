@@ -24,10 +24,17 @@
     left: 40%;
     right: 40%;
     width: 20%;
-    top: 90%;
+    top: 110%;
     height: 8%;
     font-size: 1.1em;
     background-color: #FAFAFA;
     border-radius: 25px;
 }
+h1{
+    color: #444444;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 50px;
+}
+
 

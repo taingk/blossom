@@ -1,4 +1,5 @@
 <section class="frontImgHeader row col-xxs-12">
+        <h1 class="col-xxs-12">La puissance entre <br> vos mains</h1>
         <img class="frontImg gutters" src="../../public/img/bigIphoneXaccueil.jpeg">
         <input class="savoir-plus" type="submit" value="En savoir plus">
 </section>
