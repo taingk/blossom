@@ -10,28 +10,22 @@ class ProductsController {
     }
 
     /*
+    * View profil produit
+    */ 
+    public function profileAction( $aParams ) {
+
+    }
+
+    /*
     * Formulaire d'ajout de produit
     */ 
-    public function formAction( $aParams ) {
-        $oView = new View("productsForm", "back");
-    }
-    
-    /*
-    * Ajout d'un produit en bdd 
-    */ 
     public function addAction( $aParams ) {
+        $oView = new View("productsAdd", "back");
 
     }
 
     /*
     * Formulaire d'édition d'un produit 
-    */ 
-    public function updateFormAction( $aParams ) {
-
-    }
-
-    /*
-    * Update d'un produit en bdd 
     */ 
     public function updateAction( $aParams ) {
 
@@ -41,6 +35,13 @@ class ProductsController {
     * Suppression d'un produit en bdd
     */ 
     public function deleteAction( $aParams ) {
+
+    }
+
+    /*
+    * Envoie les données à add/update/delete
+    */ 
+    public function saveAction( $aParams ) {
 
     }
     

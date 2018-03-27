@@ -9,7 +9,7 @@ class IndexController {
         $oView = new View("adminLogIn", "back");
 
         if ($_POST['email'] && $_POST['pwd']) {
-            header('Location: /back/'); 
+            header('Location: /back/dashboard'); 
         }
     }
    

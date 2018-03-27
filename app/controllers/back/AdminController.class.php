@@ -3,25 +3,16 @@
 class AdminController {    
     
     /*
-    * View profil administrateur dans la bdd
-    */ 
-    public function indexAction( $aParams ) {
-
-    }
-
-    /*
     * Formulaire inscription administrateur
     */
-    public function formAction( $aParams ) {
-        $oView = new View("adminForm", "back");
+    public function indexAction( $aParams ) {
+        $oView = new View("adminAdd", "back");
     }
 
     /*
-    * Ajout de l'administrateur dans la bdd
+    * Envoie les données à add
     */ 
-    public function addAction( $aParams ) {
-        $oView = new View("adminAdd", "back");
-        
+    public function saveAction( $aParams ) {       
         $oUser = new Users();
         // $oUser->setFirstname($_POST['firstname']);
 		// $oUser->setLastname($_POST['lastname']);
@@ -33,18 +24,4 @@ class AdminController {
 		// $oUser->save();
     }
     
-    /*
-    * Formulaire update de l'administrateur
-    */ 
-    public function updateFormAction( $aParams ) {
-
-    }
-
-    /*
-    * Update de l'administrateur dans la bdd
-    */ 
-    public function updateAction( $aParams ) {
-
-    }
-
 }

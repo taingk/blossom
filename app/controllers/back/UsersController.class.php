@@ -3,7 +3,7 @@
 class UsersController {
 
     /*
-    * View listing d'un utilisateur 
+    * View listing des utilisateurs
     */ 
     public function indexAction( $aParams ) {
         $oView = new View("users", "back");
@@ -11,23 +11,16 @@ class UsersController {
     }
 
     /*
+    * View profil utilisateur
+    */ 
+    public function profileAction( $aParams ) {
+
+    }
+
+    /*
     * Formulaire d'ajout utilisateur 
     */ 
-    public function formAction( $aParams ) {
-
-    }
-
-    /*
-    * Ajout d'un utilisateur en bdd 
-    */ 
     public function addAction( $aParams ) {
-
-    }
-
-    /*
-    * Formulaire d'édition d'un utilisateur 
-    */ 
-    public function updateFormAction( $aParams ) {
 
     }
 
@@ -35,13 +28,6 @@ class UsersController {
     * Update d'un utilisateur en bdd 
     */ 
     public function updateAction( $aParams ) {
-
-    }
-
-    /*
-    * Formulaire d'édition des droits utilisateur 
-    */ 
-    public function updateFormRightsAction( $aParams ) {
 
     }
 
@@ -58,5 +44,12 @@ class UsersController {
     public function deleteAction( $aParams ) {
 
     }
-    
+
+    /*
+    * Envoie les données à add/update/delete
+    */ 
+    public function saveAction( $aParams ) {
+
+    }
+
 }

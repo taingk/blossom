@@ -12,14 +12,14 @@ class OrdersController {
     }
 
     /*
-    * Formulaire d'édition d'une commande
+    * View profil commande
     */ 
-    public function updateFormAction( $aParams ) {
+    public function profileActioshown( $aParams ) {
 
     }
 
     /*
-    * Update d'une commande en bdd 
+    * Formulaire d'édition d'une commande
     */ 
     public function updateAction( $aParams ) {
 
@@ -29,6 +29,13 @@ class OrdersController {
     * Suppression d'une commande en bdd 
     */ 
     public function deleteAction( $aParams ) {
+
+    }
+
+    /*
+    * Envoie les données à update/delete
+    */ 
+    public function saveAction( $aParams ) {
 
     }
     

@@ -12,14 +12,14 @@ class CommentsController {
     }
 
     /*
-    * Formulaire d'ajout de commentaire
+    * View profil commentaire
     */ 
-    public function formAction( $aParams ) {
+    public function profileAction( $aParams ) {
 
     }
 
     /*
-    * Ajout d'un commentaire en bdd 
+    * Formulaire d'ajout de commentaire
     */ 
     public function addAction( $aParams ) {
 
@@ -27,14 +27,8 @@ class CommentsController {
 
     /*
     * Formulaire d'édition d'un commentaire 
-    */ 
-    public function updateFormAction( $aParams ) {
-
-    }
-
-    /*
-    * Update d'un commentaire en bdd 
-    */ 
+    * Edite, accepte et refuse un commentaire
+    */
     public function updateAction( $aParams ) {
 
     }
@@ -45,5 +39,12 @@ class CommentsController {
     public function deleteAction( $aParams ) {
 
     }
-    
+
+    /*
+    * Envoie les données à add/update/delete
+    */ 
+    public function saveAction( $aParams ) {
+
+    }
+
 }

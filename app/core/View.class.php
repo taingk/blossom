@@ -4,7 +4,7 @@ class View {
     private $sView;
 	private $sTpl;
 	private $aData = [];
-	private $aNoInclude = ["adminForm", "adminAdd", "adminLogIn"];
+	private $aNoInclude = ["adminAdd", "adminLogIn"];
 
 	public function __construct( $sView, $sTpl ) {
 		$this->sView = $sView;

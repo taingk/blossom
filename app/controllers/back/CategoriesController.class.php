@@ -11,14 +11,14 @@ class CategoriesController {
     }
 
     /*
-    * Formulaire d'ajout de catégorie 
+    * View profil categorie
     */ 
-    public function formAction( $aParams ) {
+    public function profileAction( $aParams ) {
 
     }
 
-    /*
-    * Ajout d'une catégorie en bdd 
+    /*  
+    * Formulaire d'ajout de catégorie 
     */ 
     public function addAction( $aParams ) {
 
@@ -27,13 +27,7 @@ class CategoriesController {
     /*
     * Formulaire d'édition d'une catégorie 
     */ 
-    public function updateFormAction( $aParams ) {
 
-    }
-
-    /*
-    * Update d'une catégorie en bdd 
-    */ 
     public function updateAction( $aParams ) {
 
     }
@@ -42,6 +36,13 @@ class CategoriesController {
     * Suppression d'une catégorie en bdd
     */ 
     public function deleteAction( $aParams ) {
+
+    }
+
+    /*
+    * Envoie les données à add/update/delete
+    */ 
+    public function saveAction( $aParams ) {
 
     }
     
