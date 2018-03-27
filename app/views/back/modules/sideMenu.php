@@ -16,8 +16,8 @@
                 </div>
             </div>
         </li>
-        <li class="backMenuLink" id="back">
-            <a href="/back">Tableau de bord</a>
+        <li class="backMenuLink" id="dashboard">
+            <a href="/back/dashboard">Tableau de bord</a>
         </li>
         <li class="backMenuLink" id="categories">
             <a href="/back/categories">Categories</a>
