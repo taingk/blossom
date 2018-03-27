@@ -19,26 +19,12 @@ class UserController {
     /*
     * View formulaire création de compte utilisateur
     */ 
-    public function formAction( $aParams ) {
-
-    }
-    
-    /*
-    * Ajout compte utilisateur en bdd
-    */ 
     public function addAction( $aParams ) {
 
     }
 
     /*
     * View formulaire édition profil utilisateur
-    */ 
-    public function updateFormAction( $aParams ) {
-
-    }
-
-    /*
-    * Update profil utilisateur en bdd
     */ 
     public function updateAction( $aParams ) {
 
@@ -51,4 +37,10 @@ class UserController {
 
     }
     
+    /*
+    * Envoie les données à add/update/delete
+    */ 
+    public function saveAction( $aParams ) {
+
+    }
 }
