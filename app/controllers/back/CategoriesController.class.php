@@ -10,7 +10,7 @@ class CategoriesController {
 
     }
 
-    /*
+    /*  
     * View profil categorie
     */ 
     public function profileAction( $aParams ) {
@@ -27,7 +27,6 @@ class CategoriesController {
     /*
     * Formulaire d'édition d'une catégorie 
     */ 
-
     public function updateAction( $aParams ) {
 
     }
