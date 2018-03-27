@@ -12,7 +12,7 @@
                     </span>
                     <span>
                         <a href="/"><em>> Retour sur le site</em></a>
-                    </span>                
+                    </span>
                 </div>
             </div>
         </li>

@@ -10,7 +10,7 @@ class sideMenu {
 
     setColor(sId) {
         const element = document.getElementById(sId);
-        console.log(sId);
+
         element.classList.add('rose-bg');
         element.children[0].classList.add('blanc');
     }

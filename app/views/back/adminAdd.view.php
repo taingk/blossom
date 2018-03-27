@@ -1,7 +1,7 @@
 <section class="container">
     <h1>Création du compte administrateur</h1>
     
-    <form class="formTpl col-md-10" action="/back/admin/add" method="post">
+    <form class="formTpl col-md-10" action="/back" method="post">
 
         <label><p>Prénom
         <input type="text" name="firstname" placeholder="Jean" /></p></label>

@@ -1,7 +1,7 @@
 <section class="container">
     <h1>Connexion administrateur</h1>
     
-    <form class="formTpl col-md-10" action="/back/admin/" method="post">
+    <form class="formTpl col-md-10" action="/back/dashboard" method="post">
 
         <label><p>E-mail
         <input type="text" name="email" placeholder="exemple@email.com" /></p></label>
