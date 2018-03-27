@@ -165,19 +165,12 @@ nav .navMenuList {
     }
 
     footer {
-        width:100%
+        height: 500px;
+        background-color: #0d0d0d;
+        padding: 50px 0;
     }
-    
-    footer .homeBar {
-    padding:20px
+
+    footer h4, footer .formContainer {
+        text-align: left;
     }
-    
-    footer span {
-    font-size:smaller
-    }
-    
-    .homeBar .subMenuList {
-    height:50px
-    }
-    
  
