@@ -2,27 +2,46 @@
 
 class CategoriesController {
 
+    /*
+    * View listing de categories 
+    */ 
     public function indexAction( $aParams ) {
+        $oView = new View("categories", "back");
 
     }
 
-    public function formAction( $aParams ) {
+    /*  
+    * View profil categorie
+    */ 
+    public function profileAction( $aParams ) {
 
     }
-    
+
+    /*  
+    * Formulaire d'ajout de catégorie 
+    */ 
     public function addAction( $aParams ) {
 
     }
 
-    public function updateFormAction( $aParams ) {
-
-    }
-
+    /*
+    * Formulaire d'édition d'une catégorie 
+    */ 
     public function updateAction( $aParams ) {
 
     }
 
+    /*
+    * Suppression d'une catégorie en bdd
+    */ 
     public function deleteAction( $aParams ) {
+
+    }
+
+    /*
+    * Envoie les données à add/update/delete
+    */ 
+    public function saveAction( $aParams ) {
 
     }
     
