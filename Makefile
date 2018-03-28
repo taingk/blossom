@@ -17,4 +17,4 @@ restore:
 r_apache:
 	docker exec apache_projet_annuel service apache2 restart
 pull:
-	git pull && cp ../config/conf.inc.php app/conf.inc.php && cp ../config/Makefile .
+	git pull && cp ../config/conf.inc.php app/conf.inc.php && cp ../config/Makefile . && cp ../config/.htaccess .
