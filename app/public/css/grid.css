@@ -19,10 +19,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    /* align-items: center; */
 }
 
-.align-center {
+.row-is-centered {
     align-items: center;
 }
 

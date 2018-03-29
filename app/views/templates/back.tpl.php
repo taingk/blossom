@@ -36,7 +36,7 @@
             <!-- Side Menu -->
             <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <section id="backView" class="<?php if ( in_array($this->sView, $this->aNoInclude) ) echo 'is-centered'; else echo 'col-xxs-10' ?>">
+            <section id="backView" class="<?php if ( in_array($this->sView, $this->aNoInclude) ) echo 'is-h-centered'; else echo 'col-xxs-10' ?>">
                 <div class="<?php if ( !in_array($this->sView, $this->aNoInclude) ) echo 'col-lg-11'; ?> viewContent">
                     <div class="row">
                         <?php include("views/back/" . $this->sView . ".view.php") ?>

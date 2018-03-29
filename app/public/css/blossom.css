@@ -19,6 +19,7 @@ h1 {
 
 p {
     padding: 5px;
+    font-size: 100%;
 }
 
 .is-white {
@@ -55,8 +56,12 @@ p {
     float: right;
 }
 
-.is-centered {
+.is-h-centered {
     margin: 0 auto;
+}
+
+.is-v-centered {
+    margin: auto 0;
 }
 
 .text-is-left {
@@ -71,9 +76,18 @@ p {
     text-align: center !important;
 }
 
+.text-is-justified {
+    text-align: justify !important;
+}
+
 .position-is-fixed {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
+}
+
+.img-is-auto {
+    width: 100%;
+    height: auto;
 }

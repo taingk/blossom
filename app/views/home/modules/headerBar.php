@@ -4,7 +4,7 @@
         <span class="navicon"></span>
     </label>
     <ul class="menu">
-        <section class="container row align-center">
+        <section class="container row row-is-centered">
             <li class="col-xxs-2">
                 <a href="#">
                     <img src="public/img/logo_blanc.png" alt="brand logo" id="brand-logo">

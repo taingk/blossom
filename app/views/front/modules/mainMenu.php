@@ -3,7 +3,7 @@
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
     </label>
-    <ul class="row align-center menu">
+    <ul class="row row-is-centered menu">
         <li class="col-xs-1 col-lg-3">
         </li>
         <li class="col-xs-1">
