@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../public/font/AvenirNextRegular.otf') format('truetype');
+}
+
+* {
+    font-family: "Avenir";
+    color: #FDFBFB;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+p {
+    padding: 5px;
+}
+
+.is-white {
+    color: #FDFBFB !important; 
+}
+
+.is-pink {
+    color: #D8475D !important;
+}
+
+.is-grey {
+    color: #555 !important;
+}
+
+.is-black {
+    color: #363636 !important;
+}
+
+.bg-is-pink {
+    background-color: #D8475D !important;
+}
+
+.box-has-shadow {
+    box-shadow: 1px 1px 12px #555;
+}
+
+.is-left {
+    padding-left: 15px;
+    float: left;
+}
+
+.is-right {
+    padding-right: 15px;
+    float: right;
+}
+
+.is-centered {
+    margin: 0 auto;
+}
+
+.text-is-left {
+    text-align: left !important;
+}
+
+.text-is-right {
+    text-align: right !important;
+}
+
+.text-is-centered {
+    text-align: center !important;
+}
+
+.position-is-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}

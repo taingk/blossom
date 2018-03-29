@@ -5,100 +5,74 @@
 */
 
 header {
-    /* background-image:url('../img/homeBackground.png'); */
-    background-position:center center;
-    background-size:cover;
-    height:950px;
+    height: 950px;
     background-color: #d8475d;
 }
 
-nav {
-    position:fixed;
-    width:100%;
-    z-index:1
+.headerBar {
+    height: 50px;
 }
 
-nav .container {
-    height:100%
+.headerBar ul {
+    list-style: none;
+    overflow: hidden;
 }
 
-nav .navbarBrand,nav .navbarMenu {
-    display:inline-block;
-    height:100%
+#brand-logo {
+    height: 20px;
+    cursor: pointer;
 }
 
-nav .navbarMenu {
-    float: right;
+.container-is-centered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-nav .navbarMenu ul {
-    /* display: none; */
+.title {
+    text-transform: uppercase;
+    font-size: 5vw;
 }
 
-nav .navbarMenu img {
-    height: 100%;
-    padding: 10px 0;
-    display:none;
+.subtitle {
+    text-transform: uppercase;
+    font-size: 2vw;
 }
 
-nav #logoBlossom {
-    height:100%;
-    padding:15px 0
-}
-
-nav .navMenuList {
-    float:left;
-    padding: 0 10px;
-}
-
-.importantDownloadBtn {
-    background-color: white;
+.white-download-btn {
+    background-color: #fbfbfb;
     padding: 10px;
     border-radius: 5px;
     color: #d8475d;
 }
 
-.navSlideAnimation {
-    animation: navSlideDown 420ms cubic-bezier(.165,.84,.44,1);
+.slide-animation {
+    animation: slide-down 420ms cubic-bezier(.165,.84,.44,1);
     background-color: #D8475D;
-    box-shadow: 0 1px 1px rgba(0,0,0,.15);
 }
 
-.navSlideDown {
-    -webkit-animation-name: navSlideDown;
-    animation-name: navSlideDown;
+.slide-down {
+    -webkit-animation-name: slide-down;
+    animation-name: slide-down;
 }
 
-@keyframes navSlideDown{
+@keyframes slide-down{
     0% {
-        transform:translateY(-100%)
+        transform: translateY(-100%);
     }
     100% {
-        transform:translateY(0)
+        transform: translateY(0);
     }
 }
 
-#container-center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+.headerBar .menu-btn:checked~.menu {
+    background-color: #D8475D;
+    padding-bottom: 5px; 
 }
-#container-center .col-sm-10 {
-    margin: 0 auto;
-}
-
-#container-center .col-sm-10:nth-child(1) {
-    font-size: 6rem;
-}
-
-#container-center .col-sm-10:nth-child(1) span {
-    text-transform: uppercase;
-}
-
 
 /*
  **************************************************
- ********************* FIRST SECTION **************
+ ***************** FIRST SECTION ******************
  ************************************************** 
 */
 
@@ -159,7 +133,6 @@ nav .navMenuList {
         color: white;
         padding: 12px;
         border: none;
-        float: left;
     }
 
     footer .col-sm-12 {

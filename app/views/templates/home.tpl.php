@@ -9,7 +9,7 @@
 
     <!-- General CSS -->
     <link rel="stylesheet" href="/public/css/grid.css">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/responsiveMenu.css">
     <link rel="stylesheet" href="/public/css/template.home.css">
 </head>
@@ -32,6 +32,7 @@
     </footer>
 
     <script src="/public/js/iconManager.js"></script>
+    <script src="/public/js/scrollDown.js"></script>
 </body>
 
 </html>

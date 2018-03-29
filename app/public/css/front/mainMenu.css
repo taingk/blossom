@@ -31,10 +31,6 @@
     cursor: pointer;
 }
 
-.frontMenu {
-    padding: 6px;
-}
-
 ul li a {
     font-size: smaller;
 }
