@@ -3,12 +3,12 @@
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
     </label>
-    <ul class="row row-is-centered menu">
+    <ul class="row center-in-row menu">
         <li class="col-xs-1 col-lg-3">
         </li>
         <li class="col-xs-1">
             <a href="/">
-                <img class="logo" src="public/img/logo.png">
+                <img class="logo" src="/public/img/logo.png">
             </a>
         </li>
         <li class="col-xs-2 col-lg-1">

@@ -22,8 +22,27 @@ p {
     font-size: 100%;
 }
 
+hr {
+    background-color: #dbdbdb;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: 1.5rem 0;
+}
+
+footer {
+    background-color: #D8475D;
+    height: 150px;
+    padding: 15px;
+}
+
+.bandeau {
+    padding: 75px 0;
+    margin: 75px 0;
+}
+
 .is-white {
-    color: #FDFBFB !important; 
+    color: #FDFBFB !important;  
 }
 
 .is-pink {
@@ -42,8 +61,18 @@ p {
     background-color: #D8475D !important;
 }
 
+.is-font-title {
+    font-size: 22px;
+}
+
 .box-has-shadow {
     box-shadow: 1px 1px 12px #555;
+}
+
+.in-center-box {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .is-left {

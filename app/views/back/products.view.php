@@ -27,14 +27,14 @@
         <div class="col-lg-6"></div>
         <div class="col-lg-1">
             <a href="#">
-                <img src="../../public/img/search.png" alt="" class="backSearch">
+                <img src="/public/img/search.png" alt="" class="backSearch">
             </a>
         </div>
     </article>
 
     <article class="row backListingProduits">
         <div class="col-lg-2">
-            <img src="../../public/img/iphoneXbackProduits.png" alt="" class="backProduitsImg">
+            <img src="/public/img/iphoneXbackProduits.png" alt="" class="backProduitsImg">
         </div>
         <div class="col-lg-2">
             <p class="backDescription">iPhone X Noir 254Go</p>
@@ -47,7 +47,7 @@
 
     <article class="row backListingProduits">
         <div class="col-lg-2">
-            <img src="../../public/img/iphone8backProduits.png" alt="" class="backProduitsImg">
+            <img src="/public/img/iphone8backProduits.png" alt="" class="backProduitsImg">
         </div>
         <div class="col-md-2">
             <p class="backDescription">iPhone 8 Noir 128Go</p>
@@ -62,7 +62,7 @@
 
     <article class="row backListingProduits">
         <div class="col-lg-2">
-            <img src="../../public/img/iphone7backProduits.png" alt="" class="backProduitsImg">
+            <img src="/public/img/iphone7backProduits.png" alt="" class="backProduitsImg">
         </div>
         <div class="col-md-2">
             <p class="backDescription">iPhone 7 Blanc 64Go</p>

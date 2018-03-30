@@ -1,5 +1,5 @@
-<nav class="row bgFooter">
-    <div class="col-xs-12 is-h-centered">
+<section class="container row">
+    <article class="col-xxs-12">
         <p>© 2018 Blossom. Powered by ESGI. All Rights Reserved.</p>
-    </div>
-</nav>
+    </article>
+</section>

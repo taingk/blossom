@@ -1,5 +1,7 @@
 class scrollDown {
     constructor() {
+        this.manageOffset();
+        window.addEventListener('resize', () => this.manageOffset());
         window.addEventListener('scroll', () => this.scrollFunction());
     }
 
@@ -13,6 +15,14 @@ class scrollDown {
         } else {
             eHeaderBar.classList.remove('slide-animation');
             eBtn.classList.remove('white-download-btn');
+        }
+    }
+
+    manageOffset() {
+        if ( window.innerWidth <= 768 ) {
+            document.getElementById('documentation').parentElement.classList.remove('offset-4');
+        } else {
+            document.getElementById('documentation').parentElement.classList.add('offset-4');
         }
     }
 

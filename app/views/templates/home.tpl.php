@@ -17,8 +17,8 @@
 <body>
 
     <header>
-        <!-- Header Bar -->
-        <?php include("views/home/modules/headerBar.php"); ?>
+        <!-- Header -->
+        <?php include("views/home/header.view.php"); ?>
     </header>
 
     <main>

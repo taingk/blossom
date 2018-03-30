@@ -23,12 +23,6 @@ header {
     cursor: pointer;
 }
 
-.container-is-centered {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 .title {
     text-transform: uppercase;
     font-size: 5vw;
@@ -67,7 +61,11 @@ header {
 
 .headerBar .menu-btn:checked~.menu {
     background-color: #D8475D;
-    padding-bottom: 5px; 
+    padding-bottom: 5px;
+}
+
+.menu-btn:checked~.menu + #documentation {
+    color: black !important;
 }
 
 /*
@@ -76,74 +74,48 @@ header {
  ************************************************** 
 */
 
-#example1 .introText {
-    padding: 12px 30px;
-    text-align: center;
-}
-
-#example1 .introText p {
-    font-size: 20px;
-}
-
-#example1 h2 {
-    text-align: center;
-}
-
-#greatLine {
-    width: 30%;
-}
-
-#example1 .boxFigure {
-    margin: 0 auto;
-}
-
-#example1 .homeFigure {
-    margin: 0;
-}
-
-#example1 .homeFeaturesImg {
+.feature-img {
     width: 20%;
     padding: 15px 0;
 }
 
+.feature-content {
+    width: 85%;
+    margin: 0 auto;
+}
 
-    .content {
-        width: 90%;
-        margin: 0 auto;
-        background-color: white;
-        min-height: 175px;
-        padding: 0 20px;
-    }
+/*
+ **************************************************
+ ******************** FOOTER **********************
+ ************************************************** 
+*/
 
-    footer {
-        height: 300px;
-        background-color: #e4e4e4;
-        padding: 50px 0;
-    }
+footer {
+    background-color: #e4e4e4;
+    height: 200px;
+    padding: 15px;
+}
 
-    footer h4, footer .formContainer {
-        text-align: left;
-    }
+/* footer h4, footer .formContainer {
+    text-align: left;
+}
 
+footer button {
+    height: 50px;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border: none;
+}
 
+footer .col-sm-12 {
+    padding: 20px 0;
+}
 
-    footer button {
-        height: 50px;
-        background-color: black;
-        color: white;
-        padding: 12px;
-        border: none;
-    }
-
-    footer .col-sm-12 {
-        padding: 20px 0;
-    }
-
-
-        footer #inputEmail {
-            height: 50px;
-            background-color: white;
-            color: black;
-            padding: 12px;
-            width: 280px;
-        }
+footer #inputEmail {
+    height: 50px;
+    background-color: white;
+    color: black;
+    padding: 12px;
+    width: 280px;
+} */

@@ -9,7 +9,6 @@ class iconManager {
 
             element.style.backgroundImage = `url(/public/icon/${sIcon}.svg)`;
             element.style.backgroundRepeat = `no-repeat`;
-            element.style.backgroundSize = `cover`;
             element.style.height = '40px';
             element.style.width = '40px';
         });
