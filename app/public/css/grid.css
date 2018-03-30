@@ -64,7 +64,7 @@ section {
     display: block;
 }
 
-@media (min-width: 362px) {
+@media (min-width: 320px) {
     .container {
         /* max-width: 320px; */
         width: 100%;
@@ -97,7 +97,7 @@ section {
     }
 }
 
-@media (min-width: 360px) {
+@media (min-width: 320px) {
     .col-xxs-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);
@@ -199,7 +199,7 @@ section {
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 672px) {
     .col-sm-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);

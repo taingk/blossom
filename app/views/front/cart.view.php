@@ -81,7 +81,7 @@
     </section>
 
     <div class="col-xs-5 col-md-7"></div>
-    <div class="col-xxs-12 col-sm-7 col-md-5 btn">
+    <div class="col-xxs-12 col-xs-7 col-md-5 btn">
         <form action="/front/billing" method="post">
             <input class="btnPayer right" type="submit" value="Payer" onclick="alert('Merci de votre commande')"/>
         </div>

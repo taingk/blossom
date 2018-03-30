@@ -1,4 +1,3 @@
-
 /* Cache menu */
 
 .headerBar .menu {
@@ -99,7 +98,7 @@
         display: none;
     }
 
-    .frontMenu li:nth-child(2) {
+        .frontMenu li:nth-child(2) {
         display: none;
     }
 
@@ -107,11 +106,7 @@
         display: none;
     }
 
-    .homeBar li:nth-child(1) {
-        display: none;
-    }
-
-    .homeBar li:nth-child(2) {
+    .homeBar li {
         display: none;
     }
  

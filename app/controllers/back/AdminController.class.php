@@ -2,17 +2,17 @@
 
 class AdminController {    
     
+    /*
+    * Formulaire inscription administrateur
+    */
     public function indexAction( $aParams ) {
-        $oView = new View("adminLogIn", "back");
+        $oView = new View("adminAdd", "back");
     }
 
-    public function formAction( $aParams ) {
-        $oView = new View("adminForm", "back");
-    }
-    
-    public function addAction( $aParams ) {
-        $oView = new View("adminAdd", "back");
-        
+    /*
+    * Envoie les données à add
+    */ 
+    public function saveAction( $aParams ) {       
         $oUser = new Users();
         // $oUser->setFirstname($_POST['firstname']);
 		// $oUser->setLastname($_POST['lastname']);
@@ -24,16 +24,4 @@ class AdminController {
 		// $oUser->save();
     }
     
-    public function updateFormAction( $aParams ) {
-
-    }
-
-    public function updateAction( $aParams ) {
-
-    }
-
-    public function profileAction( $aParams ) {
-
-    }
-
 }

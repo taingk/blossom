@@ -12,12 +12,16 @@ a {
     text-decoration: none;
 }
 
+.blanc {
+    color: #FDFBFB !important; 
+}
+
 .rose {
-    color: #D8475D; 
+    color: #D8475D !important;
 }
 
 .rose-bg {
-    background-color: #D8475D;
+    background-color: #D8475D !important;
 }
 
 .left {
@@ -72,4 +76,8 @@ p {
 
 .box-shadow {
     box-shadow: 1px 1px 12px #555;
+}
+
+.black {
+    color: black;
 }

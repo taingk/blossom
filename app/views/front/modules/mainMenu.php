@@ -4,32 +4,32 @@
         <span class="navicon"></span>
     </label>
     <ul class="row align-center menu">
-        <li class="col-sm-1 col-lg-3">
+        <li class="col-xs-1 col-lg-3">
         </li>
-        <li class="col-sm-1">
+        <li class="col-xs-1">
             <a href="/">
                 <img class="logo" src="../../public/img/logo.png">
             </a>
         </li>
-        <div class="col-sm-2 col-lg-1 divLink">
+        <div class="col-xs-2 col-lg-1 divLink">
             <a class="link" href="/front/category">Téléphones</a>
         </div>
         
-        <div class="col-sm-2 col-lg-1 divLink">
+        <div class="col-xs-2 col-lg-1 divLink">
             <a class="link" href="/front/category">Accessoires</a>
         </div>
-        <div class="col-sm-2 col-lg-1 divLink">
+        <div class="col-xs-2 col-lg-1 divLink">
             <a class="link" href="/front/category">Assistance</a>
         </div>
-        <div class="col-sm-2 col-lg-1">
+        <div class="col-xs-2 col-lg-1">
             <input class="frontSearchInput" type="text" name="recherche">
         </div>
-        <div class="col-sm-1">
+        <div class="col-xs-1">
             <a href="/front/search">
                 <input class="left frontSearchIcon" type="submit" name="search" value="" />
             </a>
         </div>
-        <div class="col-sm-1">
+        <div class="col-xs-1">
             <a href="/front/cart">
                 <input class="left frontCartInput" type="submit" name="search" value="" />
             </a>

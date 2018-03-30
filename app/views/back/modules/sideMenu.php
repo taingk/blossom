@@ -12,27 +12,27 @@
                     </span>
                     <span>
                         <a href="/"><em>> Retour sur le site</em></a>
-                    </span>                
+                    </span>
                 </div>
             </div>
         </li>
-        <li class="backMenuLink rose-bg">
-            <a class="" href="/back" style="color:white;">Tableau de bord</a>
+        <li class="backMenuLink" id="dashboard">
+            <a href="/back/dashboard">Tableau de bord</a>
         </li>
-        <li class="backMenuLink">
-            <a class="" href="/back/categories">Categories</a>
+        <li class="backMenuLink" id="categories">
+            <a href="/back/categories">Categories</a>
         </li>
-        <li class="backMenuLink">
-            <a class="" href="/back/products">Produits</a>
+        <li class="backMenuLink" id="products">
+            <a href="/back/products">Produits</a>
         </li>
-        <li class="backMenuLink">
-            <a class="" href="/back/orders">Commandes</a>
+        <li class="backMenuLink" id="orders">
+            <a href="/back/orders">Commandes</a>
         </li>
-        <li class="backMenuLink">
-            <a class="" href="/back/comments">Commentaires</a>
+        <li class="backMenuLink" id="comments">
+            <a href="/back/comments">Commentaires</a>
         </li>
-        <li class="backMenuLink">
-            <a class="" href="/back/users">Utilisateurs</a>
+        <li class="backMenuLink" id="users">
+            <a href="/back/users">Utilisateurs</a>
         </li>
     </ul>
 </nav>

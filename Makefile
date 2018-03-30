@@ -11,10 +11,10 @@ stop:
 logs:
 	docker logs -f apache_projet_annuel
 dump:
-	mysqldump -uroot -p app > data/backup.sql && cat data/backup.sql | mysql -uroot -p app
+	docker exec mysql_projet_annuel /usr/bin/mysqldump -u root --password=root app > data/backup.sql && cat data/backup.sql | docker exec -i mysql_projet_annuel /usr/bin/mysql -u root --password=root app
 restore:
-	cat data/backup.sql | mysql -uroot -p app
+	cat data/backup.sql | docker exec -i mysql_projet_annuel /usr/bin/mysql -u root --password=root app
 r_apache:
 	docker exec apache_projet_annuel service apache2 restart
 pull:
-	git pull && cp ../config/conf.inc.php app/conf.inc.php && cp ../config/Makefile .
+	git pull && cp ../config/conf.inc.php app/conf.inc.php && cp ../config/Makefile . && cp ../config/.htaccess .
