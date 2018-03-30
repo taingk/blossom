@@ -1,3 +1,17 @@
+.headerBar {
+    background-color: #D8475D;
+    height: 59px;
+    position: relative;
+}
+
+.headerBar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+
 .frontCartInput,
 .frontSearchIcon,
 .frontSearchInput {
@@ -5,6 +19,7 @@
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
+    border-bottom: 1px solid #FBFBFB;
     width: 100%;
 }
 
@@ -33,4 +48,79 @@
 
 ul li a {
     font-size: smaller;
+}
+
+.link{
+    font-size: smaller;
+    border: none;
+    background-color: #D8475D;
+    cursor: pointer;
+}
+
+.divLink{
+    padding: 20px;
+}
+
+
+.menuSlideDownLeft{
+    background-color: #E16074;
+    text-align: right;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    /* display: none; */
+}
+
+.menuSlideDownRight{
+    background-color:#E16074;
+    text-align: left;
+    /* display: none; */
+    /* padding-top: 5%;
+    padding-bottom: 5%; */
+}
+
+
+
+/* .divLink .link :hover .menuSlideDownLeft .menuSlideDownRight{
+    display: block;
+} */
+
+
+/* .menuSlideDownLeft,
+.menuSlideDownRight,
+.menuSlideDownLeft > div > span,
+.menuSlideDownRight > a{
+    display: none;
+} */
+
+/* .divLink:hover, 
+.link:hover,
+.menuSlideDownLeft > div > span,
+.menuSlideDownRight > a {
+    background-color: #E16074;
+    display: block;
+}*/
+
+hr{
+    position: absolute;
+    transform: rotate(90deg);
+    width: 8%;
+    right: 50%;
+}
+
+h1{
+    color: #444444;
+}
+.frontMenuIcon1{
+    width: 90px;
+    padding: 10px;
+}
+
+.frontMenuIcon2{
+    width: 95px;
+    padding: 10px;
+}
+
+.frontMenuIcon3{
+    width: 120px;
+    padding: 10px;
 }
