@@ -52,7 +52,7 @@
 }
 
 .headerBar .menu-btn:checked~.menu {
-    max-height: 240px;
+    max-height: 1000px;
 }
 
 .headerBar .menu-btn:checked~.menu-icon .navicon {
@@ -81,33 +81,10 @@
     }
 }
 
-.frontPosition-fixed {
-    top: 0;
-    position:fixed;
-    width: 100%;    
-}
-
 @media all and (max-width: 768px) {
     .headerBar li {
         max-width: calc(12/12*100%);
         flex: 0 0 calc(12/12*100%);
         padding: 10px;
     }
-
-    .frontMenu li:nth-child(1) {
-        display: none;
-    }
-
-        .frontMenu li:nth-child(2) {
-        display: none;
-    }
-
-    .frontMenu li:nth-child(6) {
-        display: none;
-    }
-
-    .homeBar li {
-        display: none;
-    }
- 
 }

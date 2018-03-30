@@ -9,7 +9,7 @@
 
     <!-- General CSS -->
     <link rel="stylesheet" href="/public/css/grid.css">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/form.css">
     <link rel="stylesheet" href="/public/css/template.back.css">
 
@@ -36,7 +36,7 @@
             <!-- Side Menu -->
             <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/sideMenu.php") ?>
             <!-- Main View -->
-            <section id="backView" class="<?php if ( in_array($this->sView, $this->aNoInclude) ) echo 'margin-auto'; else echo 'col-xxs-10' ?>">
+            <section id="backView" class="<?php if ( in_array($this->sView, $this->aNoInclude) ) echo 'is-h-centered'; else echo 'col-xxs-10' ?>">
                 <div class="<?php if ( !in_array($this->sView, $this->aNoInclude) ) echo 'col-lg-11'; ?> viewContent">
                     <div class="row">
                         <?php include("views/back/" . $this->sView . ".view.php") ?>

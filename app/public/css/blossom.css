@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../public/font/AvenirNextRegular.otf') format('truetype');
+}
+
+* {
+    font-family: "Avenir";
+    color: #FDFBFB;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+p {
+    padding: 5px;
+    font-size: 100%;
+}
+
+hr {
+    background-color: #dbdbdb;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: 1.5rem 0;
+}
+
+footer {
+    background-color: #D8475D;
+    height: 150px;
+    padding: 15px;
+}
+
+.bandeau {
+    padding: 75px 0;
+    margin: 75px 0;
+}
+
+.is-white {
+    color: #FDFBFB !important;  
+}
+
+.is-pink {
+    color: #D8475D !important;
+}
+
+.is-grey {
+    color: #555 !important;
+}
+
+.is-black {
+    color: #363636 !important;
+}
+
+.bg-is-pink {
+    background-color: #D8475D !important;
+}
+
+.is-font-title {
+    font-size: 22px;
+}
+
+.box-has-shadow {
+    box-shadow: 1px 1px 12px #555;
+}
+
+.in-center-box {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.is-left {
+    padding-left: 15px;
+    float: left;
+}
+
+.is-right {
+    padding-right: 15px;
+    float: right;
+}
+
+.is-h-centered {
+    margin: 0 auto;
+}
+
+.is-v-centered {
+    margin: auto 0;
+}
+
+.text-is-left {
+    text-align: left !important;
+}
+
+.text-is-right {
+    text-align: right !important;
+}
+
+.text-is-centered {
+    text-align: center !important;
+}
+
+.text-is-justified {
+    text-align: justify !important;
+}
+
+.position-is-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.img-is-auto {
+    width: 100%;
+    height: auto;
+}
