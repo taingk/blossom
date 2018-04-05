@@ -50,4 +50,21 @@ class BaseSql {
             $oRequest->execute($this->aColumns);
         }
     }
+
+    public function isLoginValids($sEmail, $sPwd) {
+        $sQuery = "SELECT pwd FROM " . $this->sTable . " WHERE email = :email";
+
+        $oRequest = $this->oPdo->prepare($sQuery);
+        $oRequest->execute(array(':email' => $sEmail));
+
+        if ( !$aResults = $oRequest->fetch() ) {
+            return 0;
+        } else {
+            if ( password_verify( $sPwd, $aResults['pwd'] ) ) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
 }

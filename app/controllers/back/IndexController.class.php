@@ -7,10 +7,17 @@ class IndexController {
     */
     public function indexAction( $aParams ) {
         $oView = new View("adminLogIn", "back");
+        $sEmail = $aParams['POST']['email'];
+        $sPwd = $aParams['POST']['pwd'];
 
-        if ($_POST['email'] && $_POST['pwd']) {
-            header('Location: /back/dashboard'); 
+        if ($sEmail && $sPwd) {
+            $oUsers = new Users();
+
+            if ( $oUsers->isLoginValids($sEmail, $sPwd) ) {
+                header('Location: /back/dashboard');
+            } else {
+                echo "Identifiants invalides";
+            }
         }
     }
-   
 }
