@@ -5,6 +5,14 @@ class BaseSql {
     private $oPdo;
     private $aColumns;
 
+    public function getTable() {
+        return $this->sTable;
+    }
+
+    public function getPdo() {
+        return $this->oPdo;
+    }
+
     public function __construct() {
         // Remplit $sTable par le nom de la classe qui l'appelle, qui vient de models/
         $this->sTable = strtolower(get_called_class());
@@ -43,11 +51,24 @@ class BaseSql {
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
 
             $sQuery = "INSERT INTO " . $this->sTable . " (" .  $sUsersColumns . ")" . " VALUES (:".$sValuesColumns.")";
-
-            // Prepare et execute la requete 
             $oRequest = $this->oPdo->prepare($sQuery);
-            // alimenté par le tableau $aColumns
             $oRequest->execute($this->aColumns);
+        }
+    }
+
+    public function isLoginValids($sEmail, $sPwd) {
+        $sQuery = "SELECT pwd FROM " . $this->sTable . " WHERE email = :email";
+        $oRequest = $this->oPdo->prepare($sQuery);
+        $oRequest->execute(array(':email' => $sEmail));
+
+        if ( !$aResults = $oRequest->fetch() ) {
+            return 0;
+        } else {
+            if ( password_verify( $sPwd, $aResults['pwd'] ) ) {
+                return 1;
+            } else {
+                return 0;
+            }
         }
     }
 }
