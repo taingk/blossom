@@ -14,7 +14,9 @@ class IndexController {
             $oUsers = new Users();
 
             if ( $oUsers->isLoginValids($sEmail, $sPwd) ) {
-                header('Location: /back/dashboard');
+                $oToken = new Token();
+                $oToken->insertToken( $aParams, $oUsers, $oToken->createToken() );
+                echo "Identifiants valides";
             } else {
                 echo "Identifiants invalides";
             }

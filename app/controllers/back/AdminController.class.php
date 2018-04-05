@@ -19,7 +19,7 @@ class AdminController {
 		$oUser->setEmail($_POST['email']);
 		$oUser->setPwd($_POST['pwd']);
 		$oUser->setToken("token");
-		$oUser->setAge(Helper::getAge($_POST['age']));
+		$oUser->setBirthdayDate($_POST['birthday_date']);
 		$oUser->setStatus(1);
 		$oUser->save();
     }

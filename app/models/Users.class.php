@@ -4,11 +4,14 @@ class Users extends BaseSql {
     protected $id = null;
     protected $firstname;
     protected $lastname;
+    protected $sexe;
+    protected $birthday_date;
+    protected $address;
     protected $email;
+    protected $zip_code;
+    protected $city;
     protected $pwd;
     protected $token;
-    protected $age;
-    
     protected $status;
 
     public function __construct() {
@@ -30,6 +33,22 @@ class Users extends BaseSql {
         $this->lastname = strtoupper(trim($lastname));
     }
 
+    public function setSexe($sexe) {
+        $this->sexe = $sexe;
+    }
+
+    public function setAddress($address) {
+        $this->address = $address;
+    }
+
+    public function setZipCode($zip_code) {
+        $this->zip_code = $zip_code;
+    }
+
+    public function setCity($city) {
+        $this->city = $city;
+    }
+
     public function setEmail($email) {
         // minuscule
         $this->email = strtolower(trim($email));
@@ -44,8 +63,8 @@ class Users extends BaseSql {
         $this->token = $token;
     }
 
-    public function setAge($age) {
-        $this->age = $age;
+    public function setBirthdayDate($birthday_date) {
+        $this->birthday_date = $birthday_date;
     }
 
     public function setStatus($status) {

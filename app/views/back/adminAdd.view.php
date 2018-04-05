@@ -10,7 +10,7 @@
         <input type="text" name="lastname" placeholder="DUPONT" /></p></label>
 
         <label><p>Date de naissance
-        <input type="date" name="age" placeholder="25" /></p></label>
+        <input type="date" name="birthday_date" placeholder="25" /></p></label>
 
         <label><p>E-mail
         <input type="text" name="email" placeholder="exemple@email.com" /></p></label>
