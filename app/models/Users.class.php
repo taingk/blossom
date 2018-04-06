@@ -1,7 +1,7 @@
 <?php
 
 class Users extends BaseSql {
-    protected $id = null;
+    protected $id_user = null;
     protected $firstname;
     protected $lastname;
     protected $sexe;
@@ -20,7 +20,7 @@ class Users extends BaseSql {
     }
 
     public function setId($id) {
-        $this->id = $id;
+        $this->id_user = $id;
     }
 
     public function setFirstname($firstname) {
