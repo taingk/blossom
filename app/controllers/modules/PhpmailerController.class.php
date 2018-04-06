@@ -47,7 +47,7 @@ class PhpmailerController {
         //convert HTML into a basic plain-text alternative body
         // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
         $messageContent = $mail->msgHTML(file_get_contents("views/emailing/sendEmail.view.html"), __DIR__);
-        $messageContent = str_ireplace("public/img/logo_blanc.png", $_SERVER['SERVER_NAME']."public/img/logo_blanc.png", $messageContent);
+        $messageContent = str_ireplace("public/img/logo_blanc.png", $_SERVER['SERVER_ADDR']."public/img/logo_blanc.png", $messageContent);
         echo $_SERVER['SERVER_ADDR']."/public/img/logo_blanc.png";
         // $messageContent = str_ireplace("/public/css/grid.css", "azertyui", $messageContent);
         //Replace the plain text body with one created manually
