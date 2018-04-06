@@ -2,7 +2,7 @@
     <ul class="backMenu">
         <li class="backMenuLink profile">
             <div class="row">
-                <div class="col-xs-10 margin-auto">
+                <div class="col-xs-10 is-h-centered">
                     <span>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Julie_Delpy_Cannes.jpg" alt="" class="profilePicture">
                     </span>
@@ -12,7 +12,7 @@
                     </span>
                     <span>
                         <a href="/"><em>> Retour sur le site</em></a>
-                    </span>                
+                    </span>
                 </div>
             </div>
         </li>

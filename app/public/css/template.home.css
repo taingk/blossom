@@ -5,172 +5,117 @@
 */
 
 header {
-    /* background-image:url('../img/homeBackground.png'); */
-    background-position:center center;
-    background-size:cover;
-    height:950px;
+    height: 950px;
     background-color: #d8475d;
 }
 
-nav {
-    position:fixed;
-    width:100%;
-    z-index:1
+.headerBar {
+    height: 50px;
 }
 
-nav .container {
-    height:100%
+.headerBar ul {
+    list-style: none;
+    overflow: hidden;
 }
 
-nav .navbarBrand,nav .navbarMenu {
-    display:inline-block;
-    height:100%
+#brand-logo {
+    height: 20px;
+    cursor: pointer;
 }
 
-nav .navbarMenu {
-    float: right;
+.title {
+    text-transform: uppercase;
+    font-size: 5vw;
 }
 
-nav .navbarMenu ul {
-    /* display: none; */
+.subtitle {
+    text-transform: uppercase;
+    font-size: 2vw;
 }
 
-nav .navbarMenu img {
-    height: 100%;
-    padding: 10px 0;
-    display:none;
-}
-
-nav #logoBlossom {
-    height:100%;
-    padding:15px 0
-}
-
-nav .navMenuList {
-    float:left;
-    padding: 0 10px;
-}
-
-.importantDownloadBtn {
-    background-color: white;
+.white-download-btn {
+    background-color: #fbfbfb;
     padding: 10px;
     border-radius: 5px;
     color: #d8475d;
 }
 
-.navSlideAnimation {
-    animation: navSlideDown 420ms cubic-bezier(.165,.84,.44,1);
+.slide-animation {
+    animation: slide-down 420ms cubic-bezier(.165,.84,.44,1);
     background-color: #D8475D;
-    box-shadow: 0 1px 1px rgba(0,0,0,.15);
 }
 
-.navSlideDown {
-    -webkit-animation-name: navSlideDown;
-    animation-name: navSlideDown;
+.slide-down {
+    -webkit-animation-name: slide-down;
+    animation-name: slide-down;
 }
 
-@keyframes navSlideDown{
+@keyframes slide-down{
     0% {
-        transform:translateY(-100%)
+        transform: translateY(-100%);
     }
     100% {
-        transform:translateY(0)
+        transform: translateY(0);
     }
 }
 
-#container-center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#container-center .col-sm-10 {
-    margin: 0 auto;
+.headerBar .menu-btn:checked~.menu {
+    background-color: #D8475D;
+    padding-bottom: 5px;
 }
 
-#container-center .col-sm-10:nth-child(1) {
-    font-size: 6rem;
+.menu-btn:checked~.menu + #documentation {
+    color: black !important;
 }
-
-#container-center .col-sm-10:nth-child(1) span {
-    text-transform: uppercase;
-}
-
 
 /*
  **************************************************
- ********************* FIRST SECTION **************
+ ***************** FIRST SECTION ******************
  ************************************************** 
 */
 
-#example1 .introText {
-    padding: 12px 30px;
-    text-align: center;
-}
-
-#example1 .introText p {
-    font-size: 31px;
-}
-
-#example1 h2 {
-    text-align: center;
-}
-
-#greatLine {
-    width: 30%;
-}
-
-#example1 .boxFigure {
-    margin: 0 auto;
-}
-
-#example1 .homeFigure {
-    margin: 0;
-}
-
-#example1 .homeFeaturesImg {
+.feature-img {
     width: 20%;
     padding: 15px 0;
 }
 
+.feature-content {
+    width: 85%;
+    margin: 0 auto;
+}
 
-    .content {
-        width: 90%;
-        margin: 0 auto;
-        background-color: white;
-        min-height: 175px;
-        padding: 0 20px;
-    }
+/*
+ **************************************************
+ ******************** FOOTER **********************
+ ************************************************** 
+*/
 
-    footer {
-        height: 300px;
-        background-color: #e4e4e4;
-        padding: 50px 0;
-    }
+footer {
+    background-color: #e4e4e4;
+    height: 200px;
+    padding: 15px;
+}
 
-    footer h4, footer .formContainer {
-        text-align: left;
-    }
+/* footer h4, footer .formContainer {
+    text-align: left;
+}
 
+footer button {
+    height: 50px;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border: none;
+}
 
+footer .col-sm-12 {
+    padding: 20px 0;
+}
 
-    footer button {
-        height: 50px;
-        background-color: black;
-        color: white;
-        padding: 12px;
-        border: none;
-        float: left;
-    }
-
-    footer .col-sm-12 {
-        padding: 20px 0;
-    }
-
-
-        footer #inputEmail {
-            height: 50px;
-            background-color: white;
-            color: black;
-            padding: 12px;
-            width: 280px;
-        }
+footer #inputEmail {
+    height: 50px;
+    background-color: white;
+    color: black;
+    padding: 12px;
+    width: 280px;
+} */

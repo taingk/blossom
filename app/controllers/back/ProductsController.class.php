@@ -21,7 +21,13 @@ class ProductsController {
     */ 
     public function addAction( $aParams ) {
         $oView = new View("productsAdd", "back");
-
+        $oProduct = new Products();
+        $oProduct->setProductName('iPhone 11');
+		$oProduct->setCategoriesIdCategory(NULL);
+		$oProduct->setDescription('test');
+		$oProduct->setPrice('150');
+		$oProduct->setRam("8");
+		$oProduct->save();
     }
 
     /*
@@ -42,7 +48,7 @@ class ProductsController {
     * Envoie les données à add/update/delete
     */ 
     public function saveAction( $aParams ) {
-
+        
     }
     
 }

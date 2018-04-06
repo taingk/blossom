@@ -1,0 +1,12 @@
+.headerBar {
+    background-color: #D8475D;
+    height: 50px;
+}
+
+.headerBar ul {
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    overflow: hidden;
+    background-color: #D8475D;
+}

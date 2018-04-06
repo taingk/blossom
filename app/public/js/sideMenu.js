@@ -10,19 +10,17 @@ class sideMenu {
 
     setColor(sId) {
         const element = document.getElementById(sId);
-        console.log(sId);
-        element.classList.add('rose-bg');
-        element.children[0].classList.add('blanc');
+
+        element.classList.add('bg-is-pink');
+        element.children[0].classList.add('is-white');
     }
     
     onSelectedMenu() {
         const aSelectedMenu = document.URL.split('/');
         const sId = aSelectedMenu[aSelectedMenu.indexOf('back') + 1];
         
-        if ( sId !== 'back' && sId ) {
+        if ( sId ) {
             this.setColor(sId);
-        } else {
-            this.setColor('back');
         }
     }
 

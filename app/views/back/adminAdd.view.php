@@ -1,7 +1,7 @@
 <section class="container">
     <h1>Création du compte administrateur</h1>
     
-    <form class="formTpl col-md-10" action="/back/admin/add" method="post">
+    <form class="form col-md-10" action="/back/admin/save" method="post">
 
         <label><p>Prénom
         <input type="text" name="firstname" placeholder="Jean" /></p></label>
@@ -10,7 +10,7 @@
         <input type="text" name="lastname" placeholder="DUPONT" /></p></label>
 
         <label><p>Date de naissance
-        <input type="date" name="age" placeholder="25" /></p></label>
+        <input type="date" name="birthday_date" placeholder="25" /></p></label>
 
         <label><p>E-mail
         <input type="text" name="email" placeholder="exemple@email.com" /></p></label>

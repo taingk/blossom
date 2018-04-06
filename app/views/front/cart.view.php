@@ -1,4 +1,4 @@
-<section class="row container mainView box-shadow">
+<section class="row container mainView box-has-shadow">
     <h1 class="col-xxs-12">Votre panier</h1>
     
     <hr>
@@ -21,20 +21,20 @@
                 <td>
                     <div class="captionProduct responsive-center">
                         <p><strong>iPhone 8</strong></p>
-                        <p class="grey"><strong>Blanc - 250 Go</strong></p>
-                        <p class="grey">N° réf: DHL06B2</p>
+                        <p class="is-grey"><strong>Blanc - 250 Go</strong></p>
+                        <p class="is-grey">N° réf: DHL06B2</p>
                     </div>
                 </td>
                 <td>
-                    <p class="left grey">759,00€</p>
+                    <p class="text-is-left is-grey">759,00€</p>
                 </td>
                 <td>
-                    <p class="left grey">x 1</p>
+                    <p class="text-is-left is-grey">x 1</p>
                 </td>
                 <td>
-                    <div class="text-left">
+                    <div class="text-is-left">
                         <p><strong>759,00€</strong></p> 
-                        <p class="rose">Supprimer</p>
+                        <p class="is-pink">Supprimer</p>
                     </div>
                 </td>            
             </tr>
@@ -47,19 +47,19 @@
                 <td>
                     <div class="captionProduct responsive-center">
                         <p><strong>AirPod</strong></p>
-                        <p class="grey">N° réf: BMW24R8</p>
+                        <p class="is-grey">N° réf: BMW24R8</p>
                     </div>
                 </td>
                 <td>
-                    <p class="left grey">250,00€</p>
+                    <p class="text-is-left is-grey">250,00€</p>
                 </td>
                 <td>
-                    <p class="left grey">x 2</p>
+                    <p class="text-is-left is-grey">x 2</p>
                 </td>
                 <td>
-                    <div class="text-left">
+                    <div class="text-is-left">
                         <p><strong>500,00€</strong></p> 
-                        <p class="rose">Supprimer</p>
+                        <p class="is-pink">Supprimer</p>
                     </div>
                 </td>
             </tr>
@@ -68,22 +68,22 @@
 
     <hr>
 
-    <section class="col-xxs-12 row line-height">
+    <section class="col-xxs-12 row">
         <article class="col-xs-4 col-md-6"></article>
-        <article class="col-xxs-7 col-xs-6 col-md-4 text-right"><p class="grey">Sous-total du panier :</p></article>
-        <article class="col-xxs-5 col-xs-2"><p class="grey">1259,00€</p></article>
+        <article class="col-xxs-7 col-xs-6 col-md-4 text-is-right"><p class="is-grey">Sous-total du panier :</p></article>
+        <article class="col-xxs-5 col-xs-2"><p class="is-grey">1259,00€</p></article>
         <article class="col-xs-4 col-md-6"></article>
-        <article class="col-xxs-7 col-xs-6 col-md-4 text-right"><p class="grey">Livraison :</p></article>
-        <article class="col-xxs-5 col-xs-2"><p class="grey">00,00€</p></article>
+        <article class="col-xxs-7 col-xs-6 col-md-4 text-is-right"><p class="is-grey">Livraison :</p></article>
+        <article class="col-xxs-5 col-xs-2"><p class="is-grey">00,00€</p></article>
         <article class="col-xs-4 col-md-6"></article>
-        <article class="col-xxs-7 col-xs-6 col-md-4 text-right"><p><strong>Total :</p></article>
+        <article class="col-xxs-7 col-xs-6 col-md-4 text-is-right"><p><strong>Total :</p></article>
         <article class="col-xxs-5 col-xs-2"><p>1259,00€</strong></p></article>
     </section>
 
     <div class="col-xs-5 col-md-7"></div>
-    <div class="col-xxs-12 col-xs-7 col-md-5 btn">
+    <div class="col-xxs-12 col-xs-7 col-md-5 btn text-is-right">
         <form action="/front/billing" method="post">
-            <input class="btnPayer right" type="submit" value="Payer" onclick="alert('Merci de votre commande')"/>
+            <input class="btnPayer" type="submit" value="Payer" onclick="alert('Merci de votre commande')"/>
         </div>
     </form>
 </section>

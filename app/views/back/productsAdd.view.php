@@ -21,7 +21,7 @@
     </article>
     <article class="row">
         <div class="col-lg-6 floatingLeft">
-            <div class="container text-left">
+            <div class="container text-is-left">
                 <form action="" method="post">
                     <label for="title">
                         <span class="titleForm">Titre : </span>
