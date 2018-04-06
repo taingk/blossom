@@ -2,11 +2,16 @@
 
 class BaseSql {
     private $sTable;
+    private $sId;
     private $oPdo;
     private $aColumns;
 
     public function getTable() {
         return $this->sTable;
+    }
+
+    public function getId() {
+        return $this->sId;
     }
 
     public function getPdo() {
@@ -16,6 +21,7 @@ class BaseSql {
     public function __construct() {
         // Remplit $sTable par le nom de la classe qui l'appelle, qui vient de models/
         $this->sTable = strtolower(get_called_class());
+        $this->sId = substr_replace("id_" . $this->sTable, "", -1);
 
         try {
             // Connexion à la bdd
@@ -34,19 +40,21 @@ class BaseSql {
     }
     
     public function save() {
-        // Clean $aColumns
         $this->setColumns();
-        
-        // Si un id est spécifié, c'est un update
-        if ( $this->id ) {
 
-            
+        // Update
+        if ( $this->aColumns[$this->sId] ) {
+            foreach ($this->aColumns as $sKey => $sValue) {
+                $aSqlSet[] =  $sKey . " = :" . $sKey;
+            }
+
+            $sQuery = "UPDATE " . $this->sTable . " SET " . implode( ", ", $aSqlSet ) . " WHERE " . $this->sId . " = :" . $this->sId;
+            $oRequest = $this->oPdo->prepare($sQuery);
+            $oRequest->execute($this->aColumns);
+            echo 'not working';
         } else {
-            // Sinon c'est un insert
-            // On retire id comme il est null
-            unset($this->aColumns["id"]);
-
-            // On recupere les clé de aColumns et les sépare par ',' et ':' 
+            // Insert
+            unset($this->aColumns[$this->sId]);
             $sUsersColumns = implode(",", array_keys($this->aColumns));
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
 

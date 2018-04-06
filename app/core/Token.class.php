@@ -6,8 +6,11 @@ class Token {
         return bin2hex( random_bytes( 16 ) );
     }
 
-    public function insertToken( &$aParams, $oUsers, $sToken ) {
+    public function insertTokenSession( &$aParams, $sToken ) {
         $aParams['TOKEN']['id'] = $sToken;
+    }
+
+    public function insertTokenDb( $aParams, $oUsers, $sToken ) {
         $sEmail = $aParams['POST']['email'];
 
         $sQuery = "UPDATE " . $oUsers->getTable() . " SET token = :token WHERE email = :email";
