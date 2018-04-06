@@ -6,6 +6,7 @@
 * {
     font-family: "Avenir";
     color: #FDFBFB;
+    box-sizing: border-box;
 }
 
 a {

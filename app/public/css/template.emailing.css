@@ -1,0 +1,23 @@
+body {
+    background-color: #D8475D;
+}
+
+header {
+    height: 150px;
+    padding: 15px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+#mailSection .container {
+    height: 400px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+#mailContent {
+    padding: 10px;
+}

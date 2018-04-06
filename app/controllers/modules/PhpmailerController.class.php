@@ -7,43 +7,59 @@ use PHPMailer\PHPMailer\Exception;
 class PhpmailerController {
 
     public function indexAction( $aParams ) {
-        echo 'oui';
-        //Load Composer's autoloader
+        //Import PHPMailer classes into the global namespace
         require 'core/PHPMailer/vendor/autoload.php';
-        
-        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-        try {
-            //Server settings
-            $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-            $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-            $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'contact.blossoom@gmail.com';                 // SMTP username
-            $mail->Password = 'grp6-BlossomESGI';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 587;                                    // TCP port to connect to
-        
-            //Recipients
-            $mail->setFrom('contact.blossoom@gmail.com', 'Blossom | Service contact');
-            $mail->addAddress('lavan.prep@gmail.com', 'Joe User');     // Add a recipient
-            $mail->addAddress('enzo_huynh@hotmail.com ', 'Joe User');     // Add a recipient
-            // $mail->addReplyTo('lavan.prep@gmail.com', 'Information');
-        
-            //Content
-            $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Here is the subject';
-            $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-        
-            if (!$mail->send()) {
-                echo "Mailer Error: " . $mail->ErrorInfo;
-            } else {
-                echo "Message sent!";
-            }
-
-        } catch (Exception $e) {
-            echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-        }   
+        //Create a new PHPMailer instance
+        $mail = new PHPMailer;
+        //Tell PHPMailer to use SMTP
+        $mail->isSMTP();
+        //Enable SMTP debugging
+        // 0 = off (for production use)
+        // 1 = client messages
+        // 2 = client and server messages
+        $mail->SMTPDebug = 2;
+        //Set the hostname of the mail server
+        $mail->Host = 'ssl://smtp.gmail.com';
+        $mail->IsHTML(true);
+        // use
+        // $mail->Host = gethostbyname('smtp.gmail.com');
+        // if your network does not support SMTP over IPv6
+        //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+        $mail->Port = 465;
+        //Set the encryption system to use - ssl (deprecated) or tls
+        $mail->SMTPSecure = 'ssl';
+        //Whether to use SMTP authentication
+        $mail->SMTPAuth = true;
+        //Username to use for SMTP authentication - use full email address for gmail
+        $mail->Username = "contact.blossoom@gmail.com";
+        //Password to use for SMTP authentication
+        $mail->Password = "grp6-BlossomESGI";
+        //Set who the message is to be sent from
+        $mail->setFrom('contact.blossoom@gmail.com', 'Blossom');
+        //Set an alternative reply-to address
+        $mail->addReplyTo('lavan.prep@gmail.com', 'Blossom');
+        //Set who the message is to be sent to
+        // $mail->addAddress('taingkn@gmail.com', 'Kevin Taing');
+        $mail->addAddress('lavan.prep@gmail.com', 'Lavan Prepanantha');
+        //Set the subject line
+        $mail->Subject = "Blossom | Confirmation d'inscription";
+        //Read an HTML message body from an external file, convert referenced images to embedded,
+        //convert HTML into a basic plain-text alternative body
+        // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+        $messageContent = $mail->msgHTML(file_get_contents("views/emailing/sendEmail.view.html"), __DIR__);
+        $messageContent = str_ireplace("public/img/logo_blanc.png", $_SERVER['SERVER_NAME']."public/img/logo_blanc.png", $messageContent);
+        echo $_SERVER['HTTP_REFERER']."/public/img/logo_blanc.png";
+        // $messageContent = str_ireplace("/public/css/grid.css", "azertyui", $messageContent);
+        //Replace the plain text body with one created manually
+        $mail->AltBody = 'This is a plain-text message body';
+        //Attach an image file
+        // $mail->addAttachment('images/phpmailer_mini.png');
+        //send the message, check for errors
+        if (!$mail->send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } else {
+            echo "Message sent!";
+        }
     }
 
 }
