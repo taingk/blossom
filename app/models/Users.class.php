@@ -34,19 +34,19 @@ class Users extends BaseSql {
     }
 
     public function setSexe($sexe) {
-        $this->sexe = $sexe;
+        $this->sexe = trim($sexe);
     }
 
     public function setAddress($address) {
-        $this->address = $address;
+        $this->address = trim($address);
     }
 
     public function setZipCode($zip_code) {
-        $this->zip_code = $zip_code;
+        $this->zip_code = trim($zip_code);
     }
 
     public function setCity($city) {
-        $this->city = $city;
+        $this->city = trim($city);
     }
 
     public function setEmail($email) {
@@ -64,11 +64,11 @@ class Users extends BaseSql {
     }
 
     public function setBirthdayDate($birthday_date) {
-        $this->birthday_date = $birthday_date;
+        $this->birthday_date = trim($birthday_date);
     }
 
     public function setStatus($status) {
-        $this->status = $status;
+        $this->status = trim($status);
     }
 }
 

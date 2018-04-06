@@ -45,7 +45,6 @@ class BaseSql {
             // Sinon c'est un insert
             // On retire id comme il est null
             unset($this->aColumns["id"]);
-
             // On recupere les clé de aColumns et les sépare par ',' et ':' 
             $sUsersColumns = implode(",", array_keys($this->aColumns));
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
