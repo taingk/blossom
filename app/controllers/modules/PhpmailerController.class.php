@@ -33,7 +33,7 @@ class PHPMailerController {
         //Username to use for SMTP authentication - use full email address for gmail
         $mail->Username = "contact.blossoom@gmail.com";
         //Password to use for SMTP authentication
-        $mail->Password = "grp6-BlossomESGI";
+        $mail->Password = "";
         //Set who the message is to be sent from
         $mail->setFrom('contact.blossoom@gmail.com', 'Blossom');
         //Set an alternative reply-to address
