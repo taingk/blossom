@@ -37,7 +37,7 @@ class PhpmailerController {
         //Set who the message is to be sent from
         $mail->setFrom('contact.blossoom@gmail.com', 'Blossom');
         //Set an alternative reply-to address
-        $mail->addReplyTo('lavan.prep@gmail.com', 'Blossom');
+        // $mail->addReplyTo('lavan.prep@gmail.com', 'Blossom');
         //Set who the message is to be sent to
         // $mail->addAddress('taingkn@gmail.com', 'Kevin Taing');
         $mail->addAddress('lavan.prep@gmail.com', 'Lavan Prepanantha');
@@ -45,10 +45,7 @@ class PhpmailerController {
         $mail->Subject = "Blossom | Confirmation d'inscription";
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
-        // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-        $messageContent = $mail->msgHTML(file_get_contents("views/emailing/sendEmail.view.html"), __DIR__);
-        $messageContent = str_ireplace("public/img/logo_blanc.png", $_SERVER['SERVER_NAME']."public/img/logo_blanc.png", $messageContent);
-        echo $_SERVER['SERVER_ADDR']."/public/img/logo_blanc.png";
+        $messageContent = $mail->msgHTML(str_ireplace("public/img/logo_blanc.png", $_SERVER["SERVER_NAME"]."/public/img/logo_blanc.png", file_get_contents("views/emailing/sendEmail.view.html")));
         // $messageContent = str_ireplace("/public/css/grid.css", "azertyui", $messageContent);
         //Replace the plain text body with one created manually
         $mail->AltBody = 'This is a plain-text message body';
