@@ -1,14 +1,17 @@
 <?php
 
 class Users extends BaseSql {
-    protected $id = null;
+    protected $id_user = null;
     protected $firstname;
     protected $lastname;
+    protected $sexe;
+    protected $birthday_date;
+    protected $address;
     protected $email;
+    protected $zip_code;
+    protected $city;
     protected $pwd;
     protected $token;
-    protected $age;
-    
     protected $status;
 
     public function __construct() {
@@ -17,7 +20,7 @@ class Users extends BaseSql {
     }
 
     public function setId($id) {
-        $this->id = $id;
+        $this->id_user = $id;
     }
 
     public function setFirstname($firstname) {
@@ -28,6 +31,22 @@ class Users extends BaseSql {
     public function setLastname($lastname) {
         // TAING
         $this->lastname = strtoupper(trim($lastname));
+    }
+
+    public function setSexe($sexe) {
+        $this->sexe = trim($sexe);
+    }
+
+    public function setAddress($address) {
+        $this->address = trim($address);
+    }
+
+    public function setZipCode($zip_code) {
+        $this->zip_code = trim($zip_code);
+    }
+
+    public function setCity($city) {
+        $this->city = trim($city);
     }
 
     public function setEmail($email) {
@@ -44,12 +63,12 @@ class Users extends BaseSql {
         $this->token = $token;
     }
 
-    public function setAge($age) {
-        $this->age = $age;
+    public function setBirthdayDate($birthday_date) {
+        $this->birthday_date = trim($birthday_date);
     }
 
     public function setStatus($status) {
-        $this->status = $status;
+        $this->status = trim($status);
     }
 }
 

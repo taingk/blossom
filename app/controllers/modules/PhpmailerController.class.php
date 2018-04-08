@@ -18,7 +18,9 @@ class PHPMailerController {
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPAuth = true;
         $mail->Username = "contact.blossoom@gmail.com";
-        $mail->Password = "grp6-BlossomESGI";
+        //Password to use for SMTP authentication
+        $mail->Password = "";
+        //Set who the message is to be sent from
         $mail->setFrom('contact.blossoom@gmail.com', 'Blossom');
         $mail->addAddress('lavan.prep@gmail.com', 'Lavan Prepanantha');
 
