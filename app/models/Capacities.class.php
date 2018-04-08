@@ -1,7 +1,7 @@
 <?php
 
 class Capacities extends BaseSql {
-    protected $id_capacitie = null;
+    protected $id_capacity = null;
     protected $capacity_number;
     protected $products_idproduct;
     protected $additional_price;
@@ -12,7 +12,7 @@ class Capacities extends BaseSql {
     }
 
     public function setId($id) {
-        $this->id_capacitie = trim($id);
+        $this->id_capacity = trim($id);
     }
 
     public function setCapacityNumber($capacity_number) {
