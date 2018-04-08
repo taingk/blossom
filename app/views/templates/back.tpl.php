@@ -28,13 +28,13 @@
 
     <header>        
         <!-- Red Bar -->
-        <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/redBar.php") ?>
+        <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/redBar.php") ?>
     </header>
 
     <main>
         <section class="row">
             <!-- Side Menu -->
-            <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/modules/sideMenu.php") ?>
+            <?php in_array($this->sView, $this->aNoInclude) ? : include("views/back/sideMenu.php") ?>
             <!-- Main View -->
             <section id="backView" class="<?php if ( in_array($this->sView, $this->aNoInclude) ) echo 'is-h-centered'; else echo 'col-xxs-10' ?>">
                 <div class="<?php if ( !in_array($this->sView, $this->aNoInclude) ) echo 'col-lg-11'; ?> viewContent">

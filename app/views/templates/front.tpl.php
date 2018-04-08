@@ -27,7 +27,7 @@
 
     <header>
         <!-- Main Menu -->
-        <?php include("views/front/modules/mainMenu.php") ?>
+        <?php include("views/front/mainMenu.php") ?>
     </header>
 
     <main>
