@@ -31,12 +31,5 @@ class OrdersController {
     public function deleteAction( $aParams ) {
 
     }
-
-    /*
-    * Envoie les données à update/delete
-    */ 
-    public function saveAction( $aParams ) {
-
-    }
     
 }

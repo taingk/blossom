@@ -44,11 +44,4 @@ class ProductsController {
 
     }
 
-    /*
-    * Envoie les données à add/update/delete
-    */ 
-    public function saveAction( $aParams ) {
-        
-    }
-    
 }

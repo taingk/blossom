@@ -1,12 +1,3 @@
-* {
-    color: black;   
-}
-
-html {
-    background-color: #F1F1F1;
-    height: 100%;
-}
-
 #backView, body, main, main>section {
     height: 100%;
 }
@@ -27,4 +18,11 @@ only screen and (max-width: 760px),
         padding: 0px;
     }
     
+}
+
+.viewContent {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    box-shadow: 1px 1px 12px #555;
 }
