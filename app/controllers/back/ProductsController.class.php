@@ -23,9 +23,9 @@ class ProductsController {
         $oView = new View("productsAdd", "back");
         $oProduct = new Products();
         $oProduct->setProductName('iPhone 11');
-		$oProduct->setCategoriesIdCategory(NULL);
+		$oProduct->setCategoriesIdCategory(1);
 		$oProduct->setDescription('test');
-		$oProduct->setPrice('150');
+		$oProduct->setPrice(150);
 		$oProduct->setRam("8");
 		$oProduct->save();
     }
