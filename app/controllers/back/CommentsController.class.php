@@ -41,9 +41,9 @@ class CommentsController {
     }
 
     /*
-    * Envoie les données à add/update/delete
+    * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
     */ 
-    public function saveAction( $aParams ) {
+    public function searchAction( $aParams ) {
 
     }
 

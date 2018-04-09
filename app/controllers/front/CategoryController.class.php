@@ -8,5 +8,12 @@ class CategoryController {
     public function indexAction( $aParams ) {
 
     }
+    
+    /*
+    * On get un appel AJAX pour filtrer un/des produit(s)
+    */ 
+    public function filterAction( $aParams ) {
 
-}   
+    }
+
+}

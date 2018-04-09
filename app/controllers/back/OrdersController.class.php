@@ -31,12 +31,11 @@ class OrdersController {
     public function deleteAction( $aParams ) {
 
     }
-
+ 
     /*
-    * Envoie les données à update/delete
+    * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
     */ 
-    public function saveAction( $aParams ) {
+    public function searchAction( $aParams ) {
 
     }
-    
 }

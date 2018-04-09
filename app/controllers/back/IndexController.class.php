@@ -6,7 +6,8 @@ class IndexController {
     * Formulaire connexion admnistrateur
     */
     public function indexAction( $aParams ) {
-        $oView = new View("adminLogIn", "back");
+        $oView = new View("adminLogIn", "auth");
+        
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];
 

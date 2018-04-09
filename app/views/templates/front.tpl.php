@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/responsiveMenu.css">
-    <link rel="stylesheet" href="/public/css/template.front.css">
+    <link rel="stylesheet" href="/public/css/front.tpl.css">
 
     <!-- Modules CSS -->
     <link rel="stylesheet" href="/public/css/front/mainMenu.css">
 
     <!-- Front-office CSS -->
-    <link rel="stylesheet" href="/public/css/front/<?php echo $this->sView ?>.css">
+    <link rel="stylesheet" href="/public/css/<?php echo $this->tplPath() ?>.css">
 
     <!-- Footer CSS -->
     <link rel="stylesheet" href="/public/css/front/footer.css">
@@ -27,12 +27,12 @@
 
     <header>
         <!-- Main Menu -->
-        <?php include("views/front/modules/mainMenu.php") ?>
+        <?php include("views/front/mainMenu.php") ?>
     </header>
 
     <main>
         <!-- Main View -->
-        <?php include("views/front/" . $this->sView . ".view.php"); ?>
+        <?php include("views/" . $this->tplPath() . ".view.php"); ?>
     </main>
 
     <footer>

@@ -21,5 +21,20 @@ class Colors extends BaseSql {
     public function setProductsIdProduct($products_idproduct) {
         $this->products_idproduct = trim($products_idproduct);
     }
+
+    public function getIdColor()
+    {
+        return $this->id_color;
+    }
+
+    public function getColorHexa()
+    {
+        return $this->color_hexa;
+    }
+
+    public function getProductsIdproduct()
+    {
+        return $this->products_idproduct;
+    }
 }
 ?>
