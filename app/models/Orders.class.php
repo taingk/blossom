@@ -31,6 +31,31 @@ class Orders extends BaseSql {
     public function setProductIdProduct($product_idproduct) {
         $this->product_idproduct = trim($product_idproduct);
     }
+
+    public function getIdOrder()
+    {
+        return $this->id_order;
+    }
+
+    public function getTrackingNumber()
+    {
+        return $this->tracking_number;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function getUsersIdusers()
+    {
+        return $this->users_idusers;
+    }
+
+    public function getProductIdproduct()
+    {
+        return $this->product_idproduct;
+    }
 }
 
 ?>

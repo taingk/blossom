@@ -61,12 +61,5 @@ class UsersController {
     public function deleteAction( $aParams ) {
 
     }
-
-    /*
-    * Envoie les données à add/update/delete
-    */ 
-    public function saveAction( $aParams ) {
-
-    }
-
+    
 }

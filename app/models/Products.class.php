@@ -36,6 +36,36 @@ class Products extends BaseSql {
     public function setRam($ram) {
         $this->ram = trim($ram);
     }
+
+    public function getIdProduct()
+    {
+        return $this->id_product;
+    }
+
+    public function getProductName()
+    {
+        return $this->product_name;
+    }
+
+    public function getCategoriesIdcategory()
+    {
+        return $this->categories_idcategory;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getRam()
+    {
+        return $this->ram;
+    }
 }
 
 ?>

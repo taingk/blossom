@@ -8,3 +8,8 @@ main {
     background-color: white;
     box-shadow: 1px 1px 12px #555;
 }
+
+.headNav {
+    margin: auto 30px auto calc(2/11*100%);
+    width: 100%;
+}

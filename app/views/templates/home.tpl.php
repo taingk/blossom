@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/responsiveMenu.css">
-    <link rel="stylesheet" href="/public/css/template.home.css">
+    <link rel="stylesheet" href="/public/css/home.tpl.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 
     <main>
         <!-- Main View -->
-        <?php include("views/home/" . $this->sView . ".view.php"); ?>
+        <?php include("views/" . $this->tplPath() . ".view.php"); ?>
     </main> 
 
     <footer>

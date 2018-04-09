@@ -4,7 +4,6 @@ class View {
     private $sView;
 	private $sTpl;
 	private $aData = [];
-	private $aNoInclude = ["adminAdd", "adminLogIn"];
 
 	public function __construct( $sView, $sTpl ) {
 		$this->sView = $sView;
@@ -18,14 +17,18 @@ class View {
 		}
     }
     
-	public function __destruct(){
+	public function __destruct() {
 		extract($this->aData);
 
 		include("views/templates/" . $this->sTpl . ".tpl.php");
 	}
 	
-	public function assign($sKey, $sValue){
+	public function assign($sKey, $sValue) {
 		// Prends en paramètre une clée et une valeur et insert dans $aData
 		$this->aData[$sKey] = $sValue;
+	}
+
+	public function tplPath() {
+		return $this->sTpl . "/" . $this->sView;
 	}
 }
