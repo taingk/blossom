@@ -36,6 +36,37 @@ class Carts extends BaseSql {
     public function setOrdersIdOrder($orders_id_order) {
         $this->orders_id_order = trim($orders_id_order);
     }
+
+    public function getIdCart()
+    {
+        return $this->id_cart;
+    }
+
+    public function getCapacitiesIdCapacity()
+    {
+        return $this->capacities_id_capacity;
+    }
+
+    public function getProductsIdProduct()
+    {
+        return $this->products_id_product;
+    }
+
+    public function getColorsIdColor()
+    {
+        return $this->colors_id_color;
+    }
+
+    public function getUsersIdUser()
+    {
+        return $this->users_id_user;
+    }
+
+    public function getOrdersIdOrder()
+    {
+        return $this->orders_id_order;
+    }
+
 }
 
 ?>

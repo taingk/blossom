@@ -26,6 +26,27 @@ class Images extends BaseSql {
     public function setProductsIdProduct($products_idproduct) {
         $this->products_idproduct = trim($products_idproduct);
     }
+
+    public function getIdImage()
+    {
+        return $this->id_image;
+    }
+
+    public function getImageName()
+    {
+        return $this->image_name;
+    }
+
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function getProductsIdproduct()
+    {
+        return $this->products_idproduct;
+    }
 }
 
 ?>

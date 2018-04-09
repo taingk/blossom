@@ -16,5 +16,15 @@ class Catergories extends BaseSql {
     public function setCategoryName($category_name) {
         $this->category_name = trim($category_name);
     }
+
+    public function getIdCategorie()
+    {
+        return $this->id_categorie;
+    }
+
+    public function getCategoryName()
+    {
+        return $this->category_name;
+    }
 }
 ?>

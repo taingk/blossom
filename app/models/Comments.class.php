@@ -26,6 +26,26 @@ class Comments extends BaseSql {
     public function setProductsIdProduct($products_idproduct) {
         $this->products_idproduct = trim($products_idproduct);
     }
+
+    public function getIdComment()
+    {
+        return $this->id_comment;
+    }
+
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    public function getUsersIdusers()
+    {
+        return $this->users_idusers;
+    }
+
+    public function getProductsIdproduct()
+    {
+        return $this->products_idproduct;
+    }
 }
 
 ?>

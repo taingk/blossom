@@ -70,6 +70,67 @@ class Users extends BaseSql {
     public function setStatus($status) {
         $this->status = trim($status);
     }
+
+    public function getIdUser()
+    {
+        return $this->id_user;
+    }
+
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    public function getBirthdayDate()
+    {
+        return $this->birthday_date;
+    }
+
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getZipCode()
+    {
+        return $this->zip_code;
+    }
+
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    public function getPwd()
+    {
+        return $this->pwd;
+    }
+
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }
 
 ?>

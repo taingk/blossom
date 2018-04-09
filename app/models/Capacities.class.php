@@ -26,6 +26,26 @@ class Capacities extends BaseSql {
     public function setAdditionalPrice($additional_price) {
         $this->additional_price = trim($additional_price);
     }
+
+    public function getId_capacity()
+    {
+        return $this->id_capacity;
+    }
+
+    public function getCapacityNumber()
+    {
+        return $this->capacity_number;
+    }
+
+    public function getProductsIdproduct()
+    {
+        return $this->products_idproduct;
+    }
+
+    public function getAdditionalPrice()
+    {
+        return $this->additional_price;
+    }
 }
 
 ?>
