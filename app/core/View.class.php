@@ -19,7 +19,7 @@ class View {
     
 	public function __destruct() {
 		extract($this->aData);
-
+		
 		include("views/templates/" . $this->sTpl . ".tpl.php");
 	}
 	
@@ -27,8 +27,13 @@ class View {
 		// Prends en paramètre une clée et une valeur et insert dans $aData
 		$this->aData[$sKey] = $sValue;
 	}
-
+	
 	public function tplPath() {
 		return $this->sTpl . "/" . $this->sView;
 	}
+	
+	public function addModal( $sModal, $aConfig, $aErrors = [] ) {
+		include("views/modals/" . $sModal . ".mdl.php");
+	}
+
 }

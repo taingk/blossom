@@ -12,7 +12,7 @@ class Capacities extends BaseSql {
     }
 
     public function setId($id) {
-        $this->id_capacity = trim($id);
+        $this->id_capacity = $id;
     }
 
     public function setCapacityNumber($capacity_number) {
