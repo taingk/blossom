@@ -34,16 +34,16 @@ class UsersController {
         
         $oUser = new Users();
         $oUser->setId(1);
-        $oUser->setFirstname('Update');
+        $oUser->setFirstname('Test');
 		$oUser->setLastname('taing');
-		$oUser->setEmail('taingkn@gmail.com');
-		$oUser->setPwd('test');
+		$oUser->setEmail('Lol@gmail.com');
+		$oUser->setPwd('Test1234');
 		$oUser->setBirthdayDate('1996-01-05');
         $oUser->setToken($sToken);
-        $oUser->setSexe(1);
-        $oUser->setAddress('Oui');
-        $oUser->setCity('Non');
-        $oUser->setZipCode(12345);
+        $oUser->setSexe(0);
+        $oUser->setAddress('Address');
+        $oUser->setCity('Ville');
+        $oUser->setZipCode(01234);
 		$oUser->setStatus(1);
 		$oUser->save();
     }

@@ -156,7 +156,7 @@ class Users extends BaseSql {
                                                 "value" => "0",
                                                 "checked" => true
 										    ],
-                        "Feminin" =>           [
+                        "Feminin" =>        [
                                                 "type" => "radio",
                                                 "name" => "sexe",
                                                 "value" => "1"
