@@ -42,7 +42,6 @@ class BaseSql {
     public function save() {
         $this->setColumns();
 
-        // Update
         if ( $this->aColumns[$this->sId] ) {
             foreach ($this->aColumns as $sKey => $sValue) {
                 $aSqlSet[] =  $sKey . " = :" . $sKey;
@@ -51,14 +50,12 @@ class BaseSql {
             $sQuery = "UPDATE " . $this->sTable . " SET " . implode( ", ", $aSqlSet ) . " WHERE " . $this->sId . " = :" . $this->sId;
             $oRequest = $this->oPdo->prepare($sQuery);
             $oRequest->execute($this->aColumns);
-            echo 'not working';
         } else {
-            // Insert
             unset($this->aColumns[$this->sId]);
             $sUsersColumns = implode(",", array_keys($this->aColumns));
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
 
-            $sQuery = "INSERT INTO " . $this->sTable . " (" .  $sUsersColumns . ")" . " VALUES (:".$sValuesColumns.")";
+            $sQuery = "INSERT INTO " . $this->sTable . " (" .  $sUsersColumns . ")" . " VALUES (:" . $sValuesColumns . ")";
             $oRequest = $this->oPdo->prepare($sQuery);
             $oRequest->execute($this->aColumns);
         }
@@ -69,14 +66,12 @@ class BaseSql {
         $oRequest = $this->oPdo->prepare($sQuery);
         $oRequest->execute(array(':email' => $sEmail));
 
-        if ( !$aResults = $oRequest->fetch() ) {
-            return 0;
-        } else {
+        if ( $aResults = $oRequest->fetch() ) {
             if ( password_verify( $sPwd, $aResults['pwd'] ) ) {
                 return 1;
-            } else {
-                return 0;
             }
         }
+
+        return 0;
     }
 }
