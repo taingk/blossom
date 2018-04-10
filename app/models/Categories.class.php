@@ -1,7 +1,7 @@
 <?php
 
-class Catergories extends BaseSql {
-    protected $id_categorie = null;
+class Categories extends BaseSql {
+    protected $id_category = null;
     protected $category_name;
 
     public function __construct() {
@@ -10,7 +10,7 @@ class Catergories extends BaseSql {
     }
 
     public function setId($id) {
-        $this->id_categorie = trim($id);
+        $this->id_category = trim($id);
     }
 
     public function setCategoryName($category_name) {

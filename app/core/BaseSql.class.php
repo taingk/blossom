@@ -21,7 +21,14 @@ class BaseSql {
     public function __construct() {
         // Remplit $sTable par le nom de la classe qui l'appelle, qui vient de models/
         $this->sTable = strtolower(get_called_class());
-        $this->sId = substr_replace("id_" . $this->sTable, "", -1);
+
+        if ( $this->sTable == "capacities" ) {
+            $this->sId = "id_capacity";
+        } else if ( $this->sTable == "categories" ) {
+            $this->sId = "id_category";
+        } else {
+            $this->sId = substr_replace("id_" . $this->sTable, "", -1);
+        }
 
         try {
             // Connexion à la bdd
