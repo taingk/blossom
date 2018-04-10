@@ -32,7 +32,7 @@ Lien d'accès au site de production [Blossom](https://blossoom.ovh/)
 
 <br>
 
-Planification des tâches et objectifs grâce à [GitHub Projects](https://github.com/taingk/blossom/projects/1)
+Planification des tâches et objectifs grâce à notre [Board ZenHub](https://app.zenhub.com/workspace/o/taingk/blossom/boards?repos=113166363)
 
 <br>
 
@@ -72,18 +72,6 @@ Planification des tâches et objectifs grâce à [GitHub Projects](https://githu
 ~/docker
 ```
 
-
-<br>
-
-- Script qui pull le projet à chaque webhooks.
-
-<br>
-
-```
-~/app/pull/pull.php
-```
-
-
 <br>
 
 - Alias pour nos commandes.
@@ -92,16 +80,6 @@ Planification des tâches et objectifs grâce à [GitHub Projects](https://githu
 
 ```
 ~/Makefile
-```
-
-<br>
-
-- Ce même fichier que vous lisez, documentation.
-
-<br>
-
-```
-~/README.md
 ```
 
 <br>

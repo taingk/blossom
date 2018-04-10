@@ -131,6 +131,62 @@ class Users extends BaseSql {
     {
         return $this->status;
     }
+
+    public function adminFormAdd() {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "submit" => "S'inscrire", "class" => "form col-md-10"],
+					"input" => [
+						"firstname" =>      [
+                                                "title" => "Prénom",
+                                                "type" => "text",
+                                                "placeholder" => "Jean",
+                                                "required" => true,
+                                                "minString" => 2
+                                            ],
+						"lastname" =>       [
+                                                "title" => "Nom de famille",
+                                                "type" => "text",
+                                                "placeholder" => "DUPONT",
+                                                "required" => true,
+                                                "minString" => 2
+                                            ],
+                        "Masculin" =>           [
+                                                "type" => "radio",
+                                                "name" => "sexe",
+                                                "value" => "0",
+                                                "checked" => true
+										    ],
+                        "Feminin" =>           [
+                                                "type" => "radio",
+                                                "name" => "sexe",
+                                                "value" => "1"
+										    ],
+                        "birthday_date" =>  [
+                                                "title" => "Date de naissance",
+                                                "type" => "date",
+                                                "required" => true,
+										    ],
+                        "email" =>          [
+                                                "title" => "E-mail",
+                                                "type" => "email",
+                                                "placeholder" => "exemple@gmail.com",
+                                                "required" => true
+                                            ],
+						"pwd" =>            [
+                                                "title" => "Mot de passe",
+                                                "type" => "password",
+                                                "required" => true
+                                            ],
+						"pwdConfirm" =>     [
+                                                "title" => "Veuillez confirmer votre mot de passe",
+                                                "type" => "password",
+                                                "required" => true,
+                                                "confirm" => "pwd"
+                                            ]
+					]
+		];
+	}
+
 }
 
 ?>

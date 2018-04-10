@@ -43,12 +43,18 @@ class ProductsController {
     public function deleteAction( $aParams ) {
 
     }
+    
+    /*
+    * On get un appel AJAX pour filtrer un/des produit(s)
+    */ 
+    public function filterAction( $aParams ) {
 
+    }
+ 
     /*
     * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
     */ 
     public function searchAction( $aParams ) {
 
     }
-
 }
