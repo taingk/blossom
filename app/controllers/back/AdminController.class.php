@@ -11,7 +11,7 @@ class AdminController {
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
-            $aErrors = Validate::checkForm( $aConfig, $aParams["POST"] );
+            $aErrors = Validator::checkForm( $aConfig, $aParams["POST"] );
 
 			if ( empty( $aErrors ) ) {
                 $oToken = new Token();
