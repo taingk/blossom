@@ -1,6 +1,6 @@
 <?php
 
-class Validate {
+class Validator {
 
 	public static function checkForm( $aConfig, $aData ) {
 		$aErrorsMsg = [];
