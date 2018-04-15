@@ -1,6 +1,6 @@
 <?php
 
-class Validate {
+class Validator {
 
 	public static function checkForm( $aConfig, $aData ) {
 		$aErrorsMsg = [];
@@ -45,11 +45,11 @@ class Validate {
 		return strlen( trim( $sString ) ) >= $iLength;
 	}
 
-	public function maxNum( $iNum, $iLength ) {
+	public static function maxNum( $iNum, $iLength ) {
 		return $iNum <= $iLength;
 	}
 
-	public function minNum( $iNum, $iLength ) {
+	public static function minNum( $iNum, $iLength ) {
 		return $iNum >= $iLength;
 	}
 
