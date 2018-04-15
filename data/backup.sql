@@ -27,6 +27,7 @@ CREATE TABLE `capacities` (
   `capacity_number` int(11) DEFAULT NULL,
   `products_idproduct` int(11) NOT NULL,
   `additional_price` float DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_capacity`),
   KEY `fk_capacities_products1_idx` (`products_idproduct`),
   CONSTRAINT `fk_capacities_products1` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -56,6 +57,7 @@ CREATE TABLE `carts` (
   `colors_id_color` int(11) NOT NULL,
   `users_id_user` int(11) NOT NULL,
   `orders_id_order` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_cart`),
   KEY `fk_Cart_capacities1` (`capacities_id_capacity`),
   KEY `fk_Cart_products1` (`products_id_product`),
@@ -89,6 +91,7 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(30) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -113,6 +116,7 @@ CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL AUTO_INCREMENT,
   `color_hexa` varchar(35) DEFAULT NULL,
   `products_idproduct` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_color`),
   KEY `fk_colors_products1_idx` (`products_idproduct`),
   CONSTRAINT `fk_colors_products1` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -140,6 +144,7 @@ CREATE TABLE `comments` (
   `comment` longtext,
   `users_idusers` int(11) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_comment`),
   KEY `fk_comments_users1_idx` (`users_idusers`),
   KEY `fk_comments_products1_idx` (`products_idproduct`),
@@ -169,6 +174,7 @@ CREATE TABLE `images` (
   `image_name` varchar(75) DEFAULT NULL,
   `path` varchar(255) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_image`),
   KEY `fk_images_products_idx` (`products_idproduct`),
   CONSTRAINT `fk_images_products` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -194,9 +200,9 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
   `tracking_number` varchar(15) DEFAULT NULL,
-  `status` varchar(45) DEFAULT NULL,
   `users_idusers` int(11) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_order`),
   KEY `fk_orders_users1_idx` (`users_idusers`),
   KEY `fk_orders_products1_idx` (`products_idproduct`),
@@ -228,6 +234,7 @@ CREATE TABLE `products` (
   `description` longtext,
   `price` float DEFAULT NULL,
   `ram` varchar(20) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_product`),
   KEY `fk_products_categories1_idx` (`categories_idcategory`),
   CONSTRAINT `fk_products_categories1` FOREIGN KEY (`categories_idcategory`) REFERENCES `categories` (`id_category`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -266,7 +273,7 @@ CREATE TABLE `users` (
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -287,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-11  8:39:54
+-- Dump completed on 2018-04-15 15:26:31
