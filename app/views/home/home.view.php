@@ -75,11 +75,11 @@
             </article>
             <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
                 <p class="is-font-title">Votre site</p>
-                <p class="text-is-justified"></p>
+                <p class="text-is-justified">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis vel est id commodo. Cras et purus urna. Aenean ut ex laoreet, cursus tortor sit amet, auctor dolor. Aliquam sed leo id dolor accumsan cursus sit amet sagittis turpis. Phasellus tempor lorem vel interdum ultricies. Nulla urna eros, pretium at eros nec, euismod gravida odio. Nunc erat ante, ultricies non nunc a, dictum bibendum ex. Suspendisse lacus est, molestie quis aliquam vitae, vulputate sed elit. Ut odio augue, suscipit vitae tempus nec, posuere vitae nisl.</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters is-v-centered"> 
                 <p class="is-font-title">Vos statistiques</p>
-                <p class="text-is-justified"></p>
+                <p class="text-is-justified">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis vel est id commodo. Cras et purus urna. Aenean ut ex laoreet, cursus tortor sit amet, auctor dolor. Aliquam sed leo id dolor accumsan cursus sit amet sagittis turpis. Phasellus tempor lorem vel interdum ultricies. Nulla urna eros, pretium at eros nec, euismod gravida odio. Nunc erat ante, ultricies non nunc a, dictum bibendum ex. Suspendisse lacus est, molestie quis aliquam vitae, vulputate sed elit. Ut odio augue, suscipit vitae tempus nec, posuere vitae nisl.</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters">
                 <img class="box-has-shadow img-is-auto" src="/public/img/image5.jpg" alt="">
