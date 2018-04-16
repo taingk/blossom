@@ -2,15 +2,9 @@
 
 class Token {
     private $sToken;
-    private $sEmail;
-    private $iIdUser;
 
     public function getToken() {
         return $this->sToken;
-    }
-
-    public function getIdUser() {
-        return $this->iIdUser;
     }
 
     public function __construct() {
@@ -29,9 +23,11 @@ class Token {
      *
      * @param $oUser
      */
-    public function setIdSession( $oUser ) {
-        $this->iIdUser = $oUser->getUserId( $this->sEmail );
-        $_SESSION['id_user'] = $this->iIdUser;
+    public function setIdSession( $aParams, $oUser ) {
+        $oUser->setEmail($aParams['POST']['email']);
+        $iIdUser = $oUser->select(array('id_user'))[0]['id_user'];
+
+        $_SESSION['id_user'] = $iIdUser;
     }
 
     /**
@@ -41,11 +37,13 @@ class Token {
      * @param $aParams
      * @param $oUser
      */
-    public function setTokenDb( $aParams, $oUser ) {
-        $this->sEmail = $aParams['POST']['email'];
+    public function setTokenDb( $oUser ) {
         $sToken = $_SESSION['token']['id'];
+        $iIdUser = $_SESSION['id_user'];
 
-        $oUser->setTokenDb( $this->sEmail, $sToken );
+        $oUser->setId($iIdUser);
+        $oUser->setToken($sToken);
+        $oUser->save();
     }
 
     /**
@@ -58,7 +56,8 @@ class Token {
     public function checkToken( $oUser ) {
         $sToken = $_SESSION['token']['id'];
         $iIdUser = $_SESSION['id_user'];
-        $sDbToken = $oUser->getTokenDb( $iIdUser );
+        $oUser->setId( $iIdUser );
+        $sDbToken = $oUser->select( array('token') )[0]['token'];
 
         return $sToken === $sDbToken ? 1 : 0;
     }

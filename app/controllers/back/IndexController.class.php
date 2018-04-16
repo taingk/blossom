@@ -16,10 +16,10 @@ class IndexController {
 
             if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
                 $oToken = new Token();
-
+                
                 $oToken->setTokenSession();
-                $oToken->setTokenDb( $aParams, $oUser );
-                $oToken->setIdSession( $oUser );
+                $oToken->setIdSession( $aParams, $oUser );
+                $oToken->setTokenDb( $oUser );
                 echo "Identifiants valides";
             } else {
                 echo "Identifiants invalides";
