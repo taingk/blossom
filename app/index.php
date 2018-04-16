@@ -41,6 +41,23 @@ $aParams = [
     "URL" => $aUriExploded
 ];
 
+
+// Si l'utilisateur à une session, automatiquement redirigé vers dashboard
+// Sinon, automatiquement redirigé vers la page de connexion
+// if ( $sStructure === "back") {
+//     if ( !$_SESSION['token'] ) {
+//         include "controllers/" . $sStructure . "/IndexController.class.php";
+//         $oIndex = new IndexController();
+//         $oIndex->indexAction( $aParams );
+//         return;
+//     } else if ( $sController === "IndexController" ) {
+//         include "controllers/" . $sStructure . "/DashboardController.class.php";
+//         $oDashboard = new DashboardController();
+//         $oDashboard->indexAction( $aParams );
+//         return;
+//     }
+// }
+
 if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.php" ) ) {
     include "controllers/" . $sStructure . "/" . $sController . ".class.php";
     
