@@ -29,8 +29,7 @@ class UsersController {
     */ 
     public function updateAction( $aParams ) {
         $oToken = new Token();
-        $sToken = $oToken->createToken();
-        $oToken->insertTokenSession( $aParams, $sToken );
+        $oToken->setTokenSession();
         
         $oUser = new Users();
         $oUser->setId(1);
@@ -39,7 +38,7 @@ class UsersController {
 		$oUser->setEmail('Lol@gmail.com');
 		$oUser->setPwd('Test1234');
 		$oUser->setBirthdayDate('1996-01-05');
-        $oUser->setToken($sToken);
+        $oUser->setToken($oToken->getToken());
         $oUser->setSexe(0);
         $oUser->setAddress('Address');
         $oUser->setCity('Ville');

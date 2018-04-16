@@ -12,14 +12,14 @@ class IndexController {
         $sPwd = $aParams['POST']['pwd'];
 
         if ($sEmail && $sPwd) {
-            $oUsers = new Users();
+            $oUser = new Users();
 
-            if ( $oUsers->isLoginValids($sEmail, $sPwd) ) {
+            if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
                 $oToken = new Token();
-                $sToken = $oToken->createToken();
 
-                $oToken->insertTokenSession( $aParams, $sToken );
-                $oToken->insertTokenDb( $aParams, $oUsers, $sToken );
+                $oToken->setTokenSession();
+                $oToken->setTokenDb( $aParams, $oUser );
+                $oToken->setIdSession( $oUser );
                 echo "Identifiants valides";
             } else {
                 echo "Identifiants invalides";

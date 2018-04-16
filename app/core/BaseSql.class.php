@@ -81,4 +81,27 @@ class BaseSql {
 
         return 0;
     }
+
+    public function setTokenDb( $sEmail, $sToken ) {
+        $sQuery = "UPDATE " . $this->sTable . " SET token = :token WHERE email = :email";
+        $oRequest = $this->oPdo->prepare( $sQuery );
+        $oRequest->execute( array( ':token' => $sToken, ':email' => $sEmail ) );
+    }
+
+    public function getTokenDb( $iIdUser ) {
+        $sQuery = "SELECT token FROM " . $this->sTable . " WHERE " . $this->sId . " = :" . $this->sId;
+        $oRequest = $this->oPdo->prepare( $sQuery );
+        $oRequest->execute( array( ':' . $this->sId => $iIdUser) );
+
+        return $oRequest->fetch()['token'];
+    }
+
+    public function getUserId( $sEmail ) {
+        $sQuery = "SELECT " . $this->sId . " FROM " . $this->sTable . " WHERE email = :email";
+        $oRequest = $this->oPdo->prepare( $sQuery );
+        $oRequest->execute( array( ':email' => $sEmail ) );
+
+        return $oRequest->fetch()['id_user'];
+    }
+
 }
