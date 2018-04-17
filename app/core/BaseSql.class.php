@@ -93,9 +93,9 @@ class BaseSql {
         } else {
             $sQuery = "SELECT " . $aSelect . " FROM " . $this->sTable;
         }
-
         $oRequest = $this->oPdo->prepare( $sQuery );
         $oRequest->execute( $this->aColumns );
+        print_r($this->aColumns);
 
         return $oRequest->fetchAll();
     }

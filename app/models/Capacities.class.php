@@ -5,6 +5,7 @@ class Capacities extends BaseSql {
     protected $capacity_number;
     protected $products_idproduct;
     protected $additional_price;
+    protected $status;
 
     public function __construct() {
         // On instancie le parent 
@@ -13,6 +14,20 @@ class Capacities extends BaseSql {
 
     public function setId($id) {
         $this->id_capacity = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
     }
 
     public function setCapacityNumber($capacity_number) {

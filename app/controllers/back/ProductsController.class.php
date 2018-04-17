@@ -23,11 +23,12 @@ class ProductsController {
         $oView = new View("productsAdd", "back");
         $oProduct = new Products();
         $oProduct->setProductName('iPhone 11');
-		$oProduct->setCategoriesIdCategory(NULL);
+		$oProduct->setCategoriesIdCategory(1);
 		$oProduct->setDescription('test');
 		$oProduct->setPrice('150');
-		$oProduct->setRam("8");
-		$oProduct->save();
+        $oProduct->setRam("8");
+		$oProduct->setStatus(1);
+        $oProduct->save();
     }
 
     /*
@@ -55,6 +56,14 @@ class ProductsController {
     * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
     */ 
     public function searchAction( $aParams ) {
+        $_POST['search'] = "iPhone";
+        if ($_POST['search']) {
+            $oProduct = new Products(); 
+            $oProduct->setProductName("CONCAT('%' + '" . $_POST['search'] . "' + '%')");
+            $oAllProducts = $oProduct->select(array('product_name'));   
 
+            http_response_code(200);
+            echo json_encode($oAllProducts);
+        }
     }
 }
