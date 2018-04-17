@@ -45,11 +45,21 @@ class BaseSql {
         // On ne garde que les attributs de la classe enfant
         $this->aColumns = array_diff_key(get_object_vars($this), $aColumnsExcluded);
     }
+
+    public function cleanColumns() {
+        foreach ($this->aColumns as $sKey => $sValue) {
+            if (!$sValue) {
+                unset($this->aColumns[$sKey]);
+            }
+        }
+    }
     
     public function save() {
         $this->setColumns();
 
         if ( $this->aColumns[$this->sId] ) {
+            $this->cleanColumns();
+
             foreach ($this->aColumns as $sKey => $sValue) {
                 $aSqlSet[] =  $sKey . " = :" . $sKey;
             }
@@ -68,6 +78,28 @@ class BaseSql {
         }
     }
 
+    public function select( $aSelect = "*" ) {
+        $this->setColumns();
+        $this->cleanColumns();
+
+        $aSelect === "*" ? : $aSelect = implode(', ', $aSelect);
+
+        foreach ($this->aColumns as $sKey => $sValue) {
+            $aSqlSet[] =  $sKey . " = :" . $sKey;
+        }
+
+        if ( $aSqlSet ) {
+            $sQuery = "SELECT " . $aSelect . " FROM " . $this->sTable . " WHERE " . implode( " AND ", $aSqlSet );
+        } else {
+            $sQuery = "SELECT " . $aSelect . " FROM " . $this->sTable;
+        }
+
+        $oRequest = $this->oPdo->prepare( $sQuery );
+        $oRequest->execute( $this->aColumns );
+
+        return $oRequest->fetchAll();
+    }
+
     public function isLoginValids($sEmail, $sPwd) {
         $sQuery = "SELECT pwd FROM " . $this->sTable . " WHERE email = :email";
         $oRequest = $this->oPdo->prepare($sQuery);
@@ -81,4 +113,5 @@ class BaseSql {
 
         return 0;
     }
+
 }
