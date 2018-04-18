@@ -5,6 +5,21 @@ class Colors extends BaseSql {
     protected $color_hexa;
     protected $products_idproduct;
 
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
+    }
+    protected $status;
+
     public function __construct() {
         // On instancie le parent 
         parent::__construct();

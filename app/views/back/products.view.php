@@ -76,7 +76,7 @@
     <article class="row">
         <div class="col-md-10"></div>
         <div class="col-md-2">
-            <a href="addProducts.view.php" class="backBtnAdd">+</a>
+            <span class="backBtnAdd" id="add">+</span>
         </div>
     </article>
     

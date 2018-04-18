@@ -5,10 +5,25 @@ class Comments extends BaseSql {
     protected $comment;
     protected $users_idusers;
     protected $products_idproduct;
+    protected $status;
 
     public function __construct() {
         // On instancie le parent 
         parent::__construct();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
     }
 
     public function setId($id) {
