@@ -57,7 +57,7 @@
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
-    <script src="/public/js/fetch/back/fetch.js"></script>
+    <script src="/public/js/fetch/back/search.js"></script>
 </body>
 
 </html>

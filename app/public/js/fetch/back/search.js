@@ -1,20 +1,23 @@
 const btn = document.getElementById('add');
+// 'btn' : à remplacer par l'élément trigger
 
-const dbData = new FormData();
-dbData.append('search', 'iPhone');
+const sSearch = new FormData();
+sSearch.append('search', 'iPhone');
+// 'iPhone' : à remplacer par la valeur que l'utilisateur veut rechercher
 
+// 'btn' : à remplacer par la variable en haut
 btn.addEventListener('click', () => {
+    // url : à remplacer par la bonne url action
     fetch('/back/products/search', {
         method: 'POST',
-        body: dbData
+        body: sSearch
     })
     .then(
         function(response) {
             if (response.status !== 200) {
-                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                console.log('Erreur, code : ' + response.status);
                 return;
             }
-            // Examine the text in the response
             response.json().then(function(data) {
                 console.log(data);
             });

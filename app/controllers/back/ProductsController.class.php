@@ -56,14 +56,15 @@ class ProductsController {
     * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
     */ 
     public function searchAction( $aParams ) {
-        $_POST['search'] = "iPhone";
         if ($_POST['search']) {
             $oProduct = new Products(); 
-            $oProduct->setProductName("CONCAT('%' + '" . $_POST['search'] . "' + '%')");
-            $oAllProducts = $oProduct->select(array('product_name'));   
+            $oProduct->setProductName($_POST['search']);
+            $oAllProducts = $oProduct->search();   
 
             http_response_code(200);
             echo json_encode($oAllProducts);
+        } else {
+            http_response_code(404);            
         }
     }
 }

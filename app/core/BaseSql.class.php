@@ -19,7 +19,6 @@ class BaseSql {
     }
 
     public function __construct() {
-        // Remplit $sTable par le nom de la classe qui l'appelle, qui vient de models/
         $this->sTable = strtolower(get_called_class());
 
         if ( $this->sTable == "capacities" ) {
@@ -81,13 +80,13 @@ class BaseSql {
     public function select( $aSelect = "*" ) {
         $this->setColumns();
         $this->cleanColumns();
-
+        
         $aSelect === "*" ? : $aSelect = implode(', ', $aSelect);
-
+        
         foreach ($this->aColumns as $sKey => $sValue) {
             $aSqlSet[] =  $sKey . " = :" . $sKey;
         }
-
+        
         if ( $aSqlSet ) {
             $sQuery = "SELECT " . $aSelect . " FROM " . $this->sTable . " WHERE " . implode( " AND ", $aSqlSet );
         } else {
@@ -95,7 +94,23 @@ class BaseSql {
         }
         $oRequest = $this->oPdo->prepare( $sQuery );
         $oRequest->execute( $this->aColumns );
-        print_r($this->aColumns);
+
+        return $oRequest->fetchAll();
+    }
+
+    public function search() {
+        $this->setColumns();
+        $this->cleanColumns();
+        
+        foreach ($this->aColumns as $sKey => $sValue) {
+            $aSqlSet[] =  $sKey . " LIKE :" . $sKey;
+            $this->aColumns[$sKey] = '%' . $sValue . '%';
+        }
+        
+        $sQuery = "SELECT * FROM " . $this->sTable . " WHERE " . implode( " AND ", $aSqlSet );
+
+        $oRequest = $this->oPdo->prepare( $sQuery );
+        $oRequest->execute( $this->aColumns );
 
         return $oRequest->fetchAll();
     }
