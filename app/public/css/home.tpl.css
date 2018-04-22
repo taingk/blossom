@@ -5,7 +5,8 @@
 */
 
 header {
-    height: 950px;
+    /*height: 950px;*/
+    height: 60vh;
     background-color: #d8475d;
 }
 
