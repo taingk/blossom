@@ -75,11 +75,11 @@
             </article>
             <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
                 <p class="is-font-title">Votre site</p>
-                <p class="text-is-justified">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis vel est id commodo. Cras et purus urna. Aenean ut ex laoreet, cursus tortor sit amet, auctor dolor. Aliquam sed leo id dolor accumsan cursus sit amet sagittis turpis. Phasellus tempor lorem vel interdum ultricies. Nulla urna eros, pretium at eros nec, euismod gravida odio. Nunc erat ante, ultricies non nunc a, dictum bibendum ex. Suspendisse lacus est, molestie quis aliquam vitae, vulputate sed elit. Ut odio augue, suscipit vitae tempus nec, posuere vitae nisl.</p>
+                <p class="text-is-justified">Avec Blossom, vous allez enfin pouvoir concevoir votre site de manière plus simplifiée, rapide et à petit prix. En effet, les services proposées par Blossom est avantageux pour vous car il parait de créer des sites sans forcément savoir des notions en développement web. Il vous suffit d'avoir un ordinateur et cliquer les élements que vous désirez modifier afin de générer du content dans votre site internet. Tel un chef de chantier, vous allez pouvoir promouvoir votre produit en quelques cliques grâce à Blossom.</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters is-v-centered"> 
                 <p class="is-font-title">Vos statistiques</p>
-                <p class="text-is-justified">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis vel est id commodo. Cras et purus urna. Aenean ut ex laoreet, cursus tortor sit amet, auctor dolor. Aliquam sed leo id dolor accumsan cursus sit amet sagittis turpis. Phasellus tempor lorem vel interdum ultricies. Nulla urna eros, pretium at eros nec, euismod gravida odio. Nunc erat ante, ultricies non nunc a, dictum bibendum ex. Suspendisse lacus est, molestie quis aliquam vitae, vulputate sed elit. Ut odio augue, suscipit vitae tempus nec, posuere vitae nisl.</p>
+                <p class="text-is-justified">Avec Blossom, vous allez pouvoir consulter les trafics générées par votre site internet crée au préalable. En effet, notre solution propose un dash-board réservés aux créateurs du site qui va vous permettre d'avoir une représentation graphiques de statistiques que vous pourrez créer au préalable.</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters">
                 <img class="box-has-shadow img-is-auto" src="/public/img/image5.jpg" alt="">
