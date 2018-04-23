@@ -77,14 +77,33 @@
                 <p class="is-font-title">Votre site</p>
                 <p class="text-is-justified">Avec Blossom, vous allez enfin pouvoir concevoir votre site de manière plus simplifiée, rapide et à petit prix. En effet, les services proposées par Blossom est avantageux pour vous car il parait de créer des sites sans forcément savoir des notions en développement web. Il vous suffit d'avoir un ordinateur et cliquer les élements que vous désirez modifier afin de générer du content dans votre site internet. Tel un chef de chantier, vous allez pouvoir promouvoir votre produit en quelques cliques grâce à Blossom.</p>
             </article>
-            <article class="col-xxs-12 col-sm-6 gutters is-v-centered"> 
+            <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
                 <p class="is-font-title">Vos statistiques</p>
                 <p class="text-is-justified">Avec Blossom, vous allez pouvoir consulter les trafics générées par votre site internet crée au préalable. En effet, notre solution propose un dash-board réservés aux créateurs du site qui va vous permettre d'avoir une représentation graphiques de statistiques que vous pourrez créer au préalable.</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters">
                 <img class="box-has-shadow img-is-auto" src="/public/img/image5.jpg" alt="">
             </article>
-        </article>  
+        </article>
+    </section>
+
+    <section class="bandeau ">
+        <article class="col-xxs-10 row is-h-centered">
+<!--            <article class="col-xxs-12 col-sm-6 gutters">
+                <img class="box-has-shadow img-is-auto" src="/public/img/image3.png" alt="">
+            </article>
+            <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
+                <p class="is-font-title">Votre site</p>
+                <p class="text-is-justified">Avec Blossom, vous allez enfin pouvoir concevoir votre site de manière plus simplifiée, rapide et à petit prix. En effet, les services proposées par Blossom est avantageux pour vous car il parait de créer des sites sans forcément savoir des notions en développement web. Il vous suffit d'avoir un ordinateur et cliquer les élements que vous désirez modifier afin de générer du content dans votre site internet. Tel un chef de chantier, vous allez pouvoir promouvoir votre produit en quelques cliques grâce à Blossom.</p>
+            </article>
+            <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
+                <p class="is-font-title">Vos statistiques</p>
+                <p class="text-is-justified">Avec Blossom, vous allez pouvoir consulter les trafics générées par votre site internet crée au préalable. En effet, notre solution propose un dash-board réservés aux créateurs du site qui va vous permettre d'avoir une représentation graphiques de statistiques que vous pourrez créer au préalable.</p>
+            </article>
+            <article class="col-xxs-12 col-sm-6 gutters">
+                <img class="box-has-shadow img-is-auto" src="/public/img/image5.jpg" alt="">
+            </article>
+-->        </article>
     </section>
 
 </section>
