@@ -46,7 +46,7 @@ $aParams = [
 if ( $sStructure === "back") {
     $oToken = new Token();
 
-    if ( !$_SESSION['token'] ) {
+    if ( !$_SESSION['token'] && $sController != "AdminController" ) {
         include "controllers/back/IndexController.class.php";
         $oIndex = new IndexController();
         $oIndex->indexAction( $aParams );
