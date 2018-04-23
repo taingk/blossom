@@ -23,8 +23,10 @@ class Token {
      *
      * @param $oUser
      */
-    public function setIdSession( $aParams, $oUser ) {
-        $oUser->setEmail($aParams['POST']['email']);
+    public function setIdSession( $sEmail ) {
+        $oUser = new Users();
+
+        $oUser->setEmail( $sEmail );
         $iIdUser = $oUser->select(array('id_user'))[0]['id_user'];
 
         $_SESSION['id_user'] = $iIdUser;
@@ -37,7 +39,8 @@ class Token {
      * @param $aParams
      * @param $oUser
      */
-    public function setTokenDb( $oUser ) {
+    public function setTokenDb() {
+        $oUser = new Users();
         $sToken = $_SESSION['token']['id'];
         $iIdUser = $_SESSION['id_user'];
 
@@ -53,12 +56,22 @@ class Token {
      *
      * @return int
      */
-    public function checkToken( $oUser ) {
+    public function checkToken() {
         $sToken = $_SESSION['token']['id'];
         $iIdUser = $_SESSION['id_user'];
+        $oUser = new Users();
+
         $oUser->setId( $iIdUser );
         $sDbToken = $oUser->select( array('token') )[0]['token'];
 
-        return $sToken === $sDbToken ? 1 : 0;
+        $bCheck = $sToken === $sDbToken ? 1 : 0;
+
+        if ( $bCheck ) {
+            $this->setTokenSession();
+            $this->setTokenDb();
+        } else {
+            session_destroy();
+            die('Connexion non permise');
+        }
     }
 }

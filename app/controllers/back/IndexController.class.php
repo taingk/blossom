@@ -18,9 +18,10 @@ class IndexController {
                 $oToken = new Token();
                 
                 $oToken->setTokenSession();
-                $oToken->setIdSession( $aParams, $oUser );
-                $oToken->setTokenDb( $oUser );
-                echo "Identifiants valides";
+                $oToken->setIdSession( $sEmail );
+                $oToken->setTokenDb();
+
+                header('Location: /back/dashboard');
             } else {
                 echo "Identifiants invalides";
             }
