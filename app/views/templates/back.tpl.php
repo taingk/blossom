@@ -48,7 +48,6 @@
             </article>
         </section>
     </main>
-    <textarea>Next, start a free trial!</textarea>
     <footer>
         <!-- Footer -->
         <?php include("views/back/footer.view.php")?>
@@ -58,8 +57,6 @@
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
     <script src="/public/js/fetch/back/search.js"></script>
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
 </body>
 
 </html>
