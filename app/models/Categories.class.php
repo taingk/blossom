@@ -3,6 +3,21 @@
 class Categories extends BaseSql {
     protected $id_category = null;
     protected $category_name;
+    protected $status;
+
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
+    }
 
     public function __construct() {
         // On instancie le parent 

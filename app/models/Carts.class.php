@@ -7,6 +7,7 @@ class Carts extends BaseSql {
     protected $colors_id_color;
     protected $users_id_user;
     protected $orders_id_order;
+    protected $status;
 
     public function __construct() {
         // On instancie le parent 
@@ -15,6 +16,20 @@ class Carts extends BaseSql {
 
     public function setId($id) {
         $this->id_cart = trim($id);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
     }
 
     public function setCapacitiesIdCapacity($capacities_id_capacity) {

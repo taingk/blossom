@@ -22,7 +22,7 @@ class AdminController {
                 $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
                 $oUser->setEmail($aParams['POST']['email']);
                 $oUser->setPwd($aParams['POST']['pwd']);
-                $oUser->setToken($oToken->createToken());
+                $oUser->setToken($oToken->getToken());
                 $oUser->setStatus(1);
                 $oUser->save();    
             }
