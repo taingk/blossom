@@ -7,6 +7,18 @@ class AdminController {
     */
     public function indexAction( $aParams ) {
         $oUser = new Users();
+
+        if ( $oUser->select() ) {
+            $oToken = new Token();
+            $oToken->checkToken();
+
+            include "controllers/back/DashboardController.class.php";
+            $oDashboard = new DashboardController();
+            $oDashboard->indexAction( $aParams );
+
+            return;
+        }
+
 		$aConfig = $oUser->adminFormAdd();
         $aErrors = [];
 
@@ -24,7 +36,13 @@ class AdminController {
                 $oUser->setPwd($aParams['POST']['pwd']);
                 $oUser->setToken($oToken->getToken());
                 $oUser->setStatus(1);
-                $oUser->save();    
+                $oUser->save();
+
+                include "controllers/back/IndexController.class.php";
+                $oIndex = new IndexController();
+                $oIndex->indexAction( $aParams );
+
+                return;
             }
         }
 
@@ -32,6 +50,12 @@ class AdminController {
 
         $oView->assign("aConfig", $aConfig);
 		$oView->assign("aErrors", $aErrors);
+    }
+
+    public function logOutAction( $aParams ) {
+        session_destroy();
+        $_SESSION = [];
+        header('Location: /back');
     }
     
 }

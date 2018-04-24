@@ -45,12 +45,19 @@ $aParams = [
 // Sinon, automatiquement redirigé vers la page de connexion
 if ( $sStructure === "back") {
     $oToken = new Token();
+    $oUser = new Users();
 
-    if ( !$_SESSION['token'] && $sController != "AdminController" ) {
+    if ( !$oUser->select() ) {
+        include "controllers/back/AdminController.class.php";
+        $oAdmin = new AdminController();
+        $oAdmin->indexAction( $aParams );
+
+        return;
+    } else if ( !$_SESSION['token'] ) {
         include "controllers/back/IndexController.class.php";
         $oIndex = new IndexController();
         $oIndex->indexAction( $aParams );
-    
+
         return;
     } else if ( $sController === "IndexController" ) {
         $oToken->checkToken();
@@ -58,7 +65,7 @@ if ( $sStructure === "back") {
         include "controllers/back/DashboardController.class.php";
         $oDashboard = new DashboardController();
         $oDashboard->indexAction( $aParams );
-    
+
         return;
     }
 

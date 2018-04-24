@@ -34,5 +34,8 @@
         <li class="backMenuLink" id="users">
             <a href="/back/users">Utilisateurs</a>
         </li>
+        <li class="backMenuLink">
+            <a href="/back/admin/logout">Déconnexion</a>
+        </li>
     </ul>
 </nav>
