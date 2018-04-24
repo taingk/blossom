@@ -20,7 +20,7 @@
             <a href="/back/dashboard">Tableau de bord</a>
         </li>
         <li class="backMenuLink" id="editionPages">
-            <a href="/back/pagesEditor">Edition Pages</a>
+            <a href="/back/pages">Edition Pages</a>
         </li>
         <li class="backMenuLink" id="categories">
             <a href="/back/categories">Categories</a>

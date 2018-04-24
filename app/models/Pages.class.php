@@ -2,6 +2,7 @@
 
 class Pages extends BaseSql {
     protected $id_page = null;
+    protected $page_name;
     protected $type;
     protected $content;
     protected $is_use;
@@ -15,6 +16,10 @@ class Pages extends BaseSql {
 
     public function setIdPage($id_page) {
         $this->id_page = trim($id_page);
+    }
+
+    public function setPageName($page_name) {
+        $this->page_name = trim($page_name);
     }
 
     public function setType($type) {
@@ -36,6 +41,11 @@ class Pages extends BaseSql {
     public function getIdPage()
     {
         return $this->id_page;
+    }
+
+    public function getPageName()
+    {
+        return $this->page_name;
     }
 
     public function getType()
