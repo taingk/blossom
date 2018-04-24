@@ -1,7 +1,7 @@
 <section>
 
     <section class="container">
-        <p class="bandeau is-font-title is-black text-is-centered">Blossom est un CMS qui vous permet de créer un site e-commerce pour la vente de téléphone.<br>Que vous soyez un particulier voulant lancer son site ou un professionnel, Blossom est fait pour vous !</p>
+        <p class="bandeau is-font-title is-black text-is-centered"><span class="is-pink">Blossom </span>est un CMS qui vous permet de créer un site e-commerce pour la vente de téléphone.<br>Que vous soyez un particulier voulant lancer son site ou un professionnel, <span class="is-pink">Blossom </span>est fait pour vous !</p>
         <h2 class="is-black text-is-centered">Six raisons d'utiliser <span class="is-pink">Blossom</span></h2>
         <hr>
         <section class="col-xxs-12 row">
@@ -68,27 +68,50 @@
         </section>
     </section>
 
-    <section class="bandeau bg-is-pink">
-        <article class="col-xxs-10 row is-h-centered">
-            <article class="col-xxs-12 col-sm-6 gutters">
-                <img class="box-has-shadow img-is-auto" src="/public/img/image3.png" alt="">
+    <section class="bg-is-pink">
+        <section class="container">
+            <h2 class="text-is-centered">Comment fonctionne notre solution?</h2>
+            <hr>
+            <article class="col-xxs-10 row is-h-centered">
+                <article class="col-xxs-12 col-sm-6 gutters">
+                    <img class="box-has-shadow img-is-auto" src="/public/img/image3.png" alt="">
+                </article>
+                <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
+                    <p class="is-font-title">Votre site</p>
+                    <p class="text-is-justified">Avec Blossom, vous allez enfin pouvoir concevoir votre site de manière plus simplifiée, rapide et à petit prix. En effet, les services proposées par Blossom est avantageux pour vous car il parait de créer des sites sans forcément savoir des notions en développement web. Il vous suffit d'avoir un ordinateur et cliquer les élements que vous désirez modifier afin de générer du content dans votre site internet. Tel un chef de chantier, vous allez pouvoir promouvoir votre produit en quelques cliques grâce à Blossom.</p>
+                </article>
+                <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
+                    <p class="is-font-title">Vos statistiques</p>
+                    <p class="text-is-justified">Avec Blossom, vous allez pouvoir consulter les trafics générées par votre site internet crée au préalable. En effet, notre solution propose un dash-board réservés aux créateurs du site qui va vous permettre d'avoir une représentation graphiques de statistiques que vous pourrez créer au préalable.</p>
+                </article>
+                <article class="col-xxs-12 col-sm-6 gutters">
+                    <img class="box-has-shadow img-is-auto" src="/public/img/image5.jpg" alt="">
+                </article>
             </article>
-            <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
-                <p class="is-font-title">Votre site</p>
-                <p class="text-is-justified">Avec Blossom, vous allez enfin pouvoir concevoir votre site de manière plus simplifiée, rapide et à petit prix. En effet, les services proposées par Blossom est avantageux pour vous car il parait de créer des sites sans forcément savoir des notions en développement web. Il vous suffit d'avoir un ordinateur et cliquer les élements que vous désirez modifier afin de générer du content dans votre site internet. Tel un chef de chantier, vous allez pouvoir promouvoir votre produit en quelques cliques grâce à Blossom.</p>
-            </article>
-            <article class="col-xxs-12 col-sm-6 gutters is-v-centered">
-                <p class="is-font-title">Vos statistiques</p>
-                <p class="text-is-justified">Avec Blossom, vous allez pouvoir consulter les trafics générées par votre site internet crée au préalable. En effet, notre solution propose un dash-board réservés aux créateurs du site qui va vous permettre d'avoir une représentation graphiques de statistiques que vous pourrez créer au préalable.</p>
-            </article>
-            <article class="col-xxs-12 col-sm-6 gutters">
-                <img class="box-has-shadow img-is-auto" src="/public/img/image5.jpg" alt="">
-            </article>
-        </article>
+        </section>
     </section>
 
-    <section class="bandeau ">
-        <article class="col-xxs-10 row is-h-centered">
+    <section class="container">
+        <h2 class="is-black text-is-centered">Au juste, que propose <span class="is-pink">Blossom</span>?</h2>
+        <hr>
+        <article class="col-xxs-10 row is-h-centered row">
+            <article class="col-xxs-12 col-sm-6 gutters">
+                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
+                <p class="is-black">Lorem</p>
+            </article>
+            <article class="col-xxs-12 col-sm-6 gutters">
+                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
+                <p class="is-black">Lorem</p>
+            </article>
+            <article class="col-xxs-12 col-sm-6 gutters">
+                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
+                <p class="is-black">Lorem</p>
+            </article>
+            <article class="col-xxs-12 col-sm-6 gutters">
+                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
+                <p class="is-black">Lorem</p>
+            </article>
+        </article>
 <!--            <article class="col-xxs-12 col-sm-6 gutters">
                 <img class="box-has-shadow img-is-auto" src="/public/img/image3.png" alt="">
             </article>
