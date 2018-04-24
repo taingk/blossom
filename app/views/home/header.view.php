@@ -1,9 +1,9 @@
-<nav class="headerBar position-is-fixed">
+<nav class="headerBar position-is-fixed bg-is-pink">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
     </label>
-    <ul class="menu">
+    <ul class="menu bg-is-pink" style="padding: 0;">
         <section class="container row center-in-row">
             <li class="col-xxs-2">
                 <a href="#">
