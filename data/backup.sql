@@ -254,6 +254,7 @@ DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
   `id_page` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `content` text NOT NULL,
   `is_use` tinyint(4) NOT NULL,
   `status` tinyint(4) NOT NULL,

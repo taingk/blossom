@@ -43,27 +43,27 @@ $aParams = [
 
 // Si l'utilisateur à une session, automatiquement redirigé vers dashboard
 // Sinon, automatiquement redirigé vers la page de connexion
-if ( $sStructure === "back") {
-    $oToken = new Token();
+// if ( $sStructure === "back") {
+//     $oToken = new Token();
 
-    if ( !$_SESSION['token'] && $sController != "AdminController" ) {
-        include "controllers/back/IndexController.class.php";
-        $oIndex = new IndexController();
-        $oIndex->indexAction( $aParams );
+//     if ( !$_SESSION['token'] && $sController != "AdminController" ) {
+//         include "controllers/back/IndexController.class.php";
+//         $oIndex = new IndexController();
+//         $oIndex->indexAction( $aParams );
     
-        return;
-    } else if ( $sController === "IndexController" ) {
-        $oToken->checkToken();
+//         return;
+//     } else if ( $sController === "IndexController" ) {
+//         $oToken->checkToken();
 
-        include "controllers/back/DashboardController.class.php";
-        $oDashboard = new DashboardController();
-        $oDashboard->indexAction( $aParams );
+//         include "controllers/back/DashboardController.class.php";
+//         $oDashboard = new DashboardController();
+//         $oDashboard->indexAction( $aParams );
     
-        return;
-    }
+//         return;
+//     }
 
-    $oToken->checkToken();
-}
+//     $oToken->checkToken();
+// }
 
 
 if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.php" ) ) {

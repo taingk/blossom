@@ -2,7 +2,7 @@
 
 class Pages extends BaseSql {
     protected $id_page = null;
-    protected $page_name;
+    protected $name;
     protected $type;
     protected $content;
     protected $is_use;
@@ -14,12 +14,12 @@ class Pages extends BaseSql {
         parent::__construct();
     }
 
-    public function setIdPage($id_page) {
+    public function setId($id_page) {
         $this->id_page = trim($id_page);
     }
 
     public function setPageName($page_name) {
-        $this->page_name = trim($page_name);
+        $this->name = trim($page_name);
     }
 
     public function setType($type) {
@@ -45,7 +45,7 @@ class Pages extends BaseSql {
 
     public function getPageName()
     {
-        return $this->page_name;
+        return $this->name;
     }
 
     public function getType()
@@ -67,5 +67,24 @@ class Pages extends BaseSql {
     {
         return $this->status;
     }
+
+    public function editorForm() {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "class" => "form col-md-10"],
+					"input" => [
+						"TitlePage" =>      [
+                                                "title" => "Titre de la page",
+                                                "type" => "text",
+                                                "placeholder" => "Bienvenue sur ma page",
+                        ],
+                        "SousTitle" =>      [
+                                                "title" => "Couleur",
+                                                "type" => "text",
+                                                "placeholder" => "Couleur",
+                        ]
+                    ]
+		];
+    }
 }
+
 ?>
