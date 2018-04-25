@@ -7,6 +7,11 @@ class CartController {
     */ 
     public function indexAction( $aParams ) {
         $oView = new View("cart", "front");
+        $oProduct = new Products();
+        $aResult = $oProduct->select();
+        $oView->assign('products', $aResult);
     }
+
+
 
 }

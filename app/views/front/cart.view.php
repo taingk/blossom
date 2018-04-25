@@ -3,6 +3,8 @@
     
     <hr>
 
+
+
     <section class="responsiveTable">
         <table>
             <tr>
@@ -12,32 +14,8 @@
                 <th>Quantité</th>
                 <th>Prix total</th>
             </tr>
-            <tr>
-                <td>
-                    <figure>
-                        <img src="/public/img/iphone8Panier.jpg" class="PanierImg" alt="iPhone8" title="...">
-                    </figure>
-                </td>
-                <td>
-                    <div class="captionProduct responsive-center">
-                        <p><strong>iPhone 8</strong></p>
-                        <p class="is-grey"><strong>Blanc - 250 Go</strong></p>
-                        <p class="is-grey">N° réf: DHL06B2</p>
-                    </div>
-                </td>
-                <td>
-                    <p class="text-is-left is-grey">759,00€</p>
-                </td>
-                <td>
-                    <p class="text-is-left is-grey">x 1</p>
-                </td>
-                <td>
-                    <div class="text-is-left">
-                        <p><strong>759,00€</strong></p> 
-                        <p class="is-pink">Supprimer</p>
-                    </div>
-                </td>            
-            </tr>
+
+            <?php foreach ($products as $results): ?>
             <tr>
                 <td>
                     <figure>
@@ -46,23 +24,24 @@
                 </td>
                 <td>
                     <div class="captionProduct responsive-center">
-                        <p><strong>AirPod</strong></p>
+                        <p><strong><?php echo $results["product_name"]?></strong></p>
                         <p class="is-grey">N° réf: BMW24R8</p>
                     </div>
                 </td>
                 <td>
-                    <p class="text-is-left is-grey">250,00€</p>
+                    <p class="text-is-left is-grey"><?php echo $results["price"] ?></p>
                 </td>
                 <td>
-                    <p class="text-is-left is-grey">x 2</p>
+                    <p class="text-is-left is-grey"><?php echo $results["quantity"] ?></p>
                 </td>
                 <td>
                     <div class="text-is-left">
-                        <p><strong>500,00€</strong></p> 
+                        <p><strong><?php echo $results["price"]*$results["quantity"]; ?>€</strong></p>
                         <p class="is-pink">Supprimer</p>
                     </div>
                 </td>
             </tr>
+            <?php endforeach; ?>
         </table>
     </section>
 

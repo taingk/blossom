@@ -8,6 +8,7 @@ class Products extends BaseSql {
     protected $price;
     protected $ram;
     protected $status;
+    protected $quantity;
 
     /**
      * @return mixed
@@ -15,6 +16,11 @@ class Products extends BaseSql {
     public function getStatus() {
         return $this->status;
     }
+
+    public function getQuantity() {
+        return $this->quantity;
+    }
+
 
     /**
      * @param mixed $status
@@ -48,9 +54,14 @@ class Products extends BaseSql {
         $this->price = trim($price);
     }
 
+    public function setQuantity($quantity) {
+        $this->quantity = trim($quantity);
+    }
+
     public function setRam($ram) {
         $this->ram = trim($ram);
     }
+
 
     public function getIdProduct()
     {
