@@ -47,7 +47,13 @@ if ( $sStructure === "back") {
     $oToken = new Token();
     $oUser = new Users();
 
-    if ( !$oUser->select() ) {
+    if ( $sAction === "confirmAction" ) {
+        include "controllers/back/UsersController.class.php";
+        $oUsers = new UsersController();
+        $oUsers->confirmAction( $aParams );
+
+        return;
+    } else if ( !$oUser->select() ) {
         include "controllers/back/AdminController.class.php";
         $oAdmin = new AdminController();
         $oAdmin->indexAction( $aParams );
