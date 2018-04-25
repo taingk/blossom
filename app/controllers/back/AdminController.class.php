@@ -26,17 +26,9 @@ class AdminController {
             $aErrors = Validator::checkForm( $aConfig, $aParams["POST"] );
 
 			if ( empty( $aErrors ) ) {
-                $oToken = new Token();
+                $oMailer = new Mailer();
 
-                $oUser->setFirstname($aParams['POST']['firstname']);
-                $oUser->setLastname($aParams['POST']['lastname']);
-                $oUser->setSexe($aParams['POST']['sexe']);
-                $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
-                $oUser->setEmail($aParams['POST']['email']);
-                $oUser->setPwd($aParams['POST']['pwd']);
-                $oUser->setToken($oToken->getToken());
-                $oUser->setStatus(1);
-                $oUser->save();
+                $oMailer->sendMail( $aParams );
 
                 include "controllers/back/IndexController.class.php";
                 $oIndex = new IndexController();
