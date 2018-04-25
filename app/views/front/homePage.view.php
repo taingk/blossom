@@ -1,6 +1,7 @@
 <section class="frontImgHeader row">
     <article class="col-xxs-12 row">
-        <h1 class="col-xxs-12">La puissance entre<br> vos mains</h1>
+    
+        <h1 class="col-xxs-12"><?php echo $Final["TitlePage"]?></h1>
         <div class="col-xxs-12">
             <img class="img-is-max gutters" src="/public/img/bigIphoneXaccueil.jpeg">
         </div>

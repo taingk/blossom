@@ -19,6 +19,9 @@
         <li class="backMenuLink" id="dashboard">
             <a href="/back/dashboard">Tableau de bord</a>
         </li>
+        <li class="backMenuLink" id="editionPages">
+            <a href="/back/pages">Edition Pages</a>
+        </li>
         <li class="backMenuLink" id="categories">
             <a href="/back/categories">Categories</a>
         </li>

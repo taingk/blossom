@@ -47,7 +47,7 @@ class BaseSql {
 
     public function cleanColumns() {
         foreach ($this->aColumns as $sKey => $sValue) {
-            if (!$sValue) {
+            if ( $sValue == "" ) {
                 unset($this->aColumns[$sKey]);
             }
         }
@@ -58,7 +58,8 @@ class BaseSql {
 
         if ( $this->aColumns[$this->sId] ) {
             $this->cleanColumns();
-
+            print_r($this->aColumns);
+            echo "oui";
             foreach ($this->aColumns as $sKey => $sValue) {
                 $aSqlSet[] =  $sKey . " = :" . $sKey;
             }

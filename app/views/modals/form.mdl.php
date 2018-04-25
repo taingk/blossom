@@ -1,6 +1,6 @@
 <?php
     // à décommenter pour afficher les erreurs
-	// print_r($aErrors);
+    // print_r($aErrors);
 ?>
 
 <form method="<?php echo $aConfig["config"]["method"]?>" action="<?php echo $aConfig["config"]["action"]?>" class="<?php echo $aConfig["config"]["class"]?>">
@@ -11,8 +11,8 @@
         || $sAttribut["type"] == "number" || $sAttribut["type"] == "password"
         || $sAttribut["type"] == "date" ): ?>
 
-            <label><p><?php echo $sAttribut["title"] ?>
-            <input type="<?php echo $sAttribut["type"] ?>" 
+            <label><p class="is-black"><?php echo $sAttribut["title"] ?>
+            <input class="is-black" type="<?php echo $sAttribut["type"] ?>" 
             name="<?php echo $sName ?>" 
             placeholder="<?php echo $sAttribut["placeholder"] ?>" 
             <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>/></p></label>
