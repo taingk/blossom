@@ -68,4 +68,23 @@ class UsersController {
 
     }
     
+    /**
+     * Mail confirmation
+     */
+    public function confirmAction( $aParams ) {
+        $oToken = new Token();
+        $oUser = new Users();
+
+        $oUser->setFirstname($aParams['GET']['firstname']);
+        $oUser->setLastname($aParams['GET']['lastname']);
+        $oUser->setSexe($aParams['GET']['sexe']);
+        $oUser->setBirthdayDate($aParams['GET']['birthday_date']);
+        $oUser->setEmail($aParams['GET']['email']);
+        $oUser->setPwd($aParams['GET']['pwd']);
+        $oUser->setToken($oToken->getToken());
+        $oUser->setStatus(1);
+        $oUser->save();
+
+        header('Location: /back');
+    }
 }
