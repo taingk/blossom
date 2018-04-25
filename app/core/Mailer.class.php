@@ -19,7 +19,7 @@ class Mailer {
         $mail->SMTPAuth = true;
         $mail->Username = "contact.blossom@gmail.com";
         //Password to use for SMTP authentication
-        $mail->Password = "";
+        $mail->Password = "grp6-BlossomESGI";
         //Set who the message is to be sent from
         $mail->setFrom('contact.blossoom@gmail.com', 'Blossom');
         $mail->addAddress($aParams['POST']['email'], ucfirst(strtolower($aParams['POST']['firstname'])) . ' ' . strtoupper($aParams['POST']['lastname']));
