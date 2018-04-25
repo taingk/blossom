@@ -8,7 +8,7 @@ class Token {
     }
 
     public function __construct() {
-        $this->sToken = bin2hex( random_bytes( 16 ) );
+        $this->sToken = md5(uniqid(mt_rand(), true));
     }
 
     /**
