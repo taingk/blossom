@@ -6,12 +6,10 @@ class CartController {
     * View listing des articles 
     */ 
     public function indexAction( $aParams ) {
-        $oView = new View("products", "front");
-        $oProduct = new Products();
-        $aResult = $oProduct->select();
-        $oView->assign('products', $aResult);
+        $oView = new View("cart", "front");
+        $oOrders= new Orders();
+        $oOrders->setUsersIdUsers($_SESSION['id_user']);
+        $aResult = $oOrders->select();
+        $oView->assign('cart', $aResult);
     }
-
-
-
 }
