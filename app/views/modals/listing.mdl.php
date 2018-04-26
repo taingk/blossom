@@ -27,6 +27,10 @@
                 <td><?php echo $aLists['zip_code'] ? : "Non renseigné"; ?></td>
                 <td><?php echo $aLists['city'] ? : "Non renseigné"; ?></td>
                 <td><?php echo $aLists['status']; ?></td>
+                <td>
+                    <div data-icon="settings-5" class="options"></div>
+                    <div data-icon="locked-4" class="options"></div>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

@@ -48,6 +48,12 @@ table tbody td:first-child {
     background: #EEEE;
 }
 
+.options {
+    margin: 0 5px;
+    display: inline-block;
+    cursor:pointer;
+}
+
 @media screen and (max-width: 400px) {
     h1 {
         font-size: 34px;
