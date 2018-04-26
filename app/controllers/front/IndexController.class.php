@@ -4,10 +4,11 @@ class IndexController {
 
     /*
     * View page d'accueil
-    */ 
+    */
     public function indexAction( $aParams ) {
         $oView = new View("homePage", "front");
         $oPage = new Pages();
+
 
         $oPage->setType("homePage");
         $oPage->setIsUse(1);
@@ -21,9 +22,9 @@ class IndexController {
             $aFinal[$aTemp[0]] = $aTemp[1];
         }
 
-        print_r($aFinal);
+        //print_r($aFinal);
 
-        $oView->assign("inal", $aFinal);
+        $oView->assign("Final", $aFinal);
 
 
         // $oView->assign("test", $a);
