@@ -17,7 +17,7 @@ class Mailer {
         $mail->Port = 465;
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPAuth = true;
-        $mail->Username = "contact.blossom@gmail.com";
+        $mail->Username = "contact.blossoom@gmail.com";
         //Password to use for SMTP authentication
         $mail->Password = "grp6-BlossomESGI";
         //Set who the message is to be sent from
