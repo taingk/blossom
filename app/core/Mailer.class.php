@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 
 class Mailer {
 
-    public function sendMail( $aParams ) {
+    public function sendMail( $aParams, $sToken ) {
         require 'core/PHPMailer/vendor/autoload.php';
 
         $mail = new PHPMailer;
@@ -27,15 +27,9 @@ class Mailer {
         $mail->Subject = "Blossom | Confirmation d'inscription";
         $messageContent = file_get_contents("views/emailing/sendEmail.view.html");
 
-        foreach ( $aParams['POST'] as $sKey => $sValue ) {
-            $sGetParams .= $sKey . "=" . $sValue . "&";
-        }
-
-        $sGetParams = substr($sGetParams, 0, -1);
-
         $messageContent = str_ireplace("/public/img/logo_blanc.png", "https://".$_SERVER["SERVER_NAME"]."/public/img/logo_blanc.png", $messageContent);
         $messageContent = str_ireplace("/public/font/AvenirNextRegular.otf", "https://".$_SERVER["SERVER_NAME"]."/public/font/AvenirNextRegular.otf", $messageContent);
-        $messageContent = str_ireplace("{link}", "https://".$_SERVER["SERVER_NAME"].'/back/users/confirm?' . $sGetParams, $messageContent);
+        $messageContent = str_ireplace("{link}", "https://".$_SERVER["SERVER_NAME"].'/back/users/confirm?token=' . $sToken, $messageContent);
         $messageContent = str_ireplace("{name}", ucfirst(strtolower($aParams['POST']['firstname'])) . ' ' . strtoupper($aParams['POST']['lastname']), $messageContent);
         $messageContent = $mail->msgHTML($messageContent);
 

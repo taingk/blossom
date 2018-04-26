@@ -116,12 +116,12 @@ class BaseSql {
     }
 
     public function isLoginValids($sEmail, $sPwd) {
-        $sQuery = "SELECT pwd FROM " . $this->sTable . " WHERE email = :email";
+        $sQuery = "SELECT pwd, status FROM " . $this->sTable . " WHERE email = :email";
         $oRequest = $this->oPdo->prepare($sQuery);
         $oRequest->execute(array(':email' => $sEmail));
 
         if ( $aResults = $oRequest->fetch() ) {
-            if ( password_verify( $sPwd, $aResults['pwd'] ) ) {
+            if ( password_verify( $sPwd, $aResults['pwd'] ) && $aResults['status'] ) {
                 return 1;
             }
         }

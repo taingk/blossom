@@ -27,9 +27,20 @@ class AdminController {
 
 			if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
-
-                $oMailer->sendMail( $aParams );
-
+                $oToken = new Token();
+                $oUser = new Users();
+                
+                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oUser->setFirstname($aParams['POST']['firstname']);
+                $oUser->setLastname($aParams['POST']['lastname']);
+                $oUser->setSexe($aParams['POST']['sexe']);
+                $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
+                $oUser->setEmail($aParams['POST']['email']);
+                $oUser->setPwd($aParams['POST']['pwd']);
+                $oUser->setToken($oToken->getToken());
+                $oUser->setStatus(0);
+                $oUser->save();
+    
                 include "controllers/back/IndexController.class.php";
                 $oIndex = new IndexController();
                 $oIndex->indexAction( $aParams );

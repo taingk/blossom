@@ -7,7 +7,11 @@ class UsersController {
     */ 
     public function indexAction( $aParams ) {
         $oView = new View("users", "back");
+        $oUser = new Users();
 
+        $aConfigs = $oUser->select();
+
+        $oView->assign("aConfigs", $aConfigs);
     }
 
     /*
@@ -72,21 +76,28 @@ class UsersController {
      * Mail confirmation
      */
     public function confirmAction( $aParams ) {
-        if ( count($aParams['GET']) > 6 ) {
-            $oToken = new Token();
+        if ( $aParams['GET']['token'] ) {
             $oUser = new Users();
-            
-            $oUser->setFirstname($aParams['GET']['firstname']);
-            $oUser->setLastname($aParams['GET']['lastname']);
-            $oUser->setSexe($aParams['GET']['sexe']);
-            $oUser->setBirthdayDate($aParams['GET']['birthday_date']);
-            $oUser->setEmail($aParams['GET']['email']);
-            $oUser->setPwd($aParams['GET']['pwd']);
-            $oUser->setToken($oToken->getToken());
-            $oUser->setStatus(1);
-            $oUser->save();
+            $aTokens = $oUser->select(array('id_user', 'token'));
+            $sToken = null;
+            $sId = 0;
+            $bCheck = false;
     
-            header('Location: /back');
+            foreach ( $aTokens as $sKey => $sValue ) {
+                if ( $aParams['GET']['token'] === $sValue['token'] ) {
+                    $bCheck = true;
+                    $sToken = $sValue['token'];
+                    $sId = $sValue['id_user'];
+                }
+            }
+    
+            if ( $bCheck ) {
+                $oUser->setId($sId);
+                $oUser->setStatus(1);
+                $oUser->save();
+    
+                header('Location: /back');
+            }
         }
     }
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/form.css">
+    <link rel="stylesheet" href="/public/css/table.css">
     <link rel="stylesheet" href="/public/css/back.tpl.css">
 
     <!-- Module CSS -->
