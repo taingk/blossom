@@ -18,9 +18,11 @@ class sideMenu {
     onSelectedMenu() {
         const aSelectedMenu = document.URL.split('/');
         const sId = aSelectedMenu[aSelectedMenu.indexOf('back') + 1];
-        
+
         if ( sId ) {
             this.setColor(sId);
+        } else {
+            this.setColor('dashboard');
         }
     }
 
