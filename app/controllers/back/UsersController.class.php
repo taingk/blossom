@@ -10,6 +10,21 @@ class UsersController {
         $oUser = new Users();
 
         $aConfigs = $oUser->select();
+        $aConfigs = $oUser->unsetKeyColumns($aConfigs, array('date_inserted', 'date_updated', 'token', 'pwd'));
+
+        foreach ( $aConfigs as $sKey => &$aValue ) {
+            foreach ( $aValue as $sKey => $sValue ) {
+                if ( $sKey === 'birthday_date') {
+                    $aValue[$sKey] = Helper::getAge($aValue[$sKey]);
+                }
+                if ( $sKey === 'sexe') {
+                    $aValue[$sKey] = Helper::getSexe($aValue[$sKey]);
+                }
+                if ( !$aValue[$sKey] ) {
+                    $aValue[$sKey] = 'Non renseigné';
+                }
+            }
+        }
 
         $oView->assign("aConfigs", $aConfigs);
     }
@@ -82,12 +97,13 @@ class UsersController {
             $sToken = null;
             $sId = 0;
             $bCheck = false;
-    
+
             foreach ( $aTokens as $sKey => $sValue ) {
                 if ( $aParams['GET']['token'] === $sValue['token'] ) {
                     $bCheck = true;
                     $sToken = $sValue['token'];
                     $sId = $sValue['id_user'];
+                    break;
                 }
             }
     

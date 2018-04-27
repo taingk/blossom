@@ -16,22 +16,15 @@
     </thead>
     <tbody>
         <?php foreach ($aConfig as $aLists): ?>
-            <tr>
-                <td><?php echo $aLists['id_user']; ?></td>
-                <td><?php echo $aLists['firstname']; ?></td>
-                <td><?php echo $aLists['lastname']; ?></td>
-                <td><?php echo $aLists['sexe'] ? "Femme" : "Homme"; ?></td>
-                <td><?php echo Helper::getAge($aLists['birthday_date']); ?></td>
-                <td><?php echo $aLists['email']; ?></td>
-                <td><?php echo $aLists['adress'] ? : "Non renseigné"; ?></td>
-                <td><?php echo $aLists['zip_code'] ? : "Non renseigné"; ?></td>
-                <td><?php echo $aLists['city'] ? : "Non renseigné"; ?></td>
-                <td><?php echo $aLists['status']; ?></td>
-                <td>
-                    <div data-icon="settings-5" class="options"></div>
-                    <div data-icon="locked-4" class="options"></div>
-                </td>
-            </tr>
+        <tr>
+            <?php foreach ($aLists as $sValue): ?>
+            <td><?php echo $sValue; ?></td>
+            <?php endforeach; ?>
+            <td>
+                <div data-icon="settings-5" class="options"></div>
+                <div data-icon="locked-4" class="options"></div>
+            </td>
+        </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
