@@ -47,10 +47,10 @@ if ( $sStructure === "back") {
     $oToken = new Token();
     $oUser = new Users();
 
-    if ( $sAction === "confirmAction" ) {
-        include "controllers/back/UsersController.class.php";
-        $oUsers = new UsersController();
-        $oUsers->confirmAction( $aParams );
+    if ( $sController === "UsersController" && $sAction === "confirmAction" || $sAction === "updateAction" || $sAction === "deleteAction" || $sAction === "searchAction" ) {
+        include "controllers/back/" . $sController . ".class.php";
+        $oUsers = new $sController();
+        $oUsers->$sAction( $aParams );
 
         return;
     } else if ( !$oUser->select() ) {

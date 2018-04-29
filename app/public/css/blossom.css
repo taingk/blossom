@@ -37,9 +37,25 @@ footer {
     padding: 15px;
 }
 
+input {
+    border: 0;
+    border-bottom: 1px solid #363636;
+    width: 100%;
+}
+
+[data-icon] {
+    cursor: pointer;
+}
+
 .bandeau {
     padding: 75px 0;
     margin: 75px 0;
+}
+
+.small-bandeau {
+    padding: 10px 0;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .is-white {

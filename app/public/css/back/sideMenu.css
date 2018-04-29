@@ -29,12 +29,6 @@
     padding: 8%;
 }
 
-main .row section {
-    height: calc(100% - 50px);
-    margin-bottom: auto;
-    margin-top: auto;
-}
-
 .backLeftMenu {
     margin-top: -75px;
     background-color: #FDFBFB;

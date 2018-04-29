@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/form.css">
-    <link rel="stylesheet" href="/public/css/table.css">
+    <link rel="stylesheet" href="/public/css/listing.css">
     <link rel="stylesheet" href="/public/css/back.tpl.css">
 
     <!-- Module CSS -->
@@ -57,7 +57,9 @@
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
-    <script src="/public/js/fetch/back/search.js"></script>
+    <script src="/public/js/<?php echo $this->tplPath() ?>/update.js"></script>
+    <script src="/public/js/<?php echo $this->tplPath() ?>/delete.js"></script>
+    <script src="/public/js/<?php echo $this->tplPath() ?>/search.js"></script>
 </body>
 
 </html>

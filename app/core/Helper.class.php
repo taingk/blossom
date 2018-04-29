@@ -19,4 +19,7 @@ class Helper {
         return $iSexe ? "Femme" : "Homme";
     }
 
+    static function getStatus( $iStatus ) {
+        return $iStatus ? "Actif" : "Inactif";
+    }
 }

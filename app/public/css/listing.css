@@ -51,7 +51,6 @@ table tbody td:first-child {
 .options {
     margin: 0 5px;
     display: inline-block;
-    cursor:pointer;
 }
 
 @media screen and (max-width: 400px) {
