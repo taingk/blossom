@@ -70,7 +70,7 @@ class Pages extends BaseSql {
 
     public function editorForm() {
 		return [
-					"config" => [ "method" => "POST", "action" => "", "class" => "form col-md-10"],
+					"config" => [ "method" => "POST", "action" => "", "class" => "form col-md-10", "enctype" => "multipart/form-data"],
 					"input" => [
 						"TitlePage" =>      [
                                                 "title" => "Titre de la page",
@@ -81,8 +81,13 @@ class Pages extends BaseSql {
                                                 "title" => "Couleur",
                                                 "type" => "text",
                                                 "placeholder" => "Couleur",
+                        ],
+                        "ImagePrincipale" =>          [
+                                                "title" => "Image",
+                                                "type" => "file",                            
+                                                "placeholder" => "Choisissez une image",
+                                            ]
                         ]
-                    ]
 		];
     }
 }

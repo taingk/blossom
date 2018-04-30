@@ -60,4 +60,9 @@ class PagesController {
     public function deleteAction( $aParams ) {
 
     }
+
+    public function uploadAction ( $aParams ) {
+       
+
+    }
 }
