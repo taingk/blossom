@@ -28,7 +28,6 @@ class AdminController {
 			if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
                 $oToken = new Token();
-                $oUser = new Users();
                 
                 $oMailer->sendMail($aParams, $oToken->getToken());
                 $oUser->setFirstname($aParams['POST']['firstname']);

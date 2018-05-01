@@ -93,11 +93,13 @@ input {
 }
 
 .is-left {
+    margin-left: 15px;
     padding-left: 15px;
     float: left;
 }
 
 .is-right {
+    margin-right: 15px;
     padding-right: 15px;
     float: right;
 }
@@ -145,4 +147,8 @@ input {
 
 .height-is-75 {
     height: 75px;
+}
+
+.inline {
+    display: inline-block;
 }

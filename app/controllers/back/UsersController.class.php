@@ -12,6 +12,8 @@ class UsersController {
         $aConfigs = $oUser->select();
         $aConfigs = $oUser->unsetKeyColumns($aConfigs, array('date_inserted', 'date_updated', 'token', 'pwd'));
         $aConfigs['label'] = array('id', 'prénom', 'nom', 'genre', 'âge', 'email', 'adresse', 'postal', 'ville', 'status', 'options');
+        $aConfigs['update'] = array('url' => '/back/users/update?id=');
+        $aConfigs['add'] = array('url' => '/back/users/add');
 
         foreach ( $aConfigs as $sKey => &$aValue ) {
             foreach ( $aValue as $sKey => $sValue ) {
@@ -24,7 +26,7 @@ class UsersController {
                 if ( $sKey === 'status') {
                     $aValue[$sKey] = Helper::getStatus($aValue[$sKey]);
                 }
-                if ( !$aValue[$sKey] ) {
+                if ( $aValue[$sKey] == '' ) {
                     $aValue[$sKey] = 'Non renseigné';
                 }
             }
@@ -44,23 +46,43 @@ class UsersController {
     * Formulaire d'ajout utilisateur 
     */ 
     public function addAction( $aParams ) {
+        $oUser = new Users();
+        $aConfigs = $oUser->userFormAdd();
+        $aErrors = [];
 
+        if ( !empty( $aParams['POST'] ) ) {
+            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"] );
+
+			if ( empty( $aErrors ) ) {
+                $oMailer = new Mailer();
+                $oToken = new Token();
+                
+                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oUser->setFirstname($aParams['POST']['firstname']);
+                $oUser->setLastname($aParams['POST']['lastname']);
+                $oUser->setSexe($aParams['POST']['sexe']);
+                $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
+                $oUser->setEmail($aParams['POST']['email']);
+                $oUser->setPwd($aParams['POST']['pwd']);
+                $oUser->setToken($oToken->getToken());
+                $oUser->setStatus(0);
+                $oUser->save();
+    
+                header('location: /back/users ');
+                return;
+            }
+        }
+
+        $oView = new View("usersAdd", "back");
+
+        $oView->assign("aConfigs", $aConfigs);
+		$oView->assign("aErrors", $aErrors);       
     }
 
     /*
     * Update d'un utilisateur en bdd 
     */ 
     public function updateAction( $aParams ) {
-        // if ($_POST['update']) {
-            // $oProduct = new Products(); 
-            // $oProduct->setProductName($_POST['search']);
-            // $oAllProducts = $oProduct->search();   
-
-            http_response_code(200);
-            echo json_encode(array('status' => 'ok'));
-        // } else {
-        //     http_response_code(404);            
-        // }
         // $oToken = new Token();
         // $oToken->setTokenSession();
         

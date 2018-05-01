@@ -1,3 +1,8 @@
+<section class="small-bandeau">
+    <input class="is-black inline" id="search" type="text" />
+    <div class="inline" data-icon="search" onclick="search()"></div>
+    <a href="<?php echo $aConfig['add']['url'] ?>"><div class="inline is-right" data-icon="add-1"></div></a>
+</section>
 <table id="listing">
     <thead class="bg-is-pink">
         <tr>
@@ -8,15 +13,23 @@
     </thead>
     <tbody>
         <?php unset($aConfig['label']);
-            foreach ($aConfig as $aLists): ?>
+        unset($aConfig['add']);
+        $bOptions = false;
+        foreach ($aConfig as $aLists): ?>
         <tr>
-            <?php foreach ($aLists as $sValue): ?>
-            <td><?php echo $sValue; ?></td>
-            <?php endforeach; ?>
-            <td>
-                <div data-icon="settings-5" class="options" id="update-<?php echo $aLists['id_user']?>" onclick="update(this.id)"></div>
-                <div data-icon="<?php echo $aLists['status'] === 'Actif' ? 'locked-4' : 'unlocked-1' ; ?>" class="options" id="lock-<?php echo $aLists['id_user']?>" onclick="updateStatus(this.id)"></div>
-            </td>
+            <?php foreach ($aLists as $sKey => $sValue):
+                if ( $sKey !== 'url' ):
+                    echo '<td>' . $sValue . '</td>';
+                else:
+                    $bOptions = true;
+                endif;
+            endforeach;
+            if ( !$bOptions ): ?>
+                <td>
+                    <a href="<?php echo $aConfig['update']['url'] . $aLists['id_user'] ?>"><div data-icon="settings-5" class="options" id="update-<?php echo $aLists['id_user']?>"></div></a>
+                    <div data-icon="<?php echo $aLists['status'] === 'Actif' ? 'locked-4' : 'unlocked-1' ; ?>" class="options" id="lock-<?php echo $aLists['id_user']?>" onclick="updateStatus(this.id)"></div>
+                </td>
+            <?php endif; ?>
         </tr>
         <?php endforeach; ?>
     </tbody>
