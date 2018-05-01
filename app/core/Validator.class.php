@@ -2,7 +2,7 @@
 
 class Validator {
 
-	public static function checkForm( $aConfig, $aData ) {
+	public static function checkForm( $aConfig, $aData, $bUpdate = false ) {
 		$aErrorsMsg = [];
 
 		foreach ( $aConfig["input"] as $sName => $sAttribut ) {
@@ -11,9 +11,9 @@ class Validator {
 			} else if ( !isset( $sAttribut["confirm"] ) ) {
 				if ( $sAttribut["type"] == "email" && !self::checkEmail( $aData[$sName] ) ) {
 					$aErrorsMsg[] = "Format de l'email incorrect";
-				}else if ( $sAttribut["type"] == "password" && !self::checkPwd( $aData[$sName] ) ) {
+				} else if ( $sAttribut["type"] == "password" && !self::checkPwd( $aData[$sName] ) && !$bUpdate ) {
 					$aErrorsMsg[] = "Mot de passe incorrect(Maj, Min, Chiffre, entre 6 et 32)";
-				}else if ( $sAttribut["type"] == "number" && !self::checkNumber( $aData[$sName ] ) ) {
+				} else if ( $sAttribut["type"] == "number" && !self::checkNumber( $aData[$sName ] ) ) {
 					$aErrorsMsg[] = $sName ." n'est pas correct";
 				}
 			}
@@ -31,6 +31,9 @@ class Validator {
 			}
 			if ( isset( $sAttribut["minNum"] ) && !self::minNum( $aData[$sName], $sAttribut["minNum"] ) ) {
 					$aErrorsMsg[] = $sName . " doit être supérieur à " . $sAttribut["minNum"];
+			}
+			if ( isset( $sAttribut["requiredNum"] ) && !self::requiredNum( $aData[$sName], $sAttribut["requiredNum"] ) && !$bUpdate ) {
+				$aErrorsMsg[] = $sName . " doit être égale à " . $sAttribut["requiredNum"];
 			}
 		}
 
@@ -51,6 +54,10 @@ class Validator {
 
 	public static function minNum( $iNum, $iLength ) {
 		return $iNum >= $iLength;
+	}
+
+	public static function requiredNum( $iNum, $iLength ) {
+		return $iNum == $iLength;
 	}
 
 	public static function checkEmail( $sEmail ) {

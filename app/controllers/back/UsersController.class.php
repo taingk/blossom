@@ -83,23 +83,60 @@ class UsersController {
     * Update d'un utilisateur en bdd 
     */ 
     public function updateAction( $aParams ) {
-        // $oToken = new Token();
-        // $oToken->setTokenSession();
-        
-        // $oUser = new Users();
-        // $oUser->setId(1);
-        // $oUser->setFirstname('Test');
-		// $oUser->setLastname('taing');
-		// $oUser->setEmail('Lol@gmail.com');
-		// $oUser->setPwd('Test1234');
-		// $oUser->setBirthdayDate('1996-01-05');
-        // $oUser->setToken($oToken->getToken());
-        // $oUser->setSexe(0);
-        // $oUser->setAddress('Address');
-        // $oUser->setCity('Ville');
-        // $oUser->setZipCode(01234);
-		// $oUser->setStatus(1);
-		// $oUser->save();
+        $oSelect = new Users();
+        $aConfigs = $oSelect->userFormUpdate();
+        $aErrors = [];
+        $sId = $aParams['GET']['id'];
+
+        $oSelect->setId($sId);
+        $aInfos = $oSelect->select()[0];
+
+        foreach ($aConfigs['input'] as $sKey => &$aValue) {
+            foreach ($aInfos as $sInfoKey => $sInfoValue) {
+                if ( $sInfoKey === 'sexe' ) {
+                    if ( !$sInfoValue ) {
+                        if ( $sKey === 'Masculin' ) {
+                            $aValue['checked'] = true;
+                        }
+                    } else {
+                        if ( $sKey === 'Feminin' ) {
+                            $aValue['checked'] = true;
+                        }
+                    }
+                }
+                if ( $sKey == $sInfoKey && $sKey !== 'pwd') {
+                    $aValue['value'] = $sInfoValue;
+                }
+            }
+        }
+
+        if ( !empty( $aParams['POST'] ) ) {
+            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"], true );
+
+			if ( empty( $aErrors ) ) {
+                $oUser = new Users();
+
+                $oUser->setId($sId);
+                $oUser->setFirstname($aParams['POST']['firstname']);
+                $oUser->setLastname($aParams['POST']['lastname']);
+                $oUser->setSexe($aParams['POST']['sexe']);
+                $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
+                $oUser->setEmail($aParams['POST']['email']);
+                $oUser->setPwd($aParams['POST']['pwd']);
+                $oUser->setAddress($aParams['POST']['address']);
+                $oUser->setCity($aParams['POST']['city']);
+                $oUser->setZipCode($aParams['POST']['postal']);
+                $oUser->save();
+
+                header('location: /back/users');
+                return;
+            }
+        }
+
+        $oView = new View("usersUpdate", "back");
+
+        $oView->assign("aConfigs", $aConfigs);
+		$oView->assign("aErrors", $aErrors);       
     }
 
     /*

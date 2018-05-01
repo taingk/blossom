@@ -15,7 +15,8 @@
             <input type="<?php echo $sAttribut["type"] ?>" 
             name="<?php echo $sName ?>" 
             placeholder="<?php echo $sAttribut["placeholder"] ?>" 
-            <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>/></p></label>
+            <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>
+            value="<?php echo $sAttribut["value"] ?>"/></p></label>
 
 		<?php else: ?>
 
