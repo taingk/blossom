@@ -272,6 +272,43 @@ LOCK TABLES `pages` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `images_Pages`
+--
+
+DROP TABLE IF EXISTS `images_Pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE IF NOT EXISTS `images_pages` (
+  `id_images_page` INT NOT NULL AUTO_INCREMENT,
+  `image_name` VARCHAR(30) NULL,
+  `image_path` VARCHAR(180) NULL,
+  `status` tinyint(4) NOT NULL,
+  `pages_id_page` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id_images_page`),
+  CONSTRAINT `fk_images_pages_pages1`
+    FOREIGN KEY (`pages_id_page`)
+    REFERENCES `mydb`.`pages` (`id_page`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_images_pages_pages1_idx` ON `images_pages` (`pages_id_page` ASC);
+
+
+-- CREATE TABLE `images_Pages` (
+--   `id_images_pages` int(11) NOT NULL AUTO_INCREMENT,
+--   `image_name` varchar(60) DEFAULT NULL,
+--   `image_path` varchar(180) DEFAULT NULL,
+--   `status` tinyint(4) NOT NULL,
+--   `pages_id_page` tinyint(4) NOT NULL,
+--   PRIMARY KEY (`id_images_pages`),
+--   KEY `fk_images_Pages_pages1_idx` (`pages_id_page`),
+--   CONSTRAINT `fk_images_Pages_pages1` FOREIGN KEY (`pages_id_page`) REFERENCES `pages` (`id_page`) ON DELETE NO ACTION ON UPDATE NO ACTION
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `products`
 --
 
@@ -347,4 +384,3 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-04-24  7:54:13
-
