@@ -46,6 +46,7 @@ class BaseSql {
     }
 
     public function cleanColumns() {
+
         foreach ( $this->aColumns as $sKey => $sValue ) {
             if ( $sValue == '' ) {
                 unset($this->aColumns[$sKey]);

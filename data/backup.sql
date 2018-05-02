@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
 -- Host: localhost    Database: app
 -- ------------------------------------------------------
--- Server version	5.7.21
+-- Server version	5.7.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -163,6 +163,30 @@ LOCK TABLES `comments` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `footers`
+--
+
+DROP TABLE IF EXISTS `footers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `footers` (
+  `id_footer` int(11) NOT NULL AUTO_INCREMENT,
+  `content` longtext NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id_footer`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `footers`
+--
+
+LOCK TABLES `footers` WRITE;
+/*!40000 ALTER TABLE `footers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `footers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `images`
 --
 
@@ -221,6 +245,70 @@ LOCK TABLES `orders` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pages`
+--
+
+DROP TABLE IF EXISTS `pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pages` (
+  `id_page` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `content` text NOT NULL,
+  `is_use` tinyint(4) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id_page`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pages`
+--
+
+LOCK TABLES `pages` WRITE;
+/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `images_Pages`
+--
+
+DROP TABLE IF EXISTS `images_Pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE IF NOT EXISTS `images_pages` (
+  `id_images_page` INT NOT NULL AUTO_INCREMENT,
+  `image_name` VARCHAR(30) NULL,
+  `image_path` VARCHAR(180) NULL,
+  `status` tinyint(4) NOT NULL,
+  `pages_id_page` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id_images_page`),
+  CONSTRAINT `fk_images_pages_pages1`
+    FOREIGN KEY (`pages_id_page`)
+    REFERENCES `mydb`.`pages` (`id_page`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_images_pages_pages1_idx` ON `images_pages` (`pages_id_page` ASC);
+
+
+-- CREATE TABLE `images_Pages` (
+--   `id_images_pages` int(11) NOT NULL AUTO_INCREMENT,
+--   `image_name` varchar(60) DEFAULT NULL,
+--   `image_path` varchar(180) DEFAULT NULL,
+--   `status` tinyint(4) NOT NULL,
+--   `pages_id_page` tinyint(4) NOT NULL,
+--   PRIMARY KEY (`id_images_pages`),
+--   KEY `fk_images_Pages_pages1_idx` (`pages_id_page`),
+--   CONSTRAINT `fk_images_Pages_pages1` FOREIGN KEY (`pages_id_page`) REFERENCES `pages` (`id_page`) ON DELETE NO ACTION ON UPDATE NO ACTION
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `products`
 --
 
@@ -273,7 +361,7 @@ CREATE TABLE `users` (
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,6 +370,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Testtest','TEST',0,'1996-01-05',NULL,'test@gmail.com',NULL,NULL,'$2y$10$wiL2ddQMToLEPUaTvWynLOcbm7ayiCgudUSM4XsAxDQwW4PcDzS8q','8521d840679d86f831121ade8eb29283',1,'2018-04-23 10:57:15','2018-04-23 14:49:07');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -294,4 +383,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-15 15:26:31
+-- Dump completed on 2018-04-24  7:54:13
