@@ -37,20 +37,24 @@
         }
 
         p {
-            color: black;
+            font-size: 20px;
             text-align: justify;
         }
 
         h2 {
-            color: #D8475D;
+            font-size: 30px;
         }
 
         button {
             background-color: #D8475D;
-            border: none;
+            /* border: none; */
+            font-size: 20px;
+            cursor: pointer;
             padding: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin: 0 auto;
+            display: block;
         }
 
         .container {
@@ -146,11 +150,11 @@
             <div class="container">
                 <article>
                     <div id="mailContent">
-                        <h2>Bonjour Lavan PREPANANTHA,</h2>
+                        <h2>Bonjour {name},</h2>
                         <hr>
-                        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                        <p>Veuillez confirmer votre inscription en cliquant sur le bouton ci-dessous</p>
                     </div>
-                    <button type="submit">Confirmer</button>
+                    <a href="{link}"><button type="submit">Confirmer l'inscription</button></a>
                 </article>
             </div>
         </section>

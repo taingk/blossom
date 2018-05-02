@@ -46,20 +46,43 @@ class BaseSql {
     }
 
     public function cleanColumns() {
-        foreach ($this->aColumns as $sKey => $sValue) {
-            if ( $sValue == "" ) {
+
+        foreach ( $this->aColumns as $sKey => $sValue ) {
+            if ( $sValue == '' ) {
                 unset($this->aColumns[$sKey]);
             }
         }
     }
-    
+
+    public function unsetIntegerColumns( $aFetchAll ) {
+        foreach ( $aFetchAll as $sKey => &$aValue ) {
+            foreach ( $aValue as $sKey => $sValue ) {
+                if ( is_int( $sKey ) ) {
+                    unset($aValue[$sKey]);
+                }
+            }
+        }
+
+        return $aFetchAll;
+    }
+
+    public function unsetKeyColumns( $aFetchAll, $aKey ) {
+        foreach ( $aKey as $value ) {
+            foreach ( $aFetchAll as $sKey => &$aValue ) {
+                foreach ( $aValue as $sKey => $sValue ) {
+                    unset($aValue[$value]);
+                }
+            }
+        }
+
+        return $aFetchAll;
+    }
+
     public function save() {
         $this->setColumns();
+        $this->cleanColumns();
 
         if ( $this->aColumns[$this->sId] ) {
-            $this->cleanColumns();
-            print_r($this->aColumns);
-            echo "oui";
             foreach ($this->aColumns as $sKey => $sValue) {
                 $aSqlSet[] =  $sKey . " = :" . $sKey;
             }
@@ -68,7 +91,6 @@ class BaseSql {
             $oRequest = $this->oPdo->prepare($sQuery);
             $oRequest->execute($this->aColumns);
         } else {
-            unset($this->aColumns[$this->sId]);
             $sUsersColumns = implode(",", array_keys($this->aColumns));
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
 
@@ -84,7 +106,7 @@ class BaseSql {
         
         $aSelect === "*" ? : $aSelect = implode(', ', $aSelect);
         
-        foreach ($this->aColumns as $sKey => $sValue) {
+        foreach ( $this->aColumns as $sKey => $sValue ) {
             $aSqlSet[] =  $sKey . " = :" . $sKey;
         }
         
@@ -95,8 +117,9 @@ class BaseSql {
         }
         $oRequest = $this->oPdo->prepare( $sQuery );
         $oRequest->execute( $this->aColumns );
-
-        return $oRequest->fetchAll();
+        $aResults = $oRequest->fetchAll();
+        
+        return $this->unsetIntegerColumns( $aResults );
     }
 
     public function search() {
@@ -112,17 +135,18 @@ class BaseSql {
 
         $oRequest = $this->oPdo->prepare( $sQuery );
         $oRequest->execute( $this->aColumns );
+        $aResults = $oRequest->fetchAll();
 
-        return $oRequest->fetchAll();
+        return $this->unsetIntegerColumns( $aResults );
     }
 
     public function isLoginValids($sEmail, $sPwd) {
-        $sQuery = "SELECT pwd FROM " . $this->sTable . " WHERE email = :email";
+        $sQuery = "SELECT pwd, status FROM " . $this->sTable . " WHERE email = :email";
         $oRequest = $this->oPdo->prepare($sQuery);
         $oRequest->execute(array(':email' => $sEmail));
 
         if ( $aResults = $oRequest->fetch() ) {
-            if ( password_verify( $sPwd, $aResults['pwd'] ) ) {
+            if ( password_verify( $sPwd, $aResults['pwd'] ) && $aResults['status'] ) {
                 return 1;
             }
         }

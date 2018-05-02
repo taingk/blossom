@@ -37,9 +37,25 @@ footer {
     padding: 15px;
 }
 
+input {
+    border: 0;
+    border-bottom: 1px solid #363636;
+    width: 100%;
+}
+
+[data-icon] {
+    cursor: pointer;
+}
+
 .bandeau {
     padding: 75px 0;
     margin: 75px 0;
+}
+
+.small-bandeau {
+    padding: 10px 0;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .is-white {
@@ -77,11 +93,13 @@ footer {
 }
 
 .is-left {
+    margin-left: 15px;
     padding-left: 15px;
     float: left;
 }
 
 .is-right {
+    margin-right: 15px;
     padding-right: 15px;
     float: right;
 }
@@ -129,4 +147,8 @@ footer {
 
 .height-is-75 {
     height: 75px;
+}
+
+.inline {
+    display: inline-block;
 }

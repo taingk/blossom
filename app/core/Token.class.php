@@ -8,7 +8,7 @@ class Token {
     }
 
     public function __construct() {
-        $this->sToken = bin2hex( random_bytes( 16 ) );
+        $this->sToken = bin2hex(openssl_random_pseudo_bytes(16));
     }
 
     /**
@@ -62,15 +62,18 @@ class Token {
         $oUser = new Users();
 
         $oUser->setId( $iIdUser );
-        $sDbToken = $oUser->select( array('token') )[0]['token'];
+        $aSelects = $oUser->select( array('token', 'status') );
+        $sDbToken = $aSelects[0]['token'];
+        $sDbStatus = $aSelects[0]['status'];
 
-        $bCheck = $sToken === $sDbToken ? 1 : 0;
+        $bCheck = $sToken === $sDbToken && $sDbStatus == '1' ? true : false;
 
         if ( $bCheck ) {
             $this->setTokenSession();
             $this->setTokenDb();
         } else {
             session_destroy();
+            $_SESSION = [];
             die('Connexion non permise');
         }
     }

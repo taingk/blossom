@@ -13,13 +13,11 @@
         || $sAttribut["type"] == "date" || $sAttribut["type"] == "file" ): ?>
 
             <label><p class="is-black"><?php echo $sAttribut["title"] ?>
-
-            <input class="is-black" type="<?php echo $sAttribut["type"] ?>"
-
-            name="<?php echo $sName ?>"
-            placeholder="<?php echo $sAttribut["placeholder"] ?>"
-            <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>/></p></label>
-        
+            <input class="is-black" type="<?php echo $sAttribut["type"] ?>" 
+            name="<?php echo $sName ?>" 
+            placeholder="<?php echo $sAttribut["placeholder"] ?>" 
+            <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>
+            value="<?php echo $sAttribut["value"] ?>"/></p></label>
 
 		<?php else: ?>
 

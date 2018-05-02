@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/form.css">
+    <link rel="stylesheet" href="/public/css/listing.css">
     <link rel="stylesheet" href="/public/css/back.tpl.css">
 
     <!-- Module CSS -->
@@ -48,7 +49,6 @@
             </article>
         </section>
     </main>
-    <!-- <textarea>Next, start a free trial!</textarea> -->
     <footer>
         <!-- Footer -->
         <?php include("views/back/footer.view.php")?>
@@ -57,9 +57,9 @@
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
-    <script src="/public/js/fetch/back/search.js"></script>
-    <!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script> -->
+    <!-- <script src="/public/js/<?php echo $this->tplPath() ?>/update.js"></script> -->
+    <script src="/public/js/<?php echo $this->tplPath() ?>/delete.js"></script>
+    <script src="/public/js/<?php echo $this->tplPath() ?>/search.js"></script>
 </body>
 
 </html>

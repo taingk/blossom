@@ -17,7 +17,7 @@ services:
         container_name: mysql_projet_annuel
         restart: always
         ports:
-            - 5002:80
+            - 5002:3306
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: app

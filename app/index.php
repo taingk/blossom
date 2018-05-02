@@ -43,27 +43,40 @@ $aParams = [
 
 // Si l'utilisateur à une session, automatiquement redirigé vers dashboard
 // Sinon, automatiquement redirigé vers la page de connexion
-// if ( $sStructure === "back") {
-//     $oToken = new Token();
+if ( $sStructure === "back") {
+    $oToken = new Token();
+    $oUser = new Users();
 
-//     if ( !$_SESSION['token'] && $sController != "AdminController" ) {
-//         include "controllers/back/IndexController.class.php";
-//         $oIndex = new IndexController();
-//         $oIndex->indexAction( $aParams );
-    
-//         return;
-//     } else if ( $sController === "IndexController" ) {
-//         $oToken->checkToken();
+    if ( $sAction === "confirmAction" || $sAction === "updateAction" || $sAction === "deleteAction" || $sAction === "searchAction" || $sAction === "filterAction" ) {
+        include "controllers/back/" . $sController . ".class.php";
+        $oObject = new $sController();
+        $oObject->$sAction( $aParams );
 
-//         include "controllers/back/DashboardController.class.php";
-//         $oDashboard = new DashboardController();
-//         $oDashboard->indexAction( $aParams );
-    
-//         return;
-//     }
+        return;
+    } else if ( !$oUser->select() ) {
+        include "controllers/back/AdminController.class.php";
+        $oAdmin = new AdminController();
+        $oAdmin->indexAction( $aParams );
 
-//     $oToken->checkToken();
-// }
+        return;
+    } else if ( !$_SESSION['token'] ) {
+        include "controllers/back/IndexController.class.php";
+        $oIndex = new IndexController();
+        $oIndex->indexAction( $aParams );
+
+        return;
+    } else if ( $sController === "IndexController" ) {
+        $oToken->checkToken();
+
+        include "controllers/back/DashboardController.class.php";
+        $oDashboard = new DashboardController();
+        $oDashboard->indexAction( $aParams );
+
+        return;
+    }
+
+    $oToken->checkToken();
+}
 
 
 if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.php" ) ) {
