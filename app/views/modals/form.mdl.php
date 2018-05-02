@@ -18,7 +18,7 @@
             placeholder="<?php echo $sAttribut["placeholder"] ?>"
             <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>/></p></label>
         
-            
+
 		<?php else: ?>
 
             <input type="<?php echo $sAttribut["type"] ?>" 
