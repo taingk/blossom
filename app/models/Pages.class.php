@@ -10,7 +10,7 @@ class Pages extends BaseSql {
 
 
     public function __construct() {
-        // On instancie le parent 
+        // On instancie le parent
         parent::__construct();
     }
 
@@ -75,11 +75,21 @@ class Pages extends BaseSql {
 						"TitlePage" =>      [
                                                 "title" => "Titre de la page",
                                                 "type" => "text",
-                                                "placeholder" => "Bienvenue sur ma page",
+                                                "placeholder" => "Ajouter un titre",
                         ],
-                        "SousTitle" =>      [
-                                                "title" => "Couleur",
+            "DescImage" =>      [
+                                                "title" => "Description",
                                                 "type" => "text",
+
+                                                "placeholder" => "Ajouter une description",
+                                ],
+          "ImagePrincipale" =>      [
+                                                "title" => "Upload l'image principale",
+                                                "type" => "file",
+                                                "placeholder" => "Ajouter une image",
+                                            ]
+                    ]
+=======
                                                 "placeholder" => "Couleur",
                         ],
                         "ImagePrincipale" =>          [
@@ -88,6 +98,7 @@ class Pages extends BaseSql {
                                                 "placeholder" => "Choisissez une image",
                                             ]
                         ]
+
 		];
     }
 }
