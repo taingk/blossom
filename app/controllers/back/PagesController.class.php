@@ -30,10 +30,10 @@ class PagesController {
 
         if (isset($_POST)){
         $oPage->setPageName("Page d'accueil");
-		    $oPage->setContent($s);
+		$oPage->setContent($s);
         $oPage->setType("homePage");
         $oPage->setIsUse(1);
-		    $oPage->setStatus(1);
+		$oPage->setStatus(1);
         $oPage->save();
         }
     }
