@@ -80,6 +80,7 @@ class Pages extends BaseSql {
             "DescImage" =>      [
                                                 "title" => "Description",
                                                 "type" => "text",
+
                                                 "placeholder" => "Ajouter une description",
                                 ],
           "ImagePrincipale" =>      [
@@ -88,6 +89,16 @@ class Pages extends BaseSql {
                                                 "placeholder" => "Ajouter une image",
                                             ]
                     ]
+=======
+                                                "placeholder" => "Couleur",
+                        ],
+                        "ImagePrincipale" =>          [
+                                                "title" => "Image",
+                                                "type" => "file",                            
+                                                "placeholder" => "Choisissez une image",
+                                            ]
+                        ]
+
 		];
     }
 }

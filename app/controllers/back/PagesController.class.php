@@ -30,10 +30,10 @@ class PagesController {
 
         if (isset($_POST)){
         $oPage->setPageName("Page d'accueil");
-		    $oPage->setContent($s);
+		$oPage->setContent($s);
         $oPage->setType("homePage");
         $oPage->setIsUse(1);
-		    $oPage->setStatus(1);
+		$oPage->setStatus(1);
         $oPage->save();
         }
     }
@@ -58,6 +58,11 @@ class PagesController {
     * Suppression d'un produit en bdd
     */
     public function deleteAction( $aParams ) {
+
+    }
+
+    public function uploadAction ( $aParams ) {
+       
 
     }
 }
