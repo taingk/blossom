@@ -87,19 +87,15 @@ class Pages extends BaseSql {
                                                 "title" => "Upload l'image principale",
                                                 "type" => "file",
                                                 "placeholder" => "Ajouter une image",
-                                            ]
-                    ]
-=======
-                                                "placeholder" => "Couleur",
-                        ],
+          ],
                         "ImagePrincipale" =>          [
                                                 "title" => "Image",
                                                 "type" => "file",                            
                                                 "placeholder" => "Choisissez une image",
                                             ]
-                        ]
-
-		];
+                        
+        ]
+    ];
     }
 }
 
