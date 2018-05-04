@@ -70,34 +70,30 @@ class Pages extends BaseSql {
 
     public function editorForm() {
 		return [
-					"config" => [ "method" => "POST", "action" => "", "class" => "form col-md-10", "enctype" => "multipart/form-data"],
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Valider", "class" => "form col-md-10", "enctype" => "multipart/form-data"],
 					"input" => [
 						"TitlePage" =>      [
                                                 "title" => "Titre de la page",
                                                 "type" => "text",
                                                 "placeholder" => "Ajouter un titre",
-                        ],
-            "DescImage" =>      [
+                                            ],
+                        "DescImage" =>      [
                                                 "title" => "Description",
                                                 "type" => "text",
-
                                                 "placeholder" => "Ajouter une description",
-                                ],
-          "ImagePrincipale" =>      [
+                                            ],
+                "ImagePrincipale"   =>      [
                                                 "title" => "Upload l'image principale",
                                                 "type" => "file",
                                                 "placeholder" => "Ajouter une image",
-                                            ]
-                    ]
-=======
-                                                "placeholder" => "Couleur",
-                        ],
-                        "ImagePrincipale" =>          [
+                                            ],
+                "ImagePrincipale"   =>      [
                                                 "title" => "Image",
                                                 "type" => "file",                            
                                                 "placeholder" => "Choisissez une image",
-                                            ]
-                        ]
+                                            ],
+                
+            ]
 
 		];
     }
