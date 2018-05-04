@@ -197,7 +197,7 @@ class UsersController {
                 if ( $aParams['GET']['token'] === $sValue['token'] ) {
                     $bCheck = true;
                     $sToken = $sValue['token'];
-                    $sId = $sValue['id_user'];
+                    $sId = $sValue['id'];
                     break;
                 }
             }

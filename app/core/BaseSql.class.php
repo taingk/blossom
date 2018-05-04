@@ -61,7 +61,7 @@ class BaseSql {
                     $aTemp = array('id' => $aValue[$sKey]);
                     $aValue = $aTemp + $aValue;
                     unset($aValue[$sKey]);
-                }
+                } 
                 if ( is_int( $sKey ) ) {
                     unset($aValue[$sKey]);
                 }

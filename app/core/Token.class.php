@@ -27,7 +27,7 @@ class Token {
         $oUser = new Users();
 
         $oUser->setEmail( $sEmail );
-        $iIdUser = $oUser->select(array('id_user'))[0]['id_user'];
+        $iIdUser = $oUser->select(array('id_user'))[0]['id'];
 
         $_SESSION['id_user'] = $iIdUser;
     }
