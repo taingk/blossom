@@ -17,10 +17,6 @@ class UsersController {
 
         foreach ( $aConfigs as $sKey => &$aValue ) {
             foreach ( $aValue as $sKey => $sValue ) {
-                if ( $sKey === 'id_user' ) {
-                    $aTemp = array('id' => $aValue[$sKey]);
-                    $aValue = $aTemp + $aValue;
-                } 
                 if ( $sKey === 'birthday_date' ) {
                     $aValue[$sKey] = Helper::getAge($aValue[$sKey]);
                 }
@@ -33,7 +29,6 @@ class UsersController {
                 if ( $aValue[$sKey] == '' ) {
                     $aValue[$sKey] = 'Non renseigné';
                 }
-                unset( $aValue['id_user'] );
             }
         }
 

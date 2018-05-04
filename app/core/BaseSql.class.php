@@ -57,6 +57,11 @@ class BaseSql {
     public function unsetIntegerColumns( $aFetchAll ) {
         foreach ( $aFetchAll as $sKey => &$aValue ) {
             foreach ( $aValue as $sKey => $sValue ) {
+                if ( explode('_', $sKey)[0] === 'id' ) {
+                    $aTemp = array('id' => $aValue[$sKey]);
+                    $aValue = $aTemp + $aValue;
+                    unset($aValue[$sKey]);
+                }
                 if ( is_int( $sKey ) ) {
                     unset($aValue[$sKey]);
                 }
