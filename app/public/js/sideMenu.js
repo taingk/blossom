@@ -17,7 +17,7 @@ class sideMenu {
     
     onSelectedMenu() {
         const aSelectedMenu = document.URL.split('/');
-        const sId = aSelectedMenu[aSelectedMenu.indexOf('back') + 1];
+        const sId = aSelectedMenu[aSelectedMenu.indexOf('back') + 1].split('?')[0];
 
         if ( sId ) {
             this.setColor(sId);

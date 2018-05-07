@@ -1,7 +1,9 @@
-<section class="small-bandeau">
-    <input class="is-black inline" id="search" type="text" />
-    <div class="inline" data-icon="search" onclick="search()"></div>
-    <a href="<?php echo $aConfig['add']['url'] ?>"><div class="inline is-right" data-icon="add-1"></div></a>
+<section class="small-bandeau row">
+    <form class="col-xxs-11" action="" method="POST">
+        <input class="is-black" id="search" name="search" type="text" />
+        <input class="default-button" data-icon="search" type="submit" value="" />
+    </form>
+    <a class="col-xxs-1" href="<?php echo $aConfig['add']['url'] ?>"><div class="inline" data-icon="add-1"></div></a>
 </section>
 <table id="listing">
     <thead class="bg-is-pink">

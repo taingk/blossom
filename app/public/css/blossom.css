@@ -152,3 +152,8 @@ input {
 .inline {
     display: inline-block;
 }
+
+.default-button {
+    border: 0;
+    background-color: white;
+}
