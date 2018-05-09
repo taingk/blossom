@@ -35,12 +35,19 @@ footer {
     background-color: #D8475D;
     height: 150px;
     padding: 15px;
+    box-shadow: 0 50vh 0 50vh #D8475D;
 }
 
 input {
     border: 0;
     border-bottom: 1px solid #363636;
-    width: 100%;
+}
+
+input[type="submit"]:not([data-icon]) {
+    border: 0;
+    cursor: pointer;
+    background-color: #D8475D;
+    color: #FDFBFB;
 }
 
 [data-icon] {

@@ -7,7 +7,7 @@ class IndexController {
     */
     public function indexAction( $aParams ) {
         $oView = new View("adminLogIn", "auth");
-        
+
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];
 
@@ -27,4 +27,5 @@ class IndexController {
             }
         }
     }
+
 }

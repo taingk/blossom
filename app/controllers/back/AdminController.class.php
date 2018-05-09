@@ -42,7 +42,7 @@ class AdminController {
     
                 include "controllers/back/IndexController.class.php";
                 $oIndex = new IndexController();
-                $oIndex->indexAction( $aParams );
+                $oIndex->indexAction( [] );
 
                 return;
             }

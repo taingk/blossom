@@ -38,7 +38,7 @@
     <main>
         <section class="row">
             <!-- Side Menu -->
-            <?php include("views/back/sideMenu.php") ?>
+            <?php include("views/back/sideMenu.view.php") ?>
             <!-- Main View -->
             <article id="backView" class="col-xxs-10">
                 <article class="col-lg-11 viewContent">
