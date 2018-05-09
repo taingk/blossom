@@ -13,6 +13,11 @@
     padding: 10px;
 }
 
+.form > label > p > input[type="file"] {
+    border: 0;
+    cursor: pointer;
+}
+
 .form > p > input {
     width: 100%;
     padding: 5px;
