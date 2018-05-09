@@ -1,1 +1,1 @@
-<?php $this->addModal("sideMenu", $aConfigs, $aErrors); ?>
+<?php $this->addModal("sideMenu", [], []); ?>

@@ -34,15 +34,8 @@ class View {
 	
 	public function addModal( $sModal, $aConfig, $aErrors = [] ) {
 	    if ( $sModal === 'sideMenu') {
-            $oUser = new Users();
-            $oUser->setId( $_SESSION['id_user'] );
-            $oIdentity = $oUser->select(array('firstname', 'lastname'))[0];
-            $sFirstname = $oIdentity['firstname'];
-            $sLastname = $oIdentity['lastname'];
-            $sFirstnameLetter = substr($sFirstname, 0, 1);
-            $sLastnameLetter = substr($sLastname, 0, 1);
-
-            $aProfile = array('fName' => $sFirstname, 'lName' => $sLastname, 'sName' => $sFirstnameLetter . $sLastnameLetter);
+	        $oSideMenu = new SideMenu();
+	        $aConfig = $oSideMenu->sideMenuConfigs();
         }
 
         include("views/modals/" . $sModal . ".mdl.php");

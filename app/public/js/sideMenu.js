@@ -12,7 +12,7 @@ class sideMenu {
         const element = document.getElementById(sId);
 
         element.classList.add('bg-is-pink');
-        element.children[0].classList.add('is-white');
+        element.children[1].classList.add('is-white');
     }
     
     onSelectedMenu() {

@@ -49,6 +49,7 @@
             </article>
         </section>
     </main>
+
     <footer>
         <!-- Footer -->
         <?php include("views/back/footer.view.php")?>
@@ -57,9 +58,7 @@
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
-    <!-- <script src="/public/js/<?php echo $this->tplPath() ?>/update.js"></script> -->
     <script src="/public/js/<?php echo $this->tplPath() ?>/delete.js"></script>
-    <!-- <script src="/public/js/<?php echo $this->tplPath() ?>/search.js"></script> -->
 </body>
 
 </html>
