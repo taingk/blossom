@@ -59,7 +59,7 @@ class BaseSql {
             foreach ( $aValue as $sKey => $sValue ) {
                 if ( explode('_', $sKey)[0] === 'id' ) {
                     $aTemp = array('id' => $aValue[$sKey]);
-                    $aValue = $aTemp + $aValue;
+                    $aValue = array_merge($aTemp, $aValue);
                     unset($aValue[$sKey]);
                 } 
                 if ( is_int( $sKey ) ) {
@@ -123,7 +123,7 @@ class BaseSql {
         $oRequest = $this->oPdo->prepare( $sQuery );
         $oRequest->execute( $this->aColumns );
         $aResults = $oRequest->fetchAll();
-        
+
         return $this->unsetIntegerColumns( $aResults );
     }
 
