@@ -53,6 +53,11 @@ input[type="submit"]:not([data-icon]) {
     cursor: pointer;
 }
 
+#search {
+    width: 250px;
+    font-size: 20px;
+}
+
 .bandeau {
     padding: 75px 0;
     margin: 75px 0;
