@@ -201,12 +201,9 @@ CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
   `tracking_number` varchar(15) DEFAULT NULL,
   `users_idusers` int(11) NOT NULL,
-  `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_order`),
   KEY `fk_orders_users1_idx` (`users_idusers`),
-  KEY `fk_orders_products1_idx` (`products_idproduct`),
-  CONSTRAINT `fk_orders_products1` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_orders_users1` FOREIGN KEY (`users_idusers`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -246,40 +243,6 @@ LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `images_Pages`
---
-
-DROP TABLE IF EXISTS `images_Pages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-
-CREATE TABLE IF NOT EXISTS `images_pages` (
-  `id_images_page` INT NOT NULL AUTO_INCREMENT,
-  `image_name` VARCHAR(30) NULL,
-  `image_path` VARCHAR(180) NULL,
-  `status` tinyint(4) NOT NULL,
-  `pages_id_page` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_images_page`),
-  CONSTRAINT `fk_images_pages_pages1`
-    FOREIGN KEY (`pages_id_page`)
-    REFERENCES `mydb`.`pages` (`id_page`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
--- CREATE TABLE `images_Pages` (
---   `id_images_pages` int(11) NOT NULL AUTO_INCREMENT,
---   `image_name` varchar(60) DEFAULT NULL,
---   `image_path` varchar(180) DEFAULT NULL,
---   `status` tinyint(4) NOT NULL,
---   `pages_id_page` tinyint(4) NOT NULL,
---   PRIMARY KEY (`id_images_pages`),
---   KEY `fk_images_Pages_pages1_idx` (`pages_id_page`),
---   CONSTRAINT `fk_images_Pages_pages1` FOREIGN KEY (`pages_id_page`) REFERENCES `pages` (`id_page`) ON DELETE NO ACTION ON UPDATE NO ACTION
--- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `products`
