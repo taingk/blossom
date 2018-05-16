@@ -31,4 +31,8 @@ class IndexController {
         // $oView->assign("final", $aFinal);
 
     }
+
+    public function searchAction( $aParams ) {
+        print_r($aParams);
+    }
 }

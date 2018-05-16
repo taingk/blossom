@@ -37,8 +37,12 @@ class View {
 	        $oSideMenu = new SideMenu();
 	        $aConfig = $oSideMenu->sideMenuConfigs();
         }
+	    if ( $sModal === 'mainMenu') {
+	        $oMainMenu = new MainMenu();
+			$aConfig = $oMainMenu->MainMenuConfigs();
+        }
 
-        include("views/modals/" . $sModal . ".mdl.php");
+		include("views/modals/" . $sModal . ".mdl.php");
 	}
 
 }

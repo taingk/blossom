@@ -1,7 +1,12 @@
 .headerBar {
     background-color: #D8475D;
-    height: 59px;
-    position: relative;
+    height: 70px;
+    /* position: relative; */
+}
+
+.main-menu-link {
+    min-width: 150px;
+    max-width: 200px;
 }
 
 .headerBar ul {
@@ -11,19 +16,17 @@
     overflow: hidden;
 }
 
-
-.frontCartInput,
-.frontSearchIcon,
-.frontSearchInput {
+.search-input {
     background-color: #D8475D;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
     border-bottom: 1px solid #FBFBFB;
-    width: 100%;
+    width: 70%;
+    font-size: 16px;
 }
 
-.frontSearchIcon {
+.search-icon {
     background-image: url("/public/img/searchIcon.png");
     height: 27px;
     width: 27px;
@@ -32,7 +35,7 @@
     cursor: pointer;
 }
 
-.frontCartInput {
+.cart-icon {
     background-image: url("/public/img/panierIcon.png");
     height: 40px;
     width: 40px;
@@ -42,25 +45,9 @@
 }
 
 .logo {
-    height: 35px;
+    height: 40px;
     cursor: pointer;
 }
-
-ul li a {
-    font-size: smaller;
-}
-
-.link{
-    font-size: smaller;
-    border: none;
-    background-color: #D8475D;
-    cursor: pointer;
-}
-
-.divLink{
-    padding: 20px;
-}
-
 
 .menuSlideDownLeft{
     background-color: #E16074;
