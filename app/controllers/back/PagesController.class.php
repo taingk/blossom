@@ -43,9 +43,27 @@ class PagesController {
     * Formulaire d'ajout de produit
     */
     public function addAction( $aParams ) {
+        $aConfigs = $this->oPage->editorForm();
+
+        if ( !empty( $aParams['POST'] ) ) {
+            $sPathDirectory = '/public/img/';
+            $oHomePage = new Homepages();
+
+            $oHomePage->setTitlePage($aParams['POST']['titlePage']);
+            $oHomePage->setDescriptionPage($aParams['POST']['descriptionPage']);
+            $oHomePage->setBanner($sPathDirectory . uniqid() . '_' . $_FILES['banner']['name']);
+            $oHomePage->setLeftImage($sPathDirectory . uniqid() . '_' . $_FILES['leftImage']['name']);
+            $oHomePage->setRightImage($sPathDirectory . uniqid() . '_' . $_FILES['rightImage']['name']);
+            $oHomePage->setBottomBanner($sPathDirectory . uniqid() . '_' . $_FILES['bottomBanner']['name']);
+            $oHomePage->setIdPage();
+            $oHomePage->save();
+
+            print_r($_POST);
+            print_r($_FILES);
+        }
+
         $oView = new View("pagesEditor", "back");
-
-
+        $oView->assign("aConfig", $aConfigs);
     }
 
     /*

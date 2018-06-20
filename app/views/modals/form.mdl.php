@@ -5,6 +5,11 @@
 
 <form method="<?php echo $aConfig["config"]["method"]?>" action="<?php echo $aConfig["config"]["action"]?>" class="<?php echo $aConfig["config"]["class"]?>" enctype="<?php echo $aConfig["config"]["enctype"]?>">
 
+    <?php if ($aConfig["config"]["pageTitle"]): ?>
+        <p class="medium-bandeau is-black is-font-title">
+            <?php echo $aConfig["config"]["pageTitle"]?>
+        </p>
+    <?php endif; ?>
 
 	<?php foreach ( $aConfig["input"] as $sName => $sAttribut ): ?>
 

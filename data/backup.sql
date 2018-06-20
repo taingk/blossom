@@ -43,6 +43,22 @@ LOCK TABLES `capacities` WRITE;
 /*!40000 ALTER TABLE `capacities` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `homepages`;
+
+CREATE TABLE homepages
+(
+    id_homepage int PRIMARY KEY AUTO_INCREMENT,
+    title_page varchar(255),
+    description_page varchar(255),
+    banner varchar(255),
+    left_image varchar(255),
+    right_image varchar(255),
+    bottom_banner varchar(255),
+    id_page int(11),
+    status tinyint(4) NOT NULL DEFAULT '0',
+    CONSTRAINT pages___fk FOREIGN KEY (id_page) REFERENCES pages (id_page)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Table structure for table `carts`
 --
@@ -228,7 +244,6 @@ CREATE TABLE `pages` (
   `id_page` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(20) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `content` text NOT NULL,
   `is_use` tinyint(4) NOT NULL,
   `status` tinyint(4) NOT NULL,
   PRIMARY KEY (`id_page`)

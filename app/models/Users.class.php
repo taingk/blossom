@@ -189,7 +189,7 @@ class Users extends BaseSql {
 
     public function userFormAdd() {
 		return [
-					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-4"],
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-4", "pageTitle" => "Ajouter un nouveau utilisateur"],
 					"input" => [
 						"firstname" =>      [
                                                 "title" => "Prénom",

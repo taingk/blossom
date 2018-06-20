@@ -1,6 +1,7 @@
 <?php
 
-class Pages extends BaseSql {
+class Pages extends BaseSql
+{
     protected $id_page = null;
     protected $name;
     protected $type;
@@ -8,33 +9,39 @@ class Pages extends BaseSql {
     protected $is_use;
     protected $status;
 
-
-    public function __construct() {
+    public function __construct()
+    {
         // On instancie le parent
         parent::__construct();
     }
 
-    public function setId($id_page) {
+    public function setId($id_page)
+    {
         $this->id_page = trim($id_page);
     }
 
-    public function setPageName($page_name) {
+    public function setPageName($page_name)
+    {
         $this->name = trim($page_name);
     }
 
-    public function setType($type) {
+    public function setType($type)
+    {
         $this->type = trim($type);
     }
 
-    public function setContent($content) {
+    public function setContent($content)
+    {
         $this->content = trim($content);
     }
 
-    public function setIsUse($is_use) {
+    public function setIsUse($is_use)
+    {
         $this->is_use = trim($is_use);
     }
 
-    public function setStatus($status) {
+    public function setStatus($status)
+    {
         $this->status = trim($status);
     }
 
@@ -68,34 +75,43 @@ class Pages extends BaseSql {
         return $this->status;
     }
 
-    public function editorForm() {
-		return [
-					"config" => [ "method" => "POST", "action" => "", "class" => "form col-md-10", "enctype" => "multipart/form-data"],
-					"input" => [
-						"TitlePage" =>      [
-                                                "title" => "Titre de la page",
-                                                "type" => "text",
-                                                "placeholder" => "Ajouter un titre",
-                        ],
-            "DescImage" =>      [
-                                                "title" => "Description",
-                                                "type" => "text",
-
-                                                "placeholder" => "Ajouter une description",
-                                ],
-          "ImagePrincipale" =>      [
-                                                "title" => "Upload l'image principale",
-                                                "type" => "file",
-                                                "placeholder" => "Ajouter une image",
-          ],
-                        "ImagePrincipale" =>          [
-                                                "title" => "Image",
-                                                "type" => "file",                            
-                                                "placeholder" => "Choisissez une image",
-                                            ]
-                        
-        ]
-    ];
+    public function editorForm()
+    {
+        return [
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "enctype" => "multipart/form-data", "submit" => "Enregistrer une page d'accueil", "pageTitle" => "Ajouter une nouvelle page d'accueil"],
+            "input" => [
+                "titlePage" => [
+                    "title" => "Titre de la page d'accueil",
+                    "type" => "text",
+                    "placeholder" => "Ajouter un titre",
+                ],
+                "descriptionPage" => [
+                    "title" => "Description du site",
+                    "type" => "text",
+                    "placeholder" => "Ajouter une description",
+                ],
+                "banner" => [
+                    "title" => "Upload l'image bannière",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
+                "leftImage" => [
+                    "title" => "Upload l'image gauche",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
+                "rightImage" => [
+                    "title" => "Upload l'image droite",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
+                "bottomBanner" => [
+                    "title" => "Upload l'image bannière de bas",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ]
+            ]
+        ];
     }
 }
 
