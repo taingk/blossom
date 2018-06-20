@@ -44,6 +44,9 @@ class PagesController {
     */
     public function addAction( $aParams ) {
         $oView = new View("pagesEditor", "back");
+        $oAddPages = new Pages();
+        $aConfigs = $oAddPages->editorForm();
+        $oView->assign("aConfig", $aConfigs);
 
 
     }

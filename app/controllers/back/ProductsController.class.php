@@ -1,7 +1,8 @@
 <?php
 
 class ProductsController {
-
+    private $oProduct;
+    private $aConfigs;
     /*
     * View listing de produits
     */ 

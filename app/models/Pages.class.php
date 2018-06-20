@@ -77,13 +77,13 @@ class Pages extends BaseSql {
                                                 "type" => "text",
                                                 "placeholder" => "Ajouter un titre",
                         ],
-            "DescImage" =>      [
+                        "DescImage" =>      [
                                                 "title" => "Description",
                                                 "type" => "text",
 
                                                 "placeholder" => "Ajouter une description",
                                 ],
-          "ImagePrincipale" =>      [
+                        "ImagePrincipale" =>      [
                                                 "title" => "Upload l'image principale",
                                                 "type" => "file",
                                                 "placeholder" => "Ajouter une image",
