@@ -13,7 +13,8 @@
             <?php foreach ( $aCategories as $sKey => $sValue ): ?>
             <li class="col-xxs-2 main-menu-link">
                 <a class="link" href="<?php echo $sValue ?>"><?php echo $aKeyCategories ?></a>
-            </li>   
+            </li>
+
             <?php endforeach; ?>
         <?php endforeach; ?>
         <li class="col-xxs-3 col-lg-3">
@@ -25,6 +26,21 @@
         <li class="col-xxs-1">
             <a href="/front/cart">
                 <input class="cart-icon" type="submit" name="search" value="" />
+            </a>
+        </li>
+        <li class="col-xxs-1"></li>
+        <li class="col-xxs-1"></li>
+        <li class="col-xxs-1"></li>
+        <li class="col-xxs-1"></li>
+        <li class="col-xxs-1"></li>
+        <li class="col-xxs-1">
+            <a href="/front/user/subscribe">
+                Connexion
+            </a>
+        </li>
+        <li class="col-xxs-1">
+            <a href="">
+                Inscription
             </a>
         </li>
     </ul>
