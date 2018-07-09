@@ -41,5 +41,32 @@ class Categories extends BaseSql {
     {
         return $this->category_name;
     }
+
+    public function categoryFormAdd() {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Ajouter", "class" => "form col-md-10"],
+					"input" => [
+						"category_name" =>      [
+                                                "title" => "Titre de la categorie",
+                                                "type" => "text",
+                                                "required" => true,
+                                        ],
+					]
+		];
+    }
+
+    public function categoryFormUpdate() {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer une categorie", "class" => "form col-md-4"],
+					"input" => [
+						"category_name" =>      [
+                                                "title" => "Titre de la categorie",
+                                                "type" => "text",
+                                                "placeholder" => "Telephone",
+                                                "minString" => 2
+                                            ],
+					]
+		];
+    }
 }
 ?>
