@@ -16,7 +16,7 @@ class IndexController {
 
             if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
                 $oToken = new Token();
-                
+
                 $oToken->setTokenSession();
                 $oToken->setIdSession( $sEmail );
                 $oToken->setTokenDb();

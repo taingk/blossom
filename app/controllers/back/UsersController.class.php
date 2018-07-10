@@ -173,7 +173,7 @@ class UsersController {
             $aUser = $this->oUser->select()[0];
 
             if ( $aUser ) {
-                $this->oUser->setId($aUser['id']);
+                $this->oUser->setId($aUser['id_user']);
                 $this->oUser->setStatus(1);
                 $this->oUser->save();
 
