@@ -27,7 +27,7 @@ class UserController {
         // }
 
 
-        $aConfig = $oUser->userFormAdd();
+        $aConfig = $oUser->userFormAdd("form col-md-8");
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
