@@ -88,7 +88,7 @@ class PagesController {
 
         foreach ($aIsUse as $aPages) {
             $oPage = new Homepages();
-            $oPage->setId($aPages['id']);
+            $oPage->setId($aPages['id_homepage']);
             $oPage->setIsUse(0);
             $oPage->save();
         }
