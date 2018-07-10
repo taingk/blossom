@@ -7,23 +7,25 @@ class IndexController {
     */
     public function indexAction( $aParams ) {
         $oView = new View("adminLogIn", "auth");
-        
+
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];
 
         if ($sEmail && $sPwd) {
-            $oUsers = new Users();
+            $oUser = new Users();
 
-            if ( $oUsers->isLoginValids($sEmail, $sPwd) ) {
+            if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
                 $oToken = new Token();
-                $sToken = $oToken->createToken();
+                
+                $oToken->setTokenSession();
+                $oToken->setIdSession( $sEmail );
+                $oToken->setTokenDb();
 
-                $oToken->insertTokenSession( $aParams, $sToken );
-                $oToken->insertTokenDb( $aParams, $oUsers, $sToken );
-                echo "Identifiants valides";
+                header('Location: /back/dashboard');
             } else {
                 echo "Identifiants invalides";
             }
         }
     }
+
 }

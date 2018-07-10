@@ -238,7 +238,7 @@ section {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .col-md-1 {
         max-width: calc(1/12*100%);
         flex: 0 0 calc(1/12*100%);

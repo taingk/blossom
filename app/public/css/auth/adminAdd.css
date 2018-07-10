@@ -19,10 +19,3 @@ only screen and (max-width: 760px),
     }
     
 }
-
-.viewContent {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    box-shadow: 1px 1px 12px #555;
-}

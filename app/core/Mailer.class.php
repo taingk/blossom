@@ -4,14 +4,14 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-class PHPMailerController {
+class Mailer {
 
-    public function indexAction( $aParams ) {
+    public function sendMail( $aParams, $sToken ) {
         require 'core/PHPMailer/vendor/autoload.php';
 
         $mail = new PHPMailer;
         $mail->isSMTP();
-        $mail->SMTPDebug = 2;
+        // $mail->SMTPDebug = 2;
         $mail->Host = 'ssl://smtp.gmail.com';
         $mail->IsHTML(true);
         $mail->Port = 465;
@@ -19,25 +19,26 @@ class PHPMailerController {
         $mail->SMTPAuth = true;
         $mail->Username = "contact.blossoom@gmail.com";
         //Password to use for SMTP authentication
-        $mail->Password = "";
+        $mail->Password = "grp6-BlossomESGI";
         //Set who the message is to be sent from
         $mail->setFrom('contact.blossoom@gmail.com', 'Blossom');
-        $mail->addAddress('lavan.prep@gmail.com', 'Lavan Prepanantha');
+        $mail->addAddress($aParams['POST']['email'], ucfirst(strtolower($aParams['POST']['firstname'])) . ' ' . strtoupper($aParams['POST']['lastname']));
 
         $mail->Subject = "Blossom | Confirmation d'inscription";
         $messageContent = file_get_contents("views/emailing/sendEmail.view.html");
-        if($_SERVER["SERVER_NAME"] == "blossoom.ovh" || $_SERVER["SERVER_NAME"] == "dev.blossoom.ovh") {
-            $messageContent = str_ireplace("/public/img/logo_blanc.png", "https://".$_SERVER["SERVER_NAME"]."/public/img/logo_blanc.png", $messageContent);
-            $messageContent = str_ireplace("/public/font/AvenirNextRegular.otf", "https://".$_SERVER["SERVER_NAME"]."/public/font/AvenirNextRegular.otf", $messageContent);    
-        }
+
+        $messageContent = str_ireplace("/public/img/logo_blanc.png", "https://".$_SERVER["SERVER_NAME"]."/public/img/logo_blanc.png", $messageContent);
+        $messageContent = str_ireplace("/public/font/AvenirNextRegular.otf", "https://".$_SERVER["SERVER_NAME"]."/public/font/AvenirNextRegular.otf", $messageContent);
+        $messageContent = str_ireplace("{link}", "https://".$_SERVER["SERVER_NAME"].'/back/users/confirm?token=' . $sToken, $messageContent);
+        $messageContent = str_ireplace("{name}", ucfirst(strtolower($aParams['POST']['firstname'])) . ' ' . strtoupper($aParams['POST']['lastname']), $messageContent);
         $messageContent = $mail->msgHTML($messageContent);
-        echo $_SERVER["SERVER_NAME"];
 
         if (!$mail->send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;
-        } else {
-            echo "Message sent!";
         }
+        // else {
+        //     echo "Message sent!";
+        // }
     }
 
 }

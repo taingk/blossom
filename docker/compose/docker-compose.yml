@@ -13,9 +13,11 @@ services:
         privileged: true
 
     mysql_projet_annuel:
-        image: mysql:latest
+        image: mysql:5.7
         container_name: mysql_projet_annuel
         restart: always
+        ports:
+            - 5002:3306
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: app

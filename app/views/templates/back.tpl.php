@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/form.css">
+    <link rel="stylesheet" href="/public/css/listing.css">
     <link rel="stylesheet" href="/public/css/back.tpl.css">
 
     <!-- Module CSS -->
@@ -37,7 +38,7 @@
     <main>
         <section class="row">
             <!-- Side Menu -->
-            <?php include("views/back/sideMenu.php") ?>
+            <?php include("views/back/sideMenu.view.php") ?>
             <!-- Main View -->
             <article id="backView" class="col-xxs-10">
                 <article class="col-lg-11 viewContent">
@@ -57,6 +58,7 @@
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
+    <script src="/public/js/<?php echo $this->tplPath() ?>/delete.js"></script>
 </body>
 
 </html>

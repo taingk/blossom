@@ -7,14 +7,29 @@ class Carts extends BaseSql {
     protected $colors_id_color;
     protected $users_id_user;
     protected $orders_id_order;
+    protected $status;
 
     public function __construct() {
-        // On instancie le parent 
+        // On instancie le parent
         parent::__construct();
     }
 
     public function setId($id) {
         $this->id_cart = trim($id);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
     }
 
     public function setCapacitiesIdCapacity($capacities_id_capacity) {
@@ -32,7 +47,7 @@ class Carts extends BaseSql {
     public function setUsersIdUser($users_id_user) {
         $this->users_id_user = trim($users_id_user);
     }
-    
+
     public function setOrdersIdOrder($orders_id_order) {
         $this->orders_id_order = trim($orders_id_order);
     }
@@ -66,7 +81,6 @@ class Carts extends BaseSql {
     {
         return $this->orders_id_order;
     }
-
-}
+    }
 
 ?>

@@ -5,34 +5,27 @@
     margin: 0;
 }
 
-.profilePicture {
-    height: 70px;
-    width: 70px;
+.profile-picture {
+    height: 80px;
+    width: 80px;
     border-radius: 50px;
     border: 2px solid white;
+    line-height: 80px;
+    font-size: 35px;
 }
 
-.backMenuLink span {
-    display: block;
+.banner {
+    height: 220px;
+    background: linear-gradient( rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url('/public/img/banner.jpg');
 }
 
-.profile {
-    height: 200px;
-    background: linear-gradient( rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url("https://www.cheapflights.co.uk/news/wp-content/uploads/2016/03/11-photos-that-prove-cherry-blossom-season-is-the-01-620x414.jpg");
-}
-
-.backMenuLink > a {
+.backMenuLink a:last-child {
     color: #444444;
+    padding: 0 20px;
 }
 
 .backMenuLink {
     padding: 8%;
-}
-
-main .row section {
-    height: calc(100% - 50px);
-    margin-bottom: auto;
-    margin-top: auto;
 }
 
 .backLeftMenu {
@@ -40,8 +33,6 @@ main .row section {
     background-color: #FDFBFB;
     text-align: left;
     box-shadow: 1px 1px 12px #555;
-    max-width: calc(2/12*100%);
-    flex: 0 0 calc(2/12*100%);
 }
 
 @keyframes fadeIn {
@@ -91,4 +82,57 @@ main .row section {
         flex: 0 0 calc(12/12*100%);
     }
 
+}
+
+@media (max-width: 1429px) {
+    .backMenuLink a:last-child {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1335px) {
+    .backMenuLink a:last-child {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1224px) {
+    .backMenuLink a:last-child {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 1114px) {
+    .backMenuLink a:last-child {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 1007px) {
+    .backMenuLink a:last-child {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 975px) {
+    .backMenuLink a:last-child {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 571px) {
+    .backMenuLink a:last-child.is-v-centered {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 534px) {
+    .backMenuLink a:first-child {
+        margin: 0 auto;
+    }
+
+    .backMenuLink a:last-child.is-v-centered {
+        display: none;
+    }
 }

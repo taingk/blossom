@@ -5,6 +5,21 @@ class Images extends BaseSql {
     protected $image_name;
     protected $path;
     protected $products_idproduct;
+    protected $status;
+
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
+    }
 
     public function __construct() {
         // On instancie le parent 

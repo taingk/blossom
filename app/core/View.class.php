@@ -20,15 +20,29 @@ class View {
 	public function __destruct() {
 		extract($this->aData);
 
-		include("views/templates/" . $this->sTpl . ".tpl.php");
+        include("views/templates/" . $this->sTpl . ".tpl.php");
 	}
 	
 	public function assign($sKey, $sValue) {
 		// Prends en paramètre une clée et une valeur et insert dans $aData
 		$this->aData[$sKey] = $sValue;
 	}
-
+	
 	public function tplPath() {
 		return $this->sTpl . "/" . $this->sView;
 	}
+	
+	public function addModal( $sModal, $aConfig, $aErrors = [] ) {
+	    if ( $sModal === 'sideMenu') {
+	        $oSideMenu = new SideMenu();
+	        $aConfig = $oSideMenu->sideMenuConfigs();
+        }
+	    if ( $sModal === 'mainMenu') {
+	        $oMainMenu = new MainMenu();
+			$aConfig = $oMainMenu->MainMenuConfigs();
+        }
+
+		include("views/modals/" . $sModal . ".mdl.php");
+	}
+
 }

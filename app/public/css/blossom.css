@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Avenir';
-    src: url('../../public/font/AvenirNextRegular.otf') format('truetype');
+    src: url('/public/font/AvenirNextRegular.otf') format('truetype');
 }
 
 * {
@@ -37,9 +37,42 @@ footer {
     padding: 15px;
 }
 
+input {
+    border: 0;
+    border-bottom: 1px solid #363636;
+}
+
+input[type="submit"]:not([data-icon]) {
+    border: 0;
+    cursor: pointer;
+    background-color: #D8475D;
+    color: #FDFBFB;
+}
+
+[data-icon] {
+    cursor: pointer;
+}
+
+#search {
+    width: 250px;
+    font-size: 20px;
+}
+
 .bandeau {
     padding: 75px 0;
     margin: 75px 0;
+}
+
+.small-bandeau {
+    padding: 10px 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.medium-bandeau {
+    padding: 25px 0;
+    margin: 25px 0;
+    width: 100%;
 }
 
 .is-white {
@@ -77,11 +110,13 @@ footer {
 }
 
 .is-left {
+    margin-left: 15px;
     padding-left: 15px;
     float: left;
 }
 
 .is-right {
+    margin-right: 15px;
     padding-right: 15px;
     float: right;
 }
@@ -129,4 +164,13 @@ footer {
 
 .height-is-75 {
     height: 75px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.default-button {
+    border: 0;
+    background-color: white;
 }

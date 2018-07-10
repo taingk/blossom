@@ -5,7 +5,8 @@
 */
 
 header {
-    height: 950px;
+    /*height: 950px;*/
+    height: 60vh;
     background-color: #d8475d;
 }
 
@@ -82,6 +83,16 @@ header {
 .feature-content {
     width: 85%;
     margin: 0 auto;
+}
+
+/*
+ **************************************************
+ ***************** FIRST SECTION ******************
+ **************************************************
+*/
+
+section:nth-child(2) {
+    padding: 10px;
 }
 
 /*

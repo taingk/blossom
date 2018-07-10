@@ -1,0 +1,59 @@
+/* Table Layout */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td {
+    color: black;
+    text-align: center;
+}
+
+table thead {
+    line-height: 12px;
+    text-transform: uppercase;
+}
+
+table thead th {
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 1px;
+    vertical-align: bottom;
+}
+
+table tbody tr {
+    background: #fff;
+    border-top: 2px solid #EEEE;
+    transition: background 1s;
+}
+
+table tbody td {
+    padding: 5px;
+}
+
+table tbody tr:hover td:not(:first-child) {
+    color: #fff;
+    background: #D8475D;
+}
+
+table tbody td:first-child {
+    background: #EEEE;
+}
+
+.options {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 34px;
+        line-height: 36px;
+        padding-left: 15px;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+}
