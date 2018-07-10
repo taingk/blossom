@@ -32,7 +32,7 @@
             id="<?php echo $sAttribut["name"] . '-' . $sName ?>"
             value="<?php echo $sAttribut["value"] ?>"
             <?php echo isset( $sAttribut["checked"] ) ? "checked='checked'" : "" ?>/>
-            <label for="<?php echo $sAttribut["name"] . '-' . $sName ?>"><?php echo $sName ?></label>
+            <label class="is-black" for="<?php echo $sAttribut["name"] . '-' . $sName ?>"><?php echo $sName ?></label>
 
 		<?php endif; ?>
 
