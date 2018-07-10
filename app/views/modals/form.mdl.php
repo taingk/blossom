@@ -19,7 +19,16 @@
             <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>
             value="<?php echo $sAttribut["value"] ?>"/></p></label>
 
-		<?php else: ?>
+        <?php elseif ( $sAttribut["type"] == "select" ): ?>
+
+            <label><p class="is-black"><?php echo $sAttribut["title"] ?>
+            <select name="<?php echo $sName ?>">
+                <?php foreach ( $sAttribut["options"] as $sOption ): ?>
+                    <option value="<?php echo $sOption['id'] ?>"><?php echo $sOption['name'] ?></option>
+                <?php endforeach; ?>
+            </select></p></label>
+
+        <?php else: ?>
 
             <input type="<?php echo $sAttribut["type"] ?>"
             name="<?php echo $sAttribut["name"] ?>"
