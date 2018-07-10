@@ -45,18 +45,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `homepages`;
 
-CREATE TABLE homepages
+CREATE TABLE `homepages`
 (
     id_homepage int PRIMARY KEY AUTO_INCREMENT,
+    type varchar(255),
+    name varchar(255),
     title_page varchar(255),
     description_page varchar(255),
     banner varchar(255),
     left_image varchar(255),
     right_image varchar(255),
     bottom_banner varchar(255),
-    id_page int(11),
-    status tinyint(4) NOT NULL DEFAULT '0',
-    CONSTRAINT pages___fk FOREIGN KEY (id_page) REFERENCES pages (id_page)
+    is_use tinyint(4) NOT NULL,
+    status tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -231,32 +232,6 @@ CREATE TABLE `orders` (
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pages`
---
-
-DROP TABLE IF EXISTS `pages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pages` (
-  `id_page` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `is_use` tinyint(4) NOT NULL,
-  `status` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_page`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pages`
---
-
-LOCK TABLES `pages` WRITE;
-/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

@@ -4,3 +4,4 @@ app/sass/node_modules/
 .DS_Store
 .htpasswd
 .idea/*
+public/uploads/*

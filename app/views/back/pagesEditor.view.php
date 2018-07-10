@@ -1,3 +1,1 @@
-<?php 
-
-$this->addModal( "form", $aConfig, $aErrors );
+<?php $this->addModal( "form", $aConfig, $aErrors ); ?>

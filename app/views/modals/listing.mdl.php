@@ -29,7 +29,11 @@
             if ( !$bOptions ): ?>
                 <td>
                     <a href="<?php echo $aConfig['update']['url'] . $aLists['id'] ?>"><div data-icon="settings-5" class="options" id="update-<?php echo $aLists['id']?>"></div></a>
-                    <div data-icon="<?php echo $aLists['status'] === 'Actif' ? 'locked-4' : 'unlocked-1' ; ?>" class="options" id="lock-<?php echo $aLists['id']?>" onclick="updateStatus(this.id)"></div>
+                    <div data-icon="<?php if (isset($aLists['is_use'])) :
+                        echo $aLists['is_use'] === 'Actif' ? 'locked-4' : 'unlocked-1' ;
+                    else :
+                        echo $aLists['status'] === 'Actif' ? 'locked-4' : 'unlocked-1' ;
+                    endif; ?>" class="options" id="lock-<?php echo $aLists['id']?>" onclick="updateStatus(this.id)"></div>
                 </td>
             <?php endif; ?>
         </tr>

@@ -76,10 +76,10 @@ class UsersController {
             }
         }
 
-        $oView = new View("usersAdd", "back");
+        $oView = new View("usersForm", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
-		$oView->assign("aErrors", $aErrors);       
+		$oView->assign("aErrors", $aErrors);
     }
 
     /*
@@ -133,10 +133,10 @@ class UsersController {
             }
         }
 
-        $oView = new View("usersUpdate", "back");
+        $oView = new View("usersForm", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
-		$oView->assign("aErrors", $aErrors);       
+		$oView->assign("aErrors", $aErrors);
     }
 
     /*
