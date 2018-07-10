@@ -20,8 +20,8 @@ class IndexController {
                 $oToken->setTokenSession();
                 $oToken->setIdSession( $sEmail );
                 $oToken->setTokenDb();
-                print_r($_SESSION);
-                // header('Location: /back/dashboard');
+
+                header('Location: /back/dashboard');
             } else {
                 echo "Identifiants invalides";
             }
