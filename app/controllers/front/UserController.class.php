@@ -6,7 +6,63 @@ class UserController {
     * View connexion utilisateur
     */ 
     public function indexAction( $aParams ) {
+        echo 'oui';
+    }
 
+    /*
+    * View connexion utilisateur
+    */ 
+    public function subscribeAction( $aParams ) {
+        $oUser = new Users();
+
+        // if ( $oUser->select() ) {
+        //     $oToken = new Token();
+        //     $oToken->checkToken();
+
+        //     include "controllers/back/DashboardController.class.php";
+        //     $oDashboard = new DashboardController();
+        //     $oDashboard->indexAction( $aParams );
+
+        //     return;
+        // }
+
+
+        $aConfig = $oUser->userFormAdd("form col-md-8");
+        $aErrors = [];
+
+        if ( !empty( $aParams['POST'] ) ) {
+            $aErrors = Validator::checkForm( $aConfig, $aParams["POST"] );
+
+            if ( empty( $aErrors ) ) {
+                $oMailer = new Mailer();
+                $oToken = new Token();
+                
+                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oUser->setFirstname($aParams['POST']['firstname']);
+                $oUser->setLastname($aParams['POST']['lastname']);
+                $oUser->setSexe($aParams['POST']['sexe']);
+                $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
+                $oUser->setEmail($aParams['POST']['email']);
+                $oUser->setAddress($aParams['POST']['address']);
+                $oUser->setZipCode($aParams['POST']['zip_code']);
+                $oUser->setCity($aParams['POST']['city']);
+                $oUser->setPwd($aParams['POST']['pwd']);
+                $oUser->setToken($oToken->getToken());
+                $oUser->setStatus(0);
+                $oUser->save();
+    
+                include "controllers/back/IndexController.class.php";
+                $oIndex = new IndexController();
+                $oIndex->indexAction( [] );
+
+                return;
+            }
+        }
+
+        $oView = new View("userAdd", "auth");
+
+        $oView->assign("aConfig", $aConfig);
+        $oView->assign("aErrors", $aErrors);
     }
 
     /*

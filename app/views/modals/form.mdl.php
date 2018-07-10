@@ -1,8 +1,14 @@
-<?php
-    // à décommenter pour afficher les erreurs
-//     print_r($aErrors);
-//     print_r($aConfig);
-?>
+<?php if(!empty($aErrors)) {?>
+    <div class="errorContainer">
+        <ul>
+            <?php foreach ($aErrors as $errors): ?>
+                <li>
+                    <?php echo $errors; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php } ?>
 
 <form method="<?php echo $aConfig["config"]["method"]?>" action="<?php echo $aConfig["config"]["action"]?>" class="<?php echo $aConfig["config"]["class"]?>" enctype="<?php echo $aConfig["config"]["enctype"]?>">
 
