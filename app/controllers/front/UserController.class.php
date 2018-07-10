@@ -43,6 +43,9 @@ class UserController {
                 $oUser->setSexe($aParams['POST']['sexe']);
                 $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
                 $oUser->setEmail($aParams['POST']['email']);
+                $oUser->setAddress($aParams['POST']['address']);
+                $oUser->setZipCode($aParams['POST']['zip_code']);
+                $oUser->setCity($aParams['POST']['city']);
                 $oUser->setPwd($aParams['POST']['pwd']);
                 $oUser->setToken($oToken->getToken());
                 $oUser->setStatus(0);

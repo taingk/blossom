@@ -1,6 +1,6 @@
 <?php
     // à décommenter pour afficher les erreurs
-    // print_r($aErrors);
+    var_dump($aErrors);
 ?>
 
 <form method="<?php echo $aConfig["config"]["method"]?>" action="<?php echo $aConfig["config"]["action"]?>" class="<?php echo $aConfig["config"]["class"]?>" enctype="<?php echo $aConfig["config"]["enctype"]?>">

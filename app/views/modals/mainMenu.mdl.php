@@ -34,12 +34,12 @@
         <li class="col-xxs-1"></li>
         <li class="col-xxs-1"></li>
         <li class="col-xxs-1">
-            <a href="/front/user/subscribe">
+            <a href="">
                 Connexion
             </a>
         </li>
         <li class="col-xxs-1">
-            <a href="">
+            <a href="/front/user/subscribe">
                 Inscription
             </a>
         </li>

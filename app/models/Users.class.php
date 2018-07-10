@@ -221,6 +221,24 @@ class Users extends BaseSql {
                                                 "type" => "date",
                                                 "required" => true,
 										    ],
+                        "address" =>        [
+                                                "title" => "Adresse postale",
+                                                "type" => "text",
+                                                "placeholder" => "242 boulevard de Saint Antoine",
+                                                "required" => true,
+										    ],
+                        "zip_code" =>       [
+                                                "title" => "Code postal",
+                                                "type" => "number",
+                                                "placeholder" => "75012",
+                                                "required" => true,
+										    ],
+                        "city" =>        [
+                                                "title" => "Ville",
+                                                "type" => "text",
+                                                "placeholder" => "Paris",
+                                                "required" => true,
+										    ],
                         "email" =>          [
                                                 "title" => "E-mail",
                                                 "type" => "email",
