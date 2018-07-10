@@ -9,7 +9,9 @@ class Validator {
 			if ( isset( $sAttribut["confirm"] ) && $aData[$sName] != $aData[$sAttribut["confirm"]] ) {
 				$aErrorsMsg[] = $sName . " ne correspond pas à " . $sAttribut["confirm"];
 			} else if ( !isset( $sAttribut["confirm"] ) ) {
-				if ( $sAttribut["type"] == "email" && !self::checkEmail( $aData[$sName] ) ) {
+				if ( $sAttribut["type"] == "email" && !self::checkSameEmail( $aData[$sName] ) ) {
+					$aErrorsMsg[] = "L'email renseigné est déjà utilisé";
+				} else if ( $sAttribut["type"] == "email" && !self::checkEmail( $aData[$sName] ) ) {
 					$aErrorsMsg[] = "Format de l'email incorrect";
 				} else if ( $sAttribut["type"] == "password" && !self::checkPwd( $aData[$sName] ) && !$bUpdate ) {
 					$aErrorsMsg[] = "Mot de passe incorrect(Maj, Min, Chiffre, entre 6 et 32)";
@@ -60,8 +62,16 @@ class Validator {
 		return $iNum == $iLength;
 	}
 
+	public static function checkSameEmail( $sEmail ) {
+		$oUsers = new Users();
+		$oUsers->setEmail( $sEmail );
+		if( !$oUsers->select() ) {
+			return true;
+		}
+	}
+
 	public static function checkEmail( $sEmail ) {
-		return filter_var( $sEmail, FILTER_VALIDATE_EMAIL );
+		return filter_var( $sEmail, FILTER_VALIDATE_EMAIL );			
 	}
 
 	public static function checkPwd( $sPwd ) {

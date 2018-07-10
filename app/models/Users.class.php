@@ -187,9 +187,9 @@ class Users extends BaseSql {
 		];
 	}
 
-    public function userFormAdd() {
+    public function userFormAdd($class) {
 		return [
-					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-4", "pageTitle" => "Ajouter un nouveau utilisateur"],
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => $class, "pageTitle" => "Ajouter un nouveau utilisateur"],
 					"input" => [
 						"firstname" =>      [
                                                 "title" => "Prénom",
@@ -219,6 +219,24 @@ class Users extends BaseSql {
                         "birthday_date" =>  [
                                                 "title" => "Date de naissance",
                                                 "type" => "date",
+                                                "required" => true,
+										    ],
+                        "address" =>        [
+                                                "title" => "Adresse postale",
+                                                "type" => "text",
+                                                "placeholder" => "242 boulevard de Saint Antoine",
+                                                "required" => true,
+										    ],
+                        "zip_code" =>       [
+                                                "title" => "Code postal",
+                                                "type" => "number",
+                                                "placeholder" => "75012",
+                                                "required" => true,
+										    ],
+                        "city" =>        [
+                                                "title" => "Ville",
+                                                "type" => "text",
+                                                "placeholder" => "Paris",
                                                 "required" => true,
 										    ],
                         "email" =>          [
