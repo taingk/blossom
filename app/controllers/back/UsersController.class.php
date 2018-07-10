@@ -76,10 +76,10 @@ class UsersController {
             }
         }
 
-        $oView = new View("usersAdd", "back");
+        $oView = new View("usersForm", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
-		$oView->assign("aErrors", $aErrors);       
+		$oView->assign("aErrors", $aErrors);
     }
 
     /*
@@ -133,10 +133,10 @@ class UsersController {
             }
         }
 
-        $oView = new View("usersUpdate", "back");
+        $oView = new View("usersForm", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
-		$oView->assign("aErrors", $aErrors);       
+		$oView->assign("aErrors", $aErrors);
     }
 
     /*
@@ -169,25 +169,14 @@ class UsersController {
      */
     public function confirmAction( $aParams ) {
         if ( $aParams['GET']['token'] ) {
-            $aTokens = $this->oUser->select(array('id_user', 'token'));
-            $sToken = null;
-            $sId = 0;
-            $bCheck = false;
+            $this->oUser->setToken($aParams['GET']['token']);
+            $aUser = $this->oUser->select()[0];
 
-            foreach ( $aTokens as $sKey => $sValue ) {
-                if ( $aParams['GET']['token'] === $sValue['token'] ) {
-                    $bCheck = true;
-                    $sToken = $sValue['token'];
-                    $sId = $sValue['id'];
-                    break;
-                }
-            }
-    
-            if ( $bCheck ) {
-                $this->oUser->setId($sId);
+            if ( $aUser ) {
+                $this->oUser->setId($aUser['id']);
                 $this->oUser->setStatus(1);
                 $this->oUser->save();
-    
+
                 header('Location: /back');
             }
         }

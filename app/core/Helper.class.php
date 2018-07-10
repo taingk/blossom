@@ -13,4 +13,8 @@ class Helper {
     static function getStatus( $iStatus ) {
         return $iStatus ? "Actif" : "Inactif";
     }
+
+    static function getActif( $iActif ) {
+        return $iActif ? "Oui" : "Non";
+    }
 }
