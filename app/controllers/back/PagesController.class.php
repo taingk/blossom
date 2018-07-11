@@ -48,20 +48,7 @@ class PagesController {
             $this->disableAll();
 
             $oHomePage = new Homepages();
-            $sPathDirectory = '/public/uploads/';
-            $aFiles = [];
-
-            foreach ($_FILES as $aFile) {
-                $sFileName = strtolower(explode('.', $aFile['name'])[0]);
-                $sName = basename(strtolower($sFileName . '.' . uniqid() .'.png'));
-                $sFullPath = $sPathDirectory . $sName;
-                array_push($aFiles, $sFullPath);
-
-                $sUploadPath = substr($sFullPath, 1);
-                if ( !move_uploaded_file($aFile['tmp_name'], $sUploadPath) ) {
-                    error_log("Erreur dans l'upload " . $aFile['name']);
-                }
-            }
+            $aFiles = Helper::uploadFiles($_FILES);
 
             $oHomePage->setType('homepage');
             $oHomePage->setName($aParams['POST']['name']);
@@ -116,19 +103,7 @@ class PagesController {
 
         if ( !empty( $aParams['POST'] ) ) {
             $oHomePage = new Homepages();
-            $sPathDirectory = 'public/uploads/';
-            $aFiles = [];
-
-            foreach ($_FILES as $aFile) {
-                $sFileName = strtolower(explode('.', $aFile['name'])[0]);
-                $sName = basename(strtolower($sFileName . '.' . uniqid() .'.png'));
-                $sFullPath = $sPathDirectory . $sName;
-                array_push($aFiles, $sFullPath);
-
-                if ( !move_uploaded_file($aFile['tmp_name'], $sFullPath) ) {
-                    error_log("Erreur dans l'upload " . $aFile['name']);
-                }
-            }
+            $aFiles = Helper::uploadFiles($_FILES);
 
             $oHomePage->setId($sId);
             $oHomePage->setType('homepage');
