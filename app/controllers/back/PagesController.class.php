@@ -48,7 +48,7 @@ class PagesController {
             $this->disableAll();
 
             $oHomePage = new Homepages();
-            $sPathDirectory = getcwd() . 'public/uploads/';
+            $sPathDirectory = getcwd() . '/public/uploads/';
             $aFiles = [];
 
             foreach ($_FILES as $aFile) {
