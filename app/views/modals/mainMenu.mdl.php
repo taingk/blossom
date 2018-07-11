@@ -1,3 +1,5 @@
+<?php var_dump($_SESSION); ?>
+
 <nav class="headerBar position-is-fixed">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
@@ -23,26 +25,48 @@
                 <input class="search-icon" type="submit" value=""/>
             </form>
         </li>
-        <li class="col-xxs-1">
-            <a href="/front/cart">
-                <input class="cart-icon" type="submit" name="search" value="" />
-            </a>
-        </li>
+        <?php if( !empty( $_SESSION )): ?>
+            <li class="col-xxs-1">
+                <a href="/front/cart">
+                    <input class="cart-icon" type="submit" name="search" value="" />
+                </a>
+            </li>
+        <?php endif; ?>
         <li class="col-xxs-1"></li>
         <li class="col-xxs-1"></li>
         <li class="col-xxs-1"></li>
         <li class="col-xxs-1"></li>
         <li class="col-xxs-1"></li>
-        <li class="col-xxs-1">
-            <a href="">
-                Connexion
-            </a>
-        </li>
-        <li class="col-xxs-1">
-            <a href="/front/user/subscribe">
-                Inscription
-            </a>
-        </li>
+        <?php if( !empty( $_SESSION )): ?>
+            <li class="col-xxs-1">
+                <a href="">
+                    Bienvenue, 
+                    <?php
+                        $oUsers = new Users();
+                        $oUsers->setId($_SESSION['id_user']);
+                        $aUsers = $oUsers->select()[0];
+                        $fullName = $aUsers["firstname"] . " " . $aUsers["lastname"];
+                        echo $fullName;
+                    ?>
+                </a>
+            </li>
+            <li class="col-xxs-1">
+                <a href="/front/user/logOut">
+                    Deconnexion
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="col-xxs-1">
+                <a href="/front/user">
+                    Connexion
+                </a>
+            </li>
+            <li class="col-xxs-1">
+                <a href="/front/user/subscribe">
+                    Inscription
+                </a>
+            </li>        
+        <?php endif; ?>
     </ul>
 </nav>
 
