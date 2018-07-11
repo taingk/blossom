@@ -28,8 +28,9 @@ class Helper {
             $sFullPath = $sPathDirectory . $sName;
             array_push($aFiles, $sFullPath);
 
-            if ( !move_uploaded_file($aFile['tmp_name'], getcwd() . $sFullPath ) ) {
-                error_log("Erreur dans l'upload " . $aFile['name']);
+            $sUploadPath = substr($sFullPath, 1);
+            if ( !move_uploaded_file($aFile['tmp_name'], $sUploadPath ) ) {
+                error_log( "Erreur dans l'upload " . $aFile['name'] . "\n path : " . $sUploadPath );
             }
         }
 
