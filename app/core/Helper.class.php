@@ -17,4 +17,23 @@ class Helper {
     static function getActif( $iActif ) {
         return $iActif ? "Oui" : "Non";
     }
+
+    static function uploadFiles($FILES) {
+        $sPathDirectory = '/public/uploads/';
+        $aFiles = [];
+
+        foreach ($FILES as $aFile) {
+            $sFileName = strtolower(explode('.', $aFile['name'])[0]);
+            $sName = basename(strtolower($sFileName . '.' . uniqid() .'.png'));
+            $sFullPath = $sPathDirectory . $sName;
+            array_push($aFiles, $sFullPath);
+
+            if ( !move_uploaded_file($aFile['tmp_name'], substr($sFullPath, 1)) ) {
+                error_log("Erreur dans l'upload " . $aFile['name']);
+            }
+        }
+
+        return $aFiles;
+    }
+
 }
