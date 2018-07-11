@@ -48,7 +48,7 @@ class PagesController {
             $this->disableAll();
 
             $oHomePage = new Homepages();
-            $sPathDirectory = getcwd() . '/public/uploads/';
+            $sPathDirectory = '/public/uploads/';
             $aFiles = [];
 
             foreach ($_FILES as $aFile) {
@@ -57,7 +57,8 @@ class PagesController {
                 $sFullPath = $sPathDirectory . $sName;
                 array_push($aFiles, $sFullPath);
 
-                if ( !move_uploaded_file($aFile['tmp_name'], $sFullPath) ) {
+                $sUploadPath = substr($sFullPath, 1);
+                if ( !move_uploaded_file($aFile['tmp_name'], $sUploadPath) ) {
                     error_log("Erreur dans l'upload " . $aFile['name']);
                 }
             }
