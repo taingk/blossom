@@ -20,7 +20,8 @@ class CategoriesController {
         }
         
         $this->refactorConfigs();
-        $oView->assign("aConfigs", $this->aConfigs );
+        $oView->assign( "aConfigs", $this->aConfigs );
+        $oView->assign( "aParams", array('id' => 'id_categories') );
     }
 
     /*

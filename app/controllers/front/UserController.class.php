@@ -27,11 +27,11 @@ class UserController {
         // }
 
 
-        $aConfig = $oUser->userFormAdd("form col-md-8");
+        $aConfigs = $oUser->userFormAdd("form col-md-8");
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
-            $aErrors = Validator::checkForm( $aConfig, $aParams["POST"] );
+            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"] );
 
             if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
@@ -61,7 +61,7 @@ class UserController {
 
         $oView = new View("userAdd", "auth");
 
-        $oView->assign("aConfig", $aConfig);
+        $oView->assign("aConfigs", $aConfigs);
         $oView->assign("aErrors", $aErrors);
     }
 

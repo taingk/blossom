@@ -21,7 +21,8 @@ class UsersController {
         }
         
         $this->refactorConfigs();
-        $oView->assign("aConfigs", $this->aConfigs );
+        $oView->assign( "aConfigs", $this->aConfigs );
+        $oView->assign( "aParams", array('id' => 'id_user') );
    }
 
     /*
@@ -182,7 +183,7 @@ class UsersController {
         }
     }
 
-    public function refactorConfigs() {        
+    public function refactorConfigs() {
         $this->aConfigs = $this->oUser->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'token', 'pwd'));
         $this->aConfigs['label'] = array('id', 'prénom', 'nom', 'genre', 'âge', 'email', 'adresse', 'postal', 'ville', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/users/update?id=');

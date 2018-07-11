@@ -32,14 +32,14 @@ class View {
 		return $this->sTpl . "/" . $this->sView;
 	}
 	
-	public function addModal( $sModal, $aConfig, $aErrors = [] ) {
+	public function addModal( $sModal, $aConfigs, $aErrors = [], $aParams = null ) {
 	    if ( $sModal === 'sideMenu') {
 	        $oSideMenu = new SideMenu();
-	        $aConfig = $oSideMenu->sideMenuConfigs();
+	        $aConfigs = $oSideMenu->sideMenuConfigs();
         }
 	    if ( $sModal === 'mainMenu') {
 	        $oMainMenu = new MainMenu();
-			$aConfig = $oMainMenu->MainMenuConfigs();
+			$aConfigs = $oMainMenu->MainMenuConfigs();
         }
 
 		include("views/modals/" . $sModal . ".mdl.php");

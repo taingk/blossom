@@ -20,8 +20,9 @@ class PagesController {
             $this->search( $aParams['POST']['search'] );
         }
 
-        $this->refactorConfigs();
-        $oView->assign("aConfig", $this->aConfigs );
+        $this->refactorConfigs();        
+        $oView->assign( "aConfigs", $this->aConfigs );
+        $oView->assign( "aParams", array('id' => 'id_homepage') );
    }
 
     /*
@@ -47,7 +48,7 @@ class PagesController {
             $this->disableAll();
 
             $oHomePage = new Homepages();
-            $sPathDirectory = 'public/uploads/';
+            $sPathDirectory = getcwd() . 'public/uploads/';
             $aFiles = [];
 
             foreach ($_FILES as $aFile) {
@@ -78,7 +79,7 @@ class PagesController {
 
         $this->aConfigs = $this->oHomePage->editorForm();
         $oView = new View("pagesEditor", "back");
-        $oView->assign("aConfig", $this->aConfigs);
+        $oView->assign("aConfigs", $this->aConfigs);
     }
 
     public function disableAll() {
@@ -144,7 +145,7 @@ class PagesController {
         }
 
         $oView = new View("pagesEditor", "back");
-        $oView->assign("aConfig", $this->aConfigs);
+        $oView->assign("aConfigs", $this->aConfigs);
     }
 
     /*

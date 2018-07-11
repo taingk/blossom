@@ -6,10 +6,10 @@
     <ul class="row center-in-row menu">
         <li class="col-xxs-1">
             <a href="/">
-                <img class="logo" src="<?php echo $aConfig['logo']['url']; unset($aConfig['logo']) ?>">
+                <img class="logo" src="<?php echo $aConfigs['logo']['url']; unset($aConfigs['logo']) ?>">
             </a>
         </li>
-        <?php foreach ( $aConfig as $aKeyCategories => $aCategories ): ?>
+        <?php foreach ( $aConfigs as $aKeyCategories => $aCategories ): ?>
             <?php foreach ( $aCategories as $sKey => $sValue ): ?>
             <li class="col-xxs-2 main-menu-link">
                 <a class="link" href="<?php echo $sValue ?>"><?php echo $aKeyCategories ?></a>
