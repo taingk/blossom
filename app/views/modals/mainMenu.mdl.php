@@ -4,15 +4,26 @@
         <span class="navicon"></span>
     </label>
     <ul class="row center-in-row menu">
-        <li class="col-xxs-1">
+        <li class="offset-1 col-xxs-1" id="logo">
             <a href="/">
                 <img class="logo" src="<?php echo $aConfigs['logo']['url']; unset($aConfigs['logo']) ?>">
             </a>
         </li>
-        <li class="col-xxs-1">
-            Catégories
+        <li class="col-xxs-1" onClick="openCategories()">
+            <a href="#">Catégories</a>
+            <ul id="submenu">
+                <?php foreach ( $aConfigs as $aKeyCategories => $aCategories ): ?>
+                    <?php foreach ( $aCategories as $sKey => $sValue ): ?>
+                        <li class="bg-is-pink">
+                            <a href="<?php echo $sValue ?>">
+                                <?php echo $aKeyCategories ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </ul>
         </li>
-        <li class="col-xxs-3 col-lg-3">
+        <li class="offset-3 col-xxs-2 col-lg-2" id="search-input">
             <form action="/front/index/search" method="POST">
                 <input class="search-input" type="text" name="search">
                 <input class="search-icon" type="submit" value=""/>
@@ -23,7 +34,7 @@
                 <input class="cart-icon" type="submit" name="search" value="" />
             </a>
         </li>
-        <li class="col-xxs-1">
+        <li class="col-xxs-1" style="margin-right: 15px">
             <a href="">
                 Connexion
             </a>
@@ -34,14 +45,4 @@
             </a>
         </li>
     </ul>
-</nav>
-<nav class="">
-<?php foreach ( $aConfigs as $aKeyCategories => $aCategories ): ?>
-    <?php foreach ( $aCategories as $sKey => $sValue ): ?>
-    <li class="col-xxs-2 main-menu-link">
-        <a class="link" href="<?php echo $sValue ?>"><?php echo $aKeyCategories ?></a>
-    </li>
-
-    <?php endforeach; ?>
-<?php endforeach; ?>
 </nav>

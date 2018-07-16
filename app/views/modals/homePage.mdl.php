@@ -1,6 +1,6 @@
 <section class="row">
     <article class="small-bandeau">
-        <h1 class="col-xxs-12">
+        <h1 class="col-xxs-12 is-black">
             <?php echo $aConfigs["description_top_banner"]; ?>
         </h1>
         <div class="col-xxs-12">
