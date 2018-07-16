@@ -41,6 +41,7 @@
     </footer>
 
     <script src="/public/js/iconManager.js"></script>
+    <script src="/public/js/mainMenu.js"></script>
 </body>
 
 </html>

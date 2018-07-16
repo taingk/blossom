@@ -5,7 +5,7 @@
     </label>
     <ul class="menu bg-is-pink" style="padding: 0;">
         <section class="container row center-in-row">
-            <li class="col-xxs-2">
+            <li class="col-xxs-2" id="logo">
                 <a href="#">
                     <img src="/public/img/logo_blanc.png" alt="brand logo" id="brand-logo">
                 </a>
