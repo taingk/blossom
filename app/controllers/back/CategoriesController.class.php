@@ -21,7 +21,7 @@ class CategoriesController {
         
         $this->refactorConfigs();
         $oView->assign( "aConfigs", $this->aConfigs );
-        $oView->assign( "aParams", array('id' => 'id_categories') );
+        $oView->assign( "aParams", array('id' => 'id_category') );
     }
 
     /*
