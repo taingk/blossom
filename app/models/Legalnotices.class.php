@@ -1,7 +1,7 @@
 <?php
 
 class Legalnotices extends BaseSql {
-    protected $id_legalnotices = null;
+    protected $id_legalnotice = null;
     protected $name;
     protected $title;
     protected $details;
@@ -15,12 +15,12 @@ class Legalnotices extends BaseSql {
 
     public function getId()
     {
-        return $this->id_legalnotices;
+        return $this->id_legalnotice;
     }
 
-    public function setId( $id_legalnotices )
+    public function setId( $id_legalnotice )
     {
-        $this->id_legalnotices = $id_legalnotices;
+        $this->id_legalnotice = $id_legalnotice;
     }
 
     /**

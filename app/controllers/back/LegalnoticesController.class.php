@@ -22,7 +22,7 @@ class LegalnoticesController {
 
         $this->refactorConfigs();
         $oView->assign( "aConfigs", $this->aConfigs );
-        $oView->assign( "aParams", array('id' => 'id_legalnotices') );
+        $oView->assign( "aParams", array('id' => 'id_legalnotice') );
    }
 
     /*
@@ -55,7 +55,7 @@ class LegalnoticesController {
             $oLegalNotice->setIsUse(1);
             $oLegalNotice->save();
 
-            // header('location: /back/legalnotices');
+            header('location: /back/legalnotice');
             return;
         }
 
@@ -71,7 +71,7 @@ class LegalnoticesController {
 
         foreach ($aIsUse as $aPages) {
             $oPage = new Legalnotices();
-            $oPage->setId($aPages['id_legalnotices']);
+            $oPage->setId($aPages['id_legalnotice']);
             $oPage->setIsUse(0);
             $oPage->save();
         }
@@ -97,7 +97,7 @@ class LegalnoticesController {
 
         if ( !empty( $aParams['POST'] ) ) {
             $oLegalNotice = new Legalnotices();
-
+            
             $oLegalNotice->setId($sId);
             $oLegalNotice->setName($aParams['POST']['name']);
             $oLegalNotice->setTitle($aParams['POST']['title']);

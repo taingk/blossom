@@ -82,6 +82,8 @@ class BaseSql {
         $this->cleanColumns();
 
         if ( $this->aColumns[$this->sId] ) {
+            $aSqlSet = [];
+
             foreach ($this->aColumns as $sKey => $sValue) {
                 $aSqlSet[] =  $sKey . " = :" . $sKey;
             }
@@ -102,7 +104,8 @@ class BaseSql {
     public function select( $aSelect = "*" ) {
         $this->setColumns();
         $this->cleanColumns();
-        
+        $aSqlSet = [];
+
         $aSelect === "*" ? : $aSelect = implode(', ', $aSelect);
         
         foreach ( $this->aColumns as $sKey => $sValue ) {
@@ -124,7 +127,8 @@ class BaseSql {
     public function search() {
         $this->setColumns();
         $this->cleanColumns();
-        
+        $aSqlSet = [];
+
         foreach ($this->aColumns as $sKey => $sValue) {
             $aSqlSet[] =  $sKey . " LIKE :" . $sKey;
             $this->aColumns[$sKey] = '%' . $sValue . '%';

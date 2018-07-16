@@ -17,9 +17,6 @@
     <!-- Module CSS -->
     <link rel="stylesheet" href="/public/css/back/sideMenu.css">
 
-    <!-- Back-office CSS -->
-    <link rel="stylesheet" href="/public/css/<?php echo $this->tplPath() ?>.css">
-
     <!-- Footer CSS -->
     <link rel="stylesheet" href="/public/css/back/footer.css">
 </head>
@@ -54,11 +51,11 @@
         <!-- Footer -->
         <?php include("views/back/footer.view.php")?>
     </footer>
-
+    <?php echo $this->sView ?>
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
-    <script src="/public/js/<?php echo $this->tplPath() ?>/delete.js"></script>
+    <script src="/public/js/back/delete.js"></script>
 </body>
 
 </html>

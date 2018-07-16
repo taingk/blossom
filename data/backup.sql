@@ -76,7 +76,7 @@ DROP TABLE IF EXISTS `legalnotices`;
 
 CREATE TABLE `legalnotices`
 (
-  id_legalnotices int PRIMARY KEY AUTO_INCREMENT,
+  id_legalnotice int PRIMARY KEY AUTO_INCREMENT,
   name varchar(255),
   title varchar(255),
   details TEXT,

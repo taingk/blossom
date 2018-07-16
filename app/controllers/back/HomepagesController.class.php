@@ -148,6 +148,7 @@ class HomepagesController {
     * Suppression d'un produit en bdd
     */
     public function deleteAction() {
+        echo 'oui';
         if ($_GET['id']) {
             $this->oHomePage->setId($_GET['id']);
             $sStatus = $this->oHomePage->select(array('is_use'))[0]['is_use'];            
