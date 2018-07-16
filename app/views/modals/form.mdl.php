@@ -1,24 +1,12 @@
-<?php if(!empty($aErrors)) {?>
-    <div class="errorContainer">
-        <ul>
-            <?php foreach ($aErrors as $errors): ?>
-                <li>
-                    <?php echo $errors; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php } ?>
+<?php
+    // à décommenter pour afficher les erreurs
+    // print_r($aErrors);
+?>
 
-<form method="<?php echo $aConfigs["config"]["method"]?>" action="<?php echo $aConfigs["config"]["action"]?>" class="<?php echo $aConfigs["config"]["class"]?>" enctype="<?php echo $aConfigs["config"]["enctype"]?>">
+<form method="<?php echo $aConfig["config"]["method"]?>" action="<?php echo $aConfig["config"]["action"]?>" class="<?php echo $aConfig["config"]["class"]?>" enctype="<?php echo $aConfig["config"]["enctype"]?>">
 
-    <?php if ($aConfigs["config"]["pageTitle"]): ?>
-        <p class="medium-bandeau is-black is-font-title">
-            <?php echo $aConfigs["config"]["pageTitle"]?>
-        </p>
-    <?php endif; ?>
 
-	<?php foreach ( $aConfigs["input"] as $sName => $sAttribut ): ?>
+	<?php foreach ( $aConfig["input"] as $sName => $sAttribut ): ?>
 
         <?php if ( $sAttribut["type"] == "text" || $sAttribut["type"] == "email"
         || $sAttribut["type"] == "number" || $sAttribut["type"] == "password"
@@ -31,19 +19,28 @@
             <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>
             value="<?php echo $sAttribut["value"] ?>"/></p></label>
 
-		<?php else: ?>
+        <?php elseif ( $sAttribut["type"] == "select" ): ?>
+
+            <label><p class="is-black"><?php echo $sAttribut["title"] ?>
+            <select name="<?php echo $sName ?>">
+                <?php foreach ( $sAttribut["options"] as $sOption ): ?>
+                    <option value="<?php echo $sOption['id'] ?>"><?php echo $sOption['name'] ?></option>
+                <?php endforeach; ?>
+            </select></p></label>
+
+        <?php else: ?>
 
             <input type="<?php echo $sAttribut["type"] ?>"
             name="<?php echo $sAttribut["name"] ?>"
             id="<?php echo $sAttribut["name"] . '-' . $sName ?>"
             value="<?php echo $sAttribut["value"] ?>"
             <?php echo isset( $sAttribut["checked"] ) ? "checked='checked'" : "" ?>/>
-            <label class="is-black" for="<?php echo $sAttribut["name"] . '-' . $sName ?>"><?php echo $sName ?></label>
+            <label for="<?php echo $sAttribut["name"] . '-' . $sName ?>"><?php echo $sName ?></label>
 
 		<?php endif; ?>
 
 	<?php endforeach; ?>
 
-	<p><input type="submit" value="<?php echo $aConfigs["config"]["submit"];?>"></p>
+	<p><input type="submit" value="<?php echo $aConfig["config"]["submit"];?>"></p>
 
 </form>

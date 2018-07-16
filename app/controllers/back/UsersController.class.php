@@ -12,7 +12,7 @@ class UsersController {
     * View listing des utilisateurs
     */ 
     public function indexAction( $aParams ) {
-        $oView = new View("users", "back");
+        $oView = new View("listing", "back");
 
         if ( !$aParams['POST']['search'] ) {
             $this->listing();
@@ -77,7 +77,7 @@ class UsersController {
             }
         }
 
-        $oView = new View("usersForm", "back");
+        $oView = new View("editing", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
 		$oView->assign("aErrors", $aErrors);
@@ -134,7 +134,7 @@ class UsersController {
             }
         }
 
-        $oView = new View("usersForm", "back");
+        $oView = new View("editing", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
 		$oView->assign("aErrors", $aErrors);

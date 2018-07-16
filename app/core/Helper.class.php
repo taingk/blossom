@@ -18,6 +18,13 @@ class Helper {
         return $iActif ? "Oui" : "Non";
     }
 
+    static function getCategoryName( $iCategory ) {
+        $oCategory = new Categories();
+        $oCategory->setId($iCategory);
+        $sCategoryName = $oCategory->select('category_name')[0];
+        return $sCategoryName;
+    }
+
     static function uploadFiles( $FILES ) {
         $sPathDirectory = '/public/uploads/';
         $aFiles = [];

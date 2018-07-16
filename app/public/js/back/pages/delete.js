@@ -1,7 +1,7 @@
 function updateStatus( sId ) {
     const aId = sId.split('-');
 
-    fetch('/back/pages/delete?id=' + aId[1])
+    fetch('/back/homepages/delete?id=' + aId[1])
         .then(
             (response) => {
                 if (response.status !== 200) {

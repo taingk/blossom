@@ -4,6 +4,7 @@ class MainMenu {
 
     public function mainMenuConfigs() {
         $oCategory = new Categories();
+        $oCategory->setStatus(1);
         $aCategories = $oCategory->select();
         
         $aConfigs[ 'logo' ] = [ 'url' => '/public/img/logo.png' ];

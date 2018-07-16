@@ -11,7 +11,7 @@ class CategoriesController {
     * View listing des categories 
     */ 
     public function indexAction( $aParams ) {
-        $oView = new View("categories", "back");
+        $oView = new View("listing", "back");
 
         if ( !$aParams['POST']['search'] ) {
             $this->listing();
@@ -64,7 +64,7 @@ class CategoriesController {
             
         }
 
-        $oView = new View("categoriesAdd", "back");
+        $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);     
     }
 
@@ -100,7 +100,7 @@ class CategoriesController {
             }
         }
 
-        $oView = new View("categoriesUpdate", "back");
+        $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
 

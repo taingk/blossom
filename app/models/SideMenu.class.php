@@ -18,9 +18,13 @@ class SideMenu {
                     "title" => "Tableau de bord",
                     "icon" => "controls"
                 ],
-                "pages" =>       [
-                    "title" => "Pages",
-                    "icon" => "notepad-2"
+                "#custom" =>       [
+                    "title" => "Personnalisation",
+                    "icon" => "notepad-2",
+                    "children" => [
+                        "homepages" => "Page d'accueil",
+                        "legalnotices" => "Mentions légales"
+                    ]
                 ],
                 "categories" =>           [
                     "title" => "Categories",

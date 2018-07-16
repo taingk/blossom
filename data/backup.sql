@@ -43,22 +43,45 @@ LOCK TABLES `capacities` WRITE;
 /*!40000 ALTER TABLE `capacities` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `customization`;
+
+CREATE TABLE `customization`
+(
+  id_customization int PRIMARY KEY AUTO_INCREMENT,
+  type varchar(255),
+  name varchar(255),
+  logo varchar(255),
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 DROP TABLE IF EXISTS `homepages`;
 
 CREATE TABLE `homepages`
 (
-    id_homepage int PRIMARY KEY AUTO_INCREMENT,
-    type varchar(255),
-    name varchar(255),
-    description_top_banner varchar(255),
-    description_images varchar(255),
-    description_bottom_banner varchar(255),
-    banner varchar(255),
-    left_image varchar(255),
-    right_image varchar(255),
-    bottom_banner varchar(255),
-    is_use tinyint(4) NOT NULL,
-    status tinyint(4) NOT NULL DEFAULT '0'
+  id_homepage int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  description_top_banner varchar(255),
+  description_images varchar(255),
+  description_bottom_banner varchar(255),
+  banner varchar(255),
+  left_image varchar(255),
+  right_image varchar(255),
+  bottom_banner varchar(255),
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `legal_notices`;
+
+CREATE TABLE `legal_notices`
+(
+  id_legal_notices int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  title varchar(255),
+  details TEXT,
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

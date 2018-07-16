@@ -55,3 +55,14 @@ class sideMenu {
 }
 
 new sideMenu();
+
+openCustomization = () => {
+    const subMenu = document.getElementById("submenu");
+
+    if (subMenu.style.display != "inline-block") {
+        subMenu.style.display = "inline-block";
+        subMenu.style.textAlign = "left";
+    } else {
+        subMenu.style.display = "none";
+    }
+}

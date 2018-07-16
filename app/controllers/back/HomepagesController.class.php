@@ -1,6 +1,6 @@
 <?php
 
-class PagesController {
+class HomepagesController {
     private $oHomePage;
     private $aConfigs;
 
@@ -9,10 +9,10 @@ class PagesController {
     }
 
     /*
-    * View listing de pages
+    * View listing de homepages
     */
     public function indexAction( $aParams ) {
-        $oView = new View("pages", "back");
+        $oView = new View("listing", "back");
 
         if ( !$aParams['POST']['search'] ) {
             $this->listing();
@@ -26,7 +26,7 @@ class PagesController {
    }
 
     /*
-    * Liste toutes les pages
+    * Liste toutes les homepages
     */ 
     public function listing() {
         $this->aConfigs = $this->oHomePage->select();
@@ -41,7 +41,7 @@ class PagesController {
     }
 
     /*
-    * Formulaire d'ajout de pages
+    * Formulaire d'ajout de homepages
     */
     public function addAction( $aParams ) {
         if ( !empty( $aParams['POST'] ) ) {
@@ -50,7 +50,6 @@ class PagesController {
             $oHomePage = new Homepages();
             $aFiles = Helper::uploadFiles($_FILES);
 
-            $oHomePage->setType('homepage');
             $oHomePage->setName($aParams['POST']['name']);
             $oHomePage->setDescriptionTopBanner($aParams['POST']['description_top_banner']);
             $oHomePage->setDescriptionImages($aParams['POST']['description_images']);
@@ -72,12 +71,12 @@ class PagesController {
             $oHomePage->setIsUse(1);
             $oHomePage->save();
 
-            header('location: /back/pages');
+            header('location: /back/homepages');
             return;
         }
 
-        $this->aConfigs = $this->oHomePage->editorForm();
-        $oView = new View("pagesEditor", "back");
+        $this->aConfigs = $this->oHomePage->homePageForm();
+        $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
 
@@ -98,7 +97,7 @@ class PagesController {
     * Formulaire d'édition de page
     */
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oHomePage->editorForm();
+        $this->aConfigs = $this->oHomePage->homePageForm();
         $sId = $aParams['GET']['id'];
 
         $this->oHomePage->setId($sId);
@@ -117,7 +116,6 @@ class PagesController {
             $aFiles = Helper::uploadFiles($_FILES);
 
             $oHomePage->setId($sId);
-            $oHomePage->setType('homepage');
             $oHomePage->setName($aParams['POST']['name']);
             $oHomePage->setDescriptionTopBanner($aParams['POST']['description_top_banner']);
             $oHomePage->setDescriptionImages($aParams['POST']['description_images']);
@@ -138,11 +136,11 @@ class PagesController {
             }
             $oHomePage->save();
 
-            header('location: /back/pages');
+            header('location: /back/homepages');
             return;
         }
 
-        $oView = new View("pagesEditor", "back");
+        $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
 
@@ -171,9 +169,9 @@ class PagesController {
             $this->aConfigs = $this->oHomePage->unsetKeyColumns($this->aConfigs, array('description_top_banner', 'description_images',
                 'description_bottom_banner', 'banner', 'left_image', 'right_image', 'bottom_banner',
                 'status'));
-            $this->aConfigs['label'] = array('id', 'type', 'nom', 'actif', 'options');
-            $this->aConfigs['update'] = array('url' => '/back/pages/update?id=');
-            $this->aConfigs['add'] = array('url' => '/back/pages/add');
+            $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
+            $this->aConfigs['update'] = array('url' => '/back/homepages/update?id=');
+            $this->aConfigs['add'] = array('url' => '/back/homepages/add');
 
             foreach ( $this->aConfigs as $sKey => &$aValue ) {
                 foreach ( $aValue as $sKey => $sValue ) {
@@ -186,9 +184,9 @@ class PagesController {
                 }
             }
         } else {
-            $this->aConfigs['label'] = array('id', 'type', 'nom', 'actif', 'options');
-            $this->aConfigs['update'] = array('url' => '/back/pages/update?id=');
-            $this->aConfigs['add'] = array('url' => '/back/pages/add');
+            $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
+            $this->aConfigs['update'] = array('url' => '/back/homepages/update?id=');
+            $this->aConfigs['add'] = array('url' => '/back/homepages/add');
         }
     }
 }
