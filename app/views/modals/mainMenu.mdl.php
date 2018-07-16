@@ -12,7 +12,7 @@
         <?php foreach ( $aConfig as $aKeyCategories => $aCategories ): ?>
             <?php foreach ( $aCategories as $sKey => $sValue ): ?>
             <li class="col-xxs-2 main-menu-link">
-                <a class="link" href="<?php echo $sValue ?>"><?php echo $aKeyCategories ?></a>
+                <a class="link" href="<?php echo $sValue ?>"><?php echo ucfirst($aKeyCategories) ?></a>
             </li>
 
             <?php endforeach; ?>
