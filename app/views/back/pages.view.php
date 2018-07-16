@@ -1,1 +1,1 @@
-<?php $this->addModal("listing", $aConfig, $aErrors); ?>
+<?php $this->addModal("listing", $aConfigs, $aErrors, $aParams); ?>

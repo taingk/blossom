@@ -10,15 +10,15 @@
     </div>
 <?php } ?>
 
-<form method="<?php echo $aConfig["config"]["method"]?>" action="<?php echo $aConfig["config"]["action"]?>" class="<?php echo $aConfig["config"]["class"]?>" enctype="<?php echo $aConfig["config"]["enctype"]?>">
+<form method="<?php echo $aConfigs["config"]["method"]?>" action="<?php echo $aConfigs["config"]["action"]?>" class="<?php echo $aConfigs["config"]["class"]?>" enctype="<?php echo $aConfigs["config"]["enctype"]?>">
 
-    <?php if ($aConfig["config"]["pageTitle"]): ?>
+    <?php if ($aConfigs["config"]["pageTitle"]): ?>
         <p class="medium-bandeau is-black is-font-title">
-            <?php echo $aConfig["config"]["pageTitle"]?>
+            <?php echo $aConfigs["config"]["pageTitle"]?>
         </p>
     <?php endif; ?>
 
-	<?php foreach ( $aConfig["input"] as $sName => $sAttribut ): ?>
+	<?php foreach ( $aConfigs["input"] as $sName => $sAttribut ): ?>
 
         <?php if ( $sAttribut["type"] == "text" || $sAttribut["type"] == "email"
         || $sAttribut["type"] == "number" || $sAttribut["type"] == "password"
@@ -44,6 +44,6 @@
 
 	<?php endforeach; ?>
 
-	<p><input type="submit" value="<?php echo $aConfig["config"]["submit"];?>"></p>
+	<p><input type="submit" value="<?php echo $aConfigs["config"]["submit"];?>"></p>
 
 </form>
