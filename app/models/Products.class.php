@@ -92,6 +92,35 @@ class Products extends BaseSql {
     {
         return $this->ram;
     }
+
+    public function productsForm()
+    {
+        return [
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "enctype" => "multipart/form-data", "submit" => "Enregistrer un produit", "pageTitle" => "Ajouter un nouveau produit"],
+            "input" => [
+                "name" => [
+                    "title" => "Nom du produit",
+                    "type" => "text",
+                    "placeholder" => "Ajouter un nom",
+                ],
+                "description_produit" => [
+                    "title" => "Description du produit",
+                    "type" => "text",
+                    "placeholder" => "Ajouter une description",
+                ],
+                "prix" => [
+                    "title" => "Prix du produit",
+                    "type" => "int",
+                    "placeholder" => "Ajouter votre prix",
+                ],
+                "ram" => [
+                    "title" => "Capacité",
+                    "type" => "int",
+                    "placeholder" => "Ex : 16Go",
+                ]
+            ]
+        ];
+    }
 }
 
 ?>

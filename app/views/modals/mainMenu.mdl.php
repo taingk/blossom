@@ -9,8 +9,10 @@
                 <img class="logo" src="<?php echo $aConfigs['logo']['url']; unset($aConfigs['logo']) ?>">
             </a>
         </li>
-        <li class="col-xxs-1">
-            Catégories
+        <li class="col-xxs-1 ">
+            <a href="/front/product">
+                Télephone
+            </a>
         </li>
         <li class="col-xxs-3 col-lg-3">
             <form action="/front/index/search" method="POST">

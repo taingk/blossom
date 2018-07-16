@@ -6,7 +6,7 @@ class ProductController {
     * View page produit
     */ 
     public function indexAction( $aParams ) {
-
+        echo "Voici la page produit";
     }
 
     public function allAction($aParams) {
