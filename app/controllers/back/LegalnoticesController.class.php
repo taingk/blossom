@@ -20,9 +20,9 @@ class LegalnoticesController {
             $this->search( $aParams['POST']['search'] );
         }
 
-        $this->refactorConfigs();        
+        $this->refactorConfigs();
         $oView->assign( "aConfigs", $this->aConfigs );
-        $oView->assign( "aParams", array('id' => 'id_legalnotices') );
+        $oView->assign( "aParams", array('id' => 'id_legal_notices') );
    }
 
     /*
