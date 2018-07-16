@@ -55,7 +55,7 @@ class PagesController {
             $oHomePage->setDescriptionTopBanner($aParams['POST']['description_top_banner']);
             $oHomePage->setDescriptionImages($aParams['POST']['description_images']);
             $oHomePage->setDescriptionBottomBanner($aParams['POST']['description_bottom_banner']);
-            foreach ( $aFiles as $aFile ) {
+            foreach ( $aFiles['success'] as $aFile ) {
                 if ( $aFile['name'] == 'banner' ) {
                     $oHomePage->setBanner($aFile['path']);
                 }
@@ -122,7 +122,7 @@ class PagesController {
             $oHomePage->setDescriptionTopBanner($aParams['POST']['description_top_banner']);
             $oHomePage->setDescriptionImages($aParams['POST']['description_images']);
             $oHomePage->setDescriptionBottomBanner($aParams['POST']['description_bottom_banner']);
-            foreach ( $aFiles as $aFile ) {
+            foreach ( $aFiles['success'] as $aFile ) {
                 if ( $aFile['name'] == 'banner' ) {
                     $oHomePage->setBanner($aFile['path']);
                 }

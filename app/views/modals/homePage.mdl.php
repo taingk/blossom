@@ -1,4 +1,4 @@
-<section class="frontImgHeader row">
+<section class="row">
     <article class="small-bandeau">
         <h1 class="col-xxs-12">
             <?php echo $aConfigs["description_top_banner"]; ?>
@@ -22,5 +22,5 @@
     <h2 class="col-xxs-12 is-black">
         <?php echo $aConfigs["description_bottom_banner"] ?>
     </h2>
-    <img class="col-xxs-12" src="<?php echo $aConfigs["bottom_banner"] ? $aConfigs["bottom_banner"] : "public/img/galaxy2.jpg" ; ?>">
+    <img class="img-is-max gutters" src="<?php echo $aConfigs["bottom_banner"] ? $aConfigs["bottom_banner"] : "public/img/galaxy2.jpg" ; ?>">
 </section>
