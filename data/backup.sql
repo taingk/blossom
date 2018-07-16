@@ -72,11 +72,11 @@ CREATE TABLE `homepages`
   status tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `legal_notices`;
+DROP TABLE IF EXISTS `legalnotices`;
 
-CREATE TABLE `legal_notices`
+CREATE TABLE `legalnotices`
 (
-  id_legal_notices int PRIMARY KEY AUTO_INCREMENT,
+  id_legalnotices int PRIMARY KEY AUTO_INCREMENT,
   name varchar(255),
   title varchar(255),
   details TEXT,
