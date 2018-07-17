@@ -51,7 +51,7 @@
         <!-- Footer -->
         <?php include("views/back/footer.view.php")?>
     </footer>
-    <?php echo $this->sView ?>
+
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
