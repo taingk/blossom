@@ -167,7 +167,7 @@ class HomepagesController {
 
     public function refactorConfigs() {
         if ( $this->aConfigs ) {
-            $this->aConfigs = $this->oHomePage->unsetKeyColumns($this->aConfigs, array('description_top_banner', 'description_images',
+            $this->aConfigs = $this->oHomePage->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'description_top_banner', 'description_images',
                 'description_bottom_banner', 'banner', 'left_image', 'right_image', 'bottom_banner',
                 'status'));
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');

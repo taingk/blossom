@@ -1,15 +1,15 @@
 <?php
 
-class LegalnoticesController {
-    private $oLegalNotice;
+class CgvsController {
+    private $oCgv;
     private $aConfigs;
 
     public function __construct() {
-        $this->oLegalNotice = new Legalnotices();
+        $this->oCgv = new Cgvs();
     }
 
     /*
-    * View listing de Legalnotices
+    * View listing de Cgvs
     */
     public function indexAction( $aParams ) {
         $oView = new View("listing", "back");
@@ -22,56 +22,56 @@ class LegalnoticesController {
 
         $this->refactorConfigs();
         $oView->assign( "aConfigs", $this->aConfigs );
-        $oView->assign( "aParams", array('id' => 'id_legalnotice') );
+        $oView->assign( "aParams", array('id' => 'id_cgv') );
    }
 
     /*
-    * Liste toutes les Legalnotices
+    * Liste toutes les Cgvs
     */ 
     public function listing() {
-        $this->aConfigs = $this->oLegalNotice->select();
+        $this->aConfigs = $this->oCgv->select();
     }
 
     /*
     * On remplie aConfigs par la recherche
     */ 
     public function search( $sSearch ) {
-        $this->oLegalNotice->setName( $sSearch );
-        $this->aConfigs = $this->oLegalNotice->search();
+        $this->oCgv->setName( $sSearch );
+        $this->aConfigs = $this->oCgv->search();
     }
 
     /*
-    * Formulaire d'ajout de Legalnotices
+    * Formulaire d'ajout de Cgvs
     */
     public function addAction( $aParams ) {
         if ( !empty( $aParams['POST'] ) ) {
             $this->disableAll();
 
-            $oLegalNotice = new Legalnotices();
+            $oCgv = new Cgvs();
 
-            $oLegalNotice->setName($aParams['POST']['name']);
-            $oLegalNotice->setTitle($aParams['POST']['title']);
-            $oLegalNotice->setDetails($aParams['POST']['details']);
-            $oLegalNotice->setIsUse(1);
-            $oLegalNotice->save();
+            $oCgv->setName($aParams['POST']['name']);
+            $oCgv->setTitle($aParams['POST']['title']);
+            $oCgv->setDetails($aParams['POST']['details']);
+            $oCgv->setIsUse(1);
+            $oCgv->save();
 
-            header('location: /back/legalnotices');
+            header('location: /back/cgvs');
             return;
         }
 
-        $this->aConfigs = $this->oLegalNotice->legalNoticesForm();
+        $this->aConfigs = $this->oCgv->cgvsForm();
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
 
     public function disableAll() {
-        $oSelect = new Legalnotices();
+        $oSelect = new Cgvs();
         $oSelect->setIsUse(1);
         $aIsUse = $oSelect->select();
 
         foreach ($aIsUse as $aPages) {
-            $oPage = new Legalnotices();
-            $oPage->setId($aPages['id_legalnotice']);
+            $oPage = new Cgvs();
+            $oPage->setId($aPages['id_cgv']);
             $oPage->setIsUse(0);
             $oPage->save();
         }
@@ -81,11 +81,11 @@ class LegalnoticesController {
     * Formulaire d'édition de page
     */
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oLegalNotice->legalNoticesForm();
+        $this->aConfigs = $this->oCgv->cgvsForm();
         $sId = $aParams['GET']['id'];
 
-        $this->oLegalNotice->setId($sId);
-        $aInfos = $this->oLegalNotice->select()[0];
+        $this->oCgv->setId($sId);
+        $aInfos = $this->oCgv->select()[0];
 
         foreach ($this->aConfigs['input'] as $sKey => &$aValue) {
             foreach ($aInfos as $sInfoKey => $sInfoValue) {
@@ -96,15 +96,15 @@ class LegalnoticesController {
         }
 
         if ( !empty( $aParams['POST'] ) ) {
-            $oLegalNotice = new Legalnotices();
+            $oCgv = new Cgvs();
             
-            $oLegalNotice->setId($sId);
-            $oLegalNotice->setName($aParams['POST']['name']);
-            $oLegalNotice->setTitle($aParams['POST']['title']);
-            $oLegalNotice->setDetails($aParams['POST']['details']);
-            $oLegalNotice->save();
+            $oCgv->setId($sId);
+            $oCgv->setName($aParams['POST']['name']);
+            $oCgv->setTitle($aParams['POST']['title']);
+            $oCgv->setDetails($aParams['POST']['details']);
+            $oCgv->save();
 
-            header('location: /back/legalnotices');
+            header('location: /back/cgvs');
             return;
         }
 
@@ -117,13 +117,13 @@ class LegalnoticesController {
     */
     public function deleteAction() {
         if ($_GET['id']) {
-            $this->oLegalNotice->setId($_GET['id']);
-            $sStatus = $this->oLegalNotice->select(array('is_use'))[0]['is_use'];            
+            $this->oCgv->setId($_GET['id']);
+            $sStatus = $this->oCgv->select(array('is_use'))[0]['is_use'];            
 
             $this->disableAll();
 
-            $sStatus ? $this->oLegalNotice->setIsUse(0) : $this->oLegalNotice->setIsUse(1);
-            $this->oLegalNotice->save();
+            $sStatus ? $this->oCgv->setIsUse(0) : $this->oCgv->setIsUse(1);
+            $this->oCgv->save();
 
             http_response_code(200);
             echo json_encode(array('status' => 'ok'));
@@ -134,10 +134,10 @@ class LegalnoticesController {
 
     public function refactorConfigs() {
         if ( $this->aConfigs ) {
-            $this->aConfigs = $this->oLegalNotice->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'title', 'details', 'status'));
+            $this->aConfigs = $this->oCgv->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'title', 'details', 'status'));
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
-            $this->aConfigs['update'] = array('url' => '/back/legalnotices/update?id=');
-            $this->aConfigs['add'] = array('url' => '/back/legalnotices/add');
+            $this->aConfigs['update'] = array('url' => '/back/cgvs/update?id=');
+            $this->aConfigs['add'] = array('url' => '/back/cgvs/add');
 
             foreach ( $this->aConfigs as $sKey => &$aValue ) {
                 foreach ( $aValue as $sKey => $sValue ) {
@@ -151,8 +151,8 @@ class LegalnoticesController {
             }
         } else {
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
-            $this->aConfigs['update'] = array('url' => '/back/legalnotices/update?id=');
-            $this->aConfigs['add'] = array('url' => '/back/legalnotices/add');
+            $this->aConfigs['update'] = array('url' => '/back/cgvs/update?id=');
+            $this->aConfigs['add'] = array('url' => '/back/cgvs/add');
         }
     }
 }

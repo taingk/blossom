@@ -1,11 +1,11 @@
 <?php
 
-class LegalnoticesController {
-    private $oLegalNotice;
+class ContactsController {
+    private $oContact;
     private $aConfigs;
 
     public function __construct() {
-        $this->oLegalNotice = new Legalnotices();
+        $this->oContact = new Contacts();
     }
 
     /*
@@ -14,8 +14,8 @@ class LegalnoticesController {
     public function indexAction( $aParams ) {
         $oView = new View("text", "front");
 
-        $this->oLegalNotice->setIsUse(1);
-        $this->aConfigs = $this->oLegalNotice->select()[0];
+        $this->oContact->setIsUse(1);
+        $this->aConfigs = $this->oContact->select()[0];
 
         $oView->assign("aConfigs", $this->aConfigs );
     }

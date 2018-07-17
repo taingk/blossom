@@ -43,7 +43,7 @@ $aParams = [
 
 // Si l'utilisateur à une session, automatiquement redirigé vers dashboard
 // Sinon, automatiquement redirigé vers la page de connexion
-if ( $sStructure === "back") {
+if ( $sStructure === "back" ) {
     $oToken = new Token();
     $oUser = new Users();
 
@@ -63,15 +63,11 @@ if ( $sStructure === "back") {
         include "controllers/back/IndexController.class.php";
         $oIndex = new IndexController();
         $oIndex->indexAction( $aParams );
-
         return;
     } else if ( $sController === "IndexController" ) {
         $oToken->checkToken();
-
-        include "controllers/back/DashboardController.class.php";
-        $oDashboard = new DashboardController();
-        $oDashboard->indexAction( $aParams );
-
+        
+        header('Location: /back/dashboard');
         return;
     }
 

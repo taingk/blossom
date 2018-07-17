@@ -19,11 +19,14 @@ class SideMenu {
                     "icon" => "controls"
                 ],
                 "#custom" =>       [
-                    "title" => "Personnalisation",
+                    "title" => "Personnalisations",
                     "icon" => "notepad-2",
                     "children" => [
-                        "homepages" => "Page d'accueil",
-                        "legalnotices" => "Mentions légales"
+                        "sites" => "Identité du site",
+                        "homepages" => "Pages d'accueil",
+                        "contacts" => "Pages de contact",
+                        "legalnotices" => "Mentions légales",
+                        "cgvs" => "Conditions générales de vente"
                     ]
                 ],
                 "categories" =>           [
@@ -41,6 +44,10 @@ class SideMenu {
                 "users" =>          [
                     "title" => "Utilisateurs",
                     "icon" => "users-1"
+                ],
+                "orders" =>          [
+                    "title" => "Commandes",
+                    "icon" => "note"
                 ],
                 "logout" =>            [
                     "title" => "Déconnexion",

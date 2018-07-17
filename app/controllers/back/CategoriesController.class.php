@@ -122,7 +122,7 @@ class CategoriesController {
         }
     }
 
-    public function refactorConfigs() {        
+    public function refactorConfigs() {
         $this->aConfigs['label'] = array('id', 'nom de la categorie', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/categories/update?id=');
         $this->aConfigs['add'] = array('url' => '/back/categories/add');
