@@ -8,26 +8,7 @@ class Products extends BaseSql {
     protected $price;
     protected $status;
     protected $quantity;
-
-    /**
-     * @return mixed
-     */
-    public function getStatus() {
-        return $this->status;
-    }
-
-    public function getQuantity() {
-        return $this->quantity;
-    }
-
-
-    /**
-     * @param mixed $status
-     */
-    public function setStatus( $status ) {
-        $this->status = $status;
-    }
-
+  
     public function __construct() {
         // On instancie le parent 
         parent::__construct();
@@ -56,8 +37,12 @@ class Products extends BaseSql {
     public function setQuantity($quantity) {
         $this->quantity = trim($quantity);
     }
+  
+    public function getQuantity() {
+        return $this->quantity;
+    }
 
-    public function getIdProduct()
+    public function getId()
     {
         return $this->id_product;
     }
@@ -81,7 +66,20 @@ class Products extends BaseSql {
     {
         return $this->price;
     }
-
+  
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
+    }
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+  
     public function productFormAdd() {
         $this->oCategory = new Categories();
         //$this->oCategory->setId(1);
@@ -145,5 +143,4 @@ class Products extends BaseSql {
         ];
     }
 }
-
 ?>

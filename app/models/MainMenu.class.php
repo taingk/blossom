@@ -14,7 +14,7 @@ class MainMenu {
         $aConfigs[ 'logo' ] = [ 'url' => $sPath ? $sPath : '/public/img/logo.png' ];
 
         foreach ( $aCategories as $sKey => $aValue ) {
-            $aConfigs[ $aValue['category_name'] ] = [ 'url' => '/front/category?is=' . strtolower($aValue['category_name']) ];
+            $aConfigs[ $aValue['category_name'] ] = [ 'url' => '/front/category?is=' . strtolower($aValue['id_category']) ];
         }
 
         return $aConfigs;

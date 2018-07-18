@@ -32,11 +32,6 @@ class Categories extends BaseSql {
         $this->category_name = trim($category_name);
     }
 
-    public function getIdCategorie()
-    {
-        return $this->id_categorie;
-    }
-
     public function getCategoryName()
     {
         return $this->category_name;
