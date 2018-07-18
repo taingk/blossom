@@ -62,7 +62,7 @@ class Products extends BaseSql {
         $this->ram = trim($ram);
     }
 
-
+    
     public function getIdProduct()
     {
         return $this->id_product;
@@ -93,5 +93,4 @@ class Products extends BaseSql {
         return $this->ram;
     }
 }
-
 ?>

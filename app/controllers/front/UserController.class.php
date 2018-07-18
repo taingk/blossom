@@ -6,7 +6,7 @@ class UserController {
     * View connexion utilisateur
     */ 
     public function indexAction( $aParams ) {
-        echo 'oui';
+        
     }
 
     /*
