@@ -1,7 +1,9 @@
 function updateStatus( sId ) {
+    const aSelectedMenu = document.URL.split('/');
+    const sViews = aSelectedMenu[aSelectedMenu.indexOf('back') + 1];
     const aId = sId.split('-');
 
-    fetch('/back/pages/delete?id=' + aId[1])
+    fetch(`/back/${sViews}/delete?id=${aId[1]}`)
         .then(
             (response) => {
                 if (response.status !== 200) {

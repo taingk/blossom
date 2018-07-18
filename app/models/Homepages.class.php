@@ -3,7 +3,6 @@
 class Homepages extends BaseSql {
     protected $id_homepage = null;
     protected $name;
-    protected $type;
     protected $description_top_banner;
     protected $description_images;
     protected $description_bottom_banner;
@@ -17,22 +16,6 @@ class Homepages extends BaseSql {
     public function __construct() {
         // On instancie le parent
         parent::__construct();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param mixed $type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
     }
 
     /**
@@ -87,22 +70,6 @@ class Homepages extends BaseSql {
 
     public function setId($id) {
         $this->id_homepage = trim($id);
-    }
-
-    /**
-     * @return null
-     */
-    public function getIdHomepage()
-    {
-        return $this->id_homepage;
-    }
-
-    /**
-     * @param null $id_homepage
-     */
-    public function setIdHomepage($id_homepage)
-    {
-        $this->id_homepage = $id_homepage;
     }
 
     /**
@@ -217,7 +184,7 @@ class Homepages extends BaseSql {
         $this->bottom_banner = $bottom_banner;
     }
 
-    public function editorForm()
+    public function homePageForm()
     {
         return [
             "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "enctype" => "multipart/form-data", "submit" => "Enregistrer une page d'accueil", "pageTitle" => "Ajouter une nouvelle page d'accueil"],

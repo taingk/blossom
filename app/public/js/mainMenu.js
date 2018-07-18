@@ -31,7 +31,7 @@ openCategories = () => {
             subMenu.style.display = "inline-block";
             subMenu.style.position = "absolute";
             subMenu.style.top = "100%";     
-            subMenu.style.left = "15%";
+            subMenu.style.left = "calc(2/12*100%)";
             subMenu.style.padding = "0px";
         } else {
             subMenu.style.display = "none";

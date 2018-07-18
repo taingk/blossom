@@ -11,7 +11,7 @@ class IndexController {
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];
 
-        if ($sEmail && $sPwd) {
+        if ( $sEmail && $sPwd ) {
             $oUser = new Users();
 
             if ( $oUser->isLoginValids($sEmail, $sPwd) ) {

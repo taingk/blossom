@@ -6,29 +6,9 @@ class Products extends BaseSql {
     protected $categories_idcategory;
     protected $description;
     protected $price;
-    protected $ram;
     protected $status;
     protected $quantity;
-
-    /**
-     * @return mixed
-     */
-    public function getStatus() {
-        return $this->status;
-    }
-
-    public function getQuantity() {
-        return $this->quantity;
-    }
-
-
-    /**
-     * @param mixed $status
-     */
-    public function setStatus( $status ) {
-        $this->status = $status;
-    }
-
+  
     public function __construct() {
         // On instancie le parent 
         parent::__construct();
@@ -57,13 +37,12 @@ class Products extends BaseSql {
     public function setQuantity($quantity) {
         $this->quantity = trim($quantity);
     }
-
-    public function setRam($ram) {
-        $this->ram = trim($ram);
+  
+    public function getQuantity() {
+        return $this->quantity;
     }
 
-    
-    public function getIdProduct()
+    public function getId()
     {
         return $this->id_product;
     }
@@ -87,10 +66,81 @@ class Products extends BaseSql {
     {
         return $this->price;
     }
+  
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
+    }
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+  
+    public function productFormAdd() {
+        $this->oCategory = new Categories();
+        //$this->oCategory->setId(1);
+        $aCategorieNames = $this->oCategory->select('category_name');
+        print_r($aCategorieNames);
+        return [
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-4"],
+            "input" => [
+                "name" =>      [
+                    "title" => "Nom du produit",
+                    "type" => "text",
+                    "placeholder" => "Iphone X",
+                    "required" => true,
+                    "minString" => 2
+                ],
+                "category" =>       [
+                    "title" => "Catégorie",
+                    "type" => "select",
+                    "options" => [],
+                    "required" => true,
+                ],
+                "description" =>    [
+                    "title" => "Description",
+                    "type" => "text",
+                    "placeholder" => "Description",
+                    "required" => true,
+                    "minString" => 2
+                ],
+                "price" =>        [
+                    "title" => "Prix",
+                    "type" => "number",
+                    "placeholder" => "1000",
+                    "required" => true
+                ],
+                "image" =>      [
+                    "title" => "Upload une image",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
+                "color" =>      [
+                    "title" => "Couleur",
+                    "type" => "text",
+                    "placeholder" => "Rouge",
+                    "required" => true,
+                    "minString" => 2
+                ],
+                "capacity" =>      [
+                    "title" => "Capacité",
+                    "type" => "number",
+                    "placeholder" => "16",
+                    "required" => true
+                ],
+                "quantity" =>      [
+                    "title" => "Quantité",
+                    "type" => "number",
+                    "placeholder" => "150",
+                    "required" => true
+                ]
 
-    public function getRam()
-    {
-        return $this->ram;
+            ]
+        ];
     }
 }
 ?>
