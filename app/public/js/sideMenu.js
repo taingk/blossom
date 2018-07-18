@@ -11,8 +11,8 @@ class sideMenu {
     setColor(sId) {
         const element = document.getElementById(sId);
 
-        element.classList.add('bg-is-pink');
-        element.children[1].classList.add('is-white');
+        element.classList.add('bg-is-main-color');
+        element.children[1].classList.add('is-secondary-color');
     }
     
     onSelectedMenu() {
@@ -55,3 +55,14 @@ class sideMenu {
 }
 
 new sideMenu();
+
+openCustomization = () => {
+    const subMenu = document.getElementById("submenu");
+
+    if (subMenu.style.display != "inline-block") {
+        subMenu.style.display = "inline-block";
+        subMenu.style.textAlign = "left";
+    } else {
+        subMenu.style.display = "none";
+    }
+}

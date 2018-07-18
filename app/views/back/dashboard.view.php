@@ -1,20 +1,20 @@
 <article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-pink">Statistique utilisateurs</h1>
+    <h1 class="is-main-color">Statistique utilisateurs</h1>
     <canvas id="canvas1" class="is-h-centered chartjs" ></canvas>
 </article>
 
 <article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-pink">Statistique produits</h1>
+    <h1 class="is-main-color">Statistique produits</h1>
     <canvas id="canvas2" class="is-h-centered chartjs" ></canvas>
 </article>
 
 <article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-pink">Statistique ventes</h1>
+    <h1 class="is-main-color">Statistique ventes</h1>
     <canvas id="canvas3" class="is-h-centered chartjs" ></canvas>
 </article>
 
 <article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-pink">Statistique visibilités</h1>
+    <h1 class="is-main-color">Statistique visibilités</h1>
     <canvas id="canvas4" class="is-h-centered chartjs" ></canvas>
 </article>
 

@@ -5,9 +5,8 @@
 */
 
 header {
-    /*height: 950px;*/
     height: 60vh;
-    background-color: #d8475d;
+    background-color: var(--main-color);
 }
 
 .headerBar {
@@ -35,15 +34,15 @@ header {
 }
 
 .white-download-btn {
-    background-color: #fbfbfb;
+    background-color: var(--secondary-color);
     padding: 10px;
     border-radius: 5px;
-    color: #d8475d;
+    color: var(--main-color);
 }
 
 .slide-animation {
     animation: slide-down 420ms cubic-bezier(.165,.84,.44,1);
-    background-color: #D8475D;
+    background-color: var(--main-color);
 }
 
 .slide-down {
@@ -61,12 +60,12 @@ header {
 }
 
 .headerBar .menu-btn:checked~.menu {
-    background-color: #D8475D;
+    background-color: var(--main-color);
     padding-bottom: 5px;
 }
 
 .menu-btn:checked~.menu + #documentation {
-    color: black !important;
+    color: var(--third-color) !important;
 }
 
 /*
@@ -106,27 +105,3 @@ footer {
     height: 200px;
     padding: 15px;
 }
-
-/* footer h4, footer .formContainer {
-    text-align: left;
-}
-
-footer button {
-    height: 50px;
-    background-color: black;
-    color: white;
-    padding: 12px;
-    border: none;
-}
-
-footer .col-sm-12 {
-    padding: 20px 0;
-}
-
-footer #inputEmail {
-    height: 50px;
-    background-color: white;
-    color: black;
-    padding: 12px;
-    width: 280px;
-} */

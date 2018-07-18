@@ -3,5 +3,6 @@ app/sass/node_modules/
 *.log
 .DS_Store
 .htpasswd
-.idea/*
+.idea
 app/public/uploads/*
+customColors.css

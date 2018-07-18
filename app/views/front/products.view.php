@@ -5,13 +5,13 @@
             <?php foreach ($products as $results): ?>
                 <div class="col-xxs-6 gutters">
                     <div class="col-xxs-3">
-                        <p class="is-black">
-                            <strong class="is-black">
+                        <p class="is-third-color">
+                            <strong class="is-third-color">
                                 <?php echo strtolower(ucfirst($results["product_name"]))?>
                             </strong>
                         </p>
                     </div>
-                    <p class="is-black">Prix du produit: <?php echo $results["price"]?></p>
+                    <p class="is-third-color">Prix du produit: <?php echo $results["price"]?></p>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -8,6 +8,7 @@
     <title>Blossom | Accueil</title>
 
     <!-- General CSS -->
+    <link rel="stylesheet" href="/public/css/colors.css">
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/responsiveMenu.css">

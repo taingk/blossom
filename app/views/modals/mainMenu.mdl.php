@@ -1,4 +1,4 @@
-<nav class="headerBar position-is-fixed">
+<nav class="headerBar position-is-fixed bg-is-main-color">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
@@ -14,7 +14,7 @@
             <ul id="submenu">
                 <?php foreach ( $aConfigs as $aKeyCategories => $aCategories ): ?>
                     <?php foreach ( $aCategories as $sKey => $sValue ): ?>
-                        <li class="bg-is-pink">
+                        <li class="bg-is-main-color">
                             <a href="<?php echo $sValue ?>">
                                 <?php echo $aKeyCategories ?>
                             </a>
@@ -25,7 +25,7 @@
         </li>
         <li class="offset-3 col-xxs-2 col-lg-2" id="search-input">
             <form action="/front/index/search" method="POST">
-                <input class="search-input" type="text" name="search">
+                <input class="search-input bg-is-main-color" type="text" name="search">
                 <input class="search-icon" type="submit" value=""/>
             </form>
         </li>
