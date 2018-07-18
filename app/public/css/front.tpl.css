@@ -1,0 +1,47 @@
+.headerBar {
+    padding: 5px;
+}
+
+.headerBar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.search-input {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom: 1px solid var(--secondary-color);
+    width: 70%;
+    font-size: 16px;
+}
+
+.search-icon {
+    background-image: url("/public/img/searchIcon.png");
+    height: 27px;
+    width: 27px;
+    background-size: cover;
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+}
+
+.cart-icon {
+    background-image: url("/public/img/panierIcon.png");
+    height: 40px;
+    width: 40px;
+    background-size: cover;
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+    cursor: pointer;
+}
+
+.frontImg {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}

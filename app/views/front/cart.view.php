@@ -1,6 +1,6 @@
 <section class="row gutters">
     <section class="col-xxs-8 mainView gutters">
-        <h1 class="col-xxs-12">Votre <span class="is-pink">panier</span></h1>
+        <h1 class="col-xxs-12">Votre <span class="is-main-color">panier</span></h1>
         <hr>
         <section class="responsiveTable">
             <table>
@@ -21,7 +21,7 @@
                             </figure>
                         </td>
                         <td>
-                            <span class="is-black">Commande numéro: <?php echo $results['orders_id_order']; ?></span>
+                            <span class="is-third-color">Commande numéro: <?php echo $results['orders_id_order']; ?></span>
                         </td>
                         <td>
                             <div class="captionProduct responsive-center">
@@ -38,7 +38,7 @@
                         <td>
                             <div class="text-is-left">
                                 <p><strong><?php echo $results["price"]*$results["quantity"]; ?>€</strong></p>
-                                <p class="is-pink">Supprimer</p>
+                                <p class="is-main-color">Supprimer</p>
                             </div>
                         </td>
                     </tr>
@@ -48,6 +48,6 @@
     </section>
 
     <section class="col-xxs-3 mainView gutters is-h-centered">
-        <h1>Total <span class="is-pink" style="font-size small;">(hors frais de port)</span></h1>
+        <h1>Total <span class="is-main-color" style="font-size small;">(hors frais de port)</span></h1>
     </section>
 </section>

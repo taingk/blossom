@@ -1,5 +1,5 @@
 * {
-    color: black;   
+    color: var(--third-color);
 }
 
 html {
@@ -10,6 +10,6 @@ html {
 .viewContent {
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: var(--secondary-color);
     box-shadow: 1px 1px 12px #555;
 }

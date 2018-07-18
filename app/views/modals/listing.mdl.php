@@ -1,12 +1,12 @@
 <section class="small-bandeau row">
     <form class="col-xxs-11" action="" method="POST">
-        <input class="is-black" id="search" name="search" type="text" />
+        <input class="is-third-color" id="search" name="search" type="text" />
         <input class="default-button" data-icon="search" type="submit" value="" />
     </form>
     <a class="col-xxs-1" href="<?php echo $aConfigs['add']['url'] ?>"><div class="inline" data-icon="add-1"></div></a>
 </section>
 <table id="listing">
-    <thead class="bg-is-pink">
+    <thead class="bg-is-main-color">
         <tr>
         <?php foreach ($aConfigs['label'] as $sValue): ?>
             <th><?php echo $sValue; ?></th>

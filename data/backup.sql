@@ -52,10 +52,10 @@ CREATE TABLE `sites`
   id_site int PRIMARY KEY AUTO_INCREMENT,
   name varchar(255),
   logo varchar(255),
-  main_site_color varchar(255),
-  secondary_site_color varchar(255),
-  main_font_color varchar(255),
-  secondary_font_color varchar(255),
+  favicon varchar(255),
+  main_color varchar(255),
+  secondary_color varchar(255),
+  third_color varchar(255),
   is_use tinyint(4) NOT NULL,
   status tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -365,6 +365,8 @@ CREATE TABLE `users` (
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+ALTER TABLE users AUTO_INCREMENT = 1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -6,7 +6,6 @@
     transition: max-height .2s ease-out;
     list-style: none;
     overflow: hidden;
-    background-color: #d8475d;
     font-size: 14px;
 }
 
@@ -21,7 +20,7 @@
 }
 
 .headerBar .menu-icon .navicon {
-    background: #FBFBFB;
+    background: var(--secondary-color);
     display: block;
     height: 2px;
     position: relative;
@@ -31,7 +30,7 @@
 
 .headerBar .menu-icon .navicon:before,
 .headerBar .menu-icon .navicon:after {
-    background: #FBFBFB;
+    background: var(--secondary-color);
     content: '';
     display: block;
     height: 100%;
@@ -109,7 +108,7 @@
 }
 
 #submenu li {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 #submenu li a {

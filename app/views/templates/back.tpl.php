@@ -5,27 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blossom | Back-office</title>
+    <title><?php echo $this->sSiteName ? $this->sSiteName : "Blossom" ?> | Back-office</title>
+    <link rel="icon" href="<?php echo $this->sFaviconPath ? $this->sFaviconPath : '/public/img/logo.png'; ?>" />
 
     <!-- General CSS -->
+    <link rel="stylesheet" href="<?php echo $this->bCustomCss ? '/public/css/customColors.css' : '/public/css/colors.css' ?>">
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/form.css">
     <link rel="stylesheet" href="/public/css/listing.css">
     <link rel="stylesheet" href="/public/css/back.tpl.css">
-
-    <!-- Module CSS -->
-    <link rel="stylesheet" href="/public/css/back/sideMenu.css">
-
-    <!-- Footer CSS -->
-    <link rel="stylesheet" href="/public/css/back/footer.css">
 </head>
 
 <body>
 
     <header>
         <!-- Toggle menu -->
-        <section class="row height-is-75 bg-is-pink">
+        <section class="row height-is-75 bg-is-main-color">
             <span class="headNav">
                 <div data-icon="menu-2" id="toggleMenu"></div>
             </span>
