@@ -128,6 +128,16 @@ class Products extends BaseSql {
                     "type" => "file",
                     "placeholder" => "Ajouter une image",
                 ],
+                "image2" =>      [
+                    "title" => "Upload une image",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
+                "image3" =>      [
+                    "title" => "Upload une image",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
                 "color" =>      [
                     "title" => "Couleur",
                     "type" => "text",
