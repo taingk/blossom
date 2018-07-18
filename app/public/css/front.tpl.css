@@ -45,3 +45,11 @@
     height: auto;
     margin: 0 auto;
 }
+
+.product-box {
+    padding: 30%;
+}
+
+.container-product-box {
+    border: 1px solid var(--main-color);
+}

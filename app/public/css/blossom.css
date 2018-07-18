@@ -178,13 +178,3 @@ input {
     border: 0;
     background-color: var(--secondary-color);
 }
-
-.padd{
-    padding: 7%;
-    margin: 30px;
-    border-radius: 10px;
-}
-
-.salmon{
-    background-color: #ffbb99;
-}
