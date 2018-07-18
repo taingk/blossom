@@ -31,7 +31,7 @@
                     <?php endforeach; ?>
                     </ul>
                 </li>
-                <? endif;
+                <?php endif;
             endforeach;
         endforeach; ?>
     </ul>
