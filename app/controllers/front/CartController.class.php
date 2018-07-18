@@ -13,7 +13,12 @@ class CartController {
     public function indexAction( $aParams ) {
         $oView = new View("cart", "front");
         $aProducts = [];
-        
+        $iFinalPrice = 0;
+
+        $oUser = new Users();
+        $oUser->setId($_SESSION['id_user']);
+        $aCurrentUser = $oUser->select()[0];
+
         $this->oCart->setUsersIdUser($_SESSION['id_user']);
         $this->oCart->setStatus(1);
         $aCarts = $this->oCart->select();
@@ -54,11 +59,13 @@ class CartController {
                     $aProduct['color_name'] = $oColor->select()[0]['name'];
                 }
             }
-
+            $iFinalPrice += $aProduct['final_price'];
             $aProducts[] = $aProduct;
         }
-        
+
         $oView->assign('aCarts', $aProducts);
+        $oView->assign('iTotalPrice', $iFinalPrice);
+        $oView->assign('aUsers', $aCurrentUser);
     }
 
     /*

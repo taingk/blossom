@@ -3,6 +3,10 @@ strong {
     color: var(--third-color);
 }
 
+h3 {
+    padding: 5px;
+}
+
 .images {
     width: 140px;
     height: 140px;

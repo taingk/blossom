@@ -58,7 +58,10 @@
 }
 
 .container-product-box {
-    border: 1px solid var(--main-color);
+    padding: 2px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 2px;
+    background-color: var(--secondary-color);
 }
 
 hr {

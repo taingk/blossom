@@ -178,3 +178,11 @@ input {
     border: 0;
     background-color: var(--secondary-color);
 }
+
+.margin-zero {
+    margin: 0;
+}
+
+.padding-zero {
+    padding: 0;
+}
