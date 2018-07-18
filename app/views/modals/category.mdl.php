@@ -1,5 +1,6 @@
-<section class="row container mainView box-has-shadow">
-    <h1 class="is-third-color col-xxs-12 bandeau" style="margin-bottom: 0px"><?php echo $aConfigs[0]['label']?></h1>
+<section class="row container mainView gutters">
+    <h1 class="is-third-color col-xxs-12"><?php echo $aConfigs[0]['label']?></h1>
+    <hr>
 
     <?php foreach ($aConfigs[1]['products'] as $results): ?>
         
@@ -14,5 +15,6 @@
         </a>
             
     <?php endforeach; ?>
+    
 </section>
 

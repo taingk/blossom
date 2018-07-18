@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `capacities`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `capacities` (
   `id_capacity` int(11) NOT NULL AUTO_INCREMENT,
-  `capacity_number` int(11) DEFAULT NULL,
+  `capacity_number` int(11) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
   `additional_price` float DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
@@ -132,12 +132,12 @@ DROP TABLE IF EXISTS `carts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carts` (
-  `id_cart` int(11) NOT NULL,
+  `id_cart` int(11) NOT NULL AUTO_INCREMENT,
   `capacities_id_capacity` int(11) NOT NULL,
   `products_id_product` int(11) NOT NULL,
   `colors_id_color` int(11) NOT NULL,
   `users_id_user` int(11) NOT NULL,
-  `orders_id_order` int(11) NOT NULL,
+  `orders_id_order` int(11) DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -173,7 +173,7 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(30) DEFAULT NULL,
+  `category_name` varchar(30) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -199,7 +199,8 @@ DROP TABLE IF EXISTS `colors`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL AUTO_INCREMENT,
-  `color_hexa` varchar(35) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `color_hexa` varchar(35) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -260,7 +261,7 @@ DROP TABLE IF EXISTS `images`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `images` (
   `id_image` int(11) NOT NULL AUTO_INCREMENT,
-  `image_name` varchar(75) DEFAULT NULL,
+  `image_name` varchar(75) NOT NULL,
   `path` varchar(255) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
@@ -290,7 +291,7 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
-  `tracking_number` varchar(15) DEFAULT NULL,
+  `tracking_number` varchar(15) NOT NULL,
   `users_idusers` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -319,11 +320,12 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(60) DEFAULT NULL,
+  `product_name` varchar(60) NOT NULL,
   `categories_idcategory` int(11) NOT NULL,
   `description` longtext,
   `price` float DEFAULT NULL,
-  `ram` varchar(20) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `max_quantity` int(11) DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -353,8 +355,8 @@ CREATE TABLE `users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
-  `sexe` tinyint(1) DEFAULT NULL,
-  `birthday_date` date DEFAULT NULL,
+  `sexe` tinyint(1) NOT NULL,
+  `birthday_date` date NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
   `zip_code` int(5) DEFAULT NULL,

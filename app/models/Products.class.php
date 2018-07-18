@@ -8,6 +8,7 @@ class Products extends BaseSql {
     protected $price;
     protected $status;
     protected $quantity;
+    protected $max_quantity;
   
     public function __construct() {
         // On instancie le parent 
@@ -40,6 +41,14 @@ class Products extends BaseSql {
   
     public function getQuantity() {
         return $this->quantity;
+    }
+
+    public function setMaxQuantity($max_quantity) {
+        $this->max_quantity = trim($max_quantity);
+    }
+  
+    public function getMaxQuantity() {
+        return $this->max_quantity;
     }
 
     public function getId()

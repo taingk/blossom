@@ -2,7 +2,6 @@
     margin-left: auto;
     margin-right: auto;
     background-color: var(--secondary-color);
-    box-shadow: 1px 1px 12px #555;
     height: 100%;
 }
 
@@ -50,7 +49,6 @@
     margin-top: -75px;
     background-color: var(--secondary-color);
     text-align: left;
-    box-shadow: 1px 1px 12px #555;
 }
 
 @keyframes fadeIn {

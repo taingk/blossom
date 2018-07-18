@@ -26,7 +26,7 @@
         <section class="row">
             <!-- Main View -->
             <article id="backView" class="is-h-centered">
-                <article class="viewContent">
+                <article class="viewContent box-has-shadow">
                     <section class="row">
                         <?php include("views/" . $this->tplPath() . ".view.php") ?>
                     </section>

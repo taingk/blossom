@@ -3,35 +3,18 @@ strong {
     color: var(--third-color);
 }
 
-.mainView {
+.images {
+    width: 140px;
+    height: 140px;
+    padding: 1px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 2px;
     background-color: var(--secondary-color);
-    height: 100%;
-    margin-top: 5%;
-    margin-bottom: 3%;
 }
 
-h1 {
-    color: var(--third-color);
-}
-
-hr {
-    height: 1px;
-    width: 100%;
-    border-color: #B9B5B5;
-}
-
-.PanierImg {
-    width: 121px;
-    height: 121px;
-}
-
-.captionProduct {
+.text-left {
     text-align: left;
     line-height: 0px;
-}
-
-.btn {
-    padding: 30px;
 }
 
 th {
@@ -65,21 +48,8 @@ only screen and (max-width: 760px),
         width: 0px;
     }
 
-    .text-left {
-        text-align: right;
-    }
-
     .responsive-center {
         text-align: center;
-    }
-
-    .left{
-        float:none;
-        text-align: right;
-    }
-
-    p {
-        padding: 5px;
     }
 
     .mainView {

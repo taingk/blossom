@@ -2,6 +2,13 @@
     padding: 5px;
 }
 
+.mainView {
+    background-color: var(--secondary-color);
+    height: 100%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
 .headerBar ul {
     margin: 0;
     padding: 0;
@@ -52,4 +59,10 @@
 
 .container-product-box {
     border: 1px solid var(--main-color);
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    border-color: #B9B5B5;
 }

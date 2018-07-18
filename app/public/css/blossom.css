@@ -104,7 +104,7 @@ input {
 }
 
 .box-has-shadow {
-    box-shadow: 1px 1px 12px #555;
+    /* box-shadow: 1px 1px 12px #555; */
 }
 
 .in-center-box {
