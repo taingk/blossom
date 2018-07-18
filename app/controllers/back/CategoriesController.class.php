@@ -115,16 +115,15 @@ class CategoriesController {
             $sStatus ? $this->oCategory->setStatus(0) : $this->oCategory->setStatus(1);                
             $this->oCategory->save();
 
-            http_response_code(200);
-            echo json_encode(array('status' => 'ok'));
-        } else {
-            http_response_code(404);            
+            header('location: /back/categories');
+            return;
         }
     }
 
     public function refactorConfigs() {
         $this->aConfigs['label'] = array('id', 'nom de la categorie', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/categories/update?id=');
+        $this->aConfigs['delete'] = array('url' => '/back/categories/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/categories/add');
 
         foreach ( $this->aConfigs as $sKey => &$aValue ) {

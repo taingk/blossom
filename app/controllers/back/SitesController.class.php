@@ -94,7 +94,6 @@ class SitesController {
         $aSites = $this->oSite->select(array('main_color', 'secondary_color', 'third_color'))[0];
 
         $sCssPath = getcwd() . '/public/css/customColors.css';
-        $oFile = file_get_contents($sCssPath);
         $sCss = ":root {--main-color: " . $aSites['main_color'] . ";--secondary-color: " . $aSites['secondary_color'] . ";--third-color: " . $aSites['third_color'] . ";}";
 
         file_put_contents($sCssPath, $sCss);    
@@ -164,10 +163,8 @@ class SitesController {
                 $this->setColors();
             }
 
-            http_response_code(200);
-            echo json_encode(array('status' => 'ok'));
-        } else {
-            http_response_code(404);
+            header('location: /back/sites');
+            return;
         }
     }
 
@@ -176,6 +173,7 @@ class SitesController {
             $this->aConfigs = $this->oSite->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'logo', 'favicon', 'main_color', 'secondary_color', 'third_color', 'status'));
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
             $this->aConfigs['update'] = array('url' => '/back/sites/update?id=');
+            $this->aConfigs['delete'] = array('url' => '/back/sites/delete?id=');
             $this->aConfigs['add'] = array('url' => '/back/sites/add');
 
             foreach ( $this->aConfigs as $sKey => &$aValue ) {
@@ -191,6 +189,7 @@ class SitesController {
         } else {
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
             $this->aConfigs['update'] = array('url' => '/back/sites/update?id=');
+            $this->aConfigs['delete'] = array('url' => '/back/sites/delete?id=');
             $this->aConfigs['add'] = array('url' => '/back/sites/add');
         }
     }

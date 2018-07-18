@@ -5,3 +5,4 @@ app/sass/node_modules/
 .htpasswd
 .idea
 app/public/uploads/*
+customColors.css

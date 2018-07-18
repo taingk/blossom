@@ -28,12 +28,16 @@
             endforeach;
             if ( !$bOptions ): ?>
                 <td>
-                    <a href="<?php echo $aConfigs['update']['url'] . $aLists[ $aParams['id'] ] ?>"><div data-icon="settings-5" class="options" id="update-<?php echo $aLists[ $aParams['id'] ]?>"></div></a>
-                    <div data-icon="<?php if ( isset($aLists['is_use'] ) ) :
-                        echo $aLists['is_use'] === 'Oui' ? 'locked-4' : 'unlocked-1' ;
-                    else :
-                        echo $aLists['status'] === 'Actif' ? 'locked-4' : 'unlocked-1' ;
-                    endif; ?>" class="options" id="lock-<?php echo $aLists[ $aParams['id'] ] ?>" onclick="updateStatus(this.id)"></div>
+                    <a href="<?php echo $aConfigs['update']['url'] . $aLists[ $aParams['id'] ] ?>">
+                        <div data-icon="settings-5" class="options" id="update-<?php echo $aLists[ $aParams['id'] ]?>"></div>
+                    </a>
+                    <a href="<?php echo $aConfigs['delete']['url'] . $aLists[ $aParams['id'] ] ?>">
+                        <div data-icon="<?php if ( isset($aLists['is_use'] ) ) :
+                            echo $aLists['is_use'] === 'Oui' ? 'locked-4' : 'unlocked-1' ;
+                        else :
+                            echo $aLists['status'] === 'Actif' ? 'locked-4' : 'unlocked-1' ;
+                        endif; ?>" class="options" id="lock-<?php echo $aLists[ $aParams['id'] ] ?>"></div>
+                    </a>
                 </td>
             <?php endif; ?>
         </tr>

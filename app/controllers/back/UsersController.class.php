@@ -158,10 +158,8 @@ class UsersController {
             $sStatus ? $this->oUser->setStatus(0) : $this->oUser->setStatus(1);                
             $this->oUser->save();
 
-            http_response_code(200);
-            echo json_encode(array('status' => 'ok'));
-        } else {
-            http_response_code(404);            
+            header('location: /back/users');
+            return;
         }
     }
 
@@ -187,6 +185,7 @@ class UsersController {
         $this->aConfigs = $this->oUser->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'token', 'pwd'));
         $this->aConfigs['label'] = array('id', 'prénom', 'nom', 'genre', 'âge', 'email', 'adresse', 'postal', 'ville', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/users/update?id=');
+        $this->aConfigs['delete'] = array('url' => '/back/users/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/users/add');
 
         foreach ( $this->aConfigs as $sKey => &$aValue ) {

@@ -158,10 +158,8 @@ class HomepagesController {
             $sStatus ? $this->oHomePage->setIsUse(0) : $this->oHomePage->setIsUse(1);
             $this->oHomePage->save();
 
-            http_response_code(200);
-            echo json_encode(array('status' => 'ok'));
-        } else {
-            http_response_code(404);
+            header('location: /back/homepages');
+            return;
         }
     }
 
@@ -172,8 +170,9 @@ class HomepagesController {
                 'status'));
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
             $this->aConfigs['update'] = array('url' => '/back/homepages/update?id=');
+            $this->aConfigs['delete'] = array('url' => '/back/homepages/delete?id=');
             $this->aConfigs['add'] = array('url' => '/back/homepages/add');
-
+            
             foreach ( $this->aConfigs as $sKey => &$aValue ) {
                 foreach ( $aValue as $sKey => $sValue ) {
                     if ( $sKey === 'is_use' ) {
@@ -187,6 +186,7 @@ class HomepagesController {
         } else {
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
             $this->aConfigs['update'] = array('url' => '/back/homepages/update?id=');
+            $this->aConfigs['delete'] = array('url' => '/back/homepages/delete?id=');
             $this->aConfigs['add'] = array('url' => '/back/homepages/add');
         }
     }

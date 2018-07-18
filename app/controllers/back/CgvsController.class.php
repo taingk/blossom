@@ -125,10 +125,8 @@ class CgvsController {
             $sStatus ? $this->oCgv->setIsUse(0) : $this->oCgv->setIsUse(1);
             $this->oCgv->save();
 
-            http_response_code(200);
-            echo json_encode(array('status' => 'ok'));
-        } else {
-            http_response_code(404);
+            header('location: /back/cgvs');
+            return;
         }
     }
 
@@ -137,6 +135,7 @@ class CgvsController {
             $this->aConfigs = $this->oCgv->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'title', 'details', 'status'));
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
             $this->aConfigs['update'] = array('url' => '/back/cgvs/update?id=');
+            $this->aConfigs['delete'] = array('url' => '/back/cgvs/delete?id=');
             $this->aConfigs['add'] = array('url' => '/back/cgvs/add');
 
             foreach ( $this->aConfigs as $sKey => &$aValue ) {
@@ -152,6 +151,7 @@ class CgvsController {
         } else {
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
             $this->aConfigs['update'] = array('url' => '/back/cgvs/update?id=');
+            $this->aConfigs['delete'] = array('url' => '/back/cgvs/delete?id=');
             $this->aConfigs['add'] = array('url' => '/back/cgvs/add');
         }
     }
