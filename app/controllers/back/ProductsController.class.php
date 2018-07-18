@@ -59,40 +59,40 @@ class ProductsController {
         $this->oCapacity = new Capacities();
         $this->aConfigs = $this->oProduct->productFormAdd();
 
-        /*foreach($this->aConfigs as $sKey => &$aValue ) {
-            $aCategory = ['id' => , 'name' => ];
-        }*/
+        $iId = $this->oProduct->getLastId();
+        $iLastId = $iId[0]['id_product'];
+        $iCurrentId = $iLastId + 1;
 
-        //array_push($this->aConfigs['input']['category']['options'], $aCategory);
-
-        //print_r($this->aConfigs);
-        $aFiles = Helper::uploadFiles($_FILES);
-        $aAllId = [];
-        print_r($aFiles);
-        $aAllId = $this->oProduct->select(array('id_product'));
-        print_r($aAllId);
 
         if ( !empty( $aParams['POST'] ) ) {
 
+            //$aFiles = Helper::uploadFiles($_FILES);
 
+            //$this->oProduct->setProductName($aParams['POST']['name']);
+            //$sNameCategorie = $this->oCategory->setCategoryName($aParams['POST']['category']);
+            //$iIdCategorie = $this->oCategory->select('id_category')[0];
+            //$this->oProduct->setCategoriesIdCategory($iIdCategorie);
+            //$this->oProduct->setCategoriesIdCategory('1');
+            //$this->oProduct->setDescription($aParams['POST']['description']);
 
-                //$this->oProduct->setProductName($aParams['POST']['name']);
-                //$sNameCategorie = $this->oCategory->setCategoryName($aParams['POST']['category']);
-                //$iIdCategorie = $this->oCategory->select('id_category')[0];
-                //$this->oProduct->setCategoriesIdCategory($iIdCategorie);
-                //$this->oProduct->setDescription($aParams['POST']['description']);
-/*                $this->oImage1->setPath($aParams['POST']['image']);
-                $this->oImage1->setStatus('1');
-                $this->oImage2->setPath($aParams['POST']['image2']);
-                $this->oImage2->setStatus('1');
-                $this->oImage3->setPath($aParams['POST']['image3']);
-                $this->oImage3->setStatus('1');*/
-                //$this->oProduct->setPrice($aParams['POST']['price']);
-                //$this->oProduct->setStatus(1);
-                //$this->oProduct->save();
+            $sColor = $aParams['POST']['color'];
+            //$aColor = $sColor.explode(';',$sColor);
+            print_r($sColor);
+            //foreach()
 
-                header('location: /back/products ');
-                return;
+/*            $this->oImage1->setPath($aParams['POST']['image']);
+            $this->oImage1->setStatus('1');
+            $this->oImage2->setPath($aParams['POST']['image2']);
+            $this->oImage2->setStatus('1');
+            $this->oImage3->setPath($aParams['POST']['image3']);
+            $this->oImage3->setStatus('1');
+            $this->oProduct->setPrice($aParams['POST']['price']);
+            $this->oProduct->setStatus(1);*/
+
+            //$this->oProduct->save();
+
+            header('location: /back/products ');
+            return;
 
         }
 
@@ -124,8 +124,8 @@ class ProductsController {
 
     }
     public function refactorConfigs() {
-        //$this->aConfigs = $this->oProduct->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'token', 'pwd'));
-        $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix', 'status', 'options');
+        $this->aConfigs = $this->oProduct->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'max_quantity', 'description'));
+        $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix','quantité','status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/products/update?id=');
         $this->aConfigs['add'] = array('url' => '/back/products/add');
 
