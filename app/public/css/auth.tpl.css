@@ -2,11 +2,6 @@
     color: var(--third-color);
 }
 
-html {
-    background-color: #F1F1F1;
-    height: 100%;
-}
-
 .viewContent {
     margin-left: auto;
     margin-right: auto;

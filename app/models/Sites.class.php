@@ -8,6 +8,7 @@ class Sites extends BaseSql {
     protected $main_color;
     protected $secondary_color;
     protected $third_color;
+    protected $background_color;
     protected $is_use;
     protected $status;
 
@@ -116,6 +117,21 @@ class Sites extends BaseSql {
     {
         $this->third_color = $third_color;
     }
+    /**
+     * @return mixed
+     */
+    public function getBackgroundColor()
+    {
+        return $this->background_color;
+    }
+
+    /**
+     * @param mixed $background_color
+     */
+    public function setBackgroundColor($background_color)
+    {
+        $this->background_color = $background_color;
+    }
 
     /**
      * @return mixed
@@ -179,6 +195,11 @@ class Sites extends BaseSql {
                     "title" => "Troisième couleur",
                     "type" => "text",
                     "placeholder" => "Ajouter une couleur en hexadécimale, ex : #363636",
+                ],
+                "background_color" => [
+                    "title" => "Couleur d'arrière plan",
+                    "type" => "text",
+                    "placeholder" => "Ajouter une couleur en hexadécimale, ex : #F1F1F1",
                 ]
             ]
         ];

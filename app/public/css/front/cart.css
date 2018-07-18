@@ -10,13 +10,8 @@ strong {
     margin-bottom: 3%;
 }
 
-main,
-body {
-    background-color: #F1F1F1;
-}
-
 h1 {
-    color: #4A4A4A;
+    color: var(--third-color);
 }
 
 hr {

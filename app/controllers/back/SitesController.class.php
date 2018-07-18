@@ -62,6 +62,7 @@ class SitesController {
             $oSite->setMainColor($aParams['POST']['main_color']);
             $oSite->setSecondaryColor($aParams['POST']['secondary_color']);
             $oSite->setThirdColor($aParams['POST']['third_color']);
+            $oSite->setBackgroundColor($aParams['POST']['background_color']);
             $oSite->setIsUse(1);
             $oSite->save();
 
@@ -91,10 +92,15 @@ class SitesController {
 
     public function setColors() {
         $this->oSite->setIsUse(1);
-        $aSites = $this->oSite->select(array('main_color', 'secondary_color', 'third_color'))[0];
+        $aSites = $this->oSite->select(array('main_color', 'secondary_color', 'third_color', 'background_color'))[0];
 
         $sCssPath = getcwd() . '/public/css/customColors.css';
-        $sCss = ":root {--main-color: " . $aSites['main_color'] . ";--secondary-color: " . $aSites['secondary_color'] . ";--third-color: " . $aSites['third_color'] . ";}";
+        $sCss = ":root {
+            --main-color: " . $aSites['main_color'] . ";
+            --secondary-color: " . $aSites['secondary_color'] . ";
+            --third-color: " . $aSites['third_color'] . ";
+            --background-color: " . $aSites['background_color'] . ";
+        }";
 
         file_put_contents($sCssPath, $sCss);    
     }
@@ -134,6 +140,7 @@ class SitesController {
             $oSite->setMainColor($aParams['POST']['main_color']);
             $oSite->setSecondaryColor($aParams['POST']['secondary_color']);
             $oSite->setThirdColor($aParams['POST']['third_color']);
+            $oSite->setBackgroundColor($aParams['POST']['background_color']);
             $oSite->save();
 
             $this->setColors();
@@ -170,7 +177,7 @@ class SitesController {
 
     public function refactorConfigs() {
         if ( $this->aConfigs ) {
-            $this->aConfigs = $this->oSite->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'logo', 'favicon', 'main_color', 'secondary_color', 'third_color', 'status'));
+            $this->aConfigs = $this->oSite->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'logo', 'favicon', 'main_color', 'secondary_color', 'third_color', 'background_color', 'status'));
             $this->aConfigs['label'] = array('id', 'nom', 'actif', 'options');
             $this->aConfigs['update'] = array('url' => '/back/sites/update?id=');
             $this->aConfigs['delete'] = array('url' => '/back/sites/delete?id=');

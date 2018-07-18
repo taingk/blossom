@@ -56,6 +56,7 @@ CREATE TABLE `sites`
   main_color varchar(255),
   secondary_color varchar(255),
   third_color varchar(255),
+  background_color varchar(255),
   is_use tinyint(4) NOT NULL,
   status tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,

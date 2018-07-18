@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    background: var(--background-color);
+}
+
 a {
     text-decoration: none;
 }
@@ -93,10 +97,6 @@ input {
     padding: 25px 0;
     margin: 25px 0;
     width: 100%;
-}
-
-.is-grey {
-    color: #555 !important;
 }
 
 .is-font-title {
