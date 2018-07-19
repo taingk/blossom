@@ -163,10 +163,10 @@ class Sites extends BaseSql {
         $this->status = $status;
     }
 
-    public function sitesForm()
+    public function sitesForm($sTitle = "")
     {
         return [
-            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "enctype" => "multipart/form-data", "submit" => "Enregistrer l'identité du site", "pageTitle" => "Ajouter une identité pour le site"],
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-5 row", "enctype" => "multipart/form-data", "submit" => "Enregistrer l'identité du site", "pageTitle" => $sTitle],
             "input" => [
                 "name" => [
                     "title" => "Nom de votre site",

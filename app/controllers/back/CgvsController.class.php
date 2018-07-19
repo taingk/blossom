@@ -59,7 +59,7 @@ class CgvsController {
             return;
         }
 
-        $this->aConfigs = $this->oCgv->cgvsForm();
+        $this->aConfigs = $this->oCgv->cgvsForm("Ajouter des conditions générales de vente");
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
@@ -81,7 +81,7 @@ class CgvsController {
     * Formulaire d'édition de page
     */
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oCgv->cgvsForm();
+        $this->aConfigs = $this->oCgv->cgvsForm("Editer les conditions générales de vente");
         $sId = $aParams['GET']['id'];
 
         $this->oCgv->setId($sId);

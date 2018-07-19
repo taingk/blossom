@@ -59,7 +59,7 @@ class ContactsController {
             return;
         }
 
-        $this->aConfigs = $this->oContact->contactsForm();
+        $this->aConfigs = $this->oContact->contactsForm("Ajouter une page de contact");
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
@@ -81,7 +81,7 @@ class ContactsController {
     * Formulaire d'édition de page
     */
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oContact->contactsForm();
+        $this->aConfigs = $this->oContact->contactsForm("Editer la page de contact");
         $sId = $aParams['GET']['id'];
 
         $this->oContact->setId($sId);

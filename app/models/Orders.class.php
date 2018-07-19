@@ -56,6 +56,29 @@ class Orders extends BaseSql {
     {
         return $this->product_idproduct;
     }
+
+    public function checkoutForm() {
+		return [
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Soumettre le paiement", "class" => "form col-md-5 row is-h-centered"],
+            "input" => [
+                "card_number" => [
+                                "title" => "Numero de carte de crédit",
+                                "type" => "number",
+                                "requiredNum" => 15
+                ],
+                "expiration_date" => [
+                                "title" => "Date d'expiration (Format MMAA, ex : 0121)",
+                                "type" => "number",
+                                "requiredNum" => 4
+                ],
+                "crypto" => [
+                                "title" => "Cryptogramme",
+                                "type" => "number",
+                                "requiredNum" => 3
+                ]
+            ]
+        ];
+    }
 }
 
 ?>

@@ -7,7 +7,10 @@ class UserController {
     */ 
     public function indexAction( $aParams ) {
         $oView = new View("userLogin", "auth");
-
+        $oUser = new Users();
+        $aConfigs = $oUser->userLoginForm();
+        
+        $oView->assign( "aConfigs", $aConfigs );
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];
 
@@ -46,7 +49,7 @@ class UserController {
         // }
 
 
-        $aConfigs = $oUser->userFormAdd("form col-md-8");
+        $aConfigs = $oUser->userFormAdd();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {

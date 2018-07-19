@@ -72,7 +72,7 @@ class SitesController {
             return;
         }
 
-        $this->aConfigs = $this->oSite->sitesForm();
+        $this->aConfigs = $this->oSite->sitesForm("Ajouter une identité pour le site");
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
@@ -109,7 +109,7 @@ class SitesController {
     * Formulaire d'édition de page
     */
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oSite->sitesForm();
+        $this->aConfigs = $this->oSite->sitesForm("Editer l'identité du site");
         $sId = $aParams['GET']['id'];
 
         $this->oSite->setId($sId);
