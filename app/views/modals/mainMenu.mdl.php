@@ -29,18 +29,11 @@
                 <input class="search-icon" type="submit" value=""/>
             </form>
         </li>
-        <?php if( !empty( $_SESSION )): ?>
-            <li class="col-xxs-1">
-                <a href="/front/cart">
-                    <input class="cart-icon" type="submit" name="search" value="" />
-                </a>
-            </li>
-        <?php endif; ?>
-        <li class="col-xxs-1"></li>
-        <li class="col-xxs-1"></li>
-        <li class="col-xxs-1"></li>
-        <li class="col-xxs-1"></li>
-        <li class="col-xxs-1"></li>
+        <li class="col-xxs-1">
+            <a href="/front/cart">
+                <input class="cart-icon" type="submit" name="search" value="" />
+            </a>
+        </li>
         <?php if( !empty( $_SESSION )): ?>
             <li class="col-xxs-1">
                 <a href="">
@@ -60,7 +53,7 @@
                 </a>
             </li>
         <?php else: ?>
-            <li class="col-xxs-1">
+            <li class="col-xxs-1" style="margin-right: 15px">
                 <a href="/front/user">
                     Connexion
                 </a>
