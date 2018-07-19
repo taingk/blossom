@@ -9,7 +9,7 @@ class CategoryController {
         $oView = new View("category", "front");
         $oProduct = new Products();
         $oCategory = new Categories();
-        // $oImage = new Images();
+
         $sId = $aParams['GET']['is'];
         $oProduct->setCategoriesIdCategory($sId);
         $aResults = $oProduct->select();
@@ -25,10 +25,6 @@ class CategoryController {
         array_push($aConfigs, $aProducts);
 
         $oView->assign('aConfigs', $aConfigs);
-        // $aConfigs = $this->aConfigs = $this->oImage->select();
-        // $aResult = array_push($aResultProduct, $aConfigs );
-
-        
     }
     
     /*
