@@ -2,10 +2,10 @@
 
 class Validator {
 
-	public static function checkForm( $aConfig, $aData, $bUpdate = false ) {
+	public static function checkForm( $aConfigs, $aData, $bUpdate = false ) {
 		$aErrorsMsg = [];
 
-		foreach ( $aConfig["input"] as $sName => $sAttribut ) {
+		foreach ( $aConfigs["input"] as $sName => $sAttribut ) {
 			if ( isset( $sAttribut["confirm"] ) && $aData[$sName] != $aData[$sAttribut["confirm"]] ) {
 				$aErrorsMsg[] = $sName . " ne correspond pas à " . $sAttribut["confirm"];
 			} else if ( !isset( $sAttribut["confirm"] ) ) {

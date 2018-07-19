@@ -6,7 +6,7 @@ table {
 }
 
 table th, table td {
-    color: black;
+    color: var(--third-color);
     text-align: center;
 }
 
@@ -34,7 +34,7 @@ table tbody td {
 
 table tbody tr:hover td:not(:first-child) {
     color: #fff;
-    background: #D8475D;
+    background: var(--main-color);
 }
 
 table tbody td:first-child {

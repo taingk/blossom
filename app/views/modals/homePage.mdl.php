@@ -1,25 +1,26 @@
-<section class="frontImgHeader row">
-    <article class="col-xxs-12 row">
-        <h1 class="col-xxs-12"><?php echo $aConfig["title_page"]; ?></h1>
+<section class="row">
+    <article class="small-bandeau">
+        <h1 class="col-xxs-12 is-third-color">
+            <?php echo $aConfigs["description_top_banner"]; ?>
+        </h1>
         <div class="col-xxs-12">
-            <img class="img-is-max gutters" src="<?php echo $aConfig["banner"]; ?>">
+            <img class="img-is-max gutters" src="<?php echo $aConfigs["banner"] ? $aConfigs["banner"] : "public/img/iphoneX.jpeg" ; ?>">
         </div>
-        <button class="more-info-bottom is-h-centered">En savoir plus</button>
     </article>
 </section>
 
 <section class="row">
-    <article class="col-xss-12 col-md-6">
-        <img class="img-is-max gutters" src="<?php echo $aConfig["left_image"]; ?>">
-        <button class="more-info-left is-h-centered">En savoir plus</button>
+    <h2 class="col-xxs-12 is-third-color">
+        <?php echo $aConfigs["description_images"] ?>
+    </h2>
+    <article class="col-xxs-12 col-md-6">
+        <img class="img-is-max gutters" src="<?php echo $aConfigs["left_image"] ? $aConfigs["left_image"] : "public/img/samsung.jpg" ; ?>">
     </article>
-    <article class="col-xss-12 col-md-6">
-        <img class="img-is-max gutters" src="<?php echo $aConfig["right_image"]; ?>">
-        <button class="more-info-right is-h-centered">En savoir plus</button>
+    <article class="col-xxs-12 col-md-6">
+        <img class="img-is-max gutters" src="<?php echo $aConfigs["right_image"] ? $aConfigs["right_image"] : "public/img/lg.jpg" ; ?>">
     </article>
-    <article class="col-xss-12 col-md-12 row">
-        <p class="col-xxs-12 col-xl-6 is-font-title is-black is-v-centered">
-            <?php echo $aConfig["description_page"] ?>
-        <img class="col-xxs-12 col-xl-6" src="<?php echo $aConfig["bottom_banner"]; ?>">
-    </article>
+    <h2 class="col-xxs-12 is-third-color">
+        <?php echo $aConfigs["description_bottom_banner"] ?>
+    </h2>
+    <img class="img-is-max gutters" src="<?php echo $aConfigs["bottom_banner"] ? $aConfigs["bottom_banner"] : "public/img/galaxy2.jpg" ; ?>">
 </section>

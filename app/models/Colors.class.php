@@ -2,6 +2,7 @@
 
 class Colors extends BaseSql {
     protected $id_color = null;
+    protected $name;
     protected $color_hexa;
     protected $products_idproduct;
 
@@ -40,6 +41,15 @@ class Colors extends BaseSql {
     public function getIdColor()
     {
         return $this->id_color;
+    }
+
+    public function setName($name) {
+        $this->name = trim($name);
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function getColorHexa()

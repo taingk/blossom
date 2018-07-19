@@ -4,7 +4,9 @@
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;
-    height: 100%;
+    list-style: none;
+    overflow: hidden;
+    font-size: 14px;
 }
 
 /* menu icone */
@@ -15,11 +17,10 @@
     float: right;
     padding: 24px 20px;
     position: relative;
-    user-select: none;
 }
 
 .headerBar .menu-icon .navicon {
-    background: #FBFBFB;
+    background: var(--secondary-color);
     display: block;
     height: 2px;
     position: relative;
@@ -29,7 +30,7 @@
 
 .headerBar .menu-icon .navicon:before,
 .headerBar .menu-icon .navicon:after {
-    background: #FBFBFB;
+    background: var(--secondary-color);
     content: '';
     display: block;
     height: 100%;
@@ -88,4 +89,29 @@
         flex: 0 0 calc(12/12*100%);
         padding: 10px;
     }
+    #logo {
+        display: none;
+    }
+}
+
+#submenu > li {
+    position: relative;
+    text-align: left;
+}
+
+.menu a {
+    display: inline-block;
+}
+
+#submenu {
+    display: none;
+}
+
+#submenu li {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+#submenu li a {
+    padding: 15px 30px;
+    font-size: 13px;
 }

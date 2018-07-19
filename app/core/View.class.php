@@ -4,6 +4,9 @@ class View {
     private $sView;
 	private $sTpl;
 	private $aData = [];
+	private $sSiteName;
+	private $sFaviconPath;
+	private $bCustomCss;
 
 	public function __construct( $sView, $sTpl ) {
 		$this->sView = $sView;
@@ -19,8 +22,14 @@ class View {
     
 	public function __destruct() {
 		extract($this->aData);
+		
+		$oSite = new Sites();
+		$oSite->setIsUse(1);
+		$this->sSiteName = $oSite->select()[0]['name'];
+		$this->sFaviconPath = $oSite->select()[0]['favicon'];
+		$oSite->select()[0] ? $this->bCustomCss = true : $this->bCustomCss = false;
 
-        include("views/templates/" . $this->sTpl . ".tpl.php");
+		include("views/templates/" . $this->sTpl . ".tpl.php");
 	}
 	
 	public function assign($sKey, $sValue) {
@@ -32,14 +41,14 @@ class View {
 		return $this->sTpl . "/" . $this->sView;
 	}
 	
-	public function addModal( $sModal, $aConfig, $aErrors = [] ) {
+	public function addModal( $sModal, $aConfigs, $aErrors = [], $aParams = null ) {
 	    if ( $sModal === 'sideMenu') {
 	        $oSideMenu = new SideMenu();
-	        $aConfig = $oSideMenu->sideMenuConfigs();
+	        $aConfigs = $oSideMenu->sideMenuConfigs();
         }
 	    if ( $sModal === 'mainMenu') {
 	        $oMainMenu = new MainMenu();
-			$aConfig = $oMainMenu->MainMenuConfigs();
+			$aConfigs = $oMainMenu->MainMenuConfigs();
         }
 
 		include("views/modals/" . $sModal . ".mdl.php");
