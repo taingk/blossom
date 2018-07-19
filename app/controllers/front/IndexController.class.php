@@ -23,7 +23,7 @@ class IndexController {
     }
 
     public function searchAction( $aParams ) {
-        $oView = new View("Category", "front");
+        $oView = new View("category", "front");
         $sResults = $aParams['POST']['search'];
 
         $this->oProduct->setProductName( $sResults );
