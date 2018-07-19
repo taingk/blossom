@@ -53,9 +53,7 @@ class ProductsController {
     public function addAction( $aParams ) {
         $this->oCategory = new Categories();
         $this->oColor = new Colors();
-        $this->oImage1 = new Images();
-        $this->oImage2 = new Images();
-        $this->oImage3 = new Images();
+        $this->oImage = new Images();
         $this->oCapacity = new Capacities();
         $this->aConfigs = $this->oProduct->productFormAdd();
 
@@ -66,45 +64,52 @@ class ProductsController {
 
         if ( !empty( $aParams['POST'] ) ) {
 
-            //$aFiles = Helper::uploadFiles($_FILES);
+            print_r($aParams['POST']['category']);
+            $this->oProduct->setProductName($aParams['POST']['name']);
+            $this->oProduct->setCategoriesIdCategory($aParams['POST']['category']);
+            $this->oProduct->setDescription($aParams['POST']['description']);
+            $this->oProduct->setPrice($aParams['POST']['price']);
+            $this->oProduct->setStatus('1');
+            $this->oProduct->setQuantity($aParams['POST']['quantity']);
+            $this->oProduct->setMaxQuantity($aParams['POST']['quantity']);
+            //$this->oProduct->save();
 
-            //$this->oProduct->setProductName($aParams['POST']['name']);
-            //$sNameCategorie = $this->oCategory->setCategoryName($aParams['POST']['category']);
-            //$iIdCategorie = $this->oCategory->select('id_category')[0];
-            //$this->oProduct->setCategoriesIdCategory($iIdCategorie);
-            //$this->oProduct->setCategoriesIdCategory('1');
-            //$this->oProduct->setDescription($aParams['POST']['description']);
+            $aFiles = Helper::uploadFiles($_FILES);
+            foreach ( $aFiles['success'] as $aFile ) {
+                $this->oImage->setPath($aFile['path']);
+                $this->oImage->setProductsIdProduct($iLastId);
+                $this->oImage->setStatus('1');
+                $this->oImage->setImageName('Test');
+                $this->oImage->save();
+            }
 
             $sColor = $aParams['POST']['color'];
             $aColors = explode(';',$sColor);
             foreach( $aColors as $key => $value ){
                 $aValue = explode(':',$value );
-                //print_r($aValue);
-                //$aColor[] = array($aValue[0]=>$aValue[1]);
-                //print_r($aColor);
-                //print_r($aValue[0]);
-                //echo "<br>";
-                //print_r($aValue[1]);
-                //echo "<br>";
-                //echo "{$key2} => {$value2} "."<br>";
-                    //echo $value2."<br>";
-                    $this->oColor->setName($aValue[0]);
-                    $this->oColor->setColorHexa($aValue[1]);
-                    $this->oColor->setStatus('1');
-                    $this->oColor->setProductsIdProduct($iLastId);
-                    $this->oColor->save();
+                $this->oColor->setName($aValue[0]);
+                $this->oColor->setColorHexa($aValue[1]);
+                $this->oColor->setStatus('1');
+                $this->oColor->setProductsIdProduct($iLastId);
+                $this->oColor->save();
             }
 
-/*            $this->oImage1->setPath($aParams['POST']['image']);
-            $this->oImage1->setStatus('1');
-            $this->oImage2->setPath($aParams['POST']['image2']);
-            $this->oImage2->setStatus('1');
-            $this->oImage3->setPath($aParams['POST']['image3']);
-            $this->oImage3->setStatus('1');
-            $this->oProduct->setPrice($aParams['POST']['price']);
-            $this->oProduct->setStatus(1);*/
+            $sCapacity = $aParams['POST']['capacity'];
+            //print_r($sCapacity);
+            $aCapacities = explode(';',$sCapacity);
+            //print_r($aCapacities);
+            foreach( $aCapacities as $key => $value ){
+                $aValue = explode(':',$value );
+                //print_r($aValue[0]);
+                //print_r($aValue[1]);
+                $this->oCapacity->setCapacityNumber($aValue[0]);
+                $this->oCapacity->setAdditionalPrice($aValue[1]);
+                $this->oCapacity->setStatus('1');
+                $this->oCapacity->setProductsIdProduct($iLastId);
+                $this->oCapacity->save();
+            }
 
-            //$this->oProduct->save();
+
 
             //header('location: /back/products ');
             return;
@@ -114,7 +119,6 @@ class ProductsController {
         $oView = new View("editing", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
-        //$oView->assign("aErrors", $aErrors);
     }
 
 

@@ -34,7 +34,7 @@
         <?php elseif ( $sAttribut["type"] == "select" ): ?>
 
             <label><p class="is-third-color"><?php echo $sAttribut["title"] ?>
-            <select name="<?php echo $sName ?>">
+            <select name="<?php echo $sName ?>" style='width:100px; color:black;'>
                 <?php foreach ( $sAttribut["options"] as $sOption ): ?>
                     <option value="<?php echo $sOption['id'] ?>"><?php echo $sOption['name'] ?></option>
                 <?php endforeach; ?>
