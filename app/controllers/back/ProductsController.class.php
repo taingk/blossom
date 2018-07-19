@@ -76,9 +76,24 @@ class ProductsController {
             //$this->oProduct->setDescription($aParams['POST']['description']);
 
             $sColor = $aParams['POST']['color'];
-            //$aColor = $sColor.explode(';',$sColor);
-            print_r($sColor);
-            //foreach()
+            $aColors = explode(';',$sColor);
+            foreach( $aColors as $key => $value ){
+                $aValue = explode(':',$value );
+                //print_r($aValue);
+                //$aColor[] = array($aValue[0]=>$aValue[1]);
+                //print_r($aColor);
+                //print_r($aValue[0]);
+                //echo "<br>";
+                //print_r($aValue[1]);
+                //echo "<br>";
+                //echo "{$key2} => {$value2} "."<br>";
+                    //echo $value2."<br>";
+                    $this->oColor->setName($aValue[0]);
+                    $this->oColor->setColorHexa($aValue[1]);
+                    $this->oColor->setStatus('1');
+                    $this->oColor->setProductsIdProduct($iLastId);
+                    $this->oColor->save();
+            }
 
 /*            $this->oImage1->setPath($aParams['POST']['image']);
             $this->oImage1->setStatus('1');
@@ -91,7 +106,7 @@ class ProductsController {
 
             //$this->oProduct->save();
 
-            header('location: /back/products ');
+            //header('location: /back/products ');
             return;
 
         }

@@ -92,8 +92,8 @@ class Products extends BaseSql {
     public function productFormAdd() {
         $this->oCategory = new Categories();
         //$this->oCategory->setId(1);
-        $aCategorieNames = $this->oCategory->select('category_name');
-        print_r($aCategorieNames);
+        //$aCategorieNames = $this->oCategory->select('category_name');
+        //print_r($aCategorieNames);
         return [
             "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-4"],
             "input" => [
