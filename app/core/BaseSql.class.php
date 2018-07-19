@@ -96,10 +96,10 @@ class BaseSql {
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
 
             $sQuery = "INSERT INTO " . $this->sTable . " (" .  $sUsersColumns . ")" . " VALUES (:" . $sValuesColumns . ")";
-            //print_r($sQuery);
+            print_r($sQuery);
             $oRequest = $this->oPdo->prepare($sQuery);
             $oRequest->execute($this->aColumns);
-            //print_r($this->aColumns);
+            print_r($this->aColumns);
         }
     }
 
