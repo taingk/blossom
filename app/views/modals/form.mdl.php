@@ -32,7 +32,7 @@
         <?php elseif ( $sAttribut["type"] == "select" ): ?>
 
             <label for="<?php echo $sName ?>" class="is-third-color col-xxs-12"><?php echo $sAttribut["title"] ?></label>
-            <select id="<?php echo $sName ?>" name="<?php echo $sName ?>" class="col-xxs-12">>
+            <select id="<?php echo $sName ?>" name="<?php echo $sName ?>" class="col-xxs-12 is-third-color">>
                 <?php foreach ( $sAttribut["options"] as $sOption ): ?>
                     <option value="<?php echo $sOption['id'] ?>"><?php echo $sOption['name'] ?></option>
                 <?php endforeach; ?>
