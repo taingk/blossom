@@ -107,7 +107,7 @@ class Products extends BaseSql {
                     "minString" => 2
                 ],
                 "category" =>       [
-                    "title" => "Catégorie",
+                    "title" => "Catégories",
                     "type" => "select",
                     "options" => $aArrayTemporaire,
                     "required" => true,
@@ -150,7 +150,7 @@ class Products extends BaseSql {
                 "capacity" =>      [
                     "title" => "Capacité",
                     "type" => "text",
-                    "placeholder" => "16GO:150",
+                    "placeholder" => "16:150",
                     "required" => true,
                     "minString" => 2
                 ],

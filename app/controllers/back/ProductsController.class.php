@@ -54,10 +54,10 @@ class ProductsController {
         $this->oCategory = new Categories();
         $this->aConfigs = $this->oProduct->productFormAdd();
 
-        $iId = $this->oProduct->getLastId();
-        $iLastId = $iId[0]['id_product'];
-        $iCurrentId = $iLastId + 1;
-
+        // $iId = $this->oProduct->getLastId();
+        // $iLastId = $iId[0]['id_product'];
+        // $iCurrentId = $iLastId + 1;
+        
         $aIdCategory = $this->oCategory->select(array('id_category'));
 
         if ( !empty( $aParams['POST']) && !empty($aIdCategory) ) {
@@ -70,7 +70,8 @@ class ProductsController {
             $this->oProduct->setStatus('1');
             $this->oProduct->setQuantity($aParams['POST']['quantity']);
             $this->oProduct->setMaxQuantity($aParams['POST']['quantity']);
-            //$this->oProduct->save();
+            // Ta variable qui contient l'id, ca save aussi :
+            //$iLastId = $this->oProduct->save();
 
             $aFiles = Helper::uploadFiles($_FILES);
             foreach ( $aFiles['success'] as $aFile ) {
@@ -85,8 +86,9 @@ class ProductsController {
             $sColor = $aParams['POST']['color'];
             $aColors = explode(';',$sColor);
             foreach( $aColors as $key => $value ){
+                $aValue = explode( ':', $value );
+
                 $oColor = new Colors();
-                $aValue = explode(':',$value );
                 $oColor->setName($aValue[0]);
                 $oColor->setColorHexa($aValue[1]);
                 $oColor->setStatus('1');
@@ -99,16 +101,13 @@ class ProductsController {
             $aCapacities = explode(';',$sCapacity);
             //print_r($aCapacities);
             foreach( $aCapacities as $key => $value ){
+                $aValue = explode( ':', $value );
+
                 $oCapacity = new Capacities();
-                $aValue = explode(':',$value );
-                print_r($aValue[0]);
-                echo '<br>';
-                print_r($aValue[1]);
-                echo '<br>';
                 $oCapacity->setCapacityNumber($aValue[0]);
                 $oCapacity->setAdditionalPrice($aValue[1]);
                 $oCapacity->setStatus(1);
-                $oCapacity->setProductsIdProduct($iLastId);
+                $oCapacity->setProductsIdProduct(1);
                 $oCapacity->save();
             }
 
