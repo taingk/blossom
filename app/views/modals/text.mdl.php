@@ -1,3 +1,8 @@
-<h1 class="bandeau text-is-centered"><?php echo $aConfigs['title'] ?></h1>
+<section class="row gutters container">
+    <section class="col-xxs-12 mainView gutters">
+        <h1 class="is-third-color"><?php echo $aConfigs['title'] ?></h1>
+        <hr>
 
-<p class="medium-bandeau is-third-color" style="padding: 25px; margin: 25px;"><?php echo $aConfigs['details'] ?></p>
+        <p class="is-third-color medium-bandeau text-is-justified"><?php echo $aConfigs['details'] ?></p>
+    </section>
+</section>
