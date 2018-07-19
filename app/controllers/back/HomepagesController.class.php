@@ -75,7 +75,7 @@ class HomepagesController {
             return;
         }
 
-        $this->aConfigs = $this->oHomePage->homePageForm();
+        $this->aConfigs = $this->oHomePage->homePageForm("Ajouter une nouvelle page d'accueil");
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
@@ -97,7 +97,7 @@ class HomepagesController {
     * Formulaire d'édition de page
     */
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oHomePage->homePageForm();
+        $this->aConfigs = $this->oHomePage->homePageForm("Editer la page d'accueil");
         $sId = $aParams['GET']['id'];
 
         $this->oHomePage->setId($sId);

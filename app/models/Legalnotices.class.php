@@ -99,10 +99,10 @@ class Legalnotices extends BaseSql {
         $this->status = $status;
     }
 
-    public function legalNoticesForm()
+    public function legalNoticesForm($sTitle = "")
     {
         return [
-            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "submit" => "Enregistrer les mentions légales", "pageTitle" => "Ajouter des mentions légales"],
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-5 row", "submit" => "Enregistrer les mentions légales", "pageTitle" => $sTitle],
             "input" => [
                 "name" => [
                     "title" => "Nom de la page à créer",

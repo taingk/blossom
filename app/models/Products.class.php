@@ -8,6 +8,7 @@ class Products extends BaseSql {
     protected $price;
     protected $status;
     protected $quantity;
+    protected $max_quantity;
   
     public function __construct() {
         // On instancie le parent 
@@ -40,6 +41,14 @@ class Products extends BaseSql {
   
     public function getQuantity() {
         return $this->quantity;
+    }
+
+    public function setMaxQuantity($max_quantity) {
+        $this->max_quantity = trim($max_quantity);
+    }
+  
+    public function getMaxQuantity() {
+        return $this->max_quantity;
     }
 
     public function getId()
@@ -115,6 +124,16 @@ class Products extends BaseSql {
                     "required" => true
                 ],
                 "image" =>      [
+                    "title" => "Upload une image",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
+                "image2" =>      [
+                    "title" => "Upload une image",
+                    "type" => "file",
+                    "placeholder" => "Ajouter une image",
+                ],
+                "image3" =>      [
                     "title" => "Upload une image",
                     "type" => "file",
                     "placeholder" => "Ajouter une image",

@@ -99,10 +99,10 @@ class Contacts extends BaseSql {
         $this->status = $status;
     }
 
-    public function contactsForm()
+    public function contactsForm($sTitle = "")
     {
         return [
-            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "submit" => "Enregistrer la page de contact", "pageTitle" => "Ajouter une page de contact"],
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-5 row", "submit" => "Enregistrer la page de contact", "pageTitle" => $sTitle],
             "input" => [
                 "name" => [
                     "title" => "Nom de la page à créer",

@@ -34,7 +34,7 @@
             <?php include("views/back/sideMenu.view.php") ?>
             <!-- Main View -->
             <article id="backView" class="col-xxs-10">
-                <article class="col-lg-11 viewContent">
+                <article class="col-lg-11 viewContent box-has-shadow">
                     <section class="row">
                         <?php include("views/" . $this->tplPath() . ".view.php") ?>
                     </section>

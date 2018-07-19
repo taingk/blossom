@@ -50,7 +50,7 @@ class CategoriesController {
     * Formulaire d'ajout d'une categorie
     */ 
     public function addAction( $aParams ) {
-        $this->aConfigs = $this->oCategory->categoryFormAdd();
+        $this->aConfigs = $this->oCategory->categoryForm("Ajouter une catégorie");
 
         if ( !empty( $aParams['POST'] ) ) {
             
@@ -72,7 +72,7 @@ class CategoriesController {
     * Update d'une categorie en bdd 
     */ 
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oCategory->categoryFormUpdate();
+        $this->aConfigs = $this->oCategory->categoryForm("Editer la catégorie");
         $aErrors = [];
         $sId = $aParams['GET']['id'];
 
