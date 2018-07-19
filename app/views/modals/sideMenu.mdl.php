@@ -1,4 +1,4 @@
-<nav class="col-xs-2 backLeftMenu visible">
+<nav class="col-xs-2 backLeftMenu visible box-has-shadow">
     <ul class="backMenu">
         <li class="backMenuLink banner row">
             <div class="col-xs-10 is-h-centered">

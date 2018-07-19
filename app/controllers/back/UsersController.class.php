@@ -51,7 +51,7 @@ class UsersController {
     * Formulaire d'ajout utilisateur 
     */ 
     public function addAction( $aParams ) {
-        $this->aConfigs = $this->oUser->userFormAdd("form col-md-4");
+        $this->aConfigs = $this->oUser->userFormAdd("Ajouter un utilisateur");
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {

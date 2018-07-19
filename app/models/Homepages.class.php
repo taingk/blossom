@@ -184,10 +184,10 @@ class Homepages extends BaseSql {
         $this->bottom_banner = $bottom_banner;
     }
 
-    public function homePageForm()
+    public function homePageForm($sTitle = "")
     {
         return [
-            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "enctype" => "multipart/form-data", "submit" => "Enregistrer une page d'accueil", "pageTitle" => "Ajouter une nouvelle page d'accueil"],
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-5 row", "enctype" => "multipart/form-data", "submit" => "Enregistrer une page d'accueil", "pageTitle" => $sTitle],
             "input" => [
                 "name" => [
                     "title" => "Nom de la page à créer",

@@ -1,14 +1,12 @@
-<?php if(!empty($aErrors)) {?>
-    <div class="errorContainer">
-        <ul>
-            <?php foreach ($aErrors as $errors): ?>
-                <li>
-                    <?php echo $errors; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php } ?>
+<?php if ( !empty($aErrors) ): ?>
+    <ul class="row bg-is-main-color small-bandeau">
+        <?php foreach ($aErrors as $errors): ?>
+            <li class="col-xxs-12">
+                <?php echo $errors; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
 
 <form method="<?php echo $aConfigs["config"]["method"]?>" action="<?php echo $aConfigs["config"]["action"]?>" class="<?php echo $aConfigs["config"]["class"]?>" enctype="<?php echo $aConfigs["config"]["enctype"]?>">
 
@@ -24,35 +22,36 @@
         || $sAttribut["type"] == "number" || $sAttribut["type"] == "password"
         || $sAttribut["type"] == "date" || $sAttribut["type"] == "file" ): ?>
 
-            <label><p class="is-third-color"><?php echo $sAttribut["title"] ?>
-            <input class="is-third-color" type="<?php echo $sAttribut["type"] ?>" 
+            <label for="<?php echo $sName ?>" class="is-third-color col-xxs-12 text-is-left small-bandeau"><?php echo $sAttribut["title"] ?></label>
+            <input id="<?php echo $sName ?>" class="is-third-color col-xxs-12" type="<?php echo $sAttribut["type"] ?>" 
             name="<?php echo $sName ?>" 
             placeholder="<?php echo $sAttribut["placeholder"] ?>" 
             <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>
-            value="<?php echo $sAttribut["value"] ?>"/></p></label>
+            value="<?php echo $sAttribut["value"] ?>"/>
 
         <?php elseif ( $sAttribut["type"] == "select" ): ?>
 
-            <label><p class="is-third-color"><?php echo $sAttribut["title"] ?>
-            <select name="<?php echo $sName ?>">
+            <label for="<?php echo $sName ?>" class="is-third-color col-xxs-12"><?php echo $sAttribut["title"] ?></label>
+            <select id="<?php echo $sName ?>" name="<?php echo $sName ?>" class="col-xxs-12">>
                 <?php foreach ( $sAttribut["options"] as $sOption ): ?>
                     <option value="<?php echo $sOption['id'] ?>"><?php echo $sOption['name'] ?></option>
                 <?php endforeach; ?>
-            </select></p></label>
+            </select>
 
 		<?php else: ?>
 
-            <input type="<?php echo $sAttribut["type"] ?>"
+            <label class="is-third-color col-xxs-12 small-bandeau" for="<?php echo $sAttribut["name"] . '-' . $sName ?>"><?php echo $sName ?></label>
+            <input class="col-xxs-12"
+            type="<?php echo $sAttribut["type"] ?>"
             name="<?php echo $sAttribut["name"] ?>"
             id="<?php echo $sAttribut["name"] . '-' . $sName ?>"
             value="<?php echo $sAttribut["value"] ?>"
             <?php echo isset( $sAttribut["checked"] ) ? "checked='checked'" : "" ?>/>
-            <label class="is-third-color" for="<?php echo $sAttribut["name"] . '-' . $sName ?>"><?php echo $sName ?></label>
 
 		<?php endif; ?>
 
 	<?php endforeach; ?>
 
-	<p><input type="submit" value="<?php echo $aConfigs["config"]["submit"];?>"></p>
+	<input type="submit" class="col-xxs-12 small-bandeau" value="<?php echo $aConfigs["config"]["submit"];?>">
 
 </form>

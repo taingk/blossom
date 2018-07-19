@@ -6,7 +6,29 @@ class UserController {
     * View connexion utilisateur
     */ 
     public function indexAction( $aParams ) {
+        $oView = new View("userLogin", "auth");
+        $oUser = new Users();
+        $aConfigs = $oUser->userLoginForm();
         
+        $oView->assign( "aConfigs", $aConfigs );
+        $sEmail = $aParams['POST']['email'];
+        $sPwd = $aParams['POST']['pwd'];
+
+        if ($sEmail && $sPwd) {
+            $oUser = new Users();
+
+            if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
+                $oToken = new Token();
+
+                $oToken->setTokenSession();
+                $oToken->setIdSession( $sEmail );
+                $oToken->setTokenDb();
+
+                header('Location: /');
+            } else {
+                echo "Identifiants invalides";
+            }
+        }
     }
 
     /*
@@ -27,7 +49,7 @@ class UserController {
         // }
 
 
-        $aConfigs = $oUser->userFormAdd("form col-md-8");
+        $aConfigs = $oUser->userFormAdd();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
@@ -98,5 +120,11 @@ class UserController {
     */ 
     public function saveAction( $aParams ) {
 
+    }
+
+    public function logOutAction( $aParams ) {
+        session_destroy();
+        $_SESSION = [];
+        header('Location: /front');
     }
 }

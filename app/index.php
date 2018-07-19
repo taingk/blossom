@@ -74,7 +74,6 @@ if ( $sStructure === "back" ) {
     $oToken->checkToken();
 }
 
-
 if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.php" ) ) {
     include "controllers/" . $sStructure . "/" . $sController . ".class.php";
     

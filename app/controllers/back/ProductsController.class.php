@@ -53,7 +53,9 @@ class ProductsController {
     public function addAction( $aParams ) {
         $this->oCategory = new Categories();
         $this->oColor = new Colors();
-        $this->oImage = new Images();
+        $this->oImage1 = new Images();
+        $this->oImage2 = new Images();
+        $this->oImage3 = new Images();
         $this->oCapacity = new Capacities();
         $this->aConfigs = $this->oProduct->productFormAdd();
 
@@ -64,25 +66,11 @@ class ProductsController {
         //array_push($this->aConfigs['input']['category']['options'], $aCategory);
 
         //print_r($this->aConfigs);
-
-        $sPathDirectory = 'public/uploads/';
-        $aFiles = [];
-
-        foreach ($_FILES as $aFile) {
-            $sExt = strtolower(pathinfo($aFile['name'], PATHINFO_EXTENSION));
-            $sName = basename(strtolower(uniqid() .'.'. $sExt));
-            $sFullPath = $sPathDirectory . $sName;
-            array_push($aFiles, $sFullPath);
-
-            if ( !move_uploaded_file($aFile['tmp_name'], $sFullPath) ) {
-                error_log("Erreur dans l'upload " . $aFile['name']);
-            }
-        }
-
-        $aFiles[0];
-
-        //$aAllId = $this->oProduct->select(array('id_product'));
-       // print_r($aAllId);
+        $aFiles = Helper::uploadFiles($_FILES);
+        $aAllId = [];
+        print_r($aFiles);
+        $aAllId = $this->oProduct->select(array('id_product'));
+        print_r($aAllId);
 
         if ( !empty( $aParams['POST'] ) ) {
 
@@ -93,6 +81,12 @@ class ProductsController {
                 //$iIdCategorie = $this->oCategory->select('id_category')[0];
                 //$this->oProduct->setCategoriesIdCategory($iIdCategorie);
                 //$this->oProduct->setDescription($aParams['POST']['description']);
+/*                $this->oImage1->setPath($aParams['POST']['image']);
+                $this->oImage1->setStatus('1');
+                $this->oImage2->setPath($aParams['POST']['image2']);
+                $this->oImage2->setStatus('1');
+                $this->oImage3->setPath($aParams['POST']['image3']);
+                $this->oImage3->setStatus('1');*/
                 //$this->oProduct->setPrice($aParams['POST']['price']);
                 //$this->oProduct->setStatus(1);
                 //$this->oProduct->save();
@@ -105,7 +99,7 @@ class ProductsController {
         $oView = new View("editing", "back");
 
         $oView->assign("aConfigs", $this->aConfigs);
-        $oView->assign("aErrors", $aErrors);
+        //$oView->assign("aErrors", $aErrors);
     }
 
 
