@@ -12,29 +12,38 @@ class BillingController {
     * et on ajoute dans la bdd la commande concernée
     */ 
     public function indexAction( $aParams ) {
-        $oOrder = new Orders();
-        $aConfigs = $oOrder->checkoutForm();
+        $this->oOrder = new Orders();
+        $aConfigs = $this->oOrder->checkoutForm();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
-            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"] );
+            if ( !$this->isValid( $aParams["POST"]["card_number"] ) ) {
+                $aErrors[] = "Numéro de carte de crédit invalide";
+            } else {
+                $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"] );
+                
+                if ( empty( $aErrors ) ) {
+                    $this->oOrder->setTrackingNumber(bin2hex(openssl_random_pseudo_bytes(6)));
+                    $this->oOrder->setUsersIdUsers($_SESSION['id_user']);
+                    $this->oOrder->setStatus(1);
+                    $iIdOrder = $this->oOrder->save();
 
-            if ( empty( $aErrors ) ) {
-                // $oUser->setFirstname($aParams['POST']['firstname']);
-                // $oUser->setLastname($aParams['POST']['lastname']);
-                // $oUser->setSexe($aParams['POST']['sexe']);
-                // $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
-                // $oUser->setEmail($aParams['POST']['email']);
-                // $oUser->setAddress($aParams['POST']['address']);
-                // $oUser->setZipCode($aParams['POST']['zip_code']);
-                // $oUser->setCity($aParams['POST']['city']);
-                // $oUser->setPwd($aParams['POST']['pwd']);
-                // $oUser->setToken($oToken->getToken());
-                // $oUser->setStatus(0);
-                // $oUser->save();
+                    $oCart = new Carts();
+                    $oCart->setStatus(1);
+                    $oCart->setUsersIdUser($_SESSION['id_user']);
+                    $aIsUse = $oCart->select();
+                    
+                    foreach ($aIsUse as $aCarts) {
+                        $oC = new Carts();
+                        $oC->setId($aCarts['id_cart']);
+                        $oC->setStatus(0);
+                        $oC->setOrdersIdOrder($iIdOrder);
+                        $oC->save();
+                    }
 
-                header('/');
-                return;
+                    header('Location: /');
+                    return;
+                }
             }
         }
 
@@ -44,14 +53,14 @@ class BillingController {
         $oView->assign( "aErrors", $aErrors );
     }
 
-    public function isValid($num) {
+    private function isValid($num) {
         $num = preg_replace('/[^\d]/', '', $num);
         $sum = '';
     
         for ($i = strlen($num) - 1; $i >= 0; -- $i) {
             $sum .= $i & 1 ? $num[$i] : $num[$i] * 2;
         }
-    
+
         return array_sum(str_split($sum)) % 10 === 0;
     }
 }

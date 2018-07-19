@@ -59,7 +59,7 @@ class Validator {
 	}
 
 	public static function requiredNum( $iNum, $iLength ) {
-		return $iNum == $iLength;
+		return strlen($iNum) == $iLength;
 	}
 
 	public static function checkSameEmail( $sEmail ) {
