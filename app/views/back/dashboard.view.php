@@ -1,22 +1,30 @@
-<article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-main-color">Statistique utilisateurs</h1>
-    <canvas id="canvas1" class="is-h-centered chartjs" ></canvas>
-</article>
+<section class="row gutters">
+    <section class="col-xxs-12 col-lg-5 mainView gutters is-h-centered">
+        <h1 class="is-third-color padding-zero">Statistique utilisateurs</h1>
+        <hr>
+        <canvas id="canvas1"></canvas>
+    </section>
 
-<article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-main-color">Statistique produits</h1>
-    <canvas id="canvas2" class="is-h-centered chartjs" ></canvas>
-</article>
+    <section class="col-xxs-12 col-lg-5 mainView gutters is-h-centered">
+        <h1 class="is-third-color padding-zero">Statistique produits</h1>
+        <hr>
+        <canvas id="canvas2"></canvas>
+    </section>
+</section>
 
-<article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-main-color">Statistique ventes</h1>
-    <canvas id="canvas3" class="is-h-centered chartjs" ></canvas>
-</article>
+<section class="row gutters">
+    <section class="col-xxs-12 col-lg-5 mainView gutters is-h-centered">
+        <h1 class="is-third-color padding-zero">Statistique ventes</h1>
+        <hr>
+        <canvas id="canvas3"></canvas>
+    </section>
 
-<article class="col-xs-12 col-lg-6 gutters">
-    <h1 class="is-main-color">Statistique visibilités</h1>
-    <canvas id="canvas4" class="is-h-centered chartjs" ></canvas>
-</article>
+    <section class="col-xxs-12 col-lg-5 mainView gutters is-h-centered">
+        <h1 class="is-third-color padding-zero">Statistique visibilités</h1>
+        <hr>
+        <canvas id="canvas4"></canvas>
+    </section>
+</section>
 
 <!-- Chartjs -->
 <script src="/public/js/lib/Chart.bundle.min.js"></script>
