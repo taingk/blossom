@@ -27,6 +27,10 @@ p {
     font-size: 100%;
 }
 
+li {
+    list-style-type: none;
+}
+
 hr {
     background-color: #dbdbdb;
     border: none;
@@ -41,7 +45,9 @@ footer {
     padding: 15px;
 }
 
-input {
+input:not([type='radio'])  {
+    height: 40px;
+    padding: 10px;
     border: 0;
     border-bottom: 1px solid var(--third-color);
 }
@@ -59,11 +65,26 @@ input {
 
 [data-icon] {
     cursor: pointer;
+    border: 0 !important;
 }
 
 #search {
     width: 250px;
     font-size: 20px;
+}
+
+.viewContent {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--secondary-color);
+    height: 100%;
+}
+
+.mainView {
+    background-color: var(--secondary-color);
+    height: 100%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 
 .is-main-color {

@@ -7,6 +7,10 @@ class IndexController {
     */
     public function indexAction( $aParams ) {
         $oView = new View("adminLogIn", "auth");
+        $oUser = new Users();
+        $aConfigs = $oUser->userLoginForm();
+        
+        $oView->assign( "aConfigs", $aConfigs );
 
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];

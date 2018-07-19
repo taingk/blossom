@@ -99,10 +99,10 @@ class Cgvs extends BaseSql {
         $this->status = $status;
     }
 
-    public function cgvsForm()
+    public function cgvsForm($sTitle = "")
     {
         return [
-            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "submit" => "Enregistrer les conditions générales de vente", "pageTitle" => "Ajouter des conditions générales de vente"],
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-5 row", "submit" => "Enregistrer les conditions générales de vente", "pageTitle" => $sTitle],
             "input" => [
                 "name" => [
                     "title" => "Nom de la page à créer",

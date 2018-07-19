@@ -96,10 +96,10 @@ class BaseSql {
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
 
             $sQuery = "INSERT INTO " . $this->sTable . " (" .  $sUsersColumns . ")" . " VALUES (:" . $sValuesColumns . ")";
-            print_r($sQuery);
             $oRequest = $this->oPdo->prepare($sQuery);
             $oRequest->execute($this->aColumns);
-            print_r($this->aColumns);
+
+            return $this->oPdo->lastInsertId();
         }
     }
 
@@ -124,26 +124,6 @@ class BaseSql {
         $aResults = $oRequest->fetchAll();
 
         return $this->unsetIntegerColumns( $aResults );
-    }
-
-    public function getLastId () {
-        $this->setColumns();
-        $this->cleanColumns();
-
-        $sQuery = "SELECT " . $this->sId . " FROM " . $this->sTable. " ORDER BY " . $this->sId . " DESC LIMIT 1";
-        $oRequest = $this->oPdo->prepare( $sQuery );
-        $oRequest->execute();
-        $aResults = $oRequest->fetchAll();
-        //print_r($sQuery);
-        //print_r($aResults);
-
-
-        if( !$aResults ) {
-            return 0;
-        }
-        else {
-            return $this->unsetIntegerColumns( $aResults );
-        }
     }
 
     public function search() {

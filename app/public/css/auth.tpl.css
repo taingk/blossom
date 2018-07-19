@@ -1,9 +1,0 @@
-* {
-    color: var(--third-color);
-}
-
-.viewContent {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: var(--secondary-color);
-}

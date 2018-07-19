@@ -59,7 +59,7 @@ class LegalnoticesController {
             return;
         }
 
-        $this->aConfigs = $this->oLegalNotice->legalNoticesForm();
+        $this->aConfigs = $this->oLegalNotice->legalNoticesForm("Ajouter des mentions légales");
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
@@ -81,7 +81,7 @@ class LegalnoticesController {
     * Formulaire d'édition de page
     */
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oLegalNotice->legalNoticesForm();
+        $this->aConfigs = $this->oLegalNotice->legalNoticesForm("Editer les mentions légales");
         $sId = $aParams['GET']['id'];
 
         $this->oLegalNotice->setId($sId);

@@ -7,35 +7,35 @@ class Validator {
 
 		foreach ( $aConfigs["input"] as $sName => $sAttribut ) {
 			if ( isset( $sAttribut["confirm"] ) && $aData[$sName] != $aData[$sAttribut["confirm"]] ) {
-				$aErrorsMsg[] = $sName . " ne correspond pas à " . $sAttribut["confirm"];
+				$aErrorsMsg[] = "Les mots de passes ne correspondent pas";
 			} else if ( !isset( $sAttribut["confirm"] ) ) {
 				if ( $sAttribut["type"] == "email" && !self::checkSameEmail( $aData[$sName] ) ) {
 					$aErrorsMsg[] = "L'email renseigné est déjà utilisé";
 				} else if ( $sAttribut["type"] == "email" && !self::checkEmail( $aData[$sName] ) ) {
 					$aErrorsMsg[] = "Format de l'email incorrect";
 				} else if ( $sAttribut["type"] == "password" && !self::checkPwd( $aData[$sName] ) && !$bUpdate ) {
-					$aErrorsMsg[] = "Mot de passe incorrect(Maj, Min, Chiffre, entre 6 et 32)";
+					$aErrorsMsg[] = "Mot de passe incorrect (au minimum une majuscule, minuscule, chiffre et entre 6 et 32 caractères)";
 				} else if ( $sAttribut["type"] == "number" && !self::checkNumber( $aData[$sName ] ) ) {
-					$aErrorsMsg[] = $sName ." n'est pas correct";
+
 				}
 			}
 			// On peut ajouter les cas de types radio / checkbox / etc... dans un nouveau else if
 
 			// Gère les cas "conditions"
 			if ( isset( $sAttribut["maxString"] ) && !self::maxString( $aData[$sName], $sAttribut["maxString"] ) ) {
-					$aErrorsMsg[] = $sName . " doit faire moins de " . $sAttribut["maxString"]." caractères" ;
+					$aErrorsMsg[] = $sAttribut['title'] . " doit faire moins de " . $sAttribut["maxString"]." caractères" ;
 			}
 			if ( isset( $sAttribut["minString"] ) && !self::minString( $aData[$sName], $sAttribut["minString"] ) ) {
-					$aErrorsMsg[] = $sName . " doit faire plus de " . $sAttribut["minString"]." caractères" ;
+					$aErrorsMsg[] = $sAttribut['title'] . " doit faire plus de " . $sAttribut["minString"]." caractères" ;
 			} 
 			if ( isset ($sAttribut["maxNum"] ) && !self::maxNum( $aData[$sName], $sAttribut["maxNum"] ) ) {
-					$aErrorsMsg[] = $sName . " doit être inférieur à " . $sAttribut["maxNum"];
+					$aErrorsMsg[] = $sAttribut['title'] . " doit être inférieur à " . $sAttribut["maxNum"];
 			}
 			if ( isset( $sAttribut["minNum"] ) && !self::minNum( $aData[$sName], $sAttribut["minNum"] ) ) {
-					$aErrorsMsg[] = $sName . " doit être supérieur à " . $sAttribut["minNum"];
+					$aErrorsMsg[] = $sAttribut['title'] . " doit être supérieur à " . $sAttribut["minNum"];
 			}
 			if ( isset( $sAttribut["requiredNum"] ) && !self::requiredNum( $aData[$sName], $sAttribut["requiredNum"] ) && !$bUpdate ) {
-				$aErrorsMsg[] = $sName . " doit être égale à " . $sAttribut["requiredNum"];
+				$aErrorsMsg[] = $sAttribut['title'] . " doit être égale à " . $sAttribut["requiredNum"];
 			}
 		}
 
@@ -59,7 +59,7 @@ class Validator {
 	}
 
 	public static function requiredNum( $iNum, $iLength ) {
-		return $iNum == $iLength;
+		return strlen($iNum) == $iLength;
 	}
 
 	public static function checkSameEmail( $sEmail ) {

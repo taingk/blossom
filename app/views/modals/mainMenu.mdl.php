@@ -34,15 +34,35 @@
                 <input class="cart-icon" type="submit" name="search" value="" />
             </a>
         </li>
-        <li class="col-xxs-1" style="margin-right: 15px">
-            <a href="">
-                Connexion
-            </a>
-        </li>
-        <li class="col-xxs-1">
-            <a href="/front/user/subscribe">
-                Inscription
-            </a>
-        </li>
+        <?php if( !empty( $_SESSION )): ?>
+            <li class="col-xxs-1">
+                <a href="">
+                    Bienvenue, 
+                    <?php
+                        $oUsers = new Users();
+                        $oUsers->setId($_SESSION['id_user']);
+                        $aUsers = $oUsers->select()[0];
+                        $fullName = $aUsers["firstname"] . " " . $aUsers["lastname"];
+                        echo $fullName;
+                    ?>
+                </a>
+            </li>
+            <li class="col-xxs-1">
+                <a href="/front/user/logOut">
+                    Deconnexion
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="col-xxs-1" style="margin-right: 15px">
+                <a href="/front/user">
+                    Connexion
+                </a>
+            </li>
+            <li class="col-xxs-1">
+                <a href="/front/user/subscribe">
+                    Inscription
+                </a>
+            </li>        
+        <?php endif; ?>
     </ul>
 </nav>
