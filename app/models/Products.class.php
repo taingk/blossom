@@ -90,9 +90,9 @@ class Products extends BaseSql {
     }
   
     public function productFormAdd() {
-        $this->oCategory = new Categories();
+        $oCategory = new Categories();
         $aArrayTemporaire = [];
-        $aCategories = $this->oCategory->select(array('id_category','category_name'));
+        $aCategories = $oCategory->select(array('id_category','category_name'));
         foreach($aCategories as $key => $value){
             array_push($aArrayTemporaire, ['id' => $value['id_category'], 'name' => $value['category_name']]);
         }

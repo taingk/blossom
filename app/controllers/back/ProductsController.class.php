@@ -62,7 +62,6 @@ class ProductsController {
 
         if ( !empty( $aParams['POST']) && !empty($aIdCategory) ) {
 
-            //print_r($aParams['POST']['category']);
             $this->oProduct->setProductName($aParams['POST']['name']);
             $this->oProduct->setCategoriesIdCategory($aParams['POST']['category']);
             $this->oProduct->setDescription($aParams['POST']['description']);
@@ -70,48 +69,50 @@ class ProductsController {
             $this->oProduct->setStatus('1');
             $this->oProduct->setQuantity($aParams['POST']['quantity']);
             $this->oProduct->setMaxQuantity($aParams['POST']['quantity']);
-            // Ta variable qui contient l'id, ca save aussi :
-            //$iLastId = $this->oProduct->save();
+            //Save l'id du dernier produit inséré :
+            $iLastId = $this->oProduct->save();
 
-            $aFiles = Helper::uploadFiles($_FILES);
+            $aFiles = Helper::uploadFiles( $_FILES );
             foreach ( $aFiles['success'] as $aFile ) {
+
                 $oImage = new Images();
-                $oImage->setPath($aFile['path']);
-                $oImage->setProductsIdProduct($iLastId);
+                $oImage->setPath( $aFile['path'] );
+                $oImage->setProductsIdProduct( $iLastId );
                 $oImage->setStatus('1');
                 $oImage->setImageName('Test');
-                //$this->oImage->save();
+                $oImage->save();
+
             }
 
             $sColor = $aParams['POST']['color'];
             $aColors = explode(';',$sColor);
             foreach( $aColors as $key => $value ){
-                $aValue = explode( ':', $value );
 
+                $aValue = explode( ':', $value );
                 $oColor = new Colors();
-                $oColor->setName($aValue[0]);
-                $oColor->setColorHexa($aValue[1]);
+                $oColor->setName( $aValue[0] );
+                $oColor->setColorHexa( $aValue[1] );
                 $oColor->setStatus('1');
-                $oColor->setProductsIdProduct($iLastId);
-                //$this->oColor->save();
+                $oColor->setProductsIdProduct( $iLastId );
+                $oColor->save();
+
             }
 
             $sCapacity = $aParams['POST']['capacity'];
-            //print_r($sCapacity);
             $aCapacities = explode(';',$sCapacity);
-            //print_r($aCapacities);
-            foreach( $aCapacities as $key => $value ){
-                $aValue = explode( ':', $value );
+            foreach( $aCapacities as $key => $value ) {
 
+                $aValue = explode( ':', $value );
                 $oCapacity = new Capacities();
-                $oCapacity->setCapacityNumber($aValue[0]);
-                $oCapacity->setAdditionalPrice($aValue[1]);
+                $oCapacity->setCapacityNumber( $aValue[0] );
+                $oCapacity->setAdditionalPrice( $aValue[1] );
                 $oCapacity->setStatus(1);
-                $oCapacity->setProductsIdProduct(1);
+                $oCapacity->setProductsIdProduct( $iLastId );
                 $oCapacity->save();
+
             }
 
-            //header('location: /back/products ');
+            header('location: /back/products ');
             return;
 
         }
