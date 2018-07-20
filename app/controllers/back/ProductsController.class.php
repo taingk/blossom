@@ -130,28 +130,41 @@ class ProductsController {
         $sId = $aParams['GET']['id'];
         $this->oProduct->setId($sId);
         $aInfosProduct = $this->oProduct->select()[0];
-        print_r($aInfosProduct);
         $oColor = new Colors();
         $oColor->setProductsIdProduct($sId);
         $aInfosColor = $oColor->select(array('name','color_hexa'));
-        print_r($aInfosColor);
+        $oCapacity = new Capacities();
+        $oCapacity->setProductsIdProduct($sId);
+        $aInfosCapacity = $oCapacity->select(array('capacity_number','additional_price'));
+
+        $sColor = '';
+        foreach( $aInfosColor as $sInfoKey => $sInfoValue ){
+            $sColor .= $sInfoValue['name']. ":" . $sInfoValue['color_hexa'] . ";";
+        }
+        $sColor = substr($sColor, 0, -1);
+
+        $sCapacity = '';
+        foreach( $aInfosCapacity as $sInfoKey => $sInfoValue ){
+            $sCapacity .= $sInfoValue['capacity_number']. ":" . $sInfoValue['additional_price'] . ";";
+        }
+        $sCapacity = substr($sCapacity, 0, -1);
+
 
         foreach ($this->aConfigs['input'] as $sKey => &$aValue) {
             foreach ($aInfosProduct as $sInfoKey => $sInfoValue) {
-                if ( $sKey == $sInfoKey ) {
-                    $aValue['value'] = $sInfoValue;
+                print($sKey);
+                if ( $sKey == "color") {
+                    $aValue['value'] = $sColor;
                 }
-            }
-
-            foreach($aInfosColor as $sInfoKey => $sInfoValue){
-                print_r($sInfoValue);
-                echo "<br>";
-                if ( $sKey == $sInfoKey ) {
-
+                elseif ( $sKey == "capacity") {
+                    $aValue['value'] = $sCapacity;
+                }
+                elseif ($sKey == $sInfoKey) {
                     $aValue['value'] = $sInfoValue;
                 }
             }
         }
+
 
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
