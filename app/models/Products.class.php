@@ -91,11 +91,13 @@ class Products extends BaseSql {
   
     public function productFormAdd() {
         $this->oCategory = new Categories();
-        //$this->oCategory->setId(1);
-        $aCategorieNames = $this->oCategory->select('category_name');
-        print_r($aCategorieNames);
+        $aArrayTemporaire = [];
+        $aCategories = $this->oCategory->select(array('id_category','category_name'));
+        foreach($aCategories as $key => $value){
+            array_push($aArrayTemporaire, ['id' => $value['id_category'], 'name' => $value['category_name']]);
+        }
         return [
-            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-4"],
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-5 row", "enctype" => "multipart/form-data"],
             "input" => [
                 "name" =>      [
                     "title" => "Nom du produit",
@@ -105,9 +107,9 @@ class Products extends BaseSql {
                     "minString" => 2
                 ],
                 "category" =>       [
-                    "title" => "Catégorie",
+                    "title" => "Catégories",
                     "type" => "select",
-                    "options" => [],
+                    "options" => $aArrayTemporaire,
                     "required" => true,
                 ],
                 "description" =>    [
@@ -141,15 +143,16 @@ class Products extends BaseSql {
                 "color" =>      [
                     "title" => "Couleur",
                     "type" => "text",
-                    "placeholder" => "Rouge",
+                    "placeholder" => "Rouge:#432G3",
                     "required" => true,
                     "minString" => 2
                 ],
                 "capacity" =>      [
                     "title" => "Capacité",
-                    "type" => "number",
-                    "placeholder" => "16",
-                    "required" => true
+                    "type" => "text",
+                    "placeholder" => "16:150",
+                    "required" => true,
+                    "minString" => 2
                 ],
                 "quantity" =>      [
                     "title" => "Quantité",

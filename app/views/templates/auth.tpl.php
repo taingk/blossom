@@ -14,10 +14,6 @@
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/form.css">
     <link rel="stylesheet" href="/public/css/auth.tpl.css">
-
-    <!-- Auth CSS -->
-    <link rel="stylesheet" href="/public/css/<?php echo $this->tplPath() ?>.css">
-
 </head>
 
 <body>

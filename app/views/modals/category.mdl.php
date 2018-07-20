@@ -15,6 +15,5 @@
         </a>
             
     <?php endforeach; ?>
-    
 </section>
 

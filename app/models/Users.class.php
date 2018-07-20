@@ -134,7 +134,7 @@ class Users extends BaseSql {
 
     public function adminFormAdd() {
 		return [
-					"config" => [ "method" => "POST", "action" => "", "submit" => "S'inscrire", "class" => "form col-md-10 row"],
+					"config" => [ "method" => "POST", "action" => "", "submit" => "S'inscrire", "class" => "form col-md-5 row"],
 					"input" => [
 						"firstname" =>      [
                                                 "title" => "Prénom",
@@ -189,7 +189,7 @@ class Users extends BaseSql {
 
     public function userFormAdd($sTitle = "") {
 		return [
-					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => " form col-md-5 row", "pageTitle" => $sTitle],
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
 					"input" => [
 						"firstname" =>      [
                                                 "title" => "Prénom",

@@ -98,7 +98,7 @@ class BaseSql {
             $sQuery = "INSERT INTO " . $this->sTable . " (" .  $sUsersColumns . ")" . " VALUES (:" . $sValuesColumns . ")";
             $oRequest = $this->oPdo->prepare($sQuery);
             $oRequest->execute($this->aColumns);
-            
+
             return $this->oPdo->lastInsertId();
         }
     }

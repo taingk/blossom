@@ -34,8 +34,8 @@ class Capacities extends BaseSql {
         $this->capacity_number = trim($capacity_number);
     }
 
-    public function setProductsIdProduct($products_id_product) {
-        $this->products_id_product = trim($products_id_product);
+    public function setProductsIdProduct($products_idproduct) {
+        $this->products_idproduct = trim($products_idproduct);
     }
 
     public function setAdditionalPrice($additional_price) {

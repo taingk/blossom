@@ -10,7 +10,7 @@
             </a>
         </li>
         <li class="col-xxs-1" onClick="openCategories()">
-            <a href="#">Catégories</a>
+            <a>Catégories</a>
             <ul id="submenu">
                 <?php foreach ( $aConfigs as $aKeyCategories => $aCategories ): ?>
                     <?php foreach ( $aCategories as $sKey => $sValue ): ?>
