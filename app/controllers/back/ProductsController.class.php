@@ -22,6 +22,7 @@ class ProductsController {
 
         $this->refactorConfigs();
         $oView->assign("aConfigs", $this->aConfigs );
+        $oView->assign( "aParams", array('id' => 'id_product') );
     }
 
     /*
@@ -51,28 +52,24 @@ class ProductsController {
     * Formulaire d'ajout de produit
     */
     public function addAction( $aParams ) {
+        $this->aConfigs = $this->oProduct->productForm("Ajouter un nouveau produit");
         $this->oCategory = new Categories();
-        $this->aConfigs = $this->oProduct->productFormAdd();
-
-        // $iId = $this->oProduct->getLastId();
-        // $iLastId = $iId[0]['id_product'];
-        // $iCurrentId = $iLastId + 1;
-        
         $aIdCategory = $this->oCategory->select(array('id_category'));
 
         if ( !empty( $aParams['POST']) && !empty($aIdCategory) ) {
 
-            $this->oProduct->setProductName($aParams['POST']['name']);
-            $this->oProduct->setCategoriesIdCategory($aParams['POST']['category']);
-            $this->oProduct->setDescription($aParams['POST']['description']);
-            $this->oProduct->setPrice($aParams['POST']['price']);
+            $this->oProduct->setProductName( $aParams['POST']['name'] );
+            $this->oProduct->setCategoriesIdCategory( $aParams['POST']['category'] );
+            $this->oProduct->setDescription( $aParams['POST']['description'] );
+            $this->oProduct->setPrice( $aParams['POST']['price'] );
             $this->oProduct->setStatus('1');
-            $this->oProduct->setQuantity($aParams['POST']['quantity']);
-            $this->oProduct->setMaxQuantity($aParams['POST']['quantity']);
+            $this->oProduct->setQuantity( $aParams['POST']['quantity'] );
+            $this->oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
             //Save l'id du dernier produit inséré :
             $iLastId = $this->oProduct->save();
 
             $aFiles = Helper::uploadFiles( $_FILES );
+
             foreach ( $aFiles['success'] as $aFile ) {
 
                 $oImage = new Images();
@@ -86,6 +83,7 @@ class ProductsController {
 
             $sColor = $aParams['POST']['color'];
             $aColors = explode(';',$sColor);
+
             foreach( $aColors as $key => $value ){
 
                 $aValue = explode( ':', $value );
@@ -100,6 +98,7 @@ class ProductsController {
 
             $sCapacity = $aParams['POST']['capacity'];
             $aCapacities = explode(';',$sCapacity);
+
             foreach( $aCapacities as $key => $value ) {
 
                 $aValue = explode( ':', $value );
@@ -127,7 +126,35 @@ class ProductsController {
     * Formulaire d'édition d'un produit 
     */ 
     public function updateAction( $aParams ) {
+        $this->aConfigs = $this->oProduct->productForm("Editer le produit");
+        $sId = $aParams['GET']['id'];
+        $this->oProduct->setId($sId);
+        $aInfosProduct = $this->oProduct->select()[0];
+        print_r($aInfosProduct);
+        $oColor = new Colors();
+        $oColor->setProductsIdProduct($sId);
+        $aInfosColor = $oColor->select(array('name','color_hexa'));
+        print_r($aInfosColor);
 
+        foreach ($this->aConfigs['input'] as $sKey => &$aValue) {
+            foreach ($aInfosProduct as $sInfoKey => $sInfoValue) {
+                if ( $sKey == $sInfoKey ) {
+                    $aValue['value'] = $sInfoValue;
+                }
+            }
+
+            foreach($aInfosColor as $sInfoKey => $sInfoValue){
+                print_r($sInfoValue);
+                echo "<br>";
+                if ( $sKey == $sInfoKey ) {
+
+                    $aValue['value'] = $sInfoValue;
+                }
+            }
+        }
+
+        $oView = new View("editing", "back");
+        $oView->assign("aConfigs", $this->aConfigs);
     }
 
     /*
