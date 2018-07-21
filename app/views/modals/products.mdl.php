@@ -1,14 +1,10 @@
 <section class="row container mainView gutters">
-    <h1 class="is-third-color col-xxs-12"></h1>
-    <hr>
-
     <?php foreach ($aConfigs[0]['products'] as $results): ?>
-        <strong class="col-xxs-12 is-third-color small-bandeau">
-            <?php echo $results["product_name"]?>
-        </strong>
-
+    <h1 class="is-third-color col-xxs-12"><?php echo $results["product_name"]?></h1>
+    <hr>
+    
         <a
-           class="col-xxs-12 col-xs-6 col-md-4 row container-product-box">
+           class="col-xxs-12 col-xs-6 col-md-4 container-product-box">
             <div class="col-xxs-12 product-box bg-is-main-color">
                 <label>Photo</label>
             </div>
@@ -24,7 +20,7 @@
             Couleur :
         </strong>
 
-        <select>
+        <select style="color:black;">
             <?php foreach ($aConfigs[1]['colors'] as $results): ?>
             <option><?php echo $results["name"]?></option>
             <?php endforeach; ?>
@@ -35,9 +31,9 @@
             Capacité :
         </strong>
 
-        <select>
-            <?php foreach ($aConfigs[1]['capacities'] as $results): ?>
-                <option><?php echo $results["capacity_number"]?></option>
+        <select style="color:black;">
+            <?php foreach ($aConfigs[2]['capacities'] as $results): ?>
+                <option ><?php echo $results["capacity_number"]?> +<?php echo $results["additional_price"]?> €</option>
             <?php endforeach; ?>
         </select>
 
