@@ -127,38 +127,41 @@ class ProductsController {
     */ 
     public function updateAction( $aParams ) {
         $this->aConfigs = $this->oProduct->productForm("Editer le produit");
+
         $sId = $aParams['GET']['id'];
-        $this->oProduct->setId($sId);
+        $this->oProduct->setId( $sId );
         $aInfosProduct = $this->oProduct->select()[0];
+
         $oColor = new Colors();
-        $oColor->setProductsIdProduct($sId);
-        $aInfosColor = $oColor->select(array('name','color_hexa'));
+        $oColor->setProductsIdProduct( $sId );
+        $aInfosColor = $oColor->select( array('name','color_hexa') );
+
         $oCapacity = new Capacities();
-        $oCapacity->setProductsIdProduct($sId);
-        $aInfosCapacity = $oCapacity->select(array('capacity_number','additional_price'));
+        $oCapacity->setProductsIdProduct( $sId );
+        $aInfosCapacity = $oCapacity->select( array('capacity_number','additional_price') );
 
         $sColor = '';
-        foreach( $aInfosColor as $sInfoKey => $sInfoValue ){
+        foreach( $aInfosColor as $sInfoKey => $sInfoValue ) {
             $sColor .= $sInfoValue['name']. ":" . $sInfoValue['color_hexa'] . ";";
         }
-        $sColor = substr($sColor, 0, -1);
+        $sColor = substr( $sColor, 0, -1 );
 
         $sCapacity = '';
-        foreach( $aInfosCapacity as $sInfoKey => $sInfoValue ){
+        foreach( $aInfosCapacity as $sInfoKey => $sInfoValue ) {
             $sCapacity .= $sInfoValue['capacity_number']. ":" . $sInfoValue['additional_price'] . ";";
         }
-        $sCapacity = substr($sCapacity, 0, -1);
+        $sCapacity = substr( $sCapacity, 0, -1 );
 
 
-        foreach ($this->aConfigs['input'] as $sKey => &$aValue) {
-            foreach ($aInfosProduct as $sInfoKey => $sInfoValue) {
+        foreach ( $this->aConfigs['input'] as $sKey => &$aValue ) {
+            foreach ( $aInfosProduct as $sInfoKey => $sInfoValue ) {
                 if ( $sKey == "color") {
                     $aValue['value'] = $sColor;
                 }
                 elseif ( $sKey == "capacity") {
                     $aValue['value'] = $sCapacity;
                 }
-                elseif ($sKey == $sInfoKey) {
+                elseif ( $sKey == $sInfoKey ) {
                     $aValue['value'] = $sInfoValue;
                 }
             }
@@ -178,12 +181,6 @@ class ProductsController {
             $oProduct->save();
 
 
-//            foreach( $aColorsUpdate as $key => $value ) {
-//                $colorUpdate->setId($value['id_color']);
-//                $colorUpdate->setStatus(0);
-//                //$colorUpdate->save();
-//            }
-
             $capacityUpdate = new Capacities();
             $capacityUpdate->setProductsIdProduct( $sId) ;
             $aCapacityUpdate = $capacityUpdate->select( array('id_capacity') );
@@ -197,6 +194,7 @@ class ProductsController {
             $oGetColor->setProductsIdProduct( $sId) ;
             $oGetColor->setStatus(1);
             $aGetColor = $oGetColor->select( array('id_color','name', 'color_hexa') );
+
             foreach( $aGetColor as $key => $value ) {
                 $oSetColorId = new Colors();
                 $oSetColorId->setId( $value['id_color'] );
@@ -206,20 +204,21 @@ class ProductsController {
 
             $sColor = $aParams['POST']['color'];
             $aColors = explode(';',$sColor);
+
             $oGetColor2 = new Colors();
             $oGetColor2->setProductsIdProduct( $sId) ;
             $oGetColor2->setStatus(0);
             $aGetColor2 = $oGetColor2->select( array('id_color','name', 'color_hexa') );
             //print_r($aGetColor2[0]['name']);
+
+            $aColorsExploded = [];
+
             foreach( $aColors as $key => $value ){
-                $aValue = explode( ':', $value );
-                foreach( $aGetColor2 as $key2 => $value2 ) {
-                    print_r($value2['name']);
-                    echo '<br>';
-                }
+                array_push($aColorsExploded, explode( ':', $value ));
+                //$aValue = explode( ':', $value );
                 $oColorInsert = new Colors();
-                $oColorInsert->setName( $aValue[0] );
-                $oColorInsert->setColorHexa( $aValue[1] );
+                //$oColorInsert->setName( $aValue[0] );
+                //$oColorInsert->setColorHexa( $aValue[1] );
                 $oColorInsert->setProductsIdProduct( $sId );
                 $oColorInsert->setstatus( 1 );
                 $aIDColor = $oColorInsert->select(array('id_color'));
@@ -254,7 +253,24 @@ class ProductsController {
                     }
                 }
 
-
+            }
+            print_r($aColorsExploded);
+            print_r($aGetColor2);
+            foreach($aGetColor2 as $key => $value) {
+                //print_r($value['name']);
+                //echo "<br>";
+                //print_r($value['color_hexa']);
+                //echo "<br>";
+                foreach($aColorsExploded as $key2 => $value2) {
+//                    if( $value['name'] != $value2[0] || $value['color_hexa'] != $value2[1] ) {
+//                        echo $value['name']." not equal ".$value2[0];
+//                        echo $value['color_hexa']." not equal ".$value2[1];
+//                    }
+                    print_r($value2[0]);
+                    echo "<br>";
+                    print_r($value2[1]);
+                    echo "<br>";
+                }
 
             }
 
@@ -285,7 +301,16 @@ class ProductsController {
     * Suppression d'un produit en bdd
     */ 
     public function deleteAction( $aParams ) {
+        if ($_GET['id']) {
+            $this->oProduct->setId($_GET['id']);
+            $sStatus = $this->oProduct->select(array('status'))[0]['status'];
 
+            $sStatus ? $this->oProduct->setStatus(0) : $this->oProduct->setStatus(1);
+            $this->oProduct->save();
+
+            header('location: /back/products');
+            return;
+        }
     }
     
     /*
@@ -302,7 +327,7 @@ class ProductsController {
 
         foreach ( $this->aConfigs as $sKey => &$aValue ) {
             foreach ( $aValue as $sKey => $sValue ) {
-                if ( $sKey === 'categorie' ) {
+                if ( $sKey === 'category' ) {
                     $aValue[$sKey] = Helper::getCategoryName($aValue[$sKey]);
                 }
                 if ( $sKey === 'status' ) {
