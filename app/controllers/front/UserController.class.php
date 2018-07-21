@@ -88,7 +88,11 @@ class UserController {
     * View profil utilisateur
     */ 
     public function profileAction( $aParams ) {
+        $oUsers = new Users();
+        $oUsers->setId($_SESSION['id_user']);
+        $aUsers = $oUsers->select()[0];
 
+        $oView = new View('', 'front');
     }
 
     /*
