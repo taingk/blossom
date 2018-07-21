@@ -61,6 +61,19 @@ class Comments extends BaseSql {
     {
         return $this->products_idproduct;
     }
+
+    public function commentForm($sTitle = "") {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer votre commentaire", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
+					"input" => [
+						"comment" =>      [
+                                                "title" => "Votre commentaire",
+                                                "type" => "text",
+                                                "required" => true,
+                                        ],
+					]
+		];
+    }
 }
 
 ?>
