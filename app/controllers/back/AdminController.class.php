@@ -19,7 +19,7 @@ class AdminController {
             return;
         }
 
-		$aConfigs = $oUser->adminFormAdd();
+		$aConfigs = $oUser->adminForm();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
@@ -52,6 +52,18 @@ class AdminController {
 
         $oView->assign("aConfigs", $aConfigs);
 		$oView->assign("aErrors", $aErrors);
+    }
+
+    public function installAction( $aParams ) {
+        $oUser = new Users();
+        $aConfigs = $oUser->installForm();
+        
+        if ( $aParams['POST'] ) {
+            return $this->indexAction( [] );
+        }
+        
+        $oView = new View("install", "auth");
+        $oView->assign("aConfigs", $aConfigs);
     }
 
     public function logOutAction( $aParams ) {
