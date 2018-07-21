@@ -177,14 +177,12 @@ class ProductsController {
             $oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
             $oProduct->save();
 
-            $colorUpdate = new Colors();
-            $colorUpdate->setProductsIdProduct( $sId) ;
-            $aColorsUpdate = $colorUpdate->select( array('id_color') );
-            foreach( $aColorsUpdate as $key => $value ) {
-                $colorUpdate->setId($value['id_color']);
-                $colorUpdate->setStatus(0);
-                $colorUpdate->save();
-            }
+
+//            foreach( $aColorsUpdate as $key => $value ) {
+//                $colorUpdate->setId($value['id_color']);
+//                $colorUpdate->setStatus(0);
+//                //$colorUpdate->save();
+//            }
 
             $capacityUpdate = new Capacities();
             $capacityUpdate->setProductsIdProduct( $sId) ;
@@ -192,21 +190,71 @@ class ProductsController {
             foreach( $aCapacityUpdate as $key => $value ) {
                 $capacityUpdate->setId($value['id_capacity']);
                 $capacityUpdate->setStatus(0);
-                $capacityUpdate->save();
+                //$capacityUpdate->save();
             }
 
+            $oGetColor = new Colors();
+            $oGetColor->setProductsIdProduct( $sId) ;
+            $oGetColor->setStatus(1);
+            $aGetColor = $oGetColor->select( array('id_color','name', 'color_hexa') );
+            foreach( $aGetColor as $key => $value ) {
+                $oSetColorId = new Colors();
+                $oSetColorId->setId( $value['id_color'] );
+                $oSetColorId->setStatus(0);
+                $oSetColorId->save();
+            }
 
             $sColor = $aParams['POST']['color'];
             $aColors = explode(';',$sColor);
+            $oGetColor2 = new Colors();
+            $oGetColor2->setProductsIdProduct( $sId) ;
+            $oGetColor2->setStatus(0);
+            $aGetColor2 = $oGetColor2->select( array('id_color','name', 'color_hexa') );
+            //print_r($aGetColor2[0]['name']);
             foreach( $aColors as $key => $value ){
-
                 $aValue = explode( ':', $value );
+                foreach( $aGetColor2 as $key2 => $value2 ) {
+                    print_r($value2['name']);
+                    echo '<br>';
+                }
                 $oColorInsert = new Colors();
                 $oColorInsert->setName( $aValue[0] );
                 $oColorInsert->setColorHexa( $aValue[1] );
-                $oColorInsert->setStatus('1');
                 $oColorInsert->setProductsIdProduct( $sId );
-                $oColorInsert->save();
+                $oColorInsert->setstatus( 1 );
+                $aIDColor = $oColorInsert->select(array('id_color'));
+                //print_r($aIDColor);
+                //print_r($aValue[0]);
+                if(!$aIDColor) {
+                    $oColorInsert->setStatus('1');
+                   // $oColorInsert->save();
+                }
+
+                elseif($aIDColor){
+                    if(stripos($sColor, $aValue[0])) {
+                        //print_r($aValue[0]);
+                        $oColorUpdate = new Colors();
+                        $oColorUpdate->setName($aValue[0]);
+                        $oColorUpdate->setProductsIdProduct($sId);
+                        $oColorUpdate->setStatus('1');
+                        $aIdSelect = $oColorUpdate->select(array('id_color'));
+                        //print_r($aIdSelect);
+                        foreach ($aIdSelect as $key2 => $value2) {
+                            $oColorUpdate2 = new Colors();
+                            $oColorUpdate2->setId($value2['id_color']);
+                            $oColorUpdate2->setStatus(0);
+                            //$oColorUpdate2->save();
+                        }
+                        $oColorInsert->setName($aValue[0]);
+                        $oColorInsert->setColorHexa($aValue[1]);
+                        $oColorInsert->setProductsIdProduct($sId);
+                        $oColorInsert->setStatus('1');
+                        //$oColorInsert->save();
+
+                    }
+                }
+
+
 
             }
 
@@ -221,11 +269,11 @@ class ProductsController {
                 $oCapacityInsert->setAdditionalPrice( $aValue[1] );
                 $oCapacityInsert->setStatus(1);
                 $oCapacityInsert->setProductsIdProduct( $sId );
-                $oCapacityInsert->save();
+                //$oCapacityInsert->save();
 
             }
 
-            header('location: /back/products');
+            //header('location: /back/products');
             return;
         }
 
