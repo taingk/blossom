@@ -152,7 +152,6 @@ class ProductsController {
 
         foreach ($this->aConfigs['input'] as $sKey => &$aValue) {
             foreach ($aInfosProduct as $sInfoKey => $sInfoValue) {
-                print($sKey);
                 if ( $sKey == "color") {
                     $aValue['value'] = $sColor;
                 }
@@ -165,6 +164,24 @@ class ProductsController {
             }
         }
 
+        if ( !empty( $aParams['POST'] ) ) {
+            $oProduct = new Products();
+            $aFiles = Helper::uploadFiles($_FILES);
+
+            $oProduct->setId($sId);
+            $oProduct->setProductName($aParams['POST']['name']);
+            $oProduct->setCategoriesIdCategory($aParams['POST']['category']);
+            $oProduct->setPrice($aParams['POST']['price']);
+            $oProduct->setDescription( $aParams['POST']['description'] );
+            $oProduct->setQuantity($aParams['POST']['quantity']);
+            $oProduct->setMaxQuantity($aParams['POST']['quantity']);
+            //foreach ( $aFiles['success'] as $aFile ) {
+            //}
+            $oProduct->save();
+
+            header('location: /back/products');
+            return;
+        }
 
         $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
