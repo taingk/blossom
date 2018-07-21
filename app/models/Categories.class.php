@@ -44,7 +44,6 @@ class Categories extends BaseSql {
 						"category_name" =>      [
                                                 "title" => "Titre de la categorie",
                                                 "type" => "text",
-                                                "placeholder" => "Telephones",
                                                 "required" => true,
                                         ],
 					]
