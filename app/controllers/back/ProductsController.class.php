@@ -186,13 +186,13 @@ class ProductsController {
                 $colorUpdate->save();
             }
 
-            $colorUpdate = new Colors();
-            $colorUpdate->setProductsIdProduct( $sId) ;
-            $aColorsUpdate = $colorUpdate->select( array('id_color') );
-            foreach( $aColorsUpdate as $key => $value ) {
-                $colorUpdate->setId($value['id_color']);
-                $colorUpdate->setStatus(0);
-                $colorUpdate->save();
+            $capacityUpdate = new Capacities();
+            $capacityUpdate->setProductsIdProduct( $sId) ;
+            $aCapacityUpdate = $capacityUpdate->select( array('id_capacity') );
+            foreach( $aCapacityUpdate as $key => $value ) {
+                $capacityUpdate->setId($value['id_capacity']);
+                $capacityUpdate->setStatus(0);
+                $capacityUpdate->save();
             }
 
 
@@ -208,6 +208,20 @@ class ProductsController {
                 $oColorInsert->setProductsIdProduct( $sId );
                 $oColorInsert->save();
 
+            }
+
+            $sCapacity = $aParams['POST']['capacity'];
+            $aCapacities = explode(';',$sCapacity);
+
+            foreach( $aCapacities as $key => $value ) {
+
+                $aValue = explode( ':', $value );
+                $oCapacityInsert = new Capacities();
+                $oCapacityInsert->setCapacityNumber( $aValue[0] );
+                $oCapacityInsert->setAdditionalPrice( $aValue[1] );
+                $oCapacityInsert->setStatus(1);
+                $oCapacityInsert->setProductsIdProduct( $sId );
+                $oCapacityInsert->save();
 
             }
 
