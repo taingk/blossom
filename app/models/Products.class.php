@@ -89,15 +89,15 @@ class Products extends BaseSql {
         return $this->status;
     }
   
-    public function productFormAdd() {
-        $this->oCategory = new Categories();
+    public function productForm($sTitle = "") {
+        $oCategory = new Categories();
         $aArrayTemporaire = [];
-        $aCategories = $this->oCategory->select(array('id_category','category_name'));
+        $aCategories = $oCategory->select(array('id_category','category_name'));
         foreach($aCategories as $key => $value){
             array_push($aArrayTemporaire, ['id' => $value['id_category'], 'name' => $value['category_name']]);
         }
         return [
-            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-5 row", "enctype" => "multipart/form-data"],
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-5 row", "enctype" => "multipart/form-data", "pageTitle" => $sTitle],
             "input" => [
                 "name" =>      [
                     "title" => "Nom du produit",
