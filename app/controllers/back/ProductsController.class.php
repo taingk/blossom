@@ -169,15 +169,47 @@ class ProductsController {
             $aFiles = Helper::uploadFiles($_FILES);
 
             $oProduct->setId($sId);
-            $oProduct->setProductName($aParams['POST']['name']);
-            $oProduct->setCategoriesIdCategory($aParams['POST']['category']);
-            $oProduct->setPrice($aParams['POST']['price']);
+            $oProduct->setProductName( $aParams['POST']['name'] );
+            $oProduct->setCategoriesIdCategory( $aParams['POST']['category'] );
+            $oProduct->setPrice( $aParams['POST']['price'] );
             $oProduct->setDescription( $aParams['POST']['description'] );
-            $oProduct->setQuantity($aParams['POST']['quantity']);
-            $oProduct->setMaxQuantity($aParams['POST']['quantity']);
-            //foreach ( $aFiles['success'] as $aFile ) {
-            //}
+            $oProduct->setQuantity( $aParams['POST']['quantity'] );
+            $oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
             $oProduct->save();
+
+            $colorUpdate = new Colors();
+            $colorUpdate->setProductsIdProduct( $sId) ;
+            $aColorsUpdate = $colorUpdate->select( array('id_color') );
+            foreach( $aColorsUpdate as $key => $value ) {
+                $colorUpdate->setId($value['id_color']);
+                $colorUpdate->setStatus(0);
+                $colorUpdate->save();
+            }
+
+            $colorUpdate = new Colors();
+            $colorUpdate->setProductsIdProduct( $sId) ;
+            $aColorsUpdate = $colorUpdate->select( array('id_color') );
+            foreach( $aColorsUpdate as $key => $value ) {
+                $colorUpdate->setId($value['id_color']);
+                $colorUpdate->setStatus(0);
+                $colorUpdate->save();
+            }
+
+
+            $sColor = $aParams['POST']['color'];
+            $aColors = explode(';',$sColor);
+            foreach( $aColors as $key => $value ){
+
+                $aValue = explode( ':', $value );
+                $oColorInsert = new Colors();
+                $oColorInsert->setName( $aValue[0] );
+                $oColorInsert->setColorHexa( $aValue[1] );
+                $oColorInsert->setStatus('1');
+                $oColorInsert->setProductsIdProduct( $sId );
+                $oColorInsert->save();
+
+
+            }
 
             header('location: /back/products');
             return;
