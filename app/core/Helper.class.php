@@ -18,6 +18,10 @@ class Helper {
         return $iStatus ? "En cours de livraison" : "Commande livrée";
     }
 
+    static function getCancelled( $iStatus ) {
+        return $iStatus ? "Annulée" : "En cours";
+    }
+
     static function getActif( $iActif ) {
         return $iActif ? "Oui" : "Non";
     }
@@ -33,7 +37,7 @@ class Helper {
         $sPathDirectory = '/public/uploads/';
         $aFiles = [];
         $aErrors = [];
-        $aAllowedExts =  array('gif', 'png', 'jpg', 'jpeg');
+        $aAllowedExts =  array('gif', 'png', 'jpg', 'jpeg', 'ico');
 
         foreach ( $FILES as $sKey => $aFile ) {
             $sFileExt = pathinfo( $aFile['name'], PATHINFO_EXTENSION );

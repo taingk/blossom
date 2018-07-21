@@ -26,7 +26,7 @@ class UserController {
 
                 header('Location: /');
             } else {
-                echo "Identifiants invalides";
+                header('Location: /front/user?validity=false#error');
             }
         }
     }

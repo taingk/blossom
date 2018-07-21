@@ -3,7 +3,6 @@
         <h1 class="is-third-color">Commande référence : <?php echo $aOrders['tracking_number'] ?></h1>
         <hr>
 
-<?php print_r($aProducts) ?>
-
+        <?php $this->addModal( 'listing', $aConfigs, [], $aParams ) ?>
     </section>
 </section>

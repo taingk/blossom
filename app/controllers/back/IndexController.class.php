@@ -27,7 +27,7 @@ class IndexController {
 
                 header('Location: /back/dashboard');
             } else {
-                echo "Identifiants invalides";
+                header('Location: /back?validity=false#error');
             }
         }
     }

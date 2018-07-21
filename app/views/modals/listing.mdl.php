@@ -2,10 +2,12 @@
     <section class="col-xxs-12 mainView gutters margin-zero">
 
         <section class="small-bandeau row">
-            <form class="col-xxs-11" action="" method="POST">
+            
+            <?php echo !$aConfigs['search']['url'] ? '<form class="col-xxs-11" action="" method="POST">
                 <input class="is-third-color" id="search" name="search" type="text" />
                 <input class="default-button" data-icon="search" type="submit" value="" />
-            </form>
+            </form>': ''; ?>
+
             <?php echo $aConfigs['add']['url'] ? '<a class="col-xxs-1" href="' . $aConfigs['add']['url'] . '">
             <div class="inline" data-icon="add-1"></div>
             </a>': ''; ?>
@@ -35,15 +37,15 @@
                     endforeach;
                     if ( !$bOptions ): ?>
                         <td>
-                            <a href="<?php echo $aConfigs['update']['url'] . $aLists[ $aParams['id'] ] ?>">
-                                <div data-icon="settings-5" class="options" id="update-<?php echo $aLists[ $aParams['id'] ]?>"></div>
-                            </a>
+                            <?php echo $aConfigs['update']['url'] ? '<a class="col-xxs-1" href="' . $aConfigs['update']['url'] . $aLists[ $aParams['id'] ] . '">
+                                <div data-icon="settings-5" class="options" id="update-' . $aLists[ $aParams['id'] ] . '"></div>
+                            </a>': ''; ?>
 
                             <a href="<?php echo $aConfigs['delete']['url'] . $aLists[ $aParams['id'] ] ?>">
                                 <div data-icon="<?php if ( isset($aLists['is_use'] ) ) :
                                     echo $aLists['is_use'] === 'Oui' ? 'locked-4' : 'unlocked-1' ;
                                 else :
-                                    echo $aLists['status'] === 'Actif' || $aLists['status'] === 'En cours de livraison' ? 'locked-4' : 'unlocked-1' ;
+                                    echo $aLists['status'] === 'Actif' || $aLists['cancelled'] === 'En cours' ? 'locked-4' : 'unlocked-1' ;
                                 endif; ?>" class="options" id="lock-<?php echo $aLists[ $aParams['id'] ] ?>"></div>
                             </a>
                         </td>

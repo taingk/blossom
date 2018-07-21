@@ -4,6 +4,7 @@ class Orders extends BaseSql {
     protected $id_order = null;
     protected $tracking_number;
     protected $users_idusers;
+    protected $cancelled;
     protected $status;
 
     public function __construct() {
@@ -46,6 +47,19 @@ class Orders extends BaseSql {
     public function getUsersIdusers()
     {
         return $this->users_idusers;
+    }
+    /**
+     * @return mixed
+     */
+    public function getCancelled() {
+        return $this->cancelled;
+    }
+
+    /**
+     * @param mixed $cancelled
+     */
+    public function setCancelled( $cancelled ) {
+        $this->cancelled = $cancelled;
     }
 
     public function checkoutForm() {

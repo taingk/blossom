@@ -53,6 +53,10 @@ input:not([type='radio'])  {
     border-bottom: 1px solid var(--third-color);
 }
 
+input[type="file"] {
+    border: 0 !important;
+}
+
 input[type="submit"]:not([data-icon]) {
     border: 0;
     cursor: pointer;
