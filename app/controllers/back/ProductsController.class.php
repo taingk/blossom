@@ -180,16 +180,6 @@ class ProductsController {
             $oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
             $oProduct->save();
 
-
-            $capacityUpdate = new Capacities();
-            $capacityUpdate->setProductsIdProduct( $sId) ;
-            $aCapacityUpdate = $capacityUpdate->select( array('id_capacity') );
-            foreach( $aCapacityUpdate as $key => $value ) {
-                $capacityUpdate->setId($value['id_capacity']);
-                $capacityUpdate->setStatus(0);
-                //$capacityUpdate->save();
-            }
-
             $oGetColor = new Colors();
             $oGetColor->setProductsIdProduct( $sId) ;
             $oGetColor->setStatus(1);
@@ -209,83 +199,31 @@ class ProductsController {
             $oGetColor2->setProductsIdProduct( $sId) ;
             $oGetColor2->setStatus(0);
             $aGetColor2 = $oGetColor2->select( array('id_color','name', 'color_hexa') );
-            //print_r($aGetColor2[0]['name']);
 
             $aColorsExploded = [];
 
             foreach( $aColors as $key => $value ){
                 array_push($aColorsExploded, explode( ':', $value ));
-                //$aValue = explode( ':', $value );
-                $oColorInsert = new Colors();
-                //$oColorInsert->setName( $aValue[0] );
-                //$oColorInsert->setColorHexa( $aValue[1] );
-                $oColorInsert->setProductsIdProduct( $sId );
-                $oColorInsert->setstatus( 1 );
-                $aIDColor = $oColorInsert->select(array('id_color'));
-                //print_r($aIDColor);
-                //print_r($aValue[0]);
-                if(!$aIDColor) {
-                    $oColorInsert->setStatus('1');
-                   // $oColorInsert->save();
-                }
-
-                elseif($aIDColor){
-                    if(stripos($sColor, $aValue[0])) {
-                        //print_r($aValue[0]);
-                        $oColorUpdate = new Colors();
-                        $oColorUpdate->setName($aValue[0]);
-                        $oColorUpdate->setProductsIdProduct($sId);
-                        $oColorUpdate->setStatus('1');
-                        $aIdSelect = $oColorUpdate->select(array('id_color'));
-                        //print_r($aIdSelect);
-                        foreach ($aIdSelect as $key2 => $value2) {
-                            $oColorUpdate2 = new Colors();
-                            $oColorUpdate2->setId($value2['id_color']);
-                            $oColorUpdate2->setStatus(0);
-                            //$oColorUpdate2->save();
-                        }
-                        $oColorInsert->setName($aValue[0]);
-                        $oColorInsert->setColorHexa($aValue[1]);
-                        $oColorInsert->setProductsIdProduct($sId);
-                        $oColorInsert->setStatus('1');
-                        //$oColorInsert->save();
-
-                    }
-                }
-
             }
+
             print_r($aColorsExploded);
+            echo "<br>";
             print_r($aGetColor2);
             foreach($aGetColor2 as $key => $value) {
-                //print_r($value['name']);
-                //echo "<br>";
-                //print_r($value['color_hexa']);
-                //echo "<br>";
+                print_r($value['name']);
+                echo "<br>";
+                print_r($value['color_hexa']);
+                echo "<br>";
                 foreach($aColorsExploded as $key2 => $value2) {
 //                    if( $value['name'] != $value2[0] || $value['color_hexa'] != $value2[1] ) {
 //                        echo $value['name']." not equal ".$value2[0];
 //                        echo $value['color_hexa']." not equal ".$value2[1];
 //                    }
-                    print_r($value2[0]);
+                    //print_r($value2[0]);
                     echo "<br>";
-                    print_r($value2[1]);
+                    //print_r($value2[1]);
                     echo "<br>";
                 }
-
-            }
-
-            $sCapacity = $aParams['POST']['capacity'];
-            $aCapacities = explode(';',$sCapacity);
-
-            foreach( $aCapacities as $key => $value ) {
-
-                $aValue = explode( ':', $value );
-                $oCapacityInsert = new Capacities();
-                $oCapacityInsert->setCapacityNumber( $aValue[0] );
-                $oCapacityInsert->setAdditionalPrice( $aValue[1] );
-                $oCapacityInsert->setStatus(1);
-                $oCapacityInsert->setProductsIdProduct( $sId );
-                //$oCapacityInsert->save();
 
             }
 
@@ -323,6 +261,7 @@ class ProductsController {
         $this->aConfigs = $this->oProduct->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'max_quantity', 'description'));
         $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix','quantité','status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/products/update?id=');
+        $this->aConfigs['delete'] = array('url' => '/back/products/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/products/add');
 
         foreach ( $this->aConfigs as $sKey => &$aValue ) {
