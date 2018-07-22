@@ -60,3 +60,9 @@ hr {
     width: 100%;
     border-color: #B9B5B5;
 }
+
+.box {
+    border: 1px solid grey;
+    box-shadow: 3px 3px #B9B5B5;
+}
+

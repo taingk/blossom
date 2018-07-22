@@ -36,5 +36,19 @@
                 <option ><?php echo $results["capacity_number"]?> +<?php echo $results["additional_price"]?> €</option>
             <?php endforeach; ?>
         </select>
+        
+        <div class="box col-xxs-12">
+            <div class="col-xxs-12">
+                    <form action="/front/product/addComment?is=<?php echo $aConfigs[0]['products'][0]['id_product']?>" method='POST'>
+                        <input class="input is-third-color" placeholder="Ton commentaire" size="60" name="Comment">
+                        <input type="submit" value="Valider">
+                    </form>
+            </div>
 
+            <div class="col-xxs-12">
+                <?php foreach ($aConfigs[3]['comment'] as $results): ?>
+                    <p class="is-third-color text-is-left"><?php echo $results["comment"]?></p>
+                <?php endforeach; ?>
+            </div>
+        </div>
 </section>

@@ -13,6 +13,7 @@ class CategoryController {
         $sId = $aParams['GET']['is'];
         $oProduct->setCategoriesIdCategory($sId);
         $aResults = $oProduct->select();
+        
 
         $oCategory->setId($sId);
         $sCategoryName = $oCategory->select()[0]['category_name'];
