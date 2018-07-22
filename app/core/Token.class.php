@@ -65,8 +65,9 @@ class Token {
         $aSelects = $oUser->select( array('token', 'status') );
         $sDbToken = $aSelects[0]['token'];
         $sDbStatus = $aSelects[0]['status'];
+        $sDbRights = $aSelects[0]['rights'];
 
-        $bCheck = $sToken === $sDbToken && $sDbStatus == '1' ? true : false;
+        $bCheck = $sToken === $sDbToken && $sDbStatus == '1' && $sDbRights == '1' ? true : false;
 
         if ( $bCheck ) {
             $this->setTokenSession();

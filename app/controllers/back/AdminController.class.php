@@ -37,6 +37,7 @@ class AdminController {
                 $oUser->setEmail($aParams['POST']['email']);
                 $oUser->setPwd($aParams['POST']['pwd']);
                 $oUser->setToken($oToken->getToken());
+                $oUser->setRights(1);
                 $oUser->setStatus(0);
                 $oUser->save();
     

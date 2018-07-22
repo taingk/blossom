@@ -49,7 +49,7 @@ class UserController {
         // }
 
 
-        $aConfigs = $oUser->userFormAdd();
+        $aConfigs = $oUser->userForm();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
@@ -70,6 +70,7 @@ class UserController {
                 $oUser->setCity($aParams['POST']['city']);
                 $oUser->setPwd($aParams['POST']['pwd']);
                 $oUser->setToken($oToken->getToken());
+                $oUser->setRights(0);
                 $oUser->setStatus(0);
                 $oUser->save();
 

@@ -365,6 +365,7 @@ CREATE TABLE `users` (
   `city` varchar(255) DEFAULT NULL,
   `pwd` char(60) NOT NULL,
   `token` char(32) NOT NULL,
+  `rights` tinyint(4) NOT NULL DEFAULT '0',
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,

@@ -145,14 +145,20 @@ class BaseSql {
         return $this->unsetIntegerColumns( $aResults );
     }
 
-    public function isLoginValids($sEmail, $sPwd) {
-        $sQuery = "SELECT pwd, status FROM " . $this->sTable . " WHERE email = :email";
+    public function isLoginValids($sEmail, $sPwd, $bAdmin = false) {
+        $sQuery = "SELECT pwd, status, rights FROM " . $this->sTable . " WHERE email = :email";
         $oRequest = $this->oPdo->prepare($sQuery);
         $oRequest->execute(array(':email' => $sEmail));
 
         if ( $aResults = $oRequest->fetch() ) {
-            if ( password_verify( $sPwd, $aResults['pwd'] ) && $aResults['status'] ) {
-                return 1;
+            if ( $bAdmin ) {
+                if ( password_verify( $sPwd, $aResults['pwd'] ) && $aResults['status'] && $aResults['rights'] ) {
+                    return 1;
+                }
+            } else {
+                if ( password_verify( $sPwd, $aResults['pwd'] ) && $aResults['status'] ) {
+                    return 1;
+                }
             }
         }
 

@@ -55,7 +55,7 @@
         <hr>
         <p class="col-xxs-12 is-third-color text-is-left margin-zero">Ville : <strong><?php echo $aUsers['city'] ? $aUsers['city'] : "<em class='is-third-color'>Non définie</em>" ?></strong></p>
         <hr>
-        <a href="/back/users/update?id=<?php echo $_SESSION['user_id'] ?>" class="col-xxs-12 col-md-6 bg-is-main-color default-button is-h-centered" style="padding: 15px">
+        <a href="/front/user/profile" class="col-xxs-12 col-md-6 bg-is-main-color default-button is-h-centered" style="padding: 15px">
             <strong><em>Définir son adresse de livraison</em></strong>
         </a>
     </section>

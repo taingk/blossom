@@ -37,20 +37,31 @@ class ProductController {
         $aCapacities = ['capacities' => $aResultCapacity];
         array_push($aConfigs, $aCapacities );
 
-        $aImages = ['products' => $aResultImages];
+        $aImages = ['images' => $aResultImages];
         array_push($aConfigs, $aImages );
 
-        print_r($aConfigs);
         $oView->assign('aConfigs', $aConfigs);
-    }
-
-    public function allAction($aParams) {
-
     }
 
     public function addAction($aParams) {
         $sId = $aParams['GET']['is'];
-        if ( !empty( $aParams['POST'] ) && !empty($_SESSION['id_user'])) {
+
+        $oProduct = new Products();
+        $oProduct->setId($sId);
+        $aProduct = $oProduct->select()[0];
+        $iQuantity = $aProduct['quantity'];
+
+        if ( $iQuantity <= 0 ) {
+            header('location: /front/product?is=' . $sId . '&validity=false#error');
+            return;
+        }
+
+        if ( empty($_SESSION['id_user']) ) {
+            header('location: /front/product?is=' . $sId . '&connection=false#error');
+            return;
+        }
+
+        if ( !empty( $aParams['POST'] ) ) {
             $oColor = new Colors();
             $oColor->setProductsIdProduct( $sId );
             $oColor->setName( $aParams['POST']['color'] );
@@ -79,13 +90,9 @@ class ProductController {
             $oProduct->setQuantity( $iNewQuantity );
             $oProduct->save();
 
-
             header('location: /front/product?is='.$sId );
             return;
-
         }
-
-        //$oView = new View("products", "front");
     }
 
     /*

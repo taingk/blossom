@@ -51,7 +51,7 @@ class UsersController {
     * Formulaire d'ajout utilisateur 
     */ 
     public function addAction( $aParams ) {
-        $this->aConfigs = $this->oUser->userFormAdd("Ajouter un utilisateur");
+        $this->aConfigs = $this->oUser->addUserForm("Ajouter un utilisateur");
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
@@ -69,6 +69,10 @@ class UsersController {
                 $this->oUser->setEmail($aParams['POST']['email']);
                 $this->oUser->setPwd($aParams['POST']['pwd']);
                 $this->oUser->setToken($oToken->getToken());
+                $this->oUser->setAddress($aParams['POST']['address']);
+                $this->oUser->setCity($aParams['POST']['city']);
+                $this->oUser->setZipCode($aParams['POST']['postal']);
+                $this->oUser->setRights($aParams['POST']['rights']);
                 $this->oUser->setStatus(0);
                 $this->oUser->save();
     
@@ -87,7 +91,7 @@ class UsersController {
     * Update d'un utilisateur en bdd 
     */ 
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oUser->userFormUpdate();
+        $this->aConfigs = $this->oUser->updateUserForm();
         $aErrors = [];
         $sId = $aParams['GET']['id'];
 
@@ -127,6 +131,7 @@ class UsersController {
                 $this->oUser->setAddress($aParams['POST']['address']);
                 $this->oUser->setCity($aParams['POST']['city']);
                 $this->oUser->setZipCode($aParams['POST']['postal']);
+                $this->oUser->setRights($aParams['POST']['rights']);
                 $this->oUser->save();
 
                 header('location: /back/users');
@@ -183,7 +188,7 @@ class UsersController {
 
     public function refactorConfigs() {
         $this->aConfigs = $this->oUser->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'token', 'pwd'));
-        $this->aConfigs['label'] = array('id', 'prénom', 'nom', 'genre', 'âge', 'email', 'adresse', 'postal', 'ville', 'status', 'options');
+        $this->aConfigs['label'] = array('id', 'prénom', 'nom', 'genre', 'âge', 'email', 'adresse', 'postal', 'ville', 'droits', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/users/update?id=');
         $this->aConfigs['delete'] = array('url' => '/back/users/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/users/add');
@@ -195,6 +200,9 @@ class UsersController {
                 }
                 if ( $sKey === 'sexe' ) {
                     $aValue[$sKey] = Helper::getSexe($aValue[$sKey]);
+                }
+                if ( $sKey === 'rights' ) {
+                    $aValue[$sKey] = Helper::getRights($aValue[$sKey]);
                 }
                 if ( $sKey === 'status' ) {
                     $aValue[$sKey] = Helper::getStatus($aValue[$sKey]);
