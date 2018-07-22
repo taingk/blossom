@@ -36,7 +36,7 @@
         </li>
         <?php if( !empty( $_SESSION )): ?>
             <li class="col-xxs-1">
-                <a href="">
+                <a href="/front/user/profile">
                     Bienvenue, 
                     <?php
                         $oUsers = new Users();

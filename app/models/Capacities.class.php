@@ -61,6 +61,30 @@ class Capacities extends BaseSql {
     {
         return $this->additional_price;
     }
+
+    public function capacityForm($sTitle = "", $aProducts) {
+        return [
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer une capacité de stockage", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
+            "input" => [
+                "product" =>       [
+                    "title" => "Produit",
+                    "type" => "select",
+                    "options" => $aProducts,
+                    "required" => true,
+                ],
+                "capacity_number" =>      [
+                    "title" => "Nombre de stockage en gigaoctet",
+                    "type" => "number",
+                    "placeholder" => "64"
+                ],
+                "additional_price" =>      [
+                    "title" => "Prix additionnel en euro",
+                    "type" => "number",
+                    "placeholder" => "50"
+                ],
+            ]
+        ];
+    }
 }
 
 ?>
