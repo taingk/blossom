@@ -73,7 +73,7 @@ class Images extends BaseSql {
                     "options" => $aProducts,
                     "required" => true,
                 ],
-                "name" =>       [
+                "image_name" =>       [
                     "title" => "Nom de votre image",
                     "type" => "text",
                     "required" => true,

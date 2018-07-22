@@ -110,15 +110,15 @@ class ImagesController {
         }
 
         if ( !empty( $aParams['POST'] ) ) {
-            $this->oImage = new Colors();
+            $this->oImage = new Images();
             $aFiles = Helper::uploadFiles($_FILES);
 
             foreach ( $aFiles['success'] as $aFile ) {
-                $this->oImage->setPath( $aFile['path'] );
+                $this->oImage->setPath( $aFiles['success']['path'] );
             }
 
             $this->oImage->setId( $sId );
-            $this->oImage->setImageName($aParams['POST']['name']);
+            $this->oImage->setImageName( $aParams['POST']['name'] );
             $this->oImage->setProductsIdProduct( $aParams['POST']['product'] );
             $this->oImage->setStatus(1);
             $this->oImage->save();
