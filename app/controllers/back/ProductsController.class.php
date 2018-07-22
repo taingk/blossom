@@ -1,12 +1,44 @@
 <?php
 
 class ProductsController {
+    private $oProduct;
+    private $aConfigs;
+
+    public function __construct() {
+        $this->oProduct = new Products();
+    }
 
     /*
     * View listing de produits
     */ 
     public function indexAction( $aParams ) {
-        $oView = new View("products", "back");
+        $oView = new View("listing", "back");
+
+        if ( !$aParams['POST']['search'] ) {
+            $this->listing();
+        } else {
+            $this->search( $aParams['POST']['search'] );
+        }
+
+        $this->refactorConfigs();
+        $oView->assign( "aConfigs", $this->aConfigs );
+        $oView->assign( "aParams", array('id' => 'id_product') );
+    }
+
+    /*
+    * Listes tous les produits
+    */
+
+    public function listing() {
+        $this->aConfigs = $this->oProduct->select();
+    }
+
+    /*
+    * On remplie aConfigs par la recherche
+    */
+    public function search( $sSearch ) {
+        $this->oProduct->setProductName( $sSearch );
+        $this->aConfigs = $this->oProduct->search();
     }
 
     /*
@@ -16,33 +48,101 @@ class ProductsController {
 
     }
 
+    public function allCategoriesAction( $iSelected = "" ) {
+        $oCategory = new Categories();
+        $aCategories = [];
+        $aSelects = $oCategory->select(array('id_category','category_name'));
+
+        foreach($aSelects as $key => $value) {
+            if ( $iSelected == $value['id_category'] ) {
+                array_push($aCategories, ['id' => $value['id_category'], 'name' => $value['category_name'], 'selected' => 'true' ]);
+            } else {
+                array_push($aCategories, ['id' => $value['id_category'], 'name' => $value['category_name']]);
+            }
+        }
+
+        return $aCategories;
+    }
+
     /*
     * Formulaire d'ajout de produit
-    */ 
+    */
     public function addAction( $aParams ) {
-        $oView = new View("productsAdd", "back");
-        $oProduct = new Products();
-        $oProduct->setProductName('iPhone 11');
-		$oProduct->setCategoriesIdCategory(1);
-		$oProduct->setDescription('test');
-		$oProduct->setPrice('150');
-        $oProduct->setRam("8");
-		$oProduct->setStatus(1);
-        $oProduct->save();
+        $this->aConfigs = $this->oProduct->productForm("Ajouter un nouveau produit", $this->allCategoriesAction());
+        $this->oCategory = new Categories();
+        $aIdCategory = $this->oCategory->select(array('id_category'));
+
+        if ( !empty( $aParams['POST']) && !empty($aIdCategory) ) {
+
+            $this->oProduct->setProductName( $aParams['POST']['product_name'] );
+            $this->oProduct->setCategoriesIdCategory( $aParams['POST']['category'] );
+            $this->oProduct->setDescription( $aParams['POST']['description'] );
+            $this->oProduct->setPrice( $aParams['POST']['price'] );
+            $this->oProduct->setStatus('1');
+            $this->oProduct->setQuantity( $aParams['POST']['quantity'] );
+            $this->oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
+            $this->oProduct->save();
+
+            header('location: /back/products');
+            return;
+        }
+
+        $oView = new View("editing", "back");
+        $oView->assign("aConfigs", $this->aConfigs);
     }
+
 
     /*
     * Formulaire d'édition d'un produit 
     */ 
-    public function updateAction( $aParams ) {
+    public function updateAction( $aParams ) {        
+        $sId = $aParams['GET']['id'];
+        $this->oProduct->setId( $sId );
+        $aInfosProduct = $this->oProduct->select()[0];
+        $this->aConfigs = $this->oProduct->productForm("Editer le produit", $this->allCategoriesAction($aInfosProduct['categories_idcategory']));
 
+        foreach ( $this->aConfigs['input'] as $sKey => &$aValue ) {
+            foreach ( $aInfosProduct as $sInfoKey => $sInfoValue ) {
+                if ( $sKey == $sInfoKey ) {
+                    $aValue['value'] = $sInfoValue;
+                }
+            }
+        }
+
+        if ( !empty( $aParams['POST'] ) ) {
+            $oProduct = new Products();
+
+            $oProduct->setId( $sId );
+            $oProduct->setProductName( $aParams['POST']['product_name'] );
+            $oProduct->setCategoriesIdCategory( $aParams['POST']['category'] );
+            $oProduct->setPrice( $aParams['POST']['price'] );
+            $oProduct->setDescription( $aParams['POST']['description'] );
+            $oProduct->setQuantity( $aParams['POST']['quantity'] );
+            $oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
+            $oProduct->save();
+
+            header('location: /back/products');
+            return;
+        }
+
+        $oView = new View("editing", "back");
+        $oView->assign("aConfigs", $this->aConfigs);
     }
 
     /*
     * Suppression d'un produit en bdd
     */ 
     public function deleteAction( $aParams ) {
+        if ($_GET['id']) {
+            $this->oProduct->setId($_GET['id']);
+            $sStatus = $this->oProduct->select(array('status'))[0]['status'];
 
+            $sStatus ? $this->oProduct->setStatus(0) : $this->oProduct->setStatus(1);
+            $this->oProduct->save();
+
+            header('location: /back/products');
+            return;
+        }
     }
     
     /*
@@ -51,20 +151,26 @@ class ProductsController {
     public function filterAction( $aParams ) {
 
     }
- 
-    /*
-    * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
-    */ 
-    public function searchAction( $aParams ) {
-        if ($_POST['search']) {
-            $oProduct = new Products(); 
-            $oProduct->setProductName($_POST['search']);
-            $oAllProducts = $oProduct->search();   
 
-            http_response_code(200);
-            echo json_encode($oAllProducts);
-        } else {
-            http_response_code(404);
+    public function refactorConfigs() {
+        $this->aConfigs = $this->oProduct->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'description'));
+        $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix','qté max', 'qté actuelle','status', 'options');
+        $this->aConfigs['update'] = array('url' => '/back/products/update?id=');
+        $this->aConfigs['delete'] = array('url' => '/back/products/delete?id=');
+        $this->aConfigs['add'] = array('url' => '/back/products/add');
+
+        foreach ( $this->aConfigs as $sKey => &$aValue ) {
+            foreach ( $aValue as $sKey => $sValue ) {
+                if ( $sKey === 'price' ) {
+                    $aValue[$sKey] = $sValue . '€';
+                }
+                if ( $sKey === 'status' ) {
+                    $aValue[$sKey] = Helper::getStatus($aValue[$sKey]);
+                }
+                if ( $aValue[$sKey] == '' ) {
+                    $aValue[$sKey] = 'Non renseigné';
+                }
+            }
         }
     }
 }

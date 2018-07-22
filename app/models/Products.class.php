@@ -6,29 +6,10 @@ class Products extends BaseSql {
     protected $categories_idcategory;
     protected $description;
     protected $price;
-    protected $ram;
     protected $status;
     protected $quantity;
-
-    /**
-     * @return mixed
-     */
-    public function getStatus() {
-        return $this->status;
-    }
-
-    public function getQuantity() {
-        return $this->quantity;
-    }
-
-
-    /**
-     * @param mixed $status
-     */
-    public function setStatus( $status ) {
-        $this->status = $status;
-    }
-
+    protected $max_quantity;
+  
     public function __construct() {
         // On instancie le parent 
         parent::__construct();
@@ -57,13 +38,20 @@ class Products extends BaseSql {
     public function setQuantity($quantity) {
         $this->quantity = trim($quantity);
     }
-
-    public function setRam($ram) {
-        $this->ram = trim($ram);
+  
+    public function getQuantity() {
+        return $this->quantity;
     }
 
+    public function setMaxQuantity($max_quantity) {
+        $this->max_quantity = trim($max_quantity);
+    }
+  
+    public function getMaxQuantity() {
+        return $this->max_quantity;
+    }
 
-    public function getIdProduct()
+    public function getId()
     {
         return $this->id_product;
     }
@@ -87,11 +75,59 @@ class Products extends BaseSql {
     {
         return $this->price;
     }
-
-    public function getRam()
-    {
-        return $this->ram;
+  
+    /**
+     * @param mixed $status
+     */
+    public function setStatus( $status ) {
+        $this->status = $status;
     }
-}
+    /**
+     * @return mixed
+     */
+    public function getStatus() {
+        return $this->status;
+    }
+  
+    public function productForm($sTitle = "", $aCategories) {
+        return [
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-5 row", "enctype" => "multipart/form-data", "pageTitle" => $sTitle],
+            "input" => [
+                "category" =>       [
+                    "title" => "Catégories",
+                    "type" => "select",
+                    "options" => $aCategories,
+                    "required" => true,
+                ],
+                "product_name" =>      [
+                    "title" => "Nom du produit",
+                    "type" => "text",
+                    "placeholder" => "Iphone X",
+                    "required" => true,
+                    "minString" => 2
+                ],
+                "description" =>    [
+                    "title" => "Description",
+                    "type" => "text",
+                    "placeholder" => "Description",
+                    "required" => true,
+                    "minString" => 2
+                ],
+                "price" =>        [
+                    "title" => "Prix en euro",
+                    "type" => "number",
+                    "placeholder" => "1000",
+                    "required" => true
+                ],
+                "quantity" =>      [
+                    "title" => "Quantité maximum du stock",
+                    "type" => "number",
+                    "placeholder" => "150",
+                    "required" => true
+                ],
+            ]
+        ];
+    }
 
+}
 ?>

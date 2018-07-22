@@ -2,6 +2,7 @@
 
 class Colors extends BaseSql {
     protected $id_color = null;
+    protected $name;
     protected $color_hexa;
     protected $products_idproduct;
 
@@ -42,6 +43,15 @@ class Colors extends BaseSql {
         return $this->id_color;
     }
 
+    public function setName($name) {
+        $this->name = trim($name);
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
     public function getColorHexa()
     {
         return $this->color_hexa;
@@ -51,5 +61,34 @@ class Colors extends BaseSql {
     {
         return $this->products_idproduct;
     }
+
+    public function colorForm($sTitle = "", $aProducts) {
+        return [
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer une couleur", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
+            "input" => [
+                "product" =>       [
+                    "title" => "Produit",
+                    "type" => "select",
+                    "options" => $aProducts,
+                    "required" => true,
+                ],
+                "name" =>      [
+                    "title" => "Nom du de la couleur",
+                    "type" => "text",
+                    "placeholder" => "Rouge",
+                    "required" => true,
+                    "minString" => 2
+                ],
+                "color_hexa" =>      [
+                    "title" => "Couleur en hexadécimale",
+                    "type" => "text",
+                    "placeholder" => "#FF0000",
+                    "required" => true,
+                    "minString" => 2
+                ],
+            ]
+        ];
+    }
+
 }
 ?>

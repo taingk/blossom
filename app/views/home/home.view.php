@@ -1,73 +1,73 @@
 <section id="mainPage">
     <section class="container">
-        <p class="bandeau is-font-title is-black text-is-centered"><span class="is-pink">Blossom </span>est un CMS qui vous permet de créer un site e-commerce pour la vente de téléphone.<br>Que vous soyez un particulier voulant lancer son site ou un professionnel, <span class="is-pink">Blossom </span>est fait pour vous !</p>
-        <h2 class="is-black text-is-centered">Six raisons d'utiliser <span class="is-pink">Blossom</span></h2>
+        <p class="bandeau is-font-title is-third-color text-is-centered"><span class="is-main-color">Blossom </span>est un CMS qui vous permet de créer un site e-commerce pour la vente de téléphone.<br>Que vous soyez un particulier voulant lancer son site ou un professionnel, <span class="is-main-color">Blossom </span>est fait pour vous !</p>
+        <h2 class="is-third-color text-is-centered">Six raisons d'utiliser <span class="is-main-color">Blossom</span></h2>
         <hr>
         <section class="col-xxs-12 row">
             <article class="col-xxs-12 col-xs-6 col-md-4">
                 <div class="feature-content">
                     <figure>
                         <img src="/public/img/brushIcon.png" class="feature-img" alt=".." title="...">
-                        <figcaption><h2 class="is-black">Personnalisable</h2></figcaption>
+                        <figcaption><h2 class="is-third-color">Personnalisable</h2></figcaption>
                     </figure>
                     <hr>
-                    <p class="is-black text-is-justified">Beaucoup de designs et de couleurs disponibles. Vous pourrez modifier votre site à votre guise.</p>
+                    <p class="is-third-color text-is-justified">Beaucoup de designs et de couleurs disponibles. Vous pourrez modifier votre site à votre guise.</p>
                 </div>
             </article>
             <article class="col-xxs-12 col-xs-6 col-md-4">
                 <div class="feature-content">
                     <figure>
                         <img src="/public/img/securityIcon.png" class="feature-img" alt=".." title="...">
-                        <figcaption><h2 class="is-black">Fiable</h2></figcaption>
+                        <figcaption><h2 class="is-third-color">Fiable</h2></figcaption>
                     </figure>
                     <hr>
-                    <p class="is-black text-is-justified">Plus de soucis avec notre CMS, nous vous garantissons une sécurité optimale.</p>
+                    <p class="is-third-color text-is-justified">Plus de soucis avec notre CMS, nous vous garantissons une sécurité optimale.</p>
                 </div>
             </article>
             <article class="col-xxs-12 col-xs-6 col-md-4">
                 <div class="feature-content">
                     <figure>
                         <img src="/public/img/perfIcon.png" class="feature-img" alt=".." title="...">
-                        <figcaption><h2 class="is-black">Performant</h2></figcaption>
+                        <figcaption><h2 class="is-third-color">Performant</h2></figcaption>
                     </figure>
                     <hr>
-                    <p class="is-black text-is-justified">Notre CMS vous garanti performances et stabilité. Il vous permet de faire des multitudes d'études afin d'augmenter vos bénéfices.</p>
+                    <p class="is-third-color text-is-justified">Notre CMS vous garanti performances et stabilité. Il vous permet de faire des multitudes d'études afin d'augmenter vos bénéfices.</p>
                 </div>
             </article>                
             <article class="col-xxs-12 col-xs-6 col-md-4">
                 <div class="feature-content">
                     <figure>
                         <img src="/public/img/thumbUpIcon.png" class="feature-img" alt=".." title="...">
-                        <figcaption><h2 class="is-black">Agréable</h2></figcaption>
+                        <figcaption><h2 class="is-third-color">Agréable</h2></figcaption>
                     </figure>                
                     <hr>
-                    <p class="is-black text-is-justified">Nous avons réalisés un CMS user-friendly afin que la prise en main soit intuitive.</p>
+                    <p class="is-third-color text-is-justified">Nous avons réalisés un CMS user-friendly afin que la prise en main soit intuitive.</p>
                 </div>
             </article>
             <article class="col-xxs-12 col-xs-6 col-md-4">
                 <div class="feature-content">
                     <figure>
                         <img src="/public/img/mouseIcon.png" class="feature-img" alt=".." title="...">
-                        <figcaption><h2 class="is-black">Pratique</h2></figcaption>
+                        <figcaption><h2 class="is-third-color">Pratique</h2></figcaption>
                     </figure>
                     <hr>
-                    <p class="is-black text-is-justified">Notre CMS promet rapidité et efficacité. Tout sera à porter de main et ce, très facilement.</p>
+                    <p class="is-third-color text-is-justified">Notre CMS promet rapidité et efficacité. Tout sera à porter de main et ce, très facilement.</p>
                 </div>
             </article>
             <article class="col-xxs-12 col-xs-6 col-md-4">
                 <div class="feature-content">
                     <figure>
                         <img src="/public/img/phoneIcon.png" class="feature-img" alt=".." title="...">
-                        <figcaption><h2 class="is-black">Mobile</h2></figcaption>
+                        <figcaption><h2 class="is-third-color">Mobile</h2></figcaption>
                     </figure>            
                     <hr>
-                    <p class="is-black text-is-justified">Développé en mobile-first, notre CMS permet à votre site d'être adapté à toutes plateformes.</p>
+                    <p class="is-third-color text-is-justified">Développé en mobile-first, notre CMS permet à votre site d'être adapté à toutes plateformes.</p>
                 </div>
             </article>
         </section>
     </section>
 
-    <section class="bg-is-pink">
+    <section class="bg-is-main-color">
         <section class="container">
             <h2 class="text-is-centered">Comment fonctionne notre solution?</h2>
             <hr>
@@ -91,24 +91,24 @@
     </section>
 
     <section class="container">
-        <h2 class="is-black text-is-centered">Au juste, que propose <span class="is-pink">Blossom</span>?</h2>
+        <h2 class="is-third-color text-is-centered">Au juste, que propose <span class="is-main-color">Blossom</span>?</h2>
         <hr>
         <article class="col-xxs-10 row is-h-centered row">
             <article class="col-xxs-12 col-sm-6 gutters">
-                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
-                <p class="is-black">Lorem</p>
+                <h4 class="is-third-color">Créez votre propre marque de téléphone</h4>
+                <p class="is-third-color">Lorem</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters">
-                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
-                <p class="is-black">Lorem</p>
+                <h4 class="is-third-color">Créez votre propre marque de téléphone</h4>
+                <p class="is-third-color">Lorem</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters">
-                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
-                <p class="is-black">Lorem</p>
+                <h4 class="is-third-color">Créez votre propre marque de téléphone</h4>
+                <p class="is-third-color">Lorem</p>
             </article>
             <article class="col-xxs-12 col-sm-6 gutters">
-                <h4 class="is-black">Créez votre propre marque de téléphone</h4>
-                <p class="is-black">Lorem</p>
+                <h4 class="is-third-color">Créez votre propre marque de téléphone</h4>
+                <p class="is-third-color">Lorem</p>
             </article>
         </article>
     </section>

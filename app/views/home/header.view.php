@@ -1,11 +1,11 @@
-<nav class="headerBar position-is-fixed bg-is-pink">
+<nav class="headerBar position-is-fixed bg-is-main-color">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
         <span class="navicon"></span>
     </label>
-    <ul class="menu bg-is-pink" style="padding: 0;">
+    <ul class="menu bg-is-main-color" style="padding: 0;">
         <section class="container row center-in-row">
-            <li class="col-xxs-2">
+            <li class="col-xxs-2" id="logo">
                 <a href="#">
                     <img src="/public/img/logo_blanc.png" alt="brand logo" id="brand-logo">
                 </a>

@@ -19,11 +19,11 @@ class AdminController {
             return;
         }
 
-		$aConfig = $oUser->adminFormAdd();
+		$aConfigs = $oUser->adminFormAdd();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
-            $aErrors = Validator::checkForm( $aConfig, $aParams["POST"] );
+            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"] );
 
 			if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
@@ -37,6 +37,7 @@ class AdminController {
                 $oUser->setEmail($aParams['POST']['email']);
                 $oUser->setPwd($aParams['POST']['pwd']);
                 $oUser->setToken($oToken->getToken());
+                $oUser->setRights(1);
                 $oUser->setStatus(0);
                 $oUser->save();
     
@@ -50,7 +51,7 @@ class AdminController {
 
         $oView = new View("adminAdd", "auth");
 
-        $oView->assign("aConfig", $aConfig);
+        $oView->assign("aConfigs", $aConfigs);
 		$oView->assign("aErrors", $aErrors);
     }
 

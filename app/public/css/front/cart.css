@@ -1,54 +1,11 @@
 th,
 strong {
-    color: black;
+    color: var(--third-color);
 }
 
-.mainView {
-    background-color: white;
-    height: 100%;
-    margin-top: 5%;
-    margin-bottom: 3%;
-}
-
-main,
-body {
-    background-color: #F1F1F1;
-}
-
-h1 {
-    color: #4A4A4A;
-}
-
-hr {
-    height: 1px;
-    width: 100%;
-    border-color: #B9B5B5;
-}
-
-.PanierImg {
-    width: 121px;
-    height: 121px;
-}
-
-.captionProduct {
+.text-left {
     text-align: left;
     line-height: 0px;
-}
-
-.btnPayer {
-    background: #D8475D;
-    color: #F1F1F1;
-    width: 150px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 110%;
-    padding-left: 15px;
-    margin-right: 5%;
-}
-
-.btn {
-    padding: 30px;
 }
 
 th {
@@ -82,21 +39,8 @@ only screen and (max-width: 760px),
         width: 0px;
     }
 
-    .text-left {
-        text-align: right;
-    }
-
     .responsive-center {
         text-align: center;
-    }
-
-    .left{
-        float:none;
-        text-align: right;
-    }
-
-    p {
-        padding: 5px;
     }
 
     .mainView {

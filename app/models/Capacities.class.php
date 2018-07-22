@@ -34,8 +34,8 @@ class Capacities extends BaseSql {
         $this->capacity_number = trim($capacity_number);
     }
 
-    public function setProductsIdProduct($products_id_product) {
-        $this->products_id_product = trim($products_id_product);
+    public function setProductsIdProduct($products_idproduct) {
+        $this->products_idproduct = trim($products_idproduct);
     }
 
     public function setAdditionalPrice($additional_price) {
@@ -60,6 +60,30 @@ class Capacities extends BaseSql {
     public function getAdditionalPrice()
     {
         return $this->additional_price;
+    }
+
+    public function capacityForm($sTitle = "", $aProducts) {
+        return [
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer une capacité de stockage", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
+            "input" => [
+                "product" =>       [
+                    "title" => "Produit",
+                    "type" => "select",
+                    "options" => $aProducts,
+                    "required" => true,
+                ],
+                "capacity_number" =>      [
+                    "title" => "Nombre de stockage en gigaoctet",
+                    "type" => "number",
+                    "placeholder" => "64"
+                ],
+                "additional_price" =>      [
+                    "title" => "Prix additionnel en euro",
+                    "type" => "number",
+                    "placeholder" => "50"
+                ],
+            ]
+        ];
     }
 }
 

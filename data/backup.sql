@@ -24,14 +24,16 @@ DROP TABLE IF EXISTS `capacities`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `capacities` (
   `id_capacity` int(11) NOT NULL AUTO_INCREMENT,
-  `capacity_number` int(11) DEFAULT NULL,
-  `products_idproduct` int(11) NOT NULL,
+  `capacity_number` int(11) NOT NULL,
   `additional_price` float DEFAULT NULL,
+  `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_capacity`),
   KEY `fk_capacities_products1_idx` (`products_idproduct`),
   CONSTRAINT `fk_capacities_products1` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,22 +45,84 @@ LOCK TABLES `capacities` WRITE;
 /*!40000 ALTER TABLE `capacities` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `sites`;
+
+CREATE TABLE `sites`
+(
+  id_site int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  logo varchar(255),
+  favicon varchar(255),
+  main_color varchar(255),
+  secondary_color varchar(255),
+  third_color varchar(255),
+  background_color varchar(255),
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `homepages`;
 
 CREATE TABLE `homepages`
 (
-    id_homepage int PRIMARY KEY AUTO_INCREMENT,
-    type varchar(255),
-    name varchar(255),
-    title_page varchar(255),
-    description_page varchar(255),
-    banner varchar(255),
-    left_image varchar(255),
-    right_image varchar(255),
-    bottom_banner varchar(255),
-    is_use tinyint(4) NOT NULL,
-    status tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  id_homepage int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  description_top_banner varchar(255),
+  description_images varchar(255),
+  description_bottom_banner varchar(255),
+  banner varchar(255),
+  left_image varchar(255),
+  right_image varchar(255),
+  bottom_banner varchar(255),
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `legalnotices`;
+
+CREATE TABLE `legalnotices`
+(
+  id_legalnotice int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  title varchar(255),
+  details TEXT,
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `cgvs`;
+
+CREATE TABLE `cgvs`
+(
+  id_cgv int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  title varchar(255),
+  details TEXT,
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `contacts`;
+
+CREATE TABLE `contacts`
+(
+  id_contact int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  title varchar(255),
+  details TEXT,
+  is_use tinyint(4) NOT NULL,
+  status tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Table structure for table `carts`
@@ -68,13 +132,16 @@ DROP TABLE IF EXISTS `carts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carts` (
-  `id_cart` int(11) NOT NULL,
+  `id_cart` int(11) NOT NULL AUTO_INCREMENT,
   `capacities_id_capacity` int(11) NOT NULL,
   `products_id_product` int(11) NOT NULL,
   `colors_id_color` int(11) NOT NULL,
+  `orders_id_order` int(11) DEFAULT NULL,
   `users_id_user` int(11) NOT NULL,
-  `orders_id_order` int(11) NOT NULL,
+  `cancelled` tinyint(4) NOT NULL DEFAULT '0',
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_cart`),
   KEY `fk_Cart_capacities1` (`capacities_id_capacity`),
   KEY `fk_Cart_products1` (`products_id_product`),
@@ -86,7 +153,7 @@ CREATE TABLE `carts` (
   CONSTRAINT `fk_Cart_products1` FOREIGN KEY (`products_id_product`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Cart_users1` FOREIGN KEY (`users_id_user`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_carts_orders1` FOREIGN KEY (`orders_id_order`) REFERENCES `orders` (`id_order`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,10 +174,12 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(30) DEFAULT NULL,
+  `category_name` varchar(30) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,13 +200,16 @@ DROP TABLE IF EXISTS `colors`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL AUTO_INCREMENT,
-  `color_hexa` varchar(35) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `color_hexa` varchar(35) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_color`),
   KEY `fk_colors_products1_idx` (`products_idproduct`),
   CONSTRAINT `fk_colors_products1` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,12 +234,14 @@ CREATE TABLE `comments` (
   `users_idusers` int(11) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_comment`),
   KEY `fk_comments_users1_idx` (`users_idusers`),
   KEY `fk_comments_products1_idx` (`products_idproduct`),
   CONSTRAINT `fk_comments_products1` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_comments_users1` FOREIGN KEY (`users_idusers`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,14 +262,16 @@ DROP TABLE IF EXISTS `images`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `images` (
   `id_image` int(11) NOT NULL AUTO_INCREMENT,
-  `image_name` varchar(75) DEFAULT NULL,
+  `image_name` varchar(75) NOT NULL,
   `path` varchar(255) NOT NULL,
   `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_image`),
   KEY `fk_images_products_idx` (`products_idproduct`),
   CONSTRAINT `fk_images_products` FOREIGN KEY (`products_idproduct`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,13 +292,16 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
-  `tracking_number` varchar(15) DEFAULT NULL,
+  `tracking_number` varchar(15) NOT NULL,
   `users_idusers` int(11) NOT NULL,
+  `cancelled` tinyint(4) NOT NULL DEFAULT '0',
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_order`),
   KEY `fk_orders_users1_idx` (`users_idusers`),
   CONSTRAINT `fk_orders_users1` FOREIGN KEY (`users_idusers`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,16 +322,19 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(60) DEFAULT NULL,
+  `product_name` varchar(60) NOT NULL,
   `categories_idcategory` int(11) NOT NULL,
   `description` longtext,
   `price` float DEFAULT NULL,
-  `ram` varchar(20) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `max_quantity` int(11) DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_product`),
   KEY `fk_products_categories1_idx` (`categories_idcategory`),
   CONSTRAINT `fk_products_categories1` FOREIGN KEY (`categories_idcategory`) REFERENCES `categories` (`id_category`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -275,19 +357,22 @@ CREATE TABLE `users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
-  `sexe` tinyint(1) DEFAULT NULL,
-  `birthday_date` date DEFAULT NULL,
+  `sexe` tinyint(1) NOT NULL,
+  `birthday_date` date NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
   `zip_code` int(5) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `pwd` char(60) NOT NULL,
   `token` char(32) NOT NULL,
+  `rights` tinyint(4) NOT NULL DEFAULT '0',
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+ALTER TABLE users AUTO_INCREMENT = 1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

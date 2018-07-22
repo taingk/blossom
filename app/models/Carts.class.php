@@ -7,6 +7,7 @@ class Carts extends BaseSql {
     protected $colors_id_color;
     protected $users_id_user;
     protected $orders_id_order;
+    protected $cancelled;
     protected $status;
 
     public function __construct() {
@@ -18,6 +19,19 @@ class Carts extends BaseSql {
         $this->id_cart = trim($id);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCancelled() {
+        return $this->cancelled;
+    }
+
+    /**
+     * @param mixed $cancelled
+     */
+    public function setCancelled( $cancelled ) {
+        $this->cancelled = $cancelled;
+    }
     /**
      * @return mixed
      */

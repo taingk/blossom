@@ -18,17 +18,30 @@ class SideMenu {
                     "title" => "Tableau de bord",
                     "icon" => "controls"
                 ],
-                "pages" =>       [
-                    "title" => "Pages",
-                    "icon" => "notepad-2"
+                "#custom" =>       [
+                    "title" => "Personnalisations",
+                    "icon" => "notepad-2",
+                    "children" => [
+                        "sites" => "Identité du site",
+                        "homepages" => "Pages d'accueil",
+                        "contacts" => "Pages de contact",
+                        "legalnotices" => "Mentions légales",
+                        "cgvs" => "Conditions générales de vente"
+                    ]
                 ],
                 "categories" =>           [
                     "title" => "Categories",
                     "icon" => "folder-7"
                 ],
-                "products" =>        [
+                "#products" =>        [
                     "title" => "Produits",
-                    "icon" => "smartphone-1"
+                    "icon" => "smartphone-1",
+                    "children" => [
+                        "products" => "Ajouter un produit",
+                        "colors" => "Ajouter une couleur",
+                        "capacities" => "Ajouter une capacité de stockage",
+                        "images" => "Ajouter une image",
+                    ]
                 ],
                 "comments" =>  [
                     "title" => "Commentaires",
@@ -37,6 +50,10 @@ class SideMenu {
                 "users" =>          [
                     "title" => "Utilisateurs",
                     "icon" => "users-1"
+                ],
+                "orders" =>          [
+                    "title" => "Commandes",
+                    "icon" => "note"
                 ],
                 "logout" =>            [
                     "title" => "Déconnexion",

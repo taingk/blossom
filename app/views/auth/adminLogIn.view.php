@@ -1,14 +1,16 @@
-<section class="container">
-    <h1>Connexion administrateur</h1>
+<section class="row gutters container">
     
-    <form class="form col-md-10" action="" method="post">
+    <section class="col-xxs-12 mainView gutters">
+        <h1 class="is-third-color">Connexion administrateur</h1>
+        <hr>
 
-        <label><p>E-mail
-        <input type="text" name="email" placeholder="exemple@email.com" /></p></label>
+        <?php echo $_GET['validity'] ? '
+        <section id="error" class="col-xxs-12 mainView gutters bg-is-main-color" style="margin-top: 0;">
+            <h3 class="is-secondary-color">Identifiants invalides</h3>
+        </section>
+        ' : '' ; ?>
 
-        <label><p>Mot de passe
-        <input type="password" name="pwd" /></p></label>
-
-        <p><input type="submit" value="Confirmer" /></p>
-    </form>
+        <?php $this->addModal( "form", $aConfigs ) ?>
+    </section>
+        
 </section>

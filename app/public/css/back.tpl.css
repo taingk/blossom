@@ -1,16 +1,150 @@
-main {
-    background: #F1F1F1;
-}
-
-.viewContent {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    box-shadow: 1px 1px 12px #555;
-    height: 100%;
-}
-
 .headNav {
     margin: auto 30px auto calc(2/11*100%);
     width: 100%;
+}
+
+.backMenu {
+    list-style: none;
+    padding: 0;
+    background-color: var(--secondary-color);
+    margin: 0;
+}
+
+.profile-picture {
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    border: 2px solid var(--secondary-color);
+    line-height: 80px;
+    font-size: 35px;
+}
+
+.banner {
+    height: 220px;
+    background: linear-gradient( rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url('/public/img/banner.jpg');
+}
+
+.backMenuLink a:last-child {
+    color: #444444;
+    padding: 0 20px;
+}
+
+.backMenuLink {
+    padding: 8%;
+}
+
+.backLeftMenu {
+    margin-top: -75px;
+    background-color: var(--secondary-color);
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.invisible {
+    animation: fadeOut 1s;
+    visibility: hidden;
+}
+
+.visible {
+    animation: fadeIn 1s;
+}
+
+
+@media (max-width: 975px) {
+    #toggleMenu {
+        display: block;
+        float: right;
+    }
+
+    .backLeftMenu {
+        position: fixed;
+        height: 100%;
+        max-width: calc(5/12*100%);
+        flex: 0 0 calc(5/12*100%);
+    }
+
+    #backView {
+        max-width: calc(12/12*100%);
+        flex: 0 0 calc(12/12*100%);
+    }
+
+}
+
+@media (max-width: 1429px) {
+    .backMenuLink a:last-child {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1335px) {
+    .backMenuLink a:last-child {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1224px) {
+    .backMenuLink a:last-child {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 1114px) {
+    .backMenuLink a:last-child {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 1007px) {
+    .backMenuLink a:last-child {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 975px) {
+    .backMenuLink a:last-child {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 571px) {
+    .backMenuLink a:last-child.is-v-centered {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 534px) {
+    .backMenuLink a:first-child {
+        margin: 0 auto;
+    }
+
+    .backMenuLink a:last-child.is-v-centered {
+        display: none;
+    }
+}
+
+.submenu {
+    display: none;
+}
+
+.submenu li a {
+    font-size: 14px;
 }

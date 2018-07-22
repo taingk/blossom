@@ -3,9 +3,9 @@
 class Homepages extends BaseSql {
     protected $id_homepage = null;
     protected $name;
-    protected $type;
-    protected $title_page;
-    protected $description_page;
+    protected $description_top_banner;
+    protected $description_images;
+    protected $description_bottom_banner;
     protected $banner;
     protected $left_image;
     protected $right_image;
@@ -16,22 +16,6 @@ class Homepages extends BaseSql {
     public function __construct() {
         // On instancie le parent
         parent::__construct();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param mixed $type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
     }
 
     /**
@@ -89,51 +73,51 @@ class Homepages extends BaseSql {
     }
 
     /**
-     * @return null
+     * @return mixed
      */
-    public function getIdHomepage()
+    public function getDescriptionTopBanner()
     {
-        return $this->id_homepage;
+        return $this->description_top_banner;
     }
 
     /**
-     * @param null $id_homepage
+     * @param mixed $description_top_banner
      */
-    public function setIdHomepage($id_homepage)
+    public function setDescriptionTopBanner($description_top_banner)
     {
-        $this->id_homepage = $id_homepage;
+        $this->description_top_banner = $description_top_banner;
     }
 
     /**
      * @return mixed
      */
-    public function getTitlePage()
+    public function getDescriptionImages()
     {
-        return $this->title_page;
+        return $this->description_images;
     }
 
     /**
-     * @param mixed $title_page
+     * @param mixed $description_top_banner
      */
-    public function setTitlePage($title_page)
+    public function setDescriptionImages($description_images)
     {
-        $this->title_page = $title_page;
+        $this->description_images = $description_images;
     }
 
     /**
      * @return mixed
      */
-    public function getDescriptionPage()
+    public function getDescriptionBottomBanner()
     {
-        return $this->description_page;
+        return $this->description_bottom_banner;
     }
 
     /**
-     * @param mixed $description_page
+     * @param mixed $description_bottom_banner
      */
-    public function setDescriptionPage($description_page)
+    public function setDescriptionBottomBanner($description_bottom_banner)
     {
-        $this->description_page = $description_page;
+        $this->description_bottom_banner = $description_bottom_banner;
     }
 
     /**
@@ -200,28 +184,33 @@ class Homepages extends BaseSql {
         $this->bottom_banner = $bottom_banner;
     }
 
-    public function editorForm()
+    public function homePageForm($sTitle = "")
     {
         return [
-            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-4", "enctype" => "multipart/form-data", "submit" => "Enregistrer une page d'accueil", "pageTitle" => "Ajouter une nouvelle page d'accueil"],
+            "config" => ["method" => "POST", "action" => "", "class" => "form col-md-5 row", "enctype" => "multipart/form-data", "submit" => "Enregistrer une page d'accueil", "pageTitle" => $sTitle],
             "input" => [
                 "name" => [
-                    "title" => "Nom de la page",
+                    "title" => "Nom de la page à créer",
                     "type" => "text",
                     "placeholder" => "Ajouter un nom",
                 ],
-                "title_page" => [
-                    "title" => "Phrase d'accroche",
+                "description_top_banner" => [
+                    "title" => "Titre pour la bannière du haut",
                     "type" => "text",
                     "placeholder" => "Ajouter un titre",
                 ],
-                "description_page" => [
-                    "title" => "Description du site",
+                "description_images" => [
+                    "title" => "Titre pour les deux images",
+                    "type" => "text",
+                    "placeholder" => "Ajouter une description",
+                ],
+                "description_bottom_banner" => [
+                    "title" => "Titre pour la bannière du bas",
                     "type" => "text",
                     "placeholder" => "Ajouter une description",
                 ],
                 "banner" => [
-                    "title" => "Upload l'image bannière",
+                    "title" => "Upload l'image bannière du haut",
                     "type" => "file",
                     "placeholder" => "Ajouter une image",
                 ],
@@ -236,7 +225,7 @@ class Homepages extends BaseSql {
                     "placeholder" => "Ajouter une image",
                 ],
                 "bottom_banner" => [
-                    "title" => "Upload l'image bannière de bas",
+                    "title" => "Upload l'image bannière du bas",
                     "type" => "file",
                     "placeholder" => "Ajouter une image",
                 ]

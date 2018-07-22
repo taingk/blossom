@@ -5,22 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blossom | Front-Office</title>
+    <title><?php echo $this->sSiteName ? $this->sSiteName : "Blossom" ?></title>
+    <link rel="icon" href="<?php echo $this->sFaviconPath ? $this->sFaviconPath : '/public/img/logo.png'; ?>" />
 
-    <!-- General CSS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="<?php echo $this->bCustomCss ? '/public/css/customColors.css' : '/public/css/colors.css' ?>">
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/blossom.css">
     <link rel="stylesheet" href="/public/css/responsiveMenu.css">
     <link rel="stylesheet" href="/public/css/front.tpl.css">
 
-    <!-- Modules CSS -->
-    <link rel="stylesheet" href="/public/css/front/mainMenu.css">
-
-    <!-- Front-office CSS -->
+    <!-- Cart CSS -->
     <link rel="stylesheet" href="/public/css/<?php echo $this->tplPath() ?>.css">
-
-    <!-- Footer CSS -->
-    <link rel="stylesheet" href="/public/css/front/footer.css">
 </head>
 
 <body>
@@ -41,6 +37,7 @@
     </footer>
 
     <script src="/public/js/iconManager.js"></script>
+    <script src="/public/js/mainMenu.js"></script>
 </body>
 
 </html>

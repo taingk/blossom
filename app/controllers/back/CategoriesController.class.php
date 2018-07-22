@@ -11,7 +11,7 @@ class CategoriesController {
     * View listing des categories 
     */ 
     public function indexAction( $aParams ) {
-        $oView = new View("categories", "back");
+        $oView = new View("listing", "back");
 
         if ( !$aParams['POST']['search'] ) {
             $this->listing();
@@ -20,7 +20,8 @@ class CategoriesController {
         }
         
         $this->refactorConfigs();
-        $oView->assign("aConfigs", $this->aConfigs );
+        $oView->assign( "aConfigs", $this->aConfigs );
+        $oView->assign( "aParams", array('id' => 'id_category') );
     }
 
     /*
@@ -49,11 +50,10 @@ class CategoriesController {
     * Formulaire d'ajout d'une categorie
     */ 
     public function addAction( $aParams ) {
-        $this->aConfigs = $this->oCategory->categoryFormAdd();
+        $this->aConfigs = $this->oCategory->categoryForm("Ajouter une catégorie");
 
         if ( !empty( $aParams['POST'] ) ) {
             
-                $this->oCategory->setId($sId);
                 $this->oCategory->setCategoryName($aParams['POST']['category_name']);
                 $this->oCategory->setStatus(1);
                 $this->oCategory->save();
@@ -63,7 +63,7 @@ class CategoriesController {
             
         }
 
-        $oView = new View("categoriesAdd", "back");
+        $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);     
     }
 
@@ -71,7 +71,7 @@ class CategoriesController {
     * Update d'une categorie en bdd 
     */ 
     public function updateAction( $aParams ) {
-        $this->aConfigs = $this->oCategory->categoryFormUpdate();
+        $this->aConfigs = $this->oCategory->categoryForm("Editer la catégorie");
         $aErrors = [];
         $sId = $aParams['GET']['id'];
 
@@ -99,7 +99,7 @@ class CategoriesController {
             }
         }
 
-        $oView = new View("categoriesUpdate", "back");
+        $oView = new View("editing", "back");
         $oView->assign("aConfigs", $this->aConfigs);
     }
 
@@ -114,16 +114,16 @@ class CategoriesController {
             $sStatus ? $this->oCategory->setStatus(0) : $this->oCategory->setStatus(1);                
             $this->oCategory->save();
 
-            http_response_code(200);
-            echo json_encode(array('status' => 'ok'));
-        } else {
-            http_response_code(404);            
+            header('location: /back/categories');
+            return;
         }
     }
 
-    public function refactorConfigs() {        
+    public function refactorConfigs() {
+        $this->aConfigs = $this->oCategory->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated'));
         $this->aConfigs['label'] = array('id', 'nom de la categorie', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/categories/update?id=');
+        $this->aConfigs['delete'] = array('url' => '/back/categories/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/categories/add');
 
         foreach ( $this->aConfigs as $sKey => &$aValue ) {
