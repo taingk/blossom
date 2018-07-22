@@ -56,7 +56,7 @@ if ( $sStructure === "back" ) {
     } else if ( !$oUser->select() ) {
         include "controllers/back/AdminController.class.php";
         $oAdmin = new AdminController();
-        $oAdmin->installAction( $aParams );
+        $oAdmin->indexAction( $aParams );
 
         return;
     } else if ( !$_SESSION['token'] ) {
