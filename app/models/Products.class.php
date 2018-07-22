@@ -151,7 +151,6 @@ class Products extends BaseSql {
                     "title" => "Capacité",
                     "type" => "text",
                     "placeholder" => "16:150",
-                    "required" => true,
                     "minString" => 2
                 ],
                 "quantity" =>      [
@@ -164,5 +163,6 @@ class Products extends BaseSql {
             ]
         ];
     }
+
 }
 ?>

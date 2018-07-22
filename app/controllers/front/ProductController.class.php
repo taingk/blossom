@@ -25,18 +25,51 @@ class ProductController {
         $aConfigs = [];
 
         $aProducts = ['products' => $aResultProduct];
-        array_push($aConfigs, $aProducts);
+        array_push($aConfigs, $aProducts );
 
         $aColors = ['colors' => $aResultColor];
-        array_push($aConfigs, $aColors);
+        array_push($aConfigs, $aColors );
 
         $aCapacities = ['capacities' => $aResultCapacity];
-        array_push($aConfigs, $aCapacities);
-//
-      $oView->assign('aConfigs', $aConfigs);
+        array_push($aConfigs, $aCapacities );
+
+        $oView->assign('aConfigs', $aConfigs);
     }
 
     public function allAction($aParams) {
+
+    }
+
+    public function addAction($aParams) {
+        $sId = $aParams['GET']['is'];
+        if ( !empty( $aParams['POST'] ) && !$_SESSION['id_user']) {
+            $oColor = new Colors();
+            $oColor->setProductsIdProduct( $sId );
+            $oColor->setName( $aParams['POST']['color'] );
+            $aIdColor = $oColor->select( array('id_color') );
+
+            $oCapacity = new Capacities();
+            $oCapacity->setProductsIdProduct( $sId );
+            $oCapacity->setCapacityNumber($aParams['POST']['capacity']);
+            $aIdCategory = $oCapacity->select(array('id_capacity'));
+
+            $idUser = $_SESSION['id_user'];
+
+            $oCart = new Carts();
+            $oCart->setProductsIdProduct($sId);
+            $oCart->setUsersIdUser($idUser);
+            $oCart->setCapacitiesIdCapacity($aIdCategory[0]['id_capacity']);
+            $oCart->setColorsIdColor($aIdColor[0]['id_color']);
+            $oCart->setStatus(1);
+            $oCart->save();
+
+            header('location: /front/product');
+            return;
+
+        }
+
+        //$oView = new View("products", "front");
+        //$oView->assign('aConfigs', $aConfigs);
 
     }
 
