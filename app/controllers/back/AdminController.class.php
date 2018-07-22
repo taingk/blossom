@@ -19,7 +19,7 @@ class AdminController {
             return;
         }
 
-		$aConfigs = $oUser->adminForm();
+	$aConfigs = $oUser->adminFormAdd();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
