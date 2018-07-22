@@ -9,7 +9,7 @@ class UserController {
         $oView = new View("userLogin", "auth");
         $oUser = new Users();
         $aConfigs = $oUser->userLoginForm();
-        
+
         $oView->assign( "aConfigs", $aConfigs );
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];
@@ -95,9 +95,15 @@ class UserController {
         $oUsers->setId($_SESSION['id_user']);
         $aUsers = $oUsers->select()[0];
 
+        $oOrders = new Orders();
+        $oOrders->setUsersIdUsers($_SESSION['id_user']);
+        $aOrders = $oOrders->select();
+
         $oView = new View('user', 'front');
         $oView->assign("aUsers", $aUsers);
-    }
+        $oView->assign("aOrders", $aOrders);
+      }
+
 
     /*
     * View formulaire création de compte utilisateur
