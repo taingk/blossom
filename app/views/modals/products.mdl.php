@@ -18,8 +18,9 @@
             Prix : <?php echo $results["price"]?> €
         </strong>
 
-    <?php endforeach; ?>
-    <form action="product/add" method="POST">
+
+    <form action="product/add?is=<?php echo $results['id_product']?>" method="POST">
+        <?php endforeach; ?>
         <strong class="col-xxs-12 is-third-color small-bandeau">
             Couleur :
         </strong>

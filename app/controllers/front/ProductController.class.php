@@ -42,7 +42,7 @@ class ProductController {
 
     public function addAction($aParams) {
         $sId = $aParams['GET']['is'];
-        if ( !empty( $aParams['POST'] ) && !$_SESSION['id_user']) {
+        if ( !empty( $aParams['POST'] ) && !empty($_SESSION['id_user'])) {
             $oColor = new Colors();
             $oColor->setProductsIdProduct( $sId );
             $oColor->setName( $aParams['POST']['color'] );
@@ -50,25 +50,34 @@ class ProductController {
 
             $oCapacity = new Capacities();
             $oCapacity->setProductsIdProduct( $sId );
-            $oCapacity->setCapacityNumber($aParams['POST']['capacity']);
+            $oCapacity->setCapacityNumber( $aParams['POST']['capacity'] );
             $aIdCategory = $oCapacity->select(array('id_capacity'));
 
             $idUser = $_SESSION['id_user'];
 
             $oCart = new Carts();
-            $oCart->setProductsIdProduct($sId);
-            $oCart->setUsersIdUser($idUser);
-            $oCart->setCapacitiesIdCapacity($aIdCategory[0]['id_capacity']);
-            $oCart->setColorsIdColor($aIdColor[0]['id_color']);
+            $oCart->setProductsIdProduct( $sId );
+            $oCart->setUsersIdUser( $idUser );
+            $oCart->setCapacitiesIdCapacity( $aIdCategory[0]['id_capacity'] );
+            $oCart->setColorsIdColor( $aIdColor[0]['id_color'] );
             $oCart->setStatus(1);
             $oCart->save();
 
-            header('location: /front/product');
+            $oProduct = new Products();
+            $oProduct->setId($sId);
+            $aQuantity = $oProduct->select(array('quantity'));
+            $iQuantity = $aQuantity[0]['quantity'];
+            $iNewQuantity = $iQuantity - 1;
+            $oProduct->setQuantity($iNewQuantity);
+            $oProduct->save();
+
+
+            header('location: /front/product?is='.$sId);
             return;
 
         }
 
-        //$oView = new View("products", "front");
+        $oView = new View("products", "front");
         //$oView->assign('aConfigs', $aConfigs);
 
     }
