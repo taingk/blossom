@@ -17,7 +17,8 @@ class ProductController {
         $oProduct->setId( $sId );
         $aResultProduct = $oProduct->select();
 
-        $oComment->setId( $sId );
+        $oComment->setStatus(1);
+        $oComment->setProductsIdProduct( $sId );
         $aResultComment = $oComment->select();
 
         $oColor->setProductsIdProduct( $sId );
@@ -38,7 +39,7 @@ class ProductController {
         array_push($aConfigs, $aCapacities);
 
         $aComments = ['comment' => $aResultComment];
-        array_push($aConfigs, $aComments); 
+        array_push($aConfigs, $aComments);
 
         print_r($aConfigs);
       $oView->assign('aConfigs', $aConfigs);
@@ -66,7 +67,7 @@ class ProductController {
         $sId = $aParams['GET']['is'];
 
         if ( !empty( $aParams['POST'] )) {
-            $oComment->setComment($aParams['POST']['Comment']);
+            $oComment->setComment($aParams['POST']['comment']);
             $oComment->setUsersIdUsers($_SESSION['id_user']);
             $oComment->setProductsIdProduct($sId);
             $oComment->setStatus(0);

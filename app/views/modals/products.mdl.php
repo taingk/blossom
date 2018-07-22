@@ -40,7 +40,7 @@
         <div class="box col-xxs-12">
             <div class="col-xxs-12">
                     <form action="/front/product/addComment?is=<?php echo $aConfigs[0]['products'][0]['id_product']?>" method='POST'>
-                        <input class="input is-third-color" placeholder="Ton commentaire" size="60" name="Comment">
+                        <input class="input is-third-color" placeholder="Ton commentaire" size="60" name="comment">
                         <input type="submit" value="Valider">
                     </form>
             </div>
