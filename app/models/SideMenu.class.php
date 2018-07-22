@@ -40,6 +40,7 @@ class SideMenu {
                         "products" => "Ajouter un produit",
                         "colors" => "Ajouter une couleur",
                         "capacities" => "Ajouter une capacité de stockage",
+                        "images" => "Ajouter une image",
                     ]
                 ],
                 "comments" =>  [

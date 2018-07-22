@@ -62,6 +62,31 @@ class Images extends BaseSql {
     {
         return $this->products_idproduct;
     }
+
+    public function imageForm($sTitle = "", $aProducts) {
+        return [
+            "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer une image", "enctype" => "multipart/form-data", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
+            "input" => [
+                "product" =>       [
+                    "title" => "Produit",
+                    "type" => "select",
+                    "options" => $aProducts,
+                    "required" => true,
+                ],
+                "image_name" =>       [
+                    "title" => "Nom de votre image",
+                    "type" => "text",
+                    "required" => true,
+                ],
+                "image" =>      [
+                    "title" => "Upload ton image",
+                    "type" => "file",
+                    "placeholder" => "Ajoutez une image",
+                ]
+
+            ]
+        ];
+    }
 }
 
 ?>
