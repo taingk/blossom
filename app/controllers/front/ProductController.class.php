@@ -11,6 +11,7 @@ class ProductController {
         $oProduct = new Products();
         $oColor = new Colors();
         $oCapacity = new Capacities();
+        $oImages = new Images();
 
         $sId = $aParams['GET']['is'];
         $oProduct->setId( $sId );
@@ -21,6 +22,9 @@ class ProductController {
 
         $oCapacity->setProductsIdProduct( $sId );
         $aResultCapacity = $oCapacity->select();
+
+        $oImages->setProductsIdProduct( $sId );
+        $aResultImages = $oImages->select();
 
         $aConfigs = [];
 
@@ -33,6 +37,10 @@ class ProductController {
         $aCapacities = ['capacities' => $aResultCapacity];
         array_push($aConfigs, $aCapacities );
 
+        $aImages = ['products' => $aResultImages];
+        array_push($aConfigs, $aImages );
+
+        print_r($aConfigs);
         $oView->assign('aConfigs', $aConfigs);
     }
 
@@ -65,21 +73,19 @@ class ProductController {
 
             $oProduct = new Products();
             $oProduct->setId($sId);
-            $aQuantity = $oProduct->select(array('quantity'));
+            $aQuantity = $oProduct->select( array('quantity') );
             $iQuantity = $aQuantity[0]['quantity'];
             $iNewQuantity = $iQuantity - 1;
-            $oProduct->setQuantity($iNewQuantity);
+            $oProduct->setQuantity( $iNewQuantity );
             $oProduct->save();
 
 
-            header('location: /front/product?is='.$sId);
+            header('location: /front/product?is='.$sId );
             return;
 
         }
 
-        $oView = new View("products", "front");
-        //$oView->assign('aConfigs', $aConfigs);
-
+        //$oView = new View("products", "front");
     }
 
     /*

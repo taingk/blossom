@@ -1,16 +1,14 @@
-
 <section class="row container mainView gutters">
     <?php foreach ($aConfigs[0]['products'] as $results): ?>
     <h1 class="is-third-color col-xxs-12"><?php echo $results["product_name"]?></h1>
     <hr>
-
-        <a
-           class="col-xxs-12 col-xs-6 col-md-4 container-product-box">
+        <div class="col-xxs-12 col-xs-6 col-md-4 container-product-box">
             <div class="col-xxs-12 product-box bg-is-main-color">
                 <label>Photo</label>
             </div>
 
-        </a>
+        </div>
+
         <strong class="col-xxs-12 is-third-color small-bandeau">
             Description : <?php echo $results["description"]?>
         </strong>
@@ -41,10 +39,10 @@
                 <option value="<?php echo $results['capacity_number']?>"><?php echo $results["capacity_number"]?> +<?php echo $results["additional_price"]?> €</option>
             <?php endforeach; ?>
         </select>
+
         <br>
         <input type="submit" value="Ajouter au panier">
     </form>
 
 </section>
 
-</head>
