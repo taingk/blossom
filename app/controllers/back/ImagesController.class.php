@@ -154,7 +154,7 @@ class ImagesController {
     }
     public function refactorConfigs() {
         $this->aConfigs = $this->oImage->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'path'));
-        $this->aConfigs['label'] = array('id', 'Nom', 'référence produit', 'Status', 'Options');
+        $this->aConfigs['label'] = array('id', 'Nom', 'id produit', 'Status', 'Options');
         $this->aConfigs['update'] = array('url' => '/back/images/update?id=');
         $this->aConfigs['delete'] = array('url' => '/back/images/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/images/add');

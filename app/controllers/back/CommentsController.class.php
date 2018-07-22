@@ -108,7 +108,7 @@ class CommentsController {
 
     public function refactorConfigs() {
         $this->aConfigs = $this->oComment->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated'));
-        $this->aConfigs['label'] = array('id', 'commentaire', 'id_user', 'id_produit', 'status', 'options');
+        $this->aConfigs['label'] = array('id', 'commentaire', 'id utilisateur', 'id produit', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/comments/update?id=');
         $this->aConfigs['delete'] = array('url' => '/back/comments/delete?id=');
 
