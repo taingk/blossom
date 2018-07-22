@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `capacities`;
 CREATE TABLE `capacities` (
   `id_capacity` int(11) NOT NULL AUTO_INCREMENT,
   `capacity_number` int(11) NOT NULL,
-  `products_idproduct` int(11) NOT NULL,
   `additional_price` float DEFAULT NULL,
+  `products_idproduct` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,

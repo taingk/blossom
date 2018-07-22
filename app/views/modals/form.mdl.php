@@ -37,7 +37,7 @@
                     <label for="<?php echo $sName ?>" class="is-third-color col-xxs-12 text-is-left small-bandeau"><?php echo $sAttribut["title"] ?></label>
                     <select id="<?php echo $sName ?>" name="<?php echo $sName ?>" class="col-xxs-12 is-third-color small-bandeau">
                         <?php foreach ( $sAttribut["options"] as $sOption ): ?>
-                            <option class="is-third-color" value="<?php echo $sOption['id'] ?>" selected><?php echo $sOption['name'] ?></option>
+                            <option class="is-third-color" value="<?php echo $sOption['id'] ?>" <?php echo $sOption['selected'] ? 'selected' : '' ?>><?php echo $sOption['name'] ?></option>
                         <?php endforeach; ?>
                     </select>
 
