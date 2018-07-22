@@ -128,5 +128,6 @@ class Products extends BaseSql {
             ]
         ];
     }
+
 }
 ?>
