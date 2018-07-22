@@ -27,10 +27,10 @@
                             <p class="is-third-color text-left responsive-center">Supplément : <?php echo $aCart["additional_price"] ?>€</p>
                         </td>
                         <td>
-                            <p class="is-third-color text-left responsive-center"><?php echo $aCart["final_price"] ?>€</p>                            
+                            <p class="is-third-color text-left responsive-center"><?php echo $aCart["final_price"] ?>€</p>
                             <a href="/front/cart/delete?id=<?php echo $aCart['id_cart'] ?>">
                                 <p class="is-main-color text-left responsive-center">Supprimer</p>
-                            </a>                            
+                            </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -43,7 +43,7 @@
         <h3 class="is-secondary-color">Vous devez définir une adresse de livraison ou avoir un produit dans le panier.</h3>
     </section>
     ' : '' ; ?>
-    
+
     <section class="col-xxs-12 col-md-7 mainView is-h-centered row gutters" style="margin-top: 0; margin-left: 0">
         <h1 class="col-xxs-12 is-third-color">Adresse de livraison</h1>
         <hr>
@@ -73,5 +73,5 @@
             <strong><em>Procéder au paiement</em></strong>
         </a>
     </section>
-   
+
 </section>
