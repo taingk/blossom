@@ -45,9 +45,21 @@ class ProductController {
         $aCapacities = ['capacities' => $aResultCapacity];
         array_push($aConfigs, $aCapacities);
 
-        $aComments = ['comment' => $aResultComment];
-        array_push($aConfigs, $aComments);
+        $aComments = [];
+        foreach ( $aResultComment as $aComment ) {
+            $oUser = new Users();
+            $oUser->setId($aComment['users_idusers']);
+            $aUser = $oUser->select()[0];
 
+            array_push($aComments, [
+                'id_comment' => $aComment['id_comment'],
+                'comment' => $aComment['comment'],
+                'date_inserted' => $aComment['date_inserted'],
+                'user' => $aUser
+            ]);
+        }
+        array_push($aConfigs, [ 'comment' => $aComments ]);
+        
         $aImages = ['images' => $aResultImages];
         array_push($aConfigs, $aImages);
 
@@ -101,7 +113,7 @@ class ProductController {
             $oProduct->setQuantity( $iNewQuantity );
             $oProduct->save();
 
-            header('location: /front/product?is='.$sId );
+            header('location: /front/cart');
             return;
         }
     }
@@ -116,8 +128,11 @@ class ProductController {
 
         $sId = $aParams['GET']['is'];
 
-        //TODO popin error
-      
+        if ( empty($_SESSION['id_user']) ) {
+            header('location: /front/product?is=' . $sId . '&connection=false#error');
+            return;
+        }
+
         if ( !empty( $aParams['POST'] )) {
             $oComment->setComment($aParams['POST']['comment']);
             $oComment->setUsersIdUsers($_SESSION['id_user']);

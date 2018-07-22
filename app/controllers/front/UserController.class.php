@@ -26,7 +26,7 @@ class UserController {
 
                 header('Location: /');
             } else {
-                header('Location: /front/user?validity=false#error');
+                header('Location: /front/user?validity=false');
             }
         }
     }

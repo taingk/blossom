@@ -11,7 +11,7 @@
 
     <?php echo $_GET['connection'] ? '
     <section id="error" class="col-xxs-12 mainView gutters bg-is-main-color" style="margin-top: 0;">
-        <h3 class="is-secondary-color">Vous devez être connecter pour ajouter un produit au panier.</h3>
+        <h3 class="is-secondary-color">Vous devez être connecter pour commenter ou ajouter un produit au panier.</h3>
     </section>
     ' : '' ; ?>
 
@@ -38,7 +38,7 @@
             <span id="price" class="is-third-color"><?php echo $results["price"]?></span>€
         <hr>
         
-        <form action="product/add?is=<?php echo $results['id_product']?>" method="POST" class="row">
+        <form action="/front/product/add?is=<?php echo $results['id_product']?>" method="POST" class="row">
             <strong class="is-third-color small-bandeau text-is-left">
                 Couleur :
             </strong>
@@ -69,21 +69,23 @@
     </article>
     <?php endforeach; ?>
   
-          <div class="col-xxs-12">
-            <div class="col-xxs-12">
-                    <form action="/front/product/addComment?is=<?php echo $aConfigs[0]['products'][0]['id_product']?>" method='POST'>
-                        <input class="input is-third-color" placeholder="Ton commentaire" size="60" name="comment">
-                        <input type="submit" value="Valider">
-                    </form>
-            </div>
+</section>
 
-            <div class="col-xxs-12">
-                <?php foreach ($aConfigs[3]['comment'] as $results): ?>
-                    <p class="is-third-color text-is-left"><?php echo $results["comment"]?></p>
-                <?php endforeach; ?>
-            </div>
-        </div>
+<section class="row container mainView gutters">
+    <h1 class="is-third-color col-xxs-12">Espace commentaires</h1>
+    <hr>
+    <form action="/front/product/addComment?is=<?php echo $aConfigs[0]['products'][0]['id_product']?>" class="row col-xxs-12" method="POST">
+        <input id="comment" class="is-third-color col-xxs-12 small-bandeau" placeholder="Votre commentaire" name="comment">
+        <input class="col-xxs-12 col-md-3 is-h-centered" type="submit" value="Envoyer un commentaire">
+    </form>
 
+    <?php foreach ($aConfigs[3]['comment'] as $results): ?>
+    <hr>
+    <div class="col-xxs-12">
+        <p class="is-third-color text-is-justified"><?php echo 'Commenté(e) par ' . $results["user"]["firstname"] . ' ' . $results["user"]["lastname"] . ' le ' . $results["date_inserted"] ?> :</p>
+        <p class="is-third-color text-is-justified"><?php echo $results["comment"]?></p>
+    </div>
+    <?php endforeach; ?>
 </section>
 
 <script>
