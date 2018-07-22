@@ -19,7 +19,7 @@
     </section>
 
       <section class="col-xxs-12 mainView gutters" style="margin-top: 0; margin-left: 0">
-        <h1 class="col-xxs-12 is-third-color">Commandes <span class="is-main-color">effecutées</span></h1>
+        <h1 class="col-xxs-12 is-third-color">Commandes <span class="is-main-color">effectuées</span></h1>
         <hr>
         <?php foreach ( $aOrders as $aOrder ): ?>
           <p class="col-xxs-12 is-third-color text-is-left margin-zero">ID : <strong><?php echo "<em class='is-third-color'>" . $aOrder['id_order'] . "</em>" ?></strong></p>

@@ -59,7 +59,7 @@ class UserController {
                 $oMailer = new Mailer();
                 $oToken = new Token();
 
-                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oMailer->confirmMail($aParams, $oToken->getToken());
                 $oUser->setFirstname($aParams['POST']['firstname']);
                 $oUser->setLastname($aParams['POST']['lastname']);
                 $oUser->setSexe($aParams['POST']['sexe']);
