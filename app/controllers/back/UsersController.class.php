@@ -181,7 +181,7 @@ class UsersController {
                 $this->oUser->setStatus(1);
                 $this->oUser->save();
 
-                header('Location: /back');
+                header('Location: /');
             }
         }
     }
