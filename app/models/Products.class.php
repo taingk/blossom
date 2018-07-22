@@ -89,28 +89,22 @@ class Products extends BaseSql {
         return $this->status;
     }
   
-    public function productForm($sTitle = "") {
-        $oCategory = new Categories();
-        $aArrayTemporaire = [];
-        $aCategories = $oCategory->select(array('id_category','category_name'));
-        foreach($aCategories as $key => $value){
-            array_push($aArrayTemporaire, ['id' => $value['id_category'], 'name' => $value['category_name']]);
-        }
+    public function productForm($sTitle = "", $aCategories) {
         return [
             "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-5 row", "enctype" => "multipart/form-data", "pageTitle" => $sTitle],
             "input" => [
-                "name" =>      [
+                "category" =>       [
+                    "title" => "Catégories",
+                    "type" => "select",
+                    "options" => $aCategories,
+                    "required" => true,
+                ],
+                "product_name" =>      [
                     "title" => "Nom du produit",
                     "type" => "text",
                     "placeholder" => "Iphone X",
                     "required" => true,
                     "minString" => 2
-                ],
-                "category" =>       [
-                    "title" => "Catégories",
-                    "type" => "select",
-                    "options" => $aArrayTemporaire,
-                    "required" => true,
                 ],
                 "description" =>    [
                     "title" => "Description",
@@ -120,49 +114,20 @@ class Products extends BaseSql {
                     "minString" => 2
                 ],
                 "price" =>        [
-                    "title" => "Prix",
+                    "title" => "Prix en euro",
                     "type" => "number",
                     "placeholder" => "1000",
                     "required" => true
                 ],
-                "image" =>      [
-                    "title" => "Upload une image",
-                    "type" => "file",
-                    "placeholder" => "Ajouter une image",
-                ],
-                "image2" =>      [
-                    "title" => "Upload une image",
-                    "type" => "file",
-                    "placeholder" => "Ajouter une image",
-                ],
-                "image3" =>      [
-                    "title" => "Upload une image",
-                    "type" => "file",
-                    "placeholder" => "Ajouter une image",
-                ],
-                "color" =>      [
-                    "title" => "Couleur",
-                    "type" => "text",
-                    "placeholder" => "Rouge:#432G3",
-                    "required" => true,
-                    "minString" => 2
-                ],
-                "capacity" =>      [
-                    "title" => "Capacité",
-                    "type" => "text",
-                    "placeholder" => "16:150",
-                    "required" => true,
-                    "minString" => 2
-                ],
                 "quantity" =>      [
-                    "title" => "Quantité",
+                    "title" => "Quantité maximum du stock",
                     "type" => "number",
                     "placeholder" => "150",
                     "required" => true
-                ]
-
+                ],
             ]
         ];
     }
+
 }
 ?>

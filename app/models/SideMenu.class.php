@@ -33,9 +33,15 @@ class SideMenu {
                     "title" => "Categories",
                     "icon" => "folder-7"
                 ],
-                "products" =>        [
+                "#products" =>        [
                     "title" => "Produits",
-                    "icon" => "smartphone-1"
+                    "icon" => "smartphone-1",
+                    "children" => [
+                        "products" => "Ajouter un produit",
+                        "colors" => "Ajouter une couleur",
+                        "capacities" => "Ajouter une capacité de stockage",
+                        "images" => "Ajouter une image",
+                    ]
                 ],
                 "comments" =>  [
                     "title" => "Commentaires",

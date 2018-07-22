@@ -14,6 +14,10 @@ class Helper {
         return $iStatus ? "Actif" : "Inactif";
     }
 
+    static function getRights( $iStatus ) {
+        return $iStatus ? "Administrateur" : "Utilisateur";
+    }
+
     static function getOrder( $iStatus ) {
         return $iStatus ? "En cours de livraison" : "Commande livrée";
     }

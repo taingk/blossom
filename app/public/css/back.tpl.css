@@ -141,10 +141,10 @@
     }
 }
 
-#submenu {
+.submenu {
     display: none;
 }
 
-#submenu li a {
+.submenu li a {
     font-size: 14px;
 }

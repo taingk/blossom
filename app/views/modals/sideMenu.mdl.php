@@ -11,16 +11,16 @@
         unset($aConfigs['profiles']);
         foreach ($aConfigs as $sKey => $aValue):
             foreach ($aValue as $sKey => $aMenu):
-                if ($sKey != '#custom'): ?>
+                if ($sKey != '#custom' && $sKey != '#products'): ?>
                 <li class="backMenuLink row" id="<?php echo $sKey ?>">
                     <a href="/back/<?php echo $sKey === 'logout' ? 'admin/logout' : $sKey; ?>"><div data-icon="<?php echo $aMenu['icon'] ?>"></div></a>
                     <a href="/back/<?php echo $sKey === 'logout' ? 'admin/logout' : $sKey; ?>" class="is-v-centered"><?php echo $aMenu['title'] ?></a>
                 </li>
             <?php else: ?> 
-                <li class="backMenuLink row" id="<?php echo $sKey ?>" onClick="openCustomization()">
+                <li class="backMenuLink row" id="<?php echo $sKey ?>" onClick="openCustomization(this.id)">
                     <div data-icon="<?php echo $aMenu['icon'] ?>"></div>
                     <a class="is-v-centered is-third-color" style="cursor: pointer; padding: 0 20px;"><?php echo $aMenu['title'] ?></a>
-                    <ul id="submenu">
+                    <ul id="submenu_<?php echo $sKey ?>" class="submenu">
                     <?php foreach ($aMenu['children'] as $sKey => $sChild): ?>
                         <li id="<?php echo $sKey ?>">
                             <a></a>

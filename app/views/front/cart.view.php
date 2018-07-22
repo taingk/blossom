@@ -11,11 +11,11 @@
                     <th>Prix unitaire</th>
                     <th>Prix total</th>
                 </tr>
-
+    
                 <?php foreach ( $aCarts as $aCart ): ?>
                     <tr>
                         <td>
-                            <img src="/public/img/airpodPanier.jpeg" class="images" alt="product_image">
+                            <img src="<?php echo $aCart['image']; ?>" class="images" alt="product_image">
                         </td>
                         <td>
                             <p class="is-third-color text-left responsive-center"><?php echo $aCart['category_name']; ?> : <?php echo $aCart['product_name']; ?></p>
@@ -27,10 +27,10 @@
                             <p class="is-third-color text-left responsive-center">Supplément : <?php echo $aCart["additional_price"] ?>€</p>
                         </td>
                         <td>
-                            <p class="is-third-color text-left responsive-center"><?php echo $aCart["final_price"] ?>€</p>                            
+                            <p class="is-third-color text-left responsive-center"><?php echo $aCart["final_price"] ?>€</p>
                             <a href="/front/cart/delete?id=<?php echo $aCart['id_cart'] ?>">
                                 <p class="is-main-color text-left responsive-center">Supprimer</p>
-                            </a>                            
+                            </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -43,7 +43,7 @@
         <h3 class="is-secondary-color">Vous devez définir une adresse de livraison ou avoir un produit dans le panier.</h3>
     </section>
     ' : '' ; ?>
-    
+
     <section class="col-xxs-12 col-md-7 mainView is-h-centered row gutters" style="margin-top: 0; margin-left: 0">
         <h1 class="col-xxs-12 is-third-color">Adresse de livraison</h1>
         <hr>
@@ -55,7 +55,7 @@
         <hr>
         <p class="col-xxs-12 is-third-color text-is-left margin-zero">Ville : <strong><?php echo $aUsers['city'] ? $aUsers['city'] : "<em class='is-third-color'>Non définie</em>" ?></strong></p>
         <hr>
-        <a href="/back/users/update?id=<?php echo $_SESSION['user_id'] ?>" class="col-xxs-12 col-md-6 bg-is-main-color default-button is-h-centered" style="padding: 15px">
+        <a href="/front/user/profile" class="col-xxs-12 col-md-6 bg-is-main-color default-button is-h-centered" style="padding: 15px">
             <strong><em>Définir son adresse de livraison</em></strong>
         </a>
     </section>
@@ -73,5 +73,5 @@
             <strong><em>Procéder au paiement</em></strong>
         </a>
     </section>
-   
+
 </section>
