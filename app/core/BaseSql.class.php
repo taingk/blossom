@@ -91,6 +91,7 @@ class BaseSql {
             $sQuery = "UPDATE " . $this->sTable . " SET " . implode( ", ", $aSqlSet ) . " WHERE " . $this->sId . " = :" . $this->sId;
             $oRequest = $this->oPdo->prepare($sQuery);
             $oRequest->execute($this->aColumns);
+                  
         } else {
             $sUsersColumns = implode(",", array_keys($this->aColumns));
             $sValuesColumns = implode(",:", array_keys($this->aColumns));
@@ -122,7 +123,7 @@ class BaseSql {
         $oRequest = $this->oPdo->prepare( $sQuery );
         $oRequest->execute( $this->aColumns );
         $aResults = $oRequest->fetchAll();
-
+    
         return $this->unsetIntegerColumns( $aResults );
     }
 

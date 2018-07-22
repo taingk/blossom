@@ -54,7 +54,6 @@ class CategoriesController {
 
         if ( !empty( $aParams['POST'] ) ) {
             
-                $this->oCategory->setId($sId);
                 $this->oCategory->setCategoryName($aParams['POST']['category_name']);
                 $this->oCategory->setStatus(1);
                 $this->oCategory->save();

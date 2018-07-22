@@ -11,16 +11,21 @@ class ProductController {
         $oProduct = new Products();
         $oColor = new Colors();
         $oCapacity = new Capacities();
+        $oComment = new Comments();
         $oImages = new Images();
 
         $sId = $aParams['GET']['is'];
         $oProduct->setId( $sId );
         $aResultProduct = $oProduct->select();
 
+        $oComment->setStatus(1);
+        $oComment->setProductsIdProduct( $sId );
+        $aResultComment = $oComment->select();
+
         $oColor->setProductsIdProduct( $sId );
         $oColor->setStatus(1);
         $aResultColor = $oColor->select();
-
+        
         $oCapacity->setProductsIdProduct( $sId );
         $oCapacity->setStatus(1);
         $aResultCapacity = $oCapacity->select();
@@ -38,10 +43,13 @@ class ProductController {
         array_push($aConfigs, $aColors );
 
         $aCapacities = ['capacities' => $aResultCapacity];
-        array_push($aConfigs, $aCapacities );
+        array_push($aConfigs, $aCapacities);
+
+        $aComments = ['comment' => $aResultComment];
+        array_push($aConfigs, $aComments);
 
         $aImages = ['images' => $aResultImages];
-        array_push($aConfigs, $aImages );
+        array_push($aConfigs, $aImages);
 
         $oView->assign('aConfigs', $aConfigs);
     }
@@ -99,9 +107,27 @@ class ProductController {
     }
 
     /*
-    * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
+    * Ajout d'un commentaire
     */ 
-    public function searchAction( $aParams ) {
+    public function addCommentAction( $aParams ) {
+        $oUser = new Users();
+        $oComment = new Comments();
+        $oProduct = new Products();
+
+        $sId = $aParams['GET']['is'];
+
+        //TODO popin error
+      
+        if ( !empty( $aParams['POST'] )) {
+            $oComment->setComment($aParams['POST']['comment']);
+            $oComment->setUsersIdUsers($_SESSION['id_user']);
+            $oComment->setProductsIdProduct($sId);
+            $oComment->setStatus(0);
+            $oComment->save();
+
+            header('location: /front/product?is='.$sId);
+            return;
+        }
 
     }
 
