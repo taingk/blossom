@@ -41,7 +41,14 @@ class BillingController {
                         $oC->save();
                     }
 
-                    header('Location: /');
+                    $oUser = new Users;
+                    $oUser->setId($_SESSION['id_user']);
+                    $aUser = $oUser->select()[0];
+
+                    $oMailer = new Mailer();
+                    $oMailer->paymentSuccessfulMail($aUser);    
+
+                    header('Location: /?payment=true');
                     return;
                 }
             }

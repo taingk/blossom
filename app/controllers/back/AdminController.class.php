@@ -29,7 +29,7 @@ class AdminController {
                 $oMailer = new Mailer();
                 $oToken = new Token();
                 
-                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oMailer->confirmMail($aParams, $oToken->getToken());
                 $oUser->setFirstname($aParams['POST']['firstname']);
                 $oUser->setLastname($aParams['POST']['lastname']);
                 $oUser->setSexe($aParams['POST']['sexe']);
@@ -37,6 +37,7 @@ class AdminController {
                 $oUser->setEmail($aParams['POST']['email']);
                 $oUser->setPwd($aParams['POST']['pwd']);
                 $oUser->setToken($oToken->getToken());
+                $oUser->setRights(1);
                 $oUser->setStatus(0);
                 $oUser->save();
     

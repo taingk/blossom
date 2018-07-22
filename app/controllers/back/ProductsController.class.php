@@ -21,7 +21,8 @@ class ProductsController {
         }
 
         $this->refactorConfigs();
-        $oView->assign("aConfigs", $this->aConfigs );
+        $oView->assign( "aConfigs", $this->aConfigs );
+        $oView->assign( "aParams", array('id' => 'id_product') );
     }
 
     /*
@@ -47,77 +48,46 @@ class ProductsController {
 
     }
 
+    public function allCategoriesAction( $iSelected = "" ) {
+        $oCategory = new Categories();
+        $aCategories = [];
+        $aSelects = $oCategory->select(array('id_category','category_name'));
+
+        foreach($aSelects as $key => $value) {
+            if ( $iSelected == $value['id_category'] ) {
+                array_push($aCategories, ['id' => $value['id_category'], 'name' => $value['category_name'], 'selected' => 'true' ]);
+            } else {
+                array_push($aCategories, ['id' => $value['id_category'], 'name' => $value['category_name']]);
+            }
+        }
+
+        return $aCategories;
+    }
+
     /*
     * Formulaire d'ajout de produit
     */
     public function addAction( $aParams ) {
+        $this->aConfigs = $this->oProduct->productForm("Ajouter un nouveau produit", $this->allCategoriesAction());
         $this->oCategory = new Categories();
-        $this->aConfigs = $this->oProduct->productFormAdd();
-
-        // $iId = $this->oProduct->getLastId();
-        // $iLastId = $iId[0]['id_product'];
-        // $iCurrentId = $iLastId + 1;
-        
         $aIdCategory = $this->oCategory->select(array('id_category'));
 
         if ( !empty( $aParams['POST']) && !empty($aIdCategory) ) {
 
-            //print_r($aParams['POST']['category']);
-            $this->oProduct->setProductName($aParams['POST']['name']);
-            $this->oProduct->setCategoriesIdCategory($aParams['POST']['category']);
-            $this->oProduct->setDescription($aParams['POST']['description']);
-            $this->oProduct->setPrice($aParams['POST']['price']);
+            $this->oProduct->setProductName( $aParams['POST']['product_name'] );
+            $this->oProduct->setCategoriesIdCategory( $aParams['POST']['category'] );
+            $this->oProduct->setDescription( $aParams['POST']['description'] );
+            $this->oProduct->setPrice( $aParams['POST']['price'] );
             $this->oProduct->setStatus('1');
-            $this->oProduct->setQuantity($aParams['POST']['quantity']);
-            $this->oProduct->setMaxQuantity($aParams['POST']['quantity']);
-            // Ta variable qui contient l'id, ca save aussi :
-            //$iLastId = $this->oProduct->save();
+            $this->oProduct->setQuantity( $aParams['POST']['quantity'] );
+            $this->oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
+            $this->oProduct->save();
 
-            $aFiles = Helper::uploadFiles($_FILES);
-            foreach ( $aFiles['success'] as $aFile ) {
-                $oImage = new Images();
-                $oImage->setPath($aFile['path']);
-                $oImage->setProductsIdProduct($iLastId);
-                $oImage->setStatus('1');
-                $oImage->setImageName('Test');
-                //$this->oImage->save();
-            }
-
-            $sColor = $aParams['POST']['color'];
-            $aColors = explode(';',$sColor);
-            foreach( $aColors as $key => $value ){
-                $aValue = explode( ':', $value );
-
-                $oColor = new Colors();
-                $oColor->setName($aValue[0]);
-                $oColor->setColorHexa($aValue[1]);
-                $oColor->setStatus('1');
-                $oColor->setProductsIdProduct($iLastId);
-                //$this->oColor->save();
-            }
-
-            $sCapacity = $aParams['POST']['capacity'];
-            //print_r($sCapacity);
-            $aCapacities = explode(';',$sCapacity);
-            //print_r($aCapacities);
-            foreach( $aCapacities as $key => $value ){
-                $aValue = explode( ':', $value );
-
-                $oCapacity = new Capacities();
-                $oCapacity->setCapacityNumber($aValue[0]);
-                $oCapacity->setAdditionalPrice($aValue[1]);
-                $oCapacity->setStatus(1);
-                $oCapacity->setProductsIdProduct(1);
-                $oCapacity->save();
-            }
-
-            //header('location: /back/products ');
+            header('location: /back/products');
             return;
-
         }
 
         $oView = new View("editing", "back");
-
         $oView->assign("aConfigs", $this->aConfigs);
     }
 
@@ -125,15 +95,54 @@ class ProductsController {
     /*
     * Formulaire d'édition d'un produit 
     */ 
-    public function updateAction( $aParams ) {
+    public function updateAction( $aParams ) {        
+        $sId = $aParams['GET']['id'];
+        $this->oProduct->setId( $sId );
+        $aInfosProduct = $this->oProduct->select()[0];
+        $this->aConfigs = $this->oProduct->productForm("Editer le produit", $this->allCategoriesAction($aInfosProduct['categories_idcategory']));
 
+        foreach ( $this->aConfigs['input'] as $sKey => &$aValue ) {
+            foreach ( $aInfosProduct as $sInfoKey => $sInfoValue ) {
+                if ( $sKey == $sInfoKey ) {
+                    $aValue['value'] = $sInfoValue;
+                }
+            }
+        }
+
+        if ( !empty( $aParams['POST'] ) ) {
+            $oProduct = new Products();
+
+            $oProduct->setId( $sId );
+            $oProduct->setProductName( $aParams['POST']['product_name'] );
+            $oProduct->setCategoriesIdCategory( $aParams['POST']['category'] );
+            $oProduct->setPrice( $aParams['POST']['price'] );
+            $oProduct->setDescription( $aParams['POST']['description'] );
+            $oProduct->setQuantity( $aParams['POST']['quantity'] );
+            $oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
+            $oProduct->save();
+
+            header('location: /back/products');
+            return;
+        }
+
+        $oView = new View("editing", "back");
+        $oView->assign("aConfigs", $this->aConfigs);
     }
 
     /*
     * Suppression d'un produit en bdd
     */ 
     public function deleteAction( $aParams ) {
+        if ($_GET['id']) {
+            $this->oProduct->setId($_GET['id']);
+            $sStatus = $this->oProduct->select(array('status'))[0]['status'];
 
+            $sStatus ? $this->oProduct->setStatus(0) : $this->oProduct->setStatus(1);
+            $this->oProduct->save();
+
+            header('location: /back/products');
+            return;
+        }
     }
     
     /*
@@ -142,16 +151,18 @@ class ProductsController {
     public function filterAction( $aParams ) {
 
     }
+
     public function refactorConfigs() {
-        $this->aConfigs = $this->oProduct->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'max_quantity', 'description'));
-        $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix','quantité','status', 'options');
+        $this->aConfigs = $this->oProduct->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'description'));
+        $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix','qté max', 'qté actuelle','status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/products/update?id=');
+        $this->aConfigs['delete'] = array('url' => '/back/products/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/products/add');
 
         foreach ( $this->aConfigs as $sKey => &$aValue ) {
             foreach ( $aValue as $sKey => $sValue ) {
-                if ( $sKey === 'categorie' ) {
-                    $aValue[$sKey] = Helper::getCategoryName($aValue[$sKey]);
+                if ( $sKey === 'price' ) {
+                    $aValue[$sKey] = $sValue . '€';
                 }
                 if ( $sKey === 'status' ) {
                     $aValue[$sKey] = Helper::getStatus($aValue[$sKey]);

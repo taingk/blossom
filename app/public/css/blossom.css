@@ -212,3 +212,7 @@ input {
 .padding-zero {
     padding: 0;
 }
+
+.box {
+    border: 3px solid black;
+}

@@ -56,8 +56,8 @@ class sideMenu {
 
 new sideMenu();
 
-openCustomization = () => {
-    const subMenu = document.getElementById("submenu");
+openCustomization = (id) => {
+    const subMenu = document.getElementById(`submenu_${id}`);
 
     if (subMenu.style.display != "inline-block") {
         subMenu.style.display = "inline-block";

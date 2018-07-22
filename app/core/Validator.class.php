@@ -9,7 +9,7 @@ class Validator {
 			if ( isset( $sAttribut["confirm"] ) && $aData[$sName] != $aData[$sAttribut["confirm"]] ) {
 				$aErrorsMsg[] = "Les mots de passes ne correspondent pas";
 			} else if ( !isset( $sAttribut["confirm"] ) ) {
-				if ( $sAttribut["type"] == "email" && !self::checkSameEmail( $aData[$sName] ) ) {
+				if ( $sAttribut["type"] == "email" && self::checkSameEmail( $aData[$sName] ) && !$bUpdate ) {
 					$aErrorsMsg[] = "L'email renseigné est déjà utilisé";
 				} else if ( $sAttribut["type"] == "email" && !self::checkEmail( $aData[$sName] ) ) {
 					$aErrorsMsg[] = "Format de l'email incorrect";
@@ -65,9 +65,12 @@ class Validator {
 	public static function checkSameEmail( $sEmail ) {
 		$oUsers = new Users();
 		$oUsers->setEmail( $sEmail );
-		if( !$oUsers->select() ) {
+
+		if ( $oUsers->select() ) {
 			return true;
 		}
+
+		return false;
 	}
 
 	public static function checkEmail( $sEmail ) {

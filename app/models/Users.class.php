@@ -12,6 +12,7 @@ class Users extends BaseSql {
     protected $city;
     protected $pwd;
     protected $token;
+    protected $rights;
     protected $status;
 
     public function __construct() {
@@ -69,6 +70,10 @@ class Users extends BaseSql {
 
     public function setStatus($status) {
         $this->status = trim($status);
+    }
+
+    public function setRights($rights) {
+        $this->rights = trim($rights);
     }
 
     public function getIdUser()
@@ -132,7 +137,12 @@ class Users extends BaseSql {
         return $this->status;
     }
 
-    public function adminForm() {
+    public function getRights()
+    {
+        return $this->rights;
+    }
+
+    public function adminFormAdd() {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "S'inscrire", "class" => "form col-md-5 row"],
 					"input" => [
@@ -187,7 +197,7 @@ class Users extends BaseSql {
 		];
 	}
 
-    public function userFormAdd($sTitle = "") {
+    public function addUserForm($sTitle = "") {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
 					"input" => [
@@ -255,12 +265,100 @@ class Users extends BaseSql {
                                                 "type" => "password",
                                                 "required" => true,
                                                 "confirm" => "pwd"
-                                            ]
+                        ],
+                        "rights" => [
+                            "title" => "Rang utilisateur",
+                            "type" => "select",
+                            "options" => [
+                                [
+                                    "id" => "0",
+                                    "name" => "Utilisateur",
+                                    "selected" => true
+                                ],
+                                [
+                                    "id" => "1",
+                                    "name" => "Administrateur"
+                                ]
+                            ]
+                        ]
 					]
 		];
     }
-    
-    public function userFormUpdate() {
+
+    public function userForm($sTitle = "") {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row", "pageTitle" => $sTitle],
+					"input" => [
+						"firstname" =>      [
+                                                "title" => "Prénom",
+                                                "type" => "text",
+                                                "placeholder" => "Jean",
+                                                "required" => true,
+                                                "minString" => 2
+                                            ],
+						"lastname" =>       [
+                                                "title" => "Nom de famille",
+                                                "type" => "text",
+                                                "placeholder" => "DUPONT",
+                                                "required" => true,
+                                                "minString" => 2
+                                            ],
+                        "Masculin" =>           [
+                                                "type" => "radio",
+                                                "name" => "sexe",
+                                                "value" => "0",
+                                                "checked" => true
+										    ],
+                        "Feminin" =>        [
+                                                "type" => "radio",
+                                                "name" => "sexe",
+                                                "value" => "1"
+										    ],
+                        "birthday_date" =>  [
+                                                "title" => "Date de naissance",
+                                                "type" => "date",
+                                                "required" => true,
+										    ],
+                        "address" =>        [
+                                                "title" => "Adresse postale",
+                                                "type" => "text",
+                                                "placeholder" => "242 boulevard de Saint Antoine",
+                                                "required" => true,
+										    ],
+                        "zip_code" =>       [
+                                                "title" => "Code postal",
+                                                "type" => "number",
+                                                "placeholder" => "75012",
+                                                "required" => true,
+										    ],
+                        "city" =>        [
+                                                "title" => "Ville",
+                                                "type" => "text",
+                                                "placeholder" => "Paris",
+                                                "required" => true,
+										    ],
+                        "email" =>          [
+                                                "title" => "E-mail",
+                                                "type" => "email",
+                                                "placeholder" => "exemple@gmail.com",
+                                                "required" => true
+                                            ],
+						"pwd" =>            [
+                                                "title" => "Mot de passe",
+                                                "type" => "password",
+                                                "required" => true
+                                            ],
+						"pwdConfirm" =>     [
+                                                "title" => "Confirmer le mot de passe",
+                                                "type" => "password",
+                                                "required" => true,
+                                                "confirm" => "pwd"
+                        ]
+					]
+		];
+    }
+ 
+    public function updateUserForm() {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row"],
 					"input" => [
@@ -316,7 +414,22 @@ class Users extends BaseSql {
                         "city" =>           [
                                                 "title" => "Ville",
                                                 "type" => "text"
-                                            ]
+                                            ],
+                        "rights" => [
+                                    "title" => "Rang utilisateur",
+                                    "type" => "select",
+                                    "options" => [
+                                        [
+                                            "id" => "0",
+                                            "name" => "Utilisateur",
+                                            "selected" => true
+                                        ],
+                                        [
+                                            "id" => "1",
+                                            "name" => "Administrateur"
+                                        ]
+                                    ]
+                                ]
 					]
 		];
     }

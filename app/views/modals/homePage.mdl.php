@@ -1,3 +1,15 @@
+<?php echo $_GET['confirm'] ? '<section class="row gutters">
+    <section id="error" class="col-xxs-12 gutters bg-is-main-color" style="margin-top: 50px;">
+        <h3 class="is-secondary-color">Vous avez confirmé votre email. Connectez-vous pour commencer à shopper !</h3>
+    </section></section>
+    ' : '' ; ?>
+
+<?php echo $_GET['payment'] ? '<section class="row gutters">
+    <section id="error" class="col-xxs-12 gutters bg-is-main-color" style="margin-top: 50px;">
+        <h3 class="is-secondary-color">Le paiement est validé, un mail de confirmation vous a été envoyé.</h3>
+    </section></section>
+    ' : '' ; ?>
+
 <section class="row">
     <section class="col-xxs-12 mainView">
         <?php echo $aConfigs["description_top_banner"] ? 

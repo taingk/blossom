@@ -5,11 +5,11 @@
     <?php foreach ($aConfigs[1]['products'] as $results): ?>
         
         <a href="/front/product?is=<?php echo $results['id_product']?>" 
-        class="col-xxs-12 col-xs-6 col-md-4 row container-product-box">
-            <div class="col-xxs-12 product-box bg-is-main-color">
-                <!-- <img src="" alt=""> -->
+        class="col-xxs-12 col-xs-6 col-md-4 container-product-box">
+            <div>
+                <img src="<?php echo $results["path"]?>" alt="category product" class="big-images">
             </div>
-            <strong class="col-xxs-12 is-third-color small-bandeau">
+            <strong class="is-third-color small-bandeau">
                 <?php echo $results["product_name"]?>
             </strong>
         </a>

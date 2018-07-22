@@ -11,14 +11,13 @@ class IndexController {
         $aConfigs = $oUser->userLoginForm();
         
         $oView->assign( "aConfigs", $aConfigs );
-
+        
         $sEmail = $aParams['POST']['email'];
         $sPwd = $aParams['POST']['pwd'];
 
         if ( $sEmail && $sPwd ) {
-            $oUser = new Users();
 
-            if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
+            if ( $oUser->isLoginValids($sEmail, $sPwd, true) ) {
                 $oToken = new Token();
 
                 $oToken->setTokenSession();
@@ -27,7 +26,7 @@ class IndexController {
 
                 header('Location: /back/dashboard');
             } else {
-                header('Location: /back?validity=false#error');
+                header('Location: /back?validity=false');
             }
         }
     }

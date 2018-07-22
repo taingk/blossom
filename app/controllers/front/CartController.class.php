@@ -45,11 +45,15 @@ class CartController {
                         $oProduct = new Products();
                         $oProduct->setId($sValue);
 
+                        $oImage = new Images();
+                        $oImage->setProductsIdProduct($sValue);
+
                         $iId = $oProduct->select()[0]['categories_idcategory'];
                         $oCategory = new Categories();
                         $oCategory->setId($iId);
                         
                         $iPrice = $oProduct->select()[0]['price'];
+                        $aProduct['image'] = $oImage->select()[0]['path'];
                         $aProduct['category_name'] = $oCategory->select()[0]['category_name'];
                         $aProduct['id_product'] = $oProduct->select()[0]['id_product'];
                         $aProduct['product_name'] = $oProduct->select()[0]['product_name'];
@@ -65,7 +69,7 @@ class CartController {
                 $iFinalPrice += $aProduct['final_price'];
                 $aProducts[] = $aProduct;
             }
-            
+
             $oView->assign('aCarts', $aProducts);
             $oView->assign('iTotalPrice', $iFinalPrice);
             $oView->assign('aUsers', $aCurrentUser);
