@@ -18,12 +18,15 @@ class ProductController {
         $aResultProduct = $oProduct->select();
 
         $oColor->setProductsIdProduct( $sId );
+        $oColor->setStatus(1);
         $aResultColor = $oColor->select();
 
         $oCapacity->setProductsIdProduct( $sId );
+        $oCapacity->setStatus(1);
         $aResultCapacity = $oCapacity->select();
 
         $oImages->setProductsIdProduct( $sId );
+        $oImages->setStatus(0);
         $aResultImages = $oImages->select();
 
         $aConfigs = [];
