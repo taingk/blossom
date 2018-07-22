@@ -26,7 +26,7 @@ class ProductController {
         $aResultCapacity = $oCapacity->select();
 
         $oImages->setProductsIdProduct( $sId );
-        $oImages->setStatus(0);
+        $oImages->setStatus(1);
         $aResultImages = $oImages->select();
 
         $aConfigs = [];
