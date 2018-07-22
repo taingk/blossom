@@ -11,11 +11,11 @@
                     <th>Prix unitaire</th>
                     <th>Prix total</th>
                 </tr>
-
+    
                 <?php foreach ( $aCarts as $aCart ): ?>
                     <tr>
                         <td>
-                            <img src="/public/img/airpodPanier.jpeg" class="images" alt="product_image">
+                            <img src="<?php echo $aCart['image']; ?>" class="images" alt="product_image">
                         </td>
                         <td>
                             <p class="is-third-color text-left responsive-center"><?php echo $aCart['category_name']; ?> : <?php echo $aCart['product_name']; ?></p>

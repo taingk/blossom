@@ -15,9 +15,11 @@
     </section>
     ' : '' ; ?>
 
-    <article class="col-xxs-12 col-md-5 container-product-box">
-        <div class="product-box bg-is-main-color">
-            <label>Photo</label>
+    <article class="col-xxs-12 col-md-5 row container-product-box">
+        <div>
+            <?php foreach ($aConfigs[3]['images'] as $aImages ): ?>
+                <img src="<?php echo $aImages['path'] ?>" alt="category product" class="first-product-image">
+            <?php endforeach; ?>
         </div>
     </article>
 
