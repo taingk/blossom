@@ -449,40 +449,7 @@ class Users extends BaseSql {
                                             ],
 					]
 		];
-	}
-
-    public function installForm() {
-		return [
-					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer les paramètres", "class" => "form col-md-5 row"],
-					"input" => [
-                        "dbuser" =>         [
-                                                "title" => "Nom d'utilisateur de la base de données",
-                                                "type" => "text",
-                                                "placeholder" => "root"
-                                            ],
-                        "dbpassword" =>     [
-                                                "title" => "Mot de passe de la base de données",
-                                                "type" => "password"
-                                            ],
-                        "dbhost" =>         [
-                                                "title" => "Nom d'hôte de la base de données",
-                                                "type" => "text",
-                                                "placeholder" => "localhost"
-                                            ],
-                        "dbname" =>         [
-                                                "title" => "Nom de la base de données",
-                                                "type" => "text",
-                                                "placeholder" => "blossom"
-                                            ],
-                        "dbport" =>         [
-                                                "title" => "Numéro de port de la base de données",
-                                                "type" => "number",
-                                                "placeholder" => "3306"
-                                            ]
-					]
-		];
-	}
-    
+	}    
 }
 
 ?>
