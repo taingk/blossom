@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-require 'conf.inc.php';
 
 function autoloader( $sClass ) {
     $sClass = $sClass . ".class.php";
@@ -15,6 +14,12 @@ function autoloader( $sClass ) {
 }
 
 spl_autoload_register("autoloader");
+
+if ( !file_exists('conf.inc.php') ) {
+    return require 'install.php';
+}
+
+require 'conf.inc.php';
 
 $sUri = urldecode($_SERVER["REQUEST_URI"]);
 $sUri = ltrim($sUri, "/");
