@@ -1,7 +1,7 @@
 <?php
 
-class AdminController {    
-    
+class AdminController {
+
     /*
     * Formulaire inscription administrateur
     */
@@ -28,7 +28,7 @@ class AdminController {
 			if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
                 $oToken = new Token();
-                
+
                 $oMailer->confirmMail($aParams, $oToken->getToken());
                 $oUser->setFirstname($aParams['POST']['firstname']);
                 $oUser->setLastname($aParams['POST']['lastname']);
@@ -40,7 +40,7 @@ class AdminController {
                 $oUser->setRights(1);
                 $oUser->setStatus(0);
                 $oUser->save();
-    
+
                 include "controllers/back/IndexController.class.php";
                 $oIndex = new IndexController();
                 $oIndex->indexAction( [] );
@@ -59,6 +59,10 @@ class AdminController {
         session_destroy();
         $_SESSION = [];
         header('Location: /back');
+    }
+
+    public function dataAction() {
+      
     }
 
 }

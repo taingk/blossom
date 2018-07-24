@@ -109,17 +109,6 @@ class UserController {
 
         foreach ($aConfigs['input'] as $sKey => &$aValue) {
             foreach ($aInfos as $sInfoKey => $sInfoValue) {
-                if ( $sInfoKey === 'sexe' ) {
-                    if ( !$sInfoValue ) {
-                        if ( $sKey === 'Masculin' ) {
-                            $aValue['checked'] = true;
-                        }
-                    } else {
-                        if ( $sKey === 'Feminin' ) {
-                            $aValue['checked'] = true;
-                        }
-                    }
-                }
                 if ( $sKey == $sInfoKey && $sKey !== 'pwd') {
                     $aValue['value'] = $sInfoValue;
                 }
