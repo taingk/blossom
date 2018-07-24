@@ -17,7 +17,8 @@ class UserController {
         if ($sEmail && $sPwd) {
             $oUser = new Users();
 
-            if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
+            $iLogin = $oUser->isLoginValids($sEmail, $sPwd);
+            if ( $iLogin ) {
                 $oToken = new Token();
 
                 $oToken->setTokenSession();
@@ -25,7 +26,9 @@ class UserController {
                 $oToken->setTokenDb();
 
                 header('Location: /');
-            } else {
+            } else if ( $iLogin === 0 ) {
+                header('Location: /front/user?status=false');
+            } else if ( $iLogin === -1 ) {
                 header('Location: /front/user?validity=false');
             }
         }

@@ -17,7 +17,8 @@ class IndexController {
 
         if ( $sEmail && $sPwd ) {
 
-            if ( $oUser->isLoginValids($sEmail, $sPwd, true) ) {
+            $iLogin = $oUser->isLoginValids($sEmail, $sPwd, true);
+            if ( $iLogin ) {
                 $oToken = new Token();
 
                 $oToken->setTokenSession();
@@ -25,7 +26,9 @@ class IndexController {
                 $oToken->setTokenDb();
 
                 header('Location: /back/dashboard');
-            } else {
+            } else if ( $iLogin === 0 ) {
+                header('Location: /back?status=false');
+            } else if ( $iLogin === -1 ) {
                 header('Location: /back?validity=false');
             }
         }

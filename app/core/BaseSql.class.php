@@ -153,17 +153,25 @@ class BaseSql {
 
         if ( $aResults = $oRequest->fetch() ) {
             if ( $bAdmin ) {
-                if ( password_verify( $sPwd, $aResults['pwd'] ) && $aResults['status'] && $aResults['rights'] ) {
-                    return 1;
+                if ( password_verify( $sPwd, $aResults['pwd'] ) ) {
+                    if ( $aResults['status'] ) {
+                        if ( $aResults['rights'] ) {
+                            return 1;
+                        }
+                    }
+                    return 0;
                 }
             } else {
-                if ( password_verify( $sPwd, $aResults['pwd'] ) && $aResults['status'] ) {
-                    return 1;
+                if ( password_verify( $sPwd, $aResults['pwd'] ) ) {
+                    if ( $aResults['status'] ) {
+                        return 1;
+                    }
+                    return 0;
                 }
             }
         }
-
-        return 0;
+        
+        return -1;
     }
 
 }
