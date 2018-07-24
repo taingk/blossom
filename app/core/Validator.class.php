@@ -17,9 +17,12 @@ class Validator {
 					$aErrorsMsg[] = "Mot de passe incorrect (au minimum une majuscule, minuscule, chiffre et entre 6 et 32 caractères)";
 				} else if ( $sAttribut["type"] == "number" && !self::checkNumber( $aData[$sName ] ) ) {
 
+				} else if ( $sAttribut["type"] == "captcha" && $aData[$sName] != $_SESSION['captcha'] ) {
+					$aErrorsMsg[] = "Le captcha n'est pas valide";
 				}
 			}
 			// On peut ajouter les cas de types radio / checkbox / etc... dans un nouveau else if
+			
 
 			// Gère les cas "conditions"
 			if ( isset( $sAttribut["maxString"] ) && !self::maxString( $aData[$sName], $sAttribut["maxString"] ) ) {

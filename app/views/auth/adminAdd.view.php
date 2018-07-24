@@ -5,6 +5,7 @@
         <hr>
 
         <?php $this->addModal( "form", $aConfigs, $aErrors ) ?>
+        <!-- <?php $this->addModal( "captcha", $aErrors ) ?> -->
     </section>
         
 </section>
