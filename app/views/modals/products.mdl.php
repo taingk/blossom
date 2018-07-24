@@ -16,11 +16,9 @@
     ' : '' ; ?>
 
     <article class="col-xxs-12 col-md-5 row container-product-box">
-        <div>
-            <?php foreach ($aConfigs[3]['images'] as $aImages ): ?>
-                <img src="<?php echo $aImages['path'] ?>" alt="category product" class="first-product-image">
-            <?php endforeach; ?>
-        </div>
+        <?php foreach ($aConfigs[4]['images'] as $aImages ): ?>
+            <img src="<?php echo $aImages['path'] ?>" alt="category product" class="first-product-image">
+        <?php endforeach; ?>
     </article>
 
     <article class="col-xxs-12 col-md-7 is-third-color gutters text-is-left">
@@ -92,11 +90,12 @@
 onCapacity = () => {
     const subTotal = document.getElementById('sub-total');
     const price = document.getElementById('price').innerHTML;
-    const selectBox = document.getElementById("capacity");
-    const additional_price = selectBox.options[selectBox.selectedIndex].innerHTML;
+    const selectBox = document.getElementById('capacity');
 
     subTotal.innerHTML = parseInt(price);
-    if (additional_price) {
+
+    if ( selectBox.options[selectBox.selectedIndex] ) {
+        const additional_price = selectBox.options[selectBox.selectedIndex].innerHTML;
         subTotal.innerHTML = parseInt(subTotal.innerHTML) + parseInt(additional_price.split('+')[1].slice(1, -1));
     }
 }
