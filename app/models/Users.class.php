@@ -445,20 +445,6 @@ class Users extends BaseSql {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row"],
 					"input" => [
-                        "Masculin" =>           [
-                                                "type" => "radio",
-                                                "name" => "sexe",
-                                                "value" => "0"
-										    ],
-                        "Feminin" =>        [
-                                                "type" => "radio",
-                                                "name" => "sexe",
-                                                "value" => "1"
-										    ],
-                        "birthday_date" =>  [
-                                                "title" => "Date de naissance",
-                                                "type" => "date"
-										    ],
                         "email" =>          [
                                                 "title" => "E-mail",
                                                 "type" => "email",

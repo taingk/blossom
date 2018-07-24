@@ -131,8 +131,6 @@ class UserController {
 
 			if ( empty( $aErrors ) ) {
                 $oUser->setId($sId);
-                $oUser->setSexe($aParams['POST']['sexe']);
-                $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
                 $oUser->setEmail($aParams['POST']['email']);
                 $oUser->setPwd($aParams['POST']['pwd']);
                 $oUser->setAddress($aParams['POST']['address']);
