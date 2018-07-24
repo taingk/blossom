@@ -6,5 +6,5 @@ app/sass/node_modules/
 .idea
 app/public/uploads/*
 customColors.css
-conf.inc.php
-sitemap.xml
+app/conf.inc.php
+app/sitemap.xml
