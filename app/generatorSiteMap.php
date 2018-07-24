@@ -35,27 +35,51 @@ include 'conf.inc.php';
 
     foreach( $aResultsLinks as $key => $value ) {
         if( $value['link'] == "/front/product?is=" ) {
-            foreach( $aResultsProducts as $key2 => $value2 ) {
-            $url = $sitemap->createElement("url");
-            $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_product']);
-            $changefreq = $sitemap->createElement("changefreq", "daily");
-            $priority = $sitemap->createElement("priority", "0.8");
-            $url->appendChild( $loc );
-            $url->appendChild( $changefreq );
-            $url->appendChild( $priority );
-            $urlset->appendChild($url);
+            if( !empty($aResultsProducts) ) {
+                foreach( $aResultsProducts as $key2 => $value2 ) {
+                    $url = $sitemap->createElement("url");
+                    $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_product']);
+                    $changefreq = $sitemap->createElement("changefreq", "daily");
+                    $priority = $sitemap->createElement("priority", "0.8");
+                    $url->appendChild( $loc );
+                    $url->appendChild( $changefreq );
+                    $url->appendChild( $priority );
+                    $urlset->appendChild( $url );
+                }
+            }
+            else {
+                $url = $sitemap->createElement("url");
+                $loc = $sitemap->createElement("loc","https://".$server.$value['link']);
+                $changefreq = $sitemap->createElement("changefreq", "daily");
+                $priority = $sitemap->createElement("priority", "0.8");
+                $url->appendChild( $loc );
+                $url->appendChild( $changefreq );
+                $url->appendChild( $priority );
+                $urlset->appendChild( $url );
             }
         }
         elseif( $value['link']  == "/front/category?is=" ) {
-            foreach( $aResultsCapacities as $key2 => $value2 ) {
-            $url = $sitemap->createElement("url");
-            $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_category']);
-            $changefreq = $sitemap->createElement("changefreq", "daily");
-            $priority = $sitemap->createElement("priority", "0.8");
-            $url->appendChild( $loc );
-            $url->appendChild( $changefreq );
-            $url->appendChild( $priority );
-            $urlset->appendChild($url);
+            if( !empty($aResultsCapacities) ){
+                foreach( $aResultsCapacities as $key2 => $value2 ) {
+                    $url = $sitemap->createElement("url");
+                    $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_category']);
+                    $changefreq = $sitemap->createElement("changefreq", "daily");
+                    $priority = $sitemap->createElement("priority", "0.8");
+                    $url->appendChild( $loc );
+                    $url->appendChild( $changefreq );
+                    $url->appendChild( $priority );
+                    $urlset->appendChild( $url );
+                }
+            }
+            else {
+                $url = $sitemap->createElement("url");
+                $loc = $sitemap->createElement("loc","https://".$server.$value['link']);
+                $changefreq = $sitemap->createElement("changefreq", "daily");
+                $priority = $sitemap->createElement("priority", "0.8");
+                $url->appendChild( $loc );
+                $url->appendChild( $changefreq );
+                $url->appendChild( $priority );
+                $urlset->appendChild( $url );
             }
         }
         else {
@@ -63,14 +87,14 @@ include 'conf.inc.php';
         $loc = $sitemap->createElement("loc","https://".$server.$value['link']);
         $changefreq = $sitemap->createElement("changefreq", "daily");
         $priority = $sitemap->createElement("priority", "0.8");
-        $url->appendChild($loc);
-        $url->appendChild($changefreq);
-        $url->appendChild($priority);
-        $urlset->appendChild($url);
+        $url->appendChild( $loc );
+        $url->appendChild( $changefreq );
+        $url->appendChild( $priority );
+        $urlset->appendChild( $url );
 
         }
 
     }
-    $sitemap->appendChild($urlset);
+    $sitemap->appendChild( $urlset );
 
     $sitemap->save("sitemap.xml");
