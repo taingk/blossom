@@ -1,20 +1,29 @@
 <?php
 
+include 'conf.inc.php';
+
     try {
         // Connexion à la bdd
-        $this->oPdo = new PDO('mysql:host='.DBHOST.';dbname='.DBNAME.';charset=utf8', DBUSER, DBPASSWORD);
+        $oPdo = new PDO('mysql:host='.DBHOST.';dbname='.DBNAME.';charset=utf8', DBUSER, DBPASSWORD);
     } catch (Expression $e) {
         die("Erreur " . $e->getMessage());
     }
 
-    $sQuery = "SELECT 'id_product' FROM products";
-    $oRequest = $this->oPdo->prepare( $sQuery );
-    $oRequest->execute( $this->aColumns );
-    $aResults = $oRequest->fetchAll();
+    $sQueryProducts = "select `id_product` from products ";
+    $oRequestProducts = $oPdo->prepare( $sQueryProducts );
+    $oRequestProducts->execute();
+    $aResultsProducts = $oRequestProducts->fetchAll();
 
-    $aIdProducts = $this->unsetIntegerColumns( $aResults );
+    $sQueryCapacities = "select `id_capacity` from capacities ";
+    $oRequestCapacities = $oPdo->prepare( $sQueryCapacities );
+    $oRequestCapacities->execute();
+    $aResultsCapacities = $oRequestCapacities->fetchAll();
 
-    print_r($aIdProducts);
+    $sQueryLinks = "select `link` from links ";
+    $oRequestLinks = $oPdo->prepare( $sQueryLinks );
+    $oRequestLinks->execute();
+    $aResultsLinks = $oRequestLinks->fetchAll();
+
 
     $server = $_SERVER['SERVER_NAME'];
 
@@ -24,10 +33,9 @@
     $urlset->setAttribute("xmlns:xsi",'http://www.w3.org/2001/XMLSchema-instance');
     $urlset->setAttribute("xsi:schemaLocation",'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
 
-    foreach( $alinks as $key => $value ) {
-    print_r($alinks);
+    foreach( $aResultsLinks as $key => $value ) {
         if( $value['link'] == "/front/product?is=" ) {
-            foreach( $aIdProducts as $key2 => $value2 ) {
+            foreach( $aResultsProducts as $key2 => $value2 ) {
             $url = $sitemap->createElement("url");
             $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_product']);
             $changefreq = $sitemap->createElement("changefreq", "daily");
@@ -39,8 +47,7 @@
             }
         }
         elseif( $value['link']  == "/front/category?is=" ) {
-            foreach( $aCategories as $key2 => $value2 ) {
-            print_r($aCategories);
+            foreach( $aResultsCapacities as $key2 => $value2 ) {
             $url = $sitemap->createElement("url");
             $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_category']);
             $changefreq = $sitemap->createElement("changefreq", "daily");
