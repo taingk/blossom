@@ -62,7 +62,7 @@ class ProductController {
         
         $aImages = ['images' => $aResultImages];
         array_push($aConfigs, $aImages);
-
+        error_log(print_r($aConfigs, true));
         $oView->assign('aConfigs', $aConfigs);
     }
 

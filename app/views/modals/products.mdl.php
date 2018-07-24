@@ -96,7 +96,9 @@ onCapacity = () => {
     const additional_price = selectBox.options[selectBox.selectedIndex].innerHTML;
 
     subTotal.innerHTML = parseInt(price);
-    subTotal.innerHTML = parseInt(subTotal.innerHTML) + parseInt(additional_price.split('+')[1].slice(1, -1));
+    if (additional_price) {
+        subTotal.innerHTML = parseInt(subTotal.innerHTML) + parseInt(additional_price.split('+')[1].slice(1, -1));
+    }
 }
 
 onCapacity();
