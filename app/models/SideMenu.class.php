@@ -37,10 +37,10 @@ class SideMenu {
                     "title" => "Produits",
                     "icon" => "smartphone-1",
                     "children" => [
-                        "products" => "Ajouter un produit",
-                        "colors" => "Ajouter une couleur",
-                        "capacities" => "Ajouter une capacité de stockage",
-                        "images" => "Ajouter une image",
+                        "products" => "Produit",
+                        "colors" => "Couleur",
+                        "capacities" => "Capacité de stockage",
+                        "images" => "Image",
                     ]
                 ],
                 "comments" =>  [

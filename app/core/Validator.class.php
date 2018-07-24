@@ -9,7 +9,7 @@ class Validator {
 			if ( isset( $sAttribut["confirm"] ) && $aData[$sName] != $aData[$sAttribut["confirm"]] ) {
 				$aErrorsMsg[] = "Les mots de passes ne correspondent pas";
 			} else if ( !isset( $sAttribut["confirm"] ) ) {
-				if ( $sAttribut["type"] == "email" && !self::checkSameEmail( $aData[$sName] ) ) {
+				if ( $sAttribut["type"] == "email" && self::checkSameEmail( $aData[$sName] ) && !$bUpdate ) {
 					$aErrorsMsg[] = "L'email renseigné est déjà utilisé";
 				} else if ( $sAttribut["type"] == "email" && !self::checkEmail( $aData[$sName] ) ) {
 					$aErrorsMsg[] = "Format de l'email incorrect";
@@ -17,6 +17,12 @@ class Validator {
 					$aErrorsMsg[] = "Mot de passe incorrect (au minimum une majuscule, minuscule, chiffre et entre 6 et 32 caractères)";
 				} else if ( $sAttribut["type"] == "number" && !self::checkNumber( $aData[$sName ] ) ) {
 
+				} else if ( $sAttribut["type"] == "captcha" && $aData[$sName] != $_SESSION['captcha'] ) {
+					$aErrorsMsg[] = "Le captcha n'est pas valide";
+				} else if ( $sAttribut["title"] == "Date de naissance" ) {
+					if ( Helper::getAge($aData[$sName]) < 18 ){
+						$aErrorsMsg[] = "Vous devez avoir 18 ans pour vous inscrire";
+					}
 				}
 			}
 			// On peut ajouter les cas de types radio / checkbox / etc... dans un nouveau else if
@@ -65,9 +71,12 @@ class Validator {
 	public static function checkSameEmail( $sEmail ) {
 		$oUsers = new Users();
 		$oUsers->setEmail( $sEmail );
-		if( !$oUsers->select() ) {
+
+		if ( $oUsers->select() ) {
 			return true;
 		}
+
+		return false;
 	}
 
 	public static function checkEmail( $sEmail ) {

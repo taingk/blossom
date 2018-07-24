@@ -11,9 +11,9 @@ stop:
 logs:
 	docker logs -f apache_projet_annuel
 dump:
-	docker exec mysql_projet_annuel /usr/bin/mysqldump -u root --password=root app > data/backup.sql && cat data/backup.sql | docker exec -i mysql_projet_annuel /usr/bin/mysql -u root --password=root app
+	docker exec mysql_projet_annuel /usr/bin/mysqldump -u root --password=root app > app/data/backup.sql && cat app/data/backup.sql | docker exec -i mysql_projet_annuel /usr/bin/mysql -u root --password=root app
 restore:
-	cat data/backup.sql | docker exec -i mysql_projet_annuel /usr/bin/mysql -u root --password=root app
+	cat app/data/backup.sql | docker exec -i mysql_projet_annuel /usr/bin/mysql -u root --password=root app
 r_apache:
 	docker exec apache_projet_annuel service apache2 restart
 pull:

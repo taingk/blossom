@@ -19,7 +19,7 @@ class AdminController {
             return;
         }
 
-		$aConfigs = $oUser->adminFormAdd();
+    	$aConfigs = $oUser->adminFormAdd();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
@@ -29,7 +29,7 @@ class AdminController {
                 $oMailer = new Mailer();
                 $oToken = new Token();
                 
-                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oMailer->confirmMail($aParams, $oToken->getToken());
                 $oUser->setFirstname($aParams['POST']['firstname']);
                 $oUser->setLastname($aParams['POST']['lastname']);
                 $oUser->setSexe($aParams['POST']['sexe']);
@@ -60,5 +60,5 @@ class AdminController {
         $_SESSION = [];
         header('Location: /back');
     }
-    
+
 }

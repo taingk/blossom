@@ -192,6 +192,11 @@ class Users extends BaseSql {
                                                 "type" => "password",
                                                 "required" => true,
                                                 "confirm" => "pwd"
+                        ],
+                        "captcha" =>        [
+                                                "title" => "Confirmer le captcha",
+                                                "type" => "captcha",
+                                                "required" => true,
                                             ]
 					]
 		];
@@ -234,20 +239,17 @@ class Users extends BaseSql {
                         "address" =>        [
                                                 "title" => "Adresse postale",
                                                 "type" => "text",
-                                                "placeholder" => "242 boulevard de Saint Antoine",
-                                                "required" => true,
+                                                "placeholder" => "242 boulevard de Saint Antoine"
 										    ],
                         "zip_code" =>       [
                                                 "title" => "Code postal",
                                                 "type" => "number",
-                                                "placeholder" => "75012",
-                                                "required" => true,
+                                                "placeholder" => "75012"
 										    ],
                         "city" =>        [
                                                 "title" => "Ville",
                                                 "type" => "text",
-                                                "placeholder" => "Paris",
-                                                "required" => true,
+                                                "placeholder" => "Paris"
 										    ],
                         "email" =>          [
                                                 "title" => "E-mail",
@@ -267,19 +269,19 @@ class Users extends BaseSql {
                                                 "confirm" => "pwd"
                         ],
                         "rights" => [
-                            "title" => "Rang utilisateur",
-                            "type" => "select",
-                            "options" => [
-                                [
-                                    "id" => "0",
-                                    "name" => "Utilisateur",
-                                    "selected" => true
-                                ],
-                                [
-                                    "id" => "1",
-                                    "name" => "Administrateur"
-                                ]
-                            ]
+                                                "title" => "Rang utilisateur",
+                                                "type" => "select",
+                                                "options" => [
+                                                                [
+                                                                    "id" => "0",
+                                                                    "name" => "Utilisateur",
+                                                                    "selected" => true
+                                                                ],
+                                                                [
+                                                                    "id" => "1",
+                                                                    "name" => "Administrateur"
+                                                                ]
+                                                ]
                         ]
 					]
 		];
@@ -353,7 +355,12 @@ class Users extends BaseSql {
                                                 "type" => "password",
                                                 "required" => true,
                                                 "confirm" => "pwd"
-                        ]
+                        ],
+                        "captcha" =>        [
+                                                "title" => "Confirmer le captcha",
+                                                "type" => "captcha",
+                                                "required" => true,
+                                            ]
 					]
 		];
     }
@@ -406,7 +413,7 @@ class Users extends BaseSql {
                                                 "title" => "Adresse",
                                                 "type" => "text"
                                             ],
-                        "postal" =>         [
+                        "zip_code" =>         [
                                                 "title" => "Code postal",
                                                 "type" => "text",
                                                 "requiredNum" => 5
@@ -499,7 +506,6 @@ class Users extends BaseSql {
 					]
 		];
 	}
-
 }
 
 ?>

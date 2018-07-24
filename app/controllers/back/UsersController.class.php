@@ -57,11 +57,11 @@ class UsersController {
         if ( !empty( $aParams['POST'] ) ) {
             $aErrors = Validator::checkForm( $this->aConfigs, $aParams["POST"] );
 
-			if ( empty( $aErrors ) ) {
+		if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
                 $oToken = new Token();
                 
-                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oMailer->confirmMail($aParams, $oToken->getToken());
                 $this->oUser->setFirstname($aParams['POST']['firstname']);
                 $this->oUser->setLastname($aParams['POST']['lastname']);
                 $this->oUser->setSexe($aParams['POST']['sexe']);
@@ -71,7 +71,7 @@ class UsersController {
                 $this->oUser->setToken($oToken->getToken());
                 $this->oUser->setAddress($aParams['POST']['address']);
                 $this->oUser->setCity($aParams['POST']['city']);
-                $this->oUser->setZipCode($aParams['POST']['postal']);
+                $this->oUser->setZipCode($aParams['POST']['zip_code']);
                 $this->oUser->setRights($aParams['POST']['rights']);
                 $this->oUser->setStatus(0);
                 $this->oUser->save();
@@ -130,7 +130,7 @@ class UsersController {
                 $this->oUser->setPwd($aParams['POST']['pwd']);
                 $this->oUser->setAddress($aParams['POST']['address']);
                 $this->oUser->setCity($aParams['POST']['city']);
-                $this->oUser->setZipCode($aParams['POST']['postal']);
+                $this->oUser->setZipCode($aParams['POST']['zip_code']);
                 $this->oUser->setRights($aParams['POST']['rights']);
                 $this->oUser->save();
 
@@ -181,7 +181,7 @@ class UsersController {
                 $this->oUser->setStatus(1);
                 $this->oUser->save();
 
-                header('Location: /back');
+                header('Location: /?confirm=true');
             }
         }
     }

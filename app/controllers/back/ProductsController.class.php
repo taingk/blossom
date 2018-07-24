@@ -154,7 +154,7 @@ class ProductsController {
 
     public function refactorConfigs() {
         $this->aConfigs = $this->oProduct->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'description'));
-        $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix','qté max', 'qté actuelle','status', 'options');
+        $this->aConfigs['label'] = array('id', 'produit', 'categorie', 'prix','qté actuelle', 'qté max','status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/products/update?id=');
         $this->aConfigs['delete'] = array('url' => '/back/products/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/products/add');
