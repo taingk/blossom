@@ -22,7 +22,6 @@ if ( $_POST ) {
     try {
         $oPdo = new PDO('mysql:host=' . $_POST['dbhost'], $_POST['dbuser'], $_POST['dbpassword']);
 
-        chmod('data/backup.sql', 777);
         $sFile = file_get_contents('data/backup.sql');
 
         $oPdo->exec('CREATE DATABASE '. $_POST['dbname'] .';'.

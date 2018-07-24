@@ -103,7 +103,6 @@ class SitesController {
             --background-color: " . $aSites['background_color'] . ";
         }";
 
-        chmod( getcwd() . '/public/css', 666 );
         file_put_contents($sCssPath, $sCss);
     }
 
