@@ -80,11 +80,13 @@ class AdminController {
         $urlset->setAttribute("xsi:schemaLocation",'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
 
         foreach( $alinks as $key => $value ) {
+            print_r($alinks);
             echo "test";
             if( $value['link'] == "front/product?is=" ) {
                 echo "if1";
                 foreach( $aProducts as $key2 => $value2 ) {
                     echo "foreach2";
+                    print_r($aProducts);
                     $url = $sitemap->createElement("url");
                     $loc = $sitemap->createElement("loc",$server.$value['link'].$value2['id_product']);
                     $changefreq = $sitemap->createElement("changefreq", "daily");
@@ -99,6 +101,7 @@ class AdminController {
                 echo "elseif1";
                 foreach( $aCategories as $key2 => $value2 ) {
                     echo "foreach3";
+                    print_r($aCategories);
                     $url = $sitemap->createElement("url");
                     $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_category']);
                     $changefreq = $sitemap->createElement("changefreq", "daily");
