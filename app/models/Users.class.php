@@ -463,7 +463,7 @@ class Users extends BaseSql {
                                                 "title" => "Adresse",
                                                 "type" => "text"
                                             ],
-                        "postal" =>         [
+                        "zip_code" =>         [
                                                 "title" => "Code postal",
                                                 "type" => "text",
                                                 "requiredNum" => 5
