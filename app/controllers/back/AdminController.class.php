@@ -73,6 +73,7 @@ class AdminController {
 
         $server = $_SERVER['SERVER_NAME'];
         print($server);
+        echo "coucou";
 
         $sitemap = new DOMDocument('1.0',"UTF-8");
         $urlset = $sitemap->createElement("urlset");
