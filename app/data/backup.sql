@@ -45,6 +45,36 @@ LOCK TABLES `capacities` WRITE;
 /*!40000 ALTER TABLE `capacities` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `links`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `links` (
+  `id_link` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(255),
+  PRIMARY KEY (`id_link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+INSERT INTO `links` (`id_link`, `link`) VALUES
+(1, '/front/category?is='),
+(2, '/front/cart'),
+(3, '/front/user'),
+(4, '/front/user/subscribe'),
+(5, '/front/legalnotices'),
+(6, '/front/cgvs'),
+(7, '/front/contacts'),
+(8, '/front/product?is='),
+(9, '/front/user/profile');
+
+--
+-- Dumping data for table `capacities`
+--
+
+LOCK TABLES `capacities` WRITE;
+/*!40000 ALTER TABLE `capacities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `capacities` ENABLE KEYS */;
+UNLOCK TABLES;
+
 DROP TABLE IF EXISTS `sites`;
 
 CREATE TABLE `sites`
@@ -327,7 +357,7 @@ CREATE TABLE `products` (
   `description` longtext,
   `price` float DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
-  `max_quantity` int(11) DEFAULT NULL,
+  `max_quantity` int(11) DEFAULT NULL,  
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,

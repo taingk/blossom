@@ -459,8 +459,7 @@ class Users extends BaseSql {
                                             ],
 					]
 		];
-	}
-    
+	}    
 }
 
 ?>
