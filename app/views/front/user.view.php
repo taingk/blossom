@@ -17,7 +17,7 @@
         <a href="/front/user/update" class="col-xxs-12 col-md-4 bg-is-main-color small-bandeau is-h-centered">
             Modifier son adresse de livraison
         </a>
-        <?php echo $aUsers['rights'] ? '<a href="/back" class="col-xxs-12 col-md-4 bg-is-main-color small-bandeau is-h-centered">
+        <?php echo $aUsers['rights'] ? '<a href="/back/dashboard" class="col-xxs-12 col-md-4 bg-is-main-color small-bandeau is-h-centered">
             Se rendre sur le back-office
             </a>' : '' ?>
     </section>

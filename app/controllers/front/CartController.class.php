@@ -35,11 +35,16 @@ class CartController {
                         $aProduct['id_cart'] = $sValue;
                     }
                     if ($sKey == 'capacities_id_capacity') {
-                        $oCapacity = new Capacities();
-                        $oCapacity->setId($sValue);
-                        $aProduct['capacity_number'] = $oCapacity->select()[0]['capacity_number'];
-                        $iAdditionalPrice = $oCapacity->select()[0]['additional_price'];
-                        $aProduct['additional_price'] = $iAdditionalPrice;
+                        if ( $sValue ) {
+                            $oCapacity = new Capacities();
+                            $oCapacity->setId($sValue);
+                            $aProduct['capacity_number'] = $oCapacity->select()[0]['capacity_number'];
+                            $iAdditionalPrice = $oCapacity->select()[0]['additional_price'];
+                            $aProduct['additional_price'] = $iAdditionalPrice;
+                        } else {                        
+                            $aProduct['additional_price'] = '';
+                            $aProduct['capacity_number'] = '';
+                        }
                     }
                     if ($sKey == 'products_id_product') {
                         $oProduct = new Products();
@@ -61,9 +66,13 @@ class CartController {
                         $aProduct['final_price'] = $iPrice + $iAdditionalPrice;
                     }
                     if ($sKey == 'colors_id_color') {
-                        $oColor = new Colors();
-                        $oColor->setId($sValue);
-                        $aProduct['color_name'] = $oColor->select()[0]['name'];
+                        if ( $sValue ) {
+                            $oColor = new Colors();
+                            $oColor->setId($sValue);
+                            $aProduct['color_name'] = $oColor->select()[0]['name'];
+                        } else {
+                            $aProduct['color_name'] = '';
+                        }
                     }
                 }
                 $iFinalPrice += $aProduct['final_price'];

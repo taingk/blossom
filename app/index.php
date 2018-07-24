@@ -52,7 +52,7 @@ if ( $sStructure === "back" ) {
     $oToken = new Token();
     $oUser = new Users();
 
-    if ( $sAction === "confirmAction" || $sAction === "deleteAction" ) {
+    if ( $sAction === "confirmAction" ) {
         include "controllers/back/" . $sController . ".class.php";
         $oObject = new $sController();
         $oObject->$sAction( $aParams );

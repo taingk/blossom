@@ -163,9 +163,9 @@ DROP TABLE IF EXISTS `carts`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carts` (
   `id_cart` int(11) NOT NULL AUTO_INCREMENT,
-  `capacities_id_capacity` int(11) NOT NULL,
+  `capacities_id_capacity` int(11) DEFAULT NULL,
   `products_id_product` int(11) NOT NULL,
-  `colors_id_color` int(11) NOT NULL,
+  `colors_id_color` int(11) DEFAULT NULL,
   `orders_id_order` int(11) DEFAULT NULL,
   `users_id_user` int(11) NOT NULL,
   `cancelled` tinyint(4) NOT NULL DEFAULT '0',
