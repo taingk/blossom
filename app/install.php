@@ -22,7 +22,6 @@ if ( $_POST ) {
     try {
         $oPdo = new PDO('mysql:host=' . $_POST['dbhost'], $_POST['dbuser'], $_POST['dbpassword']);
 
-        chmod('data/backup.sql', 777);
         $sFile = file_get_contents('data/backup.sql');
 
         $oPdo->exec('CREATE DATABASE '. $_POST['dbname'] .';'.
@@ -134,9 +133,7 @@ function installForm() {
                     <label for="<?php echo $sName ?>" class="is-third-color col-xxs-12 text-is-left small-bandeau"><?php echo $sAttribut["title"] ?></label>
                     <input id="<?php echo $sName ?>" class="is-third-color col-xxs-12" type="<?php echo $sAttribut["type"] ?>" 
                     name="<?php echo $sName ?>" 
-                    placeholder="<?php echo $sAttribut["placeholder"] ?>" 
                     <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>
-                    value="<?php echo $sAttribut["value"] ?>"/>
 
                 <?php endforeach; ?>
 
