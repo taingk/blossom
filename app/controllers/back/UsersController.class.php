@@ -56,8 +56,8 @@ class UsersController {
 
         if ( !empty( $aParams['POST'] ) ) {
             $aErrors = Validator::checkForm( $this->aConfigs, $aParams["POST"] );
-            unset($_SESSION['captcha']);
-			if ( empty( $aErrors ) ) {
+
+		if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
                 $oToken = new Token();
                 
