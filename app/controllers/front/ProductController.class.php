@@ -75,7 +75,7 @@ class ProductController {
         $iQuantity = $aProduct['quantity'];
 
         if ( $iQuantity <= 0 ) {
-            header('location: /front/product?is=' . $sId . '&validity=false#error');
+            header('location: /front/product?is=' . $sId . '&validity=true#error');
             return;
         }
 

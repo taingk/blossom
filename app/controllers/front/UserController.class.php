@@ -17,7 +17,8 @@ class UserController {
         if ($sEmail && $sPwd) {
             $oUser = new Users();
 
-            if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
+            if ( $oUser->isLoginValids($sEmail, $sPwd)) {
+                $aErrorsMsg[] = 'Vous devez confirmez votre adresse mail';
                 $oToken = new Token();
 
                 $oToken->setTokenSession();
@@ -39,7 +40,7 @@ class UserController {
         $aConfigs = $oUser->userForm();
         $aErrors = [];
 
-        if ( !empty( $aParams['POST'] ) ) {
+        if ( !empty( $aParams['POST'] && $aConfigs[Ø]) ) {
             $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"]);
             unset($_SESSION['captcha']);
             if ( empty( $aErrors ) ) {
