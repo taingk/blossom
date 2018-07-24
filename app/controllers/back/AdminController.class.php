@@ -72,9 +72,6 @@ class AdminController {
         $aCategories = $oCategory->select(array('id_category'));
 
         $server = $_SERVER['SERVER_NAME'];
-        print($server);
-        echo "coucou";
-        echo "coucou";
 
         $sitemap = new DOMDocument('1.0',"UTF-8");
         $urlset = $sitemap->createElement("urlset");
@@ -83,6 +80,7 @@ class AdminController {
         $urlset->setAttribute("xsi:schemaLocation",'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
 
         foreach( $alinks as $key => $value ) {
+            echo "test";
             if( $value['link'] == "front/product?is=" ) {
                 foreach( $aProducts as $key2 => $value2 ) {
                     $url = $sitemap->createElement("url");
