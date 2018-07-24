@@ -192,6 +192,11 @@ class Users extends BaseSql {
                                                 "type" => "password",
                                                 "required" => true,
                                                 "confirm" => "pwd"
+                        ],
+                        "captcha" =>        [
+                                                "title" => "Confirmer le captcha",
+                                                "type" => "captcha",
+                                                "required" => true,
                                             ]
 					]
 		];
@@ -267,19 +272,19 @@ class Users extends BaseSql {
                                                 "confirm" => "pwd"
                         ],
                         "rights" => [
-                            "title" => "Rang utilisateur",
-                            "type" => "select",
-                            "options" => [
-                                [
-                                    "id" => "0",
-                                    "name" => "Utilisateur",
-                                    "selected" => true
-                                ],
-                                [
-                                    "id" => "1",
-                                    "name" => "Administrateur"
-                                ]
-                            ]
+                                                "title" => "Rang utilisateur",
+                                                "type" => "select",
+                                                "options" => [
+                                                                [
+                                                                    "id" => "0",
+                                                                    "name" => "Utilisateur",
+                                                                    "selected" => true
+                                                                ],
+                                                                [
+                                                                    "id" => "1",
+                                                                    "name" => "Administrateur"
+                                                                ]
+                                                ]
                         ]
 					]
 		];
@@ -353,7 +358,12 @@ class Users extends BaseSql {
                                                 "type" => "password",
                                                 "required" => true,
                                                 "confirm" => "pwd"
-                        ]
+                        ],
+                        "captcha" =>        [
+                                                "title" => "Confirmer le captcha",
+                                                "type" => "captcha",
+                                                "required" => true,
+                                            ]
 					]
 		];
     }

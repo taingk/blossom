@@ -41,6 +41,16 @@
                         <?php endforeach; ?>
                     </select>
 
+                <?php elseif ( $sAttribut["type"] == "captcha" ): ?>
+
+                    <img src="<?php echo "/public/img/captcha.php";?>" alt="captcha">
+                    <label for="<?php echo $sName ?>" class="is-third-color col-xxs-12 text-is-left small-bandeau"><?php echo $sAttribut["title"] ?></label>
+                    <input id="<?php echo $sName ?>" class="is-third-color col-xxs-12" type="<?php echo $sAttribut["type"] ?>" 
+                    name="<?php echo $sName ?>" 
+                    placeholder="<?php echo $sAttribut["placeholder"] ?>" 
+                    <?php echo isset( $sAttribut["required"] ) ? "required='required'" : "" ?>
+                    value="<?php echo $sAttribut["value"] ?>"/>
+
                 <?php else: ?>
 
                     <label class="is-third-color col-xxs-12 small-bandeau" for="<?php echo $sAttribut["name"] . '-' . $sName ?>"><?php echo $sName ?></label>

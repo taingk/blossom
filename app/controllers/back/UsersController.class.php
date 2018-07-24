@@ -57,7 +57,7 @@ class UsersController {
         if ( !empty( $aParams['POST'] ) ) {
             $aErrors = Validator::checkForm( $this->aConfigs, $aParams["POST"] );
 
-			if ( empty( $aErrors ) ) {
+		if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
                 $oToken = new Token();
                 
