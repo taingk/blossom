@@ -45,6 +45,25 @@ LOCK TABLES `capacities` WRITE;
 /*!40000 ALTER TABLE `capacities` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `links`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `links` (
+  `id_link` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(255),
+  PRIMARY KEY (`id_link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `capacities`
+--
+
+LOCK TABLES `capacities` WRITE;
+/*!40000 ALTER TABLE `capacities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `capacities` ENABLE KEYS */;
+UNLOCK TABLES;
+
 DROP TABLE IF EXISTS `sites`;
 
 CREATE TABLE `sites`
