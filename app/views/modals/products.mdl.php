@@ -72,6 +72,13 @@
 <section class="row container mainView gutters">
     <h1 class="is-third-color col-xxs-12">Espace commentaires</h1>
     <hr>
+
+    <?php echo $_GET['comment'] ? '
+    <section id="error" class="col-xxs-12 mainView gutters bg-is-main-color" style="margin-top: 0;">
+        <h3 class="is-secondary-color">Votre commentaire est posté. Il est en attente de validation par le modérateur.</h3>
+    </section>
+    ' : '' ; ?>
+
     <form action="/front/product/addComment?is=<?php echo $aConfigs[0]['products'][0]['id_product']?>" class="row col-xxs-12" method="POST">
         <input id="comment" class="is-third-color col-xxs-12 small-bandeau" placeholder="Votre commentaire" name="comment">
         <input class="col-xxs-12 col-md-3 is-h-centered" type="submit" value="Envoyer un commentaire">

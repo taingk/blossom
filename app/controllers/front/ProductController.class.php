@@ -140,7 +140,7 @@ class ProductController {
             $oComment->setStatus(0);
             $oComment->save();
 
-            header('location: /front/product?is='.$sId);
+            header('location: /front/product?is='.$sId.'&comment=true#error');
             return;
         }
 
