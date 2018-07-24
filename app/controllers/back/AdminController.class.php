@@ -72,6 +72,7 @@ class AdminController {
         $aCategories = $oCategory->select(array('id_category'));
 
         $server = $_SERVER['SERVER_NAME'];
+        print($server);
 
         $sitemap = new DOMDocument('1.0',"UTF-8");
         $urlset = $sitemap->createElement("urlset");
