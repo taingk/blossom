@@ -19,10 +19,13 @@ class Validator {
 
 				} else if ( $sAttribut["type"] == "captcha" && $aData[$sName] != $_SESSION['captcha'] ) {
 					$aErrorsMsg[] = "Le captcha n'est pas valide";
+				} else if ( $sAttribut["title"] == "Date de naissance" ) {
+					if ( Helper::getAge($aData[$sName]) < 18 ){
+						$aErrorsMsg[] = "Vous devez avoir 18 ans pour vous inscrire";
+					}
 				}
 			}
 			// On peut ajouter les cas de types radio / checkbox / etc... dans un nouveau else if
-			
 
 			// Gère les cas "conditions"
 			if ( isset( $sAttribut["maxString"] ) && !self::maxString( $aData[$sName], $sAttribut["maxString"] ) ) {
