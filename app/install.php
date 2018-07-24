@@ -20,10 +20,17 @@ if ( $_POST ) {
     define("DIRNAME", $sScriptName.DS);';
 
     try {
-        $oPdo = new PDO('mysql:host='.$_POST['dbhost'].';dbname='.$_POST['dbname'].';charset=utf8', $_POST['dbuser'], $_POST['dbpassword']);
+        $oPdo = new PDO('mysql:host=' . $_POST['dbhost'], $_POST['dbuser'], $_POST['dbpassword']);
+
+        chmod('data/backup.sql', 777);
+        $sFile = file_get_contents('data/backup.sql');
+
+        $oPdo->exec('CREATE DATABASE '. $_POST['dbname'] .';'.
+                    'USE ' . $_POST['dbname'] .';'.
+                    $sFile) or die(header('Location: /?error=true&code=' . $oPdo->errorInfo()[1]));
+
         file_put_contents($sConfPath, $sConf);
         return header('Location: /back');
-
     } catch (PDOException $e) {
         switch ($e->getCode()) {
             case 2002:
@@ -31,9 +38,6 @@ if ( $_POST ) {
                 break;
             case 1045:
                 header('Location: /?error=1045');
-                break;
-            case 1049:
-                header('Location: /?error=1049');
                 break;
             }
         }
@@ -58,7 +62,7 @@ function installForm() {
                                             "placeholder" => "localhost"
                                         ],
                     "dbname" =>         [
-                                            "title" => "Nom de la base de données",
+                                            "title" => "Nom de la base de données (non-existant, nous la créons pour vous)",
                                             "type" => "text",
                                             "placeholder" => "blossom"
                                         ],
@@ -116,9 +120,10 @@ function installForm() {
                 </section></section>
                 ' : '' ; ?>
 
-            <?php echo $_GET['error'] == 1049 ? '<section class="row gutters">
+            <?php echo $_GET['error'] == 'true' ? '<section class="row gutters">
                 <section id="error" class="col-xxs-12 gutters bg-is-main-color">
-                    <h3 class="is-secondary-color">Le nom de base de données est inconnue.</h3>
+                    <h3 class="is-secondary-color">Un problème est survenu avec la création de la base de données.</h3>
+                    <h3 class="is-secondary-color">Code erreur : ' . $_GET['code'] . '</h3>
                 </section></section>
                 ' : '' ; ?>
 
@@ -143,7 +148,7 @@ function installForm() {
             <br>
             <em class="is-third-color"><strong class="is-third-color">Attention</strong>, veuillez entrer un email et un mot de passe GMAIL valide afin de valider votre compte.</em>
             <br>
-            <em class="is-third-color">Toutefois, si vous pensez vous être trompé, il est possible de modifier les identifiants dans le fichier conf.inc.php à la racine du projet.</em>
+            <em class="is-third-color">Toutefois, si vous pensez vous être trompé, il est possible de modifier les identifiants dans le fichier conf.inc.php à la racine de votre projet.</em>
 
         </section>
 

@@ -86,14 +86,9 @@ if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.ph
         $oController = new $sController();
 
         if ( method_exists( $oController, $sAction ) ) {
-            $oController->$sAction( $aParams );
-
-        } else {
-            die ("L'action " . $sAction . " n'existe pas");
+            return $oController->$sAction( $aParams );
         }
-    } else {
-        die ("La class " . $sController . " n'existe pas");
     }
-} else {
-    die ("Le fichier " . $sController . " n'existe pas");
 }
+
+include "views/error/404.php";
