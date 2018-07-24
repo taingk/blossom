@@ -71,7 +71,7 @@ class UsersController {
                 $this->oUser->setToken($oToken->getToken());
                 $this->oUser->setAddress($aParams['POST']['address']);
                 $this->oUser->setCity($aParams['POST']['city']);
-                $this->oUser->setZipCode($aParams['POST']['postal']);
+                $this->oUser->setZipCode($aParams['POST']['zip_code']);
                 $this->oUser->setRights($aParams['POST']['rights']);
                 $this->oUser->setStatus(0);
                 $this->oUser->save();
