@@ -16,7 +16,7 @@ class Users extends BaseSql {
     protected $status;
 
     public function __construct() {
-        // On instancie le parent 
+        // On instancie le parent
         parent::__construct();
     }
 
@@ -357,7 +357,7 @@ class Users extends BaseSql {
 					]
 		];
     }
- 
+
     public function updateUserForm() {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row"],
@@ -433,7 +433,56 @@ class Users extends BaseSql {
 					]
 		];
     }
-    
+
+    public function updateUserFormClient() {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row"],
+					"input" => [
+                        "Masculin" =>           [
+                                                "type" => "radio",
+                                                "name" => "sexe",
+                                                "value" => "0"
+										    ],
+                        "Feminin" =>        [
+                                                "type" => "radio",
+                                                "name" => "sexe",
+                                                "value" => "1"
+										    ],
+                        "birthday_date" =>  [
+                                                "title" => "Date de naissance",
+                                                "type" => "date"
+										    ],
+                        "email" =>          [
+                                                "title" => "E-mail",
+                                                "type" => "email",
+                                                "placeholder" => "exemple@gmail.com"
+                                            ],
+						"pwd" =>            [
+                                                "title" => "Mot de passe",
+                                                "type" => "password"
+                                            ],
+						"pwdConfirm" =>     [
+                                                "title" => "Confirmer le mot de passe",
+                                                "type" => "password",
+                                                "confirm" => "pwd"
+                                            ],
+                        "address" =>        [
+                                                "title" => "Adresse",
+                                                "type" => "text"
+                                            ],
+                        "postal" =>         [
+                                                "title" => "Code postal",
+                                                "type" => "text",
+                                                "requiredNum" => 5
+                                            ],
+                        "city" =>           [
+                                                "title" => "Ville",
+                                                "type" => "text"
+                                            ]
+					]
+		];
+    }
+
     public function userLoginForm() {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "Connexion", "class" => "form col-md-5 row"],
@@ -450,7 +499,7 @@ class Users extends BaseSql {
 					]
 		];
 	}
-    
+
 }
 
 ?>

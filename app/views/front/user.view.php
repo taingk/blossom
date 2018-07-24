@@ -13,9 +13,10 @@
         <p class="col-xxs-12 is-third-color text-is-left margin-zero">Ville : <strong><?php echo $aUsers['city'] ? "<em class='is-third-color'>" . $aUsers['city'] . "</em>" : "<em class='is-third-color'>Non définie</em>" ?></strong></p>
         <hr>
         <p class="col-xxs-12 is-third-color text-is-left margin-zero">Date d'inscription : <strong><?php echo $aUsers['date_inserted'] ? "<em class='is-third-color'>" . $aUsers['date_inserted'] . "</em>" : "<em class='is-third-color'>Non définie</em>" ?></strong></p>
-        <button class="col-xxs-12 bg-is-main-color default-button">
-            Modifier le profil
-        </button>
+        <hr>
+        <a href="/front/user/update" class="col-xxs-12 col-md-6 bg-is-main-color default-button is-h-centered" style="padding: 15px">
+            <strong><em>Modifier son profil</em></strong>
+        </a>
     </section>
 
       <section class="col-xxs-12 mainView gutters" style="margin-top: 0; margin-left: 0">

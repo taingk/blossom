@@ -117,8 +117,58 @@ class UserController {
     * View formulaire édition profil utilisateur
     */
     public function updateAction( $aParams ) {
+        $oUser = new Users();
+        $aConfigs = $oUser->updateUserFormClient();
+        $aErrors = [];
+        $sId = $_SESSION['id_user'];
 
+        $oUser->setId($sId);
+        $aInfos = $oUser->select()[0];
+
+        foreach ($aConfigs['input'] as $sKey => &$aValue) {
+            foreach ($aInfos as $sInfoKey => $sInfoValue) {
+                if ( $sInfoKey === 'sexe' ) {
+                    if ( !$sInfoValue ) {
+                        if ( $sKey === 'Masculin' ) {
+                            $aValue['checked'] = true;
+                        }
+                    } else {
+                        if ( $sKey === 'Feminin' ) {
+                            $aValue['checked'] = true;
+                        }
+                    }
+                }
+                if ( $sKey == $sInfoKey && $sKey !== 'pwd') {
+                    $aValue['value'] = $sInfoValue;
+                }
+            }
+        }
+
+        if ( !empty( $aParams['POST'] ) ) {
+            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"], true );
+
+			if ( empty( $aErrors ) ) {
+                $oUser->setId($sId);
+                $oUser->setSexe($aParams['POST']['sexe']);
+                $oUser->setBirthdayDate($aParams['POST']['birthday_date']);
+                $oUser->setEmail($aParams['POST']['email']);
+                $oUser->setPwd($aParams['POST']['pwd']);
+                $oUser->setAddress($aParams['POST']['address']);
+                $oUser->setZipCode($aParams['POST']['zip_code']);
+                $oUser->setCity($aParams['POST']['city']);
+                $oUser->save();
+
+                header('location: /front/user/profile');
+                return;
+            }
+        }
+
+        $oView = new View("userModify", "front");
+
+        $oView->assign("aConfigs", $aConfigs);
+	      $oView->assign("aErrors", $aErrors);
     }
+
 
     /*
     * Suppression de son compte utilisateur
