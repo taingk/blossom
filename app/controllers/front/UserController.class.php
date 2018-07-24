@@ -26,7 +26,7 @@ class UserController {
 
                 header('Location: /');
             } else {
-                header('Location: /front/user?validity=false#error');
+                header('Location: /front/user?validity=false');
             }
         }
     }
@@ -36,19 +36,6 @@ class UserController {
     */
     public function subscribeAction( $aParams ) {
         $oUser = new Users();
-
-        // if ( $oUser->select() ) {
-        //     $oToken = new Token();
-        //     $oToken->checkToken();
-
-        //     include "controllers/back/DashboardController.class.php";
-        //     $oDashboard = new DashboardController();
-        //     $oDashboard->indexAction( $aParams );
-
-        //     return;
-        // }
-
-
         $aConfigs = $oUser->userForm();
         $aErrors = [];
 
@@ -59,7 +46,7 @@ class UserController {
                 $oMailer = new Mailer();
                 $oToken = new Token();
 
-                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oMailer->confirmMail($aParams, $oToken->getToken());
                 $oUser->setFirstname($aParams['POST']['firstname']);
                 $oUser->setLastname($aParams['POST']['lastname']);
                 $oUser->setSexe($aParams['POST']['sexe']);
@@ -105,14 +92,6 @@ class UserController {
         $oView->assign("aOrders", $aOrders);
       }
 
-
-    /*
-    * View formulaire création de compte utilisateur
-    */
-    public function addAction( $aParams ) {
-
-    }
-
     /*
     * View formulaire édition profil utilisateur
     */
@@ -127,16 +106,9 @@ class UserController {
 
     }
 
-    /*
-    * Envoie les données à add/update/delete
-    */
-    public function saveAction( $aParams ) {
-
-    }
-
     public function logOutAction( $aParams ) {
         session_destroy();
         $_SESSION = [];
-        header('Location: /front');
+        header('Location: /');
     }
 }

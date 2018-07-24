@@ -11,19 +11,27 @@ class ProductController {
         $oProduct = new Products();
         $oColor = new Colors();
         $oCapacity = new Capacities();
+        $oComment = new Comments();
         $oImages = new Images();
 
         $sId = $aParams['GET']['is'];
         $oProduct->setId( $sId );
         $aResultProduct = $oProduct->select();
 
-        $oColor->setProductsIdProduct( $sId );
-        $aResultColor = $oColor->select();
+        $oComment->setStatus(1);
+        $oComment->setProductsIdProduct( $sId );
+        $aResultComment = $oComment->select();
 
+        $oColor->setProductsIdProduct( $sId );
+        $oColor->setStatus(1);
+        $aResultColor = $oColor->select();
+        
         $oCapacity->setProductsIdProduct( $sId );
+        $oCapacity->setStatus(1);
         $aResultCapacity = $oCapacity->select();
 
         $oImages->setProductsIdProduct( $sId );
+        $oImages->setStatus(1);
         $aResultImages = $oImages->select();
 
         $aConfigs = [];
@@ -35,10 +43,25 @@ class ProductController {
         array_push($aConfigs, $aColors );
 
         $aCapacities = ['capacities' => $aResultCapacity];
-        array_push($aConfigs, $aCapacities );
+        array_push($aConfigs, $aCapacities);
 
+        $aComments = [];
+        foreach ( $aResultComment as $aComment ) {
+            $oUser = new Users();
+            $oUser->setId($aComment['users_idusers']);
+            $aUser = $oUser->select()[0];
+
+            array_push($aComments, [
+                'id_comment' => $aComment['id_comment'],
+                'comment' => $aComment['comment'],
+                'date_inserted' => $aComment['date_inserted'],
+                'user' => $aUser
+            ]);
+        }
+        array_push($aConfigs, [ 'comment' => $aComments ]);
+        
         $aImages = ['images' => $aResultImages];
-        array_push($aConfigs, $aImages );
+        array_push($aConfigs, $aImages);
 
         $oView->assign('aConfigs', $aConfigs);
     }
@@ -90,15 +113,36 @@ class ProductController {
             $oProduct->setQuantity( $iNewQuantity );
             $oProduct->save();
 
-            header('location: /front/product?is='.$sId );
+            header('location: /front/cart');
             return;
         }
     }
 
     /*
-    * On get un appel AJAX pour rechercher dans la bdd un/des produit(s)
+    * Ajout d'un commentaire
     */ 
-    public function searchAction( $aParams ) {
+    public function addCommentAction( $aParams ) {
+        $oUser = new Users();
+        $oComment = new Comments();
+        $oProduct = new Products();
+
+        $sId = $aParams['GET']['is'];
+
+        if ( empty($_SESSION['id_user']) ) {
+            header('location: /front/product?is=' . $sId . '&connection=false#error');
+            return;
+        }
+
+        if ( !empty( $aParams['POST'] )) {
+            $oComment->setComment($aParams['POST']['comment']);
+            $oComment->setUsersIdUsers($_SESSION['id_user']);
+            $oComment->setProductsIdProduct($sId);
+            $oComment->setStatus(0);
+            $oComment->save();
+
+            header('location: /front/product?is='.$sId);
+            return;
+        }
 
     }
 

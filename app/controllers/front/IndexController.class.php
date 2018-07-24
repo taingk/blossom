@@ -33,8 +33,19 @@ class IndexController {
         $aConfigs = [];
         array_push($aConfigs, $aLabels);
         
-        $aProducts = ['products' => $sResultsSearch];
-        array_push($aConfigs, $aProducts);
+        $aProducts = [];
+        foreach ( $sResultsSearch as $aProduct ) {
+            $oImage = new Images();
+            $oImage->setProductsIdProduct($aProduct['id_product']);
+            $aImage = $oImage->select()[0]['path'];
+
+            array_push($aProducts, [
+                'id_product' => $aProduct['id_product'],
+                'product_name' => $aProduct['product_name'],
+                'path' => $aImage
+            ]);
+        }
+        array_push($aConfigs, [ 'products' => $aProducts ]);
 
         $aConfigs[0]['label'] .= "<br> Nombre de résultat(s) trouvé(s) : " . count($aConfigs[1]['products']);
         $oView->assign('aConfigs', $aConfigs);

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blossom</title>
+    <style>
+        @font-face {
+            font-family: 'Avenir';
+            src: url('/public/font/AvenirNextRegular.otf') format('truetype');
+        }
+
+        * {
+            font-family: "Avenir";
+            color: #FDFBFB;
+            box-sizing: border-box;
+        }
+
+        html, body, .container {
+            height: 100%;
+        }
+
+        body {
+            background-color: #ececec;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            height: 150px;
+            padding: 15px;
+        }
+
+        article {
+            padding: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        button {
+            background-color: #D8475D;
+            /* border: none; */
+            font-size: 20px;
+            cursor: pointer;
+            padding: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: #D8475D;
+        }
+
+        @media (min-width: 320px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu section {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            box-sizing: border-box;
+            align-items: center;
+        }
+
+        .menu section li {
+            margin: 0 auto;
+        }
+
+        #mailSection .container:nth-child(1) {
+            background-color: #FDFBFB;
+            width: 70%;
+            margin: 0 auto;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mailContent {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <section>
+                        <li>
+                            <a href="#">
+                                <img src="/public/img/logo_blanc.png" alt="brand logo" id="brand-logo">
+                            </a>
+                        </li>
+                    </section>
+                </ul>            
+            </nav>
+        </header>
+        <section id="mailSection">
+            <div class="container">
+                <article>
+                    <div id="mailContent">
+                        <h2>Bonjour {name},</h2>
+                        <hr>
+                        <p>Veuillez confirmer votre inscription en cliquant sur le bouton ci-dessous</p>
+                    </div>
+                    <a href="{link}"><button type="submit">Confirmer l'inscription</button></a>
+                </article>
+            </div>
+        </section>
+        <footer></footer>
+    </div>
+</body>
+</html>

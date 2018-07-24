@@ -146,7 +146,7 @@ class CapacitiesController {
     }
     public function refactorConfigs() {
         $this->aConfigs = $this->oCapacity->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated'));
-        $this->aConfigs['label'] = array('id', 'stockage', 'prix additionnel', 'référence produit', 'status', 'options');
+        $this->aConfigs['label'] = array('id', 'stockage', 'prix additionnel', 'id produit', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/capacities/update?id=');
         $this->aConfigs['delete'] = array('url' => '/back/capacities/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/capacities/add');

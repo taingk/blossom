@@ -69,21 +69,20 @@ class ImagesController {
     */
     public function addAction( $aParams ) {
         if ( !empty( $aParams['POST'] ) ) {
-            $this->oImage = new Images();
             $aFiles = Helper::uploadFiles($_FILES);
 
             foreach ( $aFiles['success'] as $aFile ) {
-                $this->oImage->setPath( $aFile['path'] );
+                if ( $aFile['name'] == 'image' ) {
+                    $this->oImage->setPath( $aFile['path'] );
+                }
             }
-
-            $this->oImage->setImageName( $aParams['POST']['name'] );
+            $this->oImage->setImageName( $aParams['POST']['image_name'] );
             $this->oImage->setStatus(1);
             $this->oImage->setProductsIdProduct( $aParams['POST']['product'] );
             $this->oImage->save();
 
             header('location: /back/images');
             return;
-
         }
         
         $this->aConfigs = $this->oImage->imageForm("Ajouter une nouvelle image", $this->allProductsAction());
@@ -110,15 +109,15 @@ class ImagesController {
         }
 
         if ( !empty( $aParams['POST'] ) ) {
-            $this->oImage = new Images();
             $aFiles = Helper::uploadFiles($_FILES);
 
             foreach ( $aFiles['success'] as $aFile ) {
-                $this->oImage->setPath( $aFiles['success']['path'] );
+                if ( $aFile['name'] == 'image' ) {
+                    $this->oImage->setPath( $aFile['path'] );
+                }
             }
-
             $this->oImage->setId( $sId );
-            $this->oImage->setImageName( $aParams['POST']['name'] );
+            $this->oImage->setImageName( $aParams['POST']['image_name'] );
             $this->oImage->setProductsIdProduct( $aParams['POST']['product'] );
             $this->oImage->setStatus(1);
             $this->oImage->save();
@@ -155,7 +154,7 @@ class ImagesController {
     }
     public function refactorConfigs() {
         $this->aConfigs = $this->oImage->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated', 'path'));
-        $this->aConfigs['label'] = array('id', 'Nom', 'référence produit', 'Status', 'Options');
+        $this->aConfigs['label'] = array('id', 'Nom', 'id produit', 'Status', 'Options');
         $this->aConfigs['update'] = array('url' => '/back/images/update?id=');
         $this->aConfigs['delete'] = array('url' => '/back/images/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/images/add');

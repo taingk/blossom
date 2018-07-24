@@ -146,7 +146,7 @@ class ColorsController {
     }
     public function refactorConfigs() {
         $this->aConfigs = $this->oColor->unsetKeyColumns($this->aConfigs, array('date_inserted', 'date_updated'));
-        $this->aConfigs['label'] = array('id', 'Couleur', 'Hexadecimal', 'référence produit', 'status', 'options');
+        $this->aConfigs['label'] = array('id', 'Couleur', 'Hexadecimal', 'id produit', 'status', 'options');
         $this->aConfigs['update'] = array('url' => '/back/colors/update?id=');
         $this->aConfigs['delete'] = array('url' => '/back/colors/delete?id=');
         $this->aConfigs['add'] = array('url' => '/back/colors/add');
