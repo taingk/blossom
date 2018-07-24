@@ -82,13 +82,13 @@ class AdminController {
         foreach( $alinks as $key => $value ) {
             print_r($alinks);
             echo "test";
-            if( $value['link'] == "front/product?is=" ) {
+            if( $value['link'] == "/front/product?is=" ) {
                 echo "if1";
                 foreach( $aProducts as $key2 => $value2 ) {
                     echo "foreach2";
                     print_r($aProducts);
                     $url = $sitemap->createElement("url");
-                    $loc = $sitemap->createElement("loc",$server.$value['link'].$value2['id_product']);
+                    $loc = $sitemap->createElement("loc","https://".$server.$value['link'].$value2['id_product']);
                     $changefreq = $sitemap->createElement("changefreq", "daily");
                     $priority = $sitemap->createElement("priority", "0.8");
                     $url->appendChild( $loc );
@@ -97,7 +97,7 @@ class AdminController {
                     $urlset->appendChild($url);
                 }
             }
-            elseif( $value['link']  == "front/category?is=" ) {
+            elseif( $value['link']  == "/front/category?is=" ) {
                 echo "elseif1";
                 foreach( $aCategories as $key2 => $value2 ) {
                     echo "foreach3";
@@ -115,7 +115,7 @@ class AdminController {
             else {
                 echo "else";
                 $url = $sitemap->createElement("url");
-                $loc = $sitemap->createElement("loc",$value['link']);
+                $loc = $sitemap->createElement("loc","https://".$server.$value['link']);
                 $changefreq = $sitemap->createElement("changefreq", "daily");
                 $priority = $sitemap->createElement("priority", "0.8");
                 $url->appendChild($loc);
