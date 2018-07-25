@@ -119,7 +119,7 @@ class Products extends BaseSql {
                     "placeholder" => "1000",
                     "required" => true
                 ],
-                "quantity" =>      [
+                "max_quantity" =>      [
                     "title" => "Quantité maximum du stock",
                     "type" => "number",
                     "placeholder" => "150",
