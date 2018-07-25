@@ -29,7 +29,7 @@ class Categories extends BaseSql {
     }
 
     public function setCategoryName($category_name) {
-        $this->category_name = trim($category_name);
+        $this->category_name = strip_tags(trim($category_name));
     }
 
     public function getCategoryName()

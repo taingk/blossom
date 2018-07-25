@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-require 'conf.inc.php';
 
 function autoloader( $sClass ) {
     $sClass = $sClass . ".class.php";
@@ -15,6 +14,12 @@ function autoloader( $sClass ) {
 }
 
 spl_autoload_register("autoloader");
+
+if ( !file_exists('conf.inc.php') ) {
+    return require 'install.php';
+}
+
+require 'conf.inc.php';
 
 $sUri = urldecode($_SERVER["REQUEST_URI"]);
 $sUri = ltrim($sUri, "/");
@@ -47,7 +52,7 @@ if ( $sStructure === "back" ) {
     $oToken = new Token();
     $oUser = new Users();
 
-    if ( $sAction === "confirmAction" || $sAction === "deleteAction" ) {
+    if ( $sAction === "confirmAction" ) {
         include "controllers/back/" . $sController . ".class.php";
         $oObject = new $sController();
         $oObject->$sAction( $aParams );
@@ -81,14 +86,9 @@ if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.ph
         $oController = new $sController();
 
         if ( method_exists( $oController, $sAction ) ) {
-            $oController->$sAction( $aParams );
-
-        } else {
-            die ("L'action " . $sAction . " n'existe pas");
+            return $oController->$sAction( $aParams );
         }
-    } else {
-        die ("La class " . $sController . " n'existe pas");
     }
-} else {
-    die ("Le fichier " . $sController . " n'existe pas");
 }
+
+include "views/error/404.php";

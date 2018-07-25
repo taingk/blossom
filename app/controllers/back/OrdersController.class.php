@@ -66,11 +66,16 @@ class OrdersController {
                     $aProduct['id_cart'] = $sValue;
                 }
                 if ($sKey == 'capacities_id_capacity') {
-                    $oCapacity = new Capacities();
-                    $oCapacity->setId($sValue);
-                    $aProduct['capacity_number'] = $oCapacity->select()[0]['capacity_number'];
-                    $iAdditionalPrice = $oCapacity->select()[0]['additional_price'];
-                    $aProduct['additional_price'] = $iAdditionalPrice;
+                    if ( $sValue ) {
+                        $oCapacity = new Capacities();
+                        $oCapacity->setId($sValue);
+                        $aProduct['capacity_number'] = $oCapacity->select()[0]['capacity_number'];
+                        $iAdditionalPrice = $oCapacity->select()[0]['additional_price'];
+                        $aProduct['additional_price'] = $iAdditionalPrice;
+                    } else {                        
+                        $aProduct['additional_price'] = '';
+                        $aProduct['capacity_number'] = '';
+                    }
                 }
                 if ($sKey == 'products_id_product') {
                     $oProduct = new Products();
@@ -88,9 +93,13 @@ class OrdersController {
                     $aProduct['final_price'] = $iPrice + $iAdditionalPrice;
                 }
                 if ($sKey == 'colors_id_color') {
-                    $oColor = new Colors();
-                    $oColor->setId($sValue);
-                    $aProduct['color_name'] = $oColor->select()[0]['name'];
+                    if ( $sValue ) {
+                        $oColor = new Colors();
+                        $oColor->setId($sValue);
+                        $aProduct['color_name'] = $oColor->select()[0]['name'];
+                    } else {
+                        $aProduct['color_name'] = '';
+                    }
                 }
                 if ($sKey == 'cancelled') {
                     $aProduct['cancelled'] = $sValue;
@@ -200,10 +209,14 @@ class OrdersController {
                 foreach ( $this->aConfigs as $sKey => &$aValue ) {
                     foreach ( $aValue as $sKey => $sValue ) {
                         if ( $sKey === 'capacity_number' ) {
-                            $aValue[$sKey] = $sValue . 'go';
+                            if ( $sValue ) {
+                                $aValue[$sKey] = $sValue . 'go';
+                            }
                         }
                         if ( $sKey === 'additional_price' || $sKey === 'price' || $sKey === 'final_price' ) {
-                            $aValue[$sKey] = $sValue . '€';
+                            if ( $sValue ) {
+                                $aValue[$sKey] = $sValue . '€';
+                            }
                         }
                         if ( $sKey === 'cancelled' ) {
                             $aValue[$sKey] = Helper::getCancelled($aValue[$sKey]);

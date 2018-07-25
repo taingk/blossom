@@ -75,7 +75,7 @@ class ProductController {
         $iQuantity = $aProduct['quantity'];
 
         if ( $iQuantity <= 0 ) {
-            header('location: /front/product?is=' . $sId . '&validity=false#error');
+            header('location: /front/product?is=' . $sId . '&validity=true#error');
             return;
         }
 
@@ -84,38 +84,40 @@ class ProductController {
             return;
         }
 
-        if ( !empty( $aParams['POST'] ) ) {
+        $oCart = new Carts();
+        $oCart->setProductsIdProduct( $sId );
+        $oCart->setUsersIdUser( $_SESSION['id_user'] );
+        $oCart->setStatus(1);
+
+        if ( $aParams['POST']['color'] ) {
             $oColor = new Colors();
             $oColor->setProductsIdProduct( $sId );
             $oColor->setName( $aParams['POST']['color'] );
-            $aIdColor = $oColor->select( array('id_color') );
+            $aIdColor = $oColor->select( array('id_color') )[0]['id_color'];
 
+            $oCart->setColorsIdColor( $aIdColor );
+        }
+        if ( $aParams['POST']['capacity'] ) {
             $oCapacity = new Capacities();
             $oCapacity->setProductsIdProduct( $sId );
             $oCapacity->setCapacityNumber( $aParams['POST']['capacity'] );
-            $aIdCategory = $oCapacity->select(array('id_capacity'));
+            $aIdCategory = $oCapacity->select(array('id_capacity'))[0]['id_capacity'];
 
-            $idUser = $_SESSION['id_user'];
-
-            $oCart = new Carts();
-            $oCart->setProductsIdProduct( $sId );
-            $oCart->setUsersIdUser( $idUser );
-            $oCart->setCapacitiesIdCapacity( $aIdCategory[0]['id_capacity'] );
-            $oCart->setColorsIdColor( $aIdColor[0]['id_color'] );
-            $oCart->setStatus(1);
-            $oCart->save();
-
-            $oProduct = new Products();
-            $oProduct->setId($sId);
-            $aQuantity = $oProduct->select( array('quantity') );
-            $iQuantity = $aQuantity[0]['quantity'];
-            $iNewQuantity = $iQuantity - 1;
-            $oProduct->setQuantity( $iNewQuantity );
-            $oProduct->save();
-
-            header('location: /front/cart');
-            return;
+            $oCart->setCapacitiesIdCapacity( $aIdCategory );
         }
+
+        $oCart->save();
+
+        $oProduct = new Products();
+        $oProduct->setId($sId);
+        $aQuantity = $oProduct->select( array('quantity') );
+        $iQuantity = $aQuantity[0]['quantity'];
+        $iNewQuantity = $iQuantity - 1;
+        $oProduct->setQuantity( $iNewQuantity );
+        $oProduct->save();
+
+        header('location: /front/cart');
+        return;
     }
 
     /*
@@ -140,7 +142,7 @@ class ProductController {
             $oComment->setStatus(0);
             $oComment->save();
 
-            header('location: /front/product?is='.$sId);
+            header('location: /front/product?is='.$sId.'&comment=true#error');
             return;
         }
 

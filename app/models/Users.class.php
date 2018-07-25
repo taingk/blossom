@@ -16,7 +16,7 @@ class Users extends BaseSql {
     protected $status;
 
     public function __construct() {
-        // On instancie le parent 
+        // On instancie le parent
         parent::__construct();
     }
 
@@ -26,12 +26,12 @@ class Users extends BaseSql {
 
     public function setFirstname($firstname) {
         // Kevin
-        $this->firstname = ucfirst(strtolower(trim($firstname)));
+        $this->firstname = strip_tags(ucfirst(strtolower(trim($firstname))));
     }
 
     public function setLastname($lastname) {
         // TAING
-        $this->lastname = strtoupper(trim($lastname));
+        $this->lastname = strip_tags(strtoupper(trim($lastname)));
     }
 
     public function setSexe($sexe) {
@@ -39,7 +39,7 @@ class Users extends BaseSql {
     }
 
     public function setAddress($address) {
-        $this->address = trim($address);
+        $this->address = strip_tags(trim($address));
     }
 
     public function setZipCode($zip_code) {
@@ -47,12 +47,12 @@ class Users extends BaseSql {
     }
 
     public function setCity($city) {
-        $this->city = trim($city);
+        $this->city = strip_tags(trim($city));
     }
 
     public function setEmail($email) {
         // minuscule
-        $this->email = strtolower(trim($email));
+        $this->email = strip_tags(strtolower(trim($email)));
     }
 
     public function setPwd($pwd) {
@@ -192,6 +192,11 @@ class Users extends BaseSql {
                                                 "type" => "password",
                                                 "required" => true,
                                                 "confirm" => "pwd"
+                        ],
+                        "captcha" =>        [
+                                                "title" => "Confirmer le captcha",
+                                                "type" => "captcha",
+                                                "required" => true,
                                             ]
 					]
 		];
@@ -234,20 +239,17 @@ class Users extends BaseSql {
                         "address" =>        [
                                                 "title" => "Adresse postale",
                                                 "type" => "text",
-                                                "placeholder" => "242 boulevard de Saint Antoine",
-                                                "required" => true,
+                                                "placeholder" => "242 boulevard de Saint Antoine"
 										    ],
                         "zip_code" =>       [
                                                 "title" => "Code postal",
                                                 "type" => "number",
-                                                "placeholder" => "75012",
-                                                "required" => true,
+                                                "placeholder" => "75012"
 										    ],
                         "city" =>        [
                                                 "title" => "Ville",
                                                 "type" => "text",
-                                                "placeholder" => "Paris",
-                                                "required" => true,
+                                                "placeholder" => "Paris"
 										    ],
                         "email" =>          [
                                                 "title" => "E-mail",
@@ -267,19 +269,19 @@ class Users extends BaseSql {
                                                 "confirm" => "pwd"
                         ],
                         "rights" => [
-                            "title" => "Rang utilisateur",
-                            "type" => "select",
-                            "options" => [
-                                [
-                                    "id" => "0",
-                                    "name" => "Utilisateur",
-                                    "selected" => true
-                                ],
-                                [
-                                    "id" => "1",
-                                    "name" => "Administrateur"
-                                ]
-                            ]
+                                                "title" => "Rang utilisateur",
+                                                "type" => "select",
+                                                "options" => [
+                                                                [
+                                                                    "id" => "0",
+                                                                    "name" => "Utilisateur",
+                                                                    "selected" => true
+                                                                ],
+                                                                [
+                                                                    "id" => "1",
+                                                                    "name" => "Administrateur"
+                                                                ]
+                                                ]
                         ]
 					]
 		];
@@ -353,11 +355,16 @@ class Users extends BaseSql {
                                                 "type" => "password",
                                                 "required" => true,
                                                 "confirm" => "pwd"
-                        ]
+                        ],
+                        "captcha" =>        [
+                                                "title" => "Confirmer le captcha",
+                                                "type" => "captcha",
+                                                "required" => true,
+                                            ]
 					]
 		];
     }
- 
+
     public function updateUserForm() {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row"],
@@ -406,7 +413,7 @@ class Users extends BaseSql {
                                                 "title" => "Adresse",
                                                 "type" => "text"
                                             ],
-                        "postal" =>         [
+                        "zip_code" =>         [
                                                 "title" => "Code postal",
                                                 "type" => "text",
                                                 "requiredNum" => 5
@@ -433,7 +440,42 @@ class Users extends BaseSql {
 					]
 		];
     }
-    
+
+    public function updateUserFormClient() {
+		return [
+					"config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un utilisateur", "class" => "form col-md-5 row"],
+					"input" => [
+                        "email" =>          [
+                                                "title" => "E-mail",
+                                                "type" => "email",
+                                                "placeholder" => "exemple@gmail.com"
+                                            ],
+						"pwd" =>            [
+                                                "title" => "Mot de passe",
+                                                "type" => "password"
+                                            ],
+						"pwdConfirm" =>     [
+                                                "title" => "Confirmer le mot de passe",
+                                                "type" => "password",
+                                                "confirm" => "pwd"
+                                            ],
+                        "address" =>        [
+                                                "title" => "Adresse",
+                                                "type" => "text"
+                                            ],
+                        "zip_code" =>         [
+                                                "title" => "Code postal",
+                                                "type" => "text",
+                                                "requiredNum" => 5
+                                            ],
+                        "city" =>           [
+                                                "title" => "Ville",
+                                                "type" => "text"
+                                            ]
+					]
+		];
+    }
+
     public function userLoginForm() {
 		return [
 					"config" => [ "method" => "POST", "action" => "", "submit" => "Connexion", "class" => "form col-md-5 row"],
@@ -450,7 +492,6 @@ class Users extends BaseSql {
 					]
 		];
 	}
-    
 }
 
 ?>

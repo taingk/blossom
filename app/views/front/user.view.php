@@ -1,8 +1,8 @@
 <section class="row gutters container">
-    <section class="col-xxs-12 mainView gutters">
-        <h1 class="is-third-color">Votre <span class="is-main-color">profil</span></h1>
+    <section class="col-xxs-12 mainView gutters row">
+        <h1 class="is-third-color is-h-centered">Votre <span class="is-main-color">profil</span></h1>
         <hr>
-        <p class="col-xxs-12 is-third-color text-is-left margin-zero">Nom/Prénom : <strong><?php echo "<em class='is-third-color'>" . $aUsers['firstname'] . " " . $aUsers['lastname'] . "</em>" ?></strong></p>
+        <p class="col-xxs-12 is-third-color text-is-left margin-zero">Nom et prénom : <strong><?php echo "<em class='is-third-color'>" . $aUsers['lastname'] . " " . $aUsers['firstname'] . "</em>" ?></strong></p>
         <hr>
         <p class="col-xxs-12 is-third-color text-is-left margin-zero">Adresse email : <strong><?php echo $aUsers['email'] ? "<em class='is-third-color'>" . $aUsers['email'] . "</em>" : "<em class='is-third-color'>Non définie</em>" ?></strong></p>
         <hr>
@@ -13,13 +13,17 @@
         <p class="col-xxs-12 is-third-color text-is-left margin-zero">Ville : <strong><?php echo $aUsers['city'] ? "<em class='is-third-color'>" . $aUsers['city'] . "</em>" : "<em class='is-third-color'>Non définie</em>" ?></strong></p>
         <hr>
         <p class="col-xxs-12 is-third-color text-is-left margin-zero">Date d'inscription : <strong><?php echo $aUsers['date_inserted'] ? "<em class='is-third-color'>" . $aUsers['date_inserted'] . "</em>" : "<em class='is-third-color'>Non définie</em>" ?></strong></p>
-        <button class="col-xxs-12 bg-is-main-color default-button">
-            Modifier le profil
-        </button>
+        <hr>
+        <a href="/front/user/update" class="col-xxs-12 col-md-4 bg-is-main-color small-bandeau is-h-centered">
+            Modifier son adresse de livraison
+        </a>
+        <?php echo $aUsers['rights'] ? '<a href="/back/dashboard" class="col-xxs-12 col-md-4 bg-is-main-color small-bandeau is-h-centered">
+            Se rendre sur le back-office
+            </a>' : '' ?>
     </section>
 
       <section class="col-xxs-12 mainView gutters" style="margin-top: 0; margin-left: 0">
-        <h1 class="col-xxs-12 is-third-color">Commandes <span class="is-main-color">effecutées</span></h1>
+        <h1 class="col-xxs-12 is-third-color">Commandes <span class="is-main-color">effectuées</span></h1>
         <hr>
         <?php foreach ( $aOrders as $aOrder ): ?>
           <p class="col-xxs-12 is-third-color text-is-left margin-zero">ID : <strong><?php echo "<em class='is-third-color'>" . $aOrder['id_order'] . "</em>" ?></strong></p>

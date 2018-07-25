@@ -14,7 +14,6 @@ class CategoryController {
         $oProduct->setCategoriesIdCategory($sId);
         $aResults = $oProduct->select();
         
-
         $oCategory->setId($sId);
         $sCategoryName = $oCategory->select()[0]['category_name'];
         
@@ -25,6 +24,7 @@ class CategoryController {
         $aProducts = [];
         foreach ( $aResults as $aProduct ) {
             $oImage = new Images();
+            $oImage->setStatus(1);
             $oImage->setProductsIdProduct($aProduct['id_product']);
             $aImage = $oImage->select()[0]['path'];
 

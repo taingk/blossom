@@ -15,16 +15,16 @@
                 <?php foreach ( $aCarts as $aCart ): ?>
                     <tr>
                         <td>
-                            <img src="<?php echo $aCart['image']; ?>" class="images" alt="product_image">
+                            <img src="<?php echo $aCart['image'] ? $aCart['image'] : "/public/img/no-img.png" ; ?>" class="images" alt="product_image">
                         </td>
                         <td>
                             <p class="is-third-color text-left responsive-center"><?php echo $aCart['category_name']; ?> : <?php echo $aCart['product_name']; ?></p>
-                            <p class="is-third-color text-left responsive-center">Couleur : <?php echo $aCart['color_name']; ?></p>
-                            <p class="is-third-color text-left responsive-center">Capacités : <?php echo $aCart['capacity_number']; ?>go</p>
+                            <?php echo $aCart['color_name'] ? '<p class="is-third-color text-left responsive-center">Couleur : '.$aCart['color_name'].'</p>': '' ?>
+                            <?php echo $aCart['capacity_number'] ? '<p class="is-third-color text-left responsive-center">Capacités : '.$aCart['capacity_number'].'</p>': '' ?>
                         </td>
                         <td>
                             <p class="is-third-color text-left responsive-center">Base : <?php echo $aCart["price"] ?>€</p>
-                            <p class="is-third-color text-left responsive-center">Supplément : <?php echo $aCart["additional_price"] ?>€</p>
+                            <?php echo $aCart['additional_price'] ? '<p class="is-third-color text-left responsive-center">Supplément : '.$aCart['additional_price'].'</p>': '' ?>
                         </td>
                         <td>
                             <p class="is-third-color text-left responsive-center"><?php echo $aCart["final_price"] ?>€</p>

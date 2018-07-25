@@ -17,7 +17,8 @@ class UserController {
         if ($sEmail && $sPwd) {
             $oUser = new Users();
 
-            if ( $oUser->isLoginValids($sEmail, $sPwd) ) {
+            $iLogin = $oUser->isLoginValids($sEmail, $sPwd);
+            if ( $iLogin ) {
                 $oToken = new Token();
 
                 $oToken->setTokenSession();
@@ -25,7 +26,9 @@ class UserController {
                 $oToken->setTokenDb();
 
                 header('Location: /');
-            } else {
+            } else if ( $iLogin === 0 ) {
+                header('Location: /front/user?status=false');
+            } else if ( $iLogin === -1 ) {
                 header('Location: /front/user?validity=false');
             }
         }
@@ -36,30 +39,17 @@ class UserController {
     */
     public function subscribeAction( $aParams ) {
         $oUser = new Users();
-
-        // if ( $oUser->select() ) {
-        //     $oToken = new Token();
-        //     $oToken->checkToken();
-
-        //     include "controllers/back/DashboardController.class.php";
-        //     $oDashboard = new DashboardController();
-        //     $oDashboard->indexAction( $aParams );
-
-        //     return;
-        // }
-
-
         $aConfigs = $oUser->userForm();
         $aErrors = [];
 
         if ( !empty( $aParams['POST'] ) ) {
-            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"] );
-
+            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"]);
+            unset($_SESSION['captcha']);
             if ( empty( $aErrors ) ) {
                 $oMailer = new Mailer();
                 $oToken = new Token();
 
-                $oMailer->sendMail($aParams, $oToken->getToken());
+                $oMailer->confirmMail($aParams, $oToken->getToken());
                 $oUser->setFirstname($aParams['POST']['firstname']);
                 $oUser->setLastname($aParams['POST']['lastname']);
                 $oUser->setSexe($aParams['POST']['sexe']);
@@ -105,20 +95,49 @@ class UserController {
         $oView->assign("aOrders", $aOrders);
       }
 
-
-    /*
-    * View formulaire création de compte utilisateur
-    */
-    public function addAction( $aParams ) {
-
-    }
-
     /*
     * View formulaire édition profil utilisateur
     */
     public function updateAction( $aParams ) {
+        $oUser = new Users();
+        $aConfigs = $oUser->updateUserFormClient();
+        $aErrors = [];
+        $sId = $_SESSION['id_user'];
 
+        $oUser->setId($sId);
+        $aInfos = $oUser->select()[0];
+
+        foreach ($aConfigs['input'] as $sKey => &$aValue) {
+            foreach ($aInfos as $sInfoKey => $sInfoValue) {
+                if ( $sKey == $sInfoKey && $sKey !== 'pwd') {
+                    $aValue['value'] = $sInfoValue;
+                }
+            }
+        }
+
+        if ( !empty( $aParams['POST'] ) ) {
+            $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"], true );
+
+			if ( empty( $aErrors ) ) {
+                $oUser->setId($sId);
+                $oUser->setEmail($aParams['POST']['email']);
+                $oUser->setPwd($aParams['POST']['pwd']);
+                $oUser->setAddress($aParams['POST']['address']);
+                $oUser->setZipCode($aParams['POST']['zip_code']);
+                $oUser->setCity($aParams['POST']['city']);
+                $oUser->save();
+
+                header('location: /front/user/profile');
+                return;
+            }
+        }
+
+        $oView = new View("userModify", "front");
+
+        $oView->assign("aConfigs", $aConfigs);
+	      $oView->assign("aErrors", $aErrors);
     }
+
 
     /*
     * Suppression de son compte utilisateur
@@ -127,16 +146,9 @@ class UserController {
 
     }
 
-    /*
-    * Envoie les données à add/update/delete
-    */
-    public function saveAction( $aParams ) {
-
-    }
-
     public function logOutAction( $aParams ) {
         session_destroy();
         $_SESSION = [];
-        header('Location: /front');
+        header('Location: /');
     }
 }

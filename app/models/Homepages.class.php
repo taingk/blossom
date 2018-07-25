@@ -31,7 +31,7 @@ class Homepages extends BaseSql {
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = strip_tags(trim($name));
     }
 
     /**
@@ -85,7 +85,7 @@ class Homepages extends BaseSql {
      */
     public function setDescriptionTopBanner($description_top_banner)
     {
-        $this->description_top_banner = $description_top_banner;
+        $this->description_top_banner = strip_tags(trim($description_top_banner));
     }
 
     /**
@@ -101,7 +101,7 @@ class Homepages extends BaseSql {
      */
     public function setDescriptionImages($description_images)
     {
-        $this->description_images = $description_images;
+        $this->description_images = strip_tags(trim($description_images));
     }
 
     /**
@@ -117,7 +117,7 @@ class Homepages extends BaseSql {
      */
     public function setDescriptionBottomBanner($description_bottom_banner)
     {
-        $this->description_bottom_banner = $description_bottom_banner;
+        $this->description_bottom_banner = strip_tags(trim($description_bottom_banner));
     }
 
     /**

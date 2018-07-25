@@ -10,6 +10,12 @@
         </section>
         ' : '' ; ?>
 
+        <?php echo $_GET['status'] ? '
+        <section id="error" class="col-xxs-12 mainView gutters bg-is-main-color" style="margin-top: 0;">
+            <h3 class="is-secondary-color">Votre compte est inactif, vous pouvez l\'activer en confirmant votre email.</h3>
+        </section>
+        ' : '' ; ?>
+
         <?php $this->addModal( "form", $aConfigs ) ?>
     </section>
         

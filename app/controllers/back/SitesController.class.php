@@ -95,6 +95,7 @@ class SitesController {
         $aSites = $this->oSite->select(array('main_color', 'secondary_color', 'third_color', 'background_color'))[0];
 
         $sCssPath = getcwd() . '/public/css/customColors.css';
+
         $sCss = ":root {
             --main-color: " . $aSites['main_color'] . ";
             --secondary-color: " . $aSites['secondary_color'] . ";
@@ -102,7 +103,7 @@ class SitesController {
             --background-color: " . $aSites['background_color'] . ";
         }";
 
-        file_put_contents($sCssPath, $sCss);    
+        file_put_contents($sCssPath, $sCss);
     }
 
     /*

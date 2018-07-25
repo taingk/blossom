@@ -31,7 +31,7 @@ class Comments extends BaseSql {
     }
 
     public function setComment($comment) {
-        $this->comment = trim($comment);
+        $this->comment = strip_tags(trim($comment));
     }
 
     public function setUsersIdUsers($users_idusers) {

@@ -5,40 +5,58 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 class Mailer {
+    private $oMail;
 
-    public function sendMail( $aParams, $sToken ) {
+    public function __construct() {
         require 'core/PHPMailer/vendor/autoload.php';
 
-        $mail = new PHPMailer;
-        $mail->isSMTP();
-        // $mail->SMTPDebug = 2;
-        $mail->Host = 'ssl://smtp.gmail.com';
-        $mail->IsHTML(true);
-        $mail->Port = 465;
-        $mail->SMTPSecure = 'ssl';
-        $mail->SMTPAuth = true;
-        $mail->Username = "contact.blossoom@gmail.com";
-        //Password to use for SMTP authentication
-        $mail->Password = "grp6-BlossomESGI";
-        //Set who the message is to be sent from
-        $mail->setFrom('contact.blossoom@gmail.com', 'Blossom');
-        $mail->addAddress($aParams['POST']['email'], ucfirst(strtolower($aParams['POST']['firstname'])) . ' ' . strtoupper($aParams['POST']['lastname']));
+        $this->oMail = new PHPMailer;
+        $this->oMail->isSMTP();
+        // $this->oMail->SMTPDebug = 2;
+        $this->oMail->Host = 'ssl://smtp.gmail.com';
+        $this->oMail->IsHTML(true);
+        $this->oMail->Port = 465;
+        $this->oMail->SMTPSecure = 'ssl';
+        $this->oMail->SMTPAuth = true;
+        $this->oMail->Username = MAILUSER;
+        $this->oMail->Password = MAILPASSWORD;
+        $this->oMail->setFrom(MAILUSER, $aSite ? $aSite['name'] : 'Blossom');
+    }
 
-        $mail->Subject = "Blossom | Confirmation d'inscription";
-        $messageContent = file_get_contents("views/emailing/sendEmail.view.html");
+    public function confirmMail( $aParams, $sToken ) {
+        $oSite = new Sites();
+        $oSite->setStatus(1);
+        $aSite = $oSite->select()[0];
+
+        $this->oMail->addAddress($aParams['POST']['email'], ucfirst(strtolower($aParams['POST']['firstname'])) . ' ' . strtoupper($aParams['POST']['lastname']));
+        $this->oMail->Subject = !empty($aSite) ? $aSite['name'] . " | Confirmation d'inscription" : "Blossom | Confirmation d'inscription";
+        $messageContent = file_get_contents("views/emailing/confirmMail.view.html");
 
         $messageContent = str_ireplace("/public/img/logo_blanc.png", "https://".$_SERVER["SERVER_NAME"]."/public/img/logo_blanc.png", $messageContent);
         $messageContent = str_ireplace("/public/font/AvenirNextRegular.otf", "https://".$_SERVER["SERVER_NAME"]."/public/font/AvenirNextRegular.otf", $messageContent);
         $messageContent = str_ireplace("{link}", "https://".$_SERVER["SERVER_NAME"].'/back/users/confirm?token=' . $sToken, $messageContent);
         $messageContent = str_ireplace("{name}", ucfirst(strtolower($aParams['POST']['firstname'])) . ' ' . strtoupper($aParams['POST']['lastname']), $messageContent);
-        $messageContent = $mail->msgHTML($messageContent);
+        $messageContent = $this->oMail->msgHTML($messageContent);
 
-        if (!$mail->send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
+        if (!$this->oMail->send()) {
+            echo "Mailer Error: " . $this->oMail->ErrorInfo;
         }
-        // else {
-        //     echo "Message sent!";
-        // }
+    }
+
+    public function paymentSuccessfulMail( $aParams ) {
+        $this->oMail->addAddress($aParams['email'], ucfirst(strtolower($aParams['firstname'])) . ' ' . strtoupper($aParams['lastname']));
+        $this->oMail->Subject = !empty($aSite) ? $aSite['name'] . " | Paiement confirmé" : "Blossom | Confirmation de paiement";
+        $messageContent = file_get_contents("views/emailing/paymentSuccessful.view.html");
+
+        $messageContent = str_ireplace("/public/img/logo_blanc.png", "https://".$_SERVER["SERVER_NAME"]."/public/img/logo_blanc.png", $messageContent);
+        $messageContent = str_ireplace("/public/font/AvenirNextRegular.otf", "https://".$_SERVER["SERVER_NAME"]."/public/font/AvenirNextRegular.otf", $messageContent);
+        $messageContent = str_ireplace("{link}", "https://".$_SERVER["SERVER_NAME"].'/front/user/profile', $messageContent);
+        $messageContent = str_ireplace("{name}", $aParams['firstname'] . ' ' . $aParams['lastname'], $messageContent);
+        $messageContent = $this->oMail->msgHTML($messageContent);
+
+        if (!$this->oMail->send()) {
+            echo "Mailer Error: " . $this->oMail->ErrorInfo;
+        }
     }
 
 }

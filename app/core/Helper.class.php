@@ -43,6 +43,10 @@ class Helper {
         $aErrors = [];
         $aAllowedExts =  array('gif', 'png', 'jpg', 'jpeg', 'ico');
 
+        if ( !is_dir( getcwd() . $sPathDirectory) ) {
+            mkdir( getcwd() . $sPathDirectory);
+        }
+        
         foreach ( $FILES as $sKey => $aFile ) {
             $sFileExt = pathinfo( $aFile['name'], PATHINFO_EXTENSION );
 

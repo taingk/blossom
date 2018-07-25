@@ -72,7 +72,6 @@ class CategoriesController {
     */ 
     public function updateAction( $aParams ) {
         $this->aConfigs = $this->oCategory->categoryForm("Editer la catégorie");
-        $aErrors = [];
         $sId = $aParams['GET']['id'];
 
         $this->oCategory->setId($sId);
@@ -85,18 +84,14 @@ class CategoriesController {
                 }
             }
         }
-
+        
         if ( !empty( $aParams['POST'] ) ) {
-            $aErrors = Validator::checkForm( $this->aConfigs, $aParams["POST"], true );
+            $this->oCategory->setId($sId);
+            $this->oCategory->setCategoryName($aParams['POST']['category_name']);
+            $this->oCategory->save();
 
-			if ( empty( $aErrors ) ) {
-                $this->oCategory->setId($sId);
-                $this->oCategory->setCategoryName($aParams['POST']['category_name']);
-                $this->oCategory->save();
-
-                header('location: /back/categories');
-                return;
-            }
+            header('location: /back/categories');
+            return;
         }
 
         $oView = new View("editing", "back");

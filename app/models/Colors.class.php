@@ -44,7 +44,7 @@ class Colors extends BaseSql {
     }
 
     public function setName($name) {
-        $this->name = trim($name);
+        $this->name = strip_tags(trim($name));
     }
 
     public function getName()

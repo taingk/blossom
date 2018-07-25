@@ -7,7 +7,7 @@
         <a href="/front/product?is=<?php echo $results['id_product']?>" 
         class="col-xxs-12 col-xs-6 col-md-4 container-product-box">
             <div>
-                <img src="<?php echo $results["path"]?>" alt="category product" class="big-images">
+                <img src="<?php echo $results["path"] ? $results["path"] : "/public/img/no-img.png" ; ?>" alt="category product" class="big-images">
             </div>
             <strong class="is-third-color small-bandeau">
                 <?php echo $results["product_name"]?>
