@@ -26,12 +26,12 @@ class Users extends BaseSql {
 
     public function setFirstname($firstname) {
         // Kevin
-        $this->firstname = ucfirst(strtolower(trim($firstname)));
+        $this->firstname = strip_tags(ucfirst(strtolower(trim($firstname))));
     }
 
     public function setLastname($lastname) {
         // TAING
-        $this->lastname = strtoupper(trim($lastname));
+        $this->lastname = strip_tags(strtoupper(trim($lastname)));
     }
 
     public function setSexe($sexe) {
@@ -39,7 +39,7 @@ class Users extends BaseSql {
     }
 
     public function setAddress($address) {
-        $this->address = trim($address);
+        $this->address = strip_tags(trim($address));
     }
 
     public function setZipCode($zip_code) {
@@ -47,12 +47,12 @@ class Users extends BaseSql {
     }
 
     public function setCity($city) {
-        $this->city = trim($city);
+        $this->city = strip_tags(trim($city));
     }
 
     public function setEmail($email) {
         // minuscule
-        $this->email = strtolower(trim($email));
+        $this->email = strip_tags(strtolower(trim($email)));
     }
 
     public function setPwd($pwd) {

@@ -40,7 +40,7 @@ class Sites extends BaseSql {
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = strip_tags($name);
     }
     /**
      * @return mixed
@@ -85,7 +85,7 @@ class Sites extends BaseSql {
      */
     public function setMainColor($main_color)
     {
-        $this->main_color = $main_color;
+        $this->main_color = strip_tags($main_color);
     }
     /**
      * @return mixed
@@ -100,7 +100,7 @@ class Sites extends BaseSql {
      */
     public function setSecondaryColor($secondary_color)
     {
-        $this->secondary_color = $secondary_color;
+        $this->secondary_color = strip_tags($secondary_color);
     }
     /**
      * @return mixed
@@ -115,7 +115,7 @@ class Sites extends BaseSql {
      */
     public function setThirdColor($third_color)
     {
-        $this->third_color = $third_color;
+        $this->third_color = strip_tags($third_color);
     }
     /**
      * @return mixed
@@ -130,7 +130,7 @@ class Sites extends BaseSql {
      */
     public function setBackgroundColor($background_color)
     {
-        $this->background_color = $background_color;
+        $this->background_color = strip_tags($background_color);
     }
 
     /**

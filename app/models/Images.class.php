@@ -31,7 +31,7 @@ class Images extends BaseSql {
     }
 
     public function setImageName($image_name) {
-        $this->image_name = trim($image_name);
+        $this->image_name = strip_tags(trim($image_name));
     }
 
     public function setPath($path) {

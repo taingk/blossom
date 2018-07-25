@@ -20,7 +20,7 @@ class Products extends BaseSql {
     }
 
     public function setProductName($product_name) {
-        $this->product_name = trim($product_name);
+        $this->product_name = strip_tags(trim($product_name));
     }
 
     public function setCategoriesIdCategory($categories_idcategory) {
@@ -28,7 +28,7 @@ class Products extends BaseSql {
     }
 
     public function setDescription($description) {
-        $this->description = trim($description);
+        $this->description = strip_tags(trim($description));
     }
 
     public function setPrice($price) {

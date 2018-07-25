@@ -36,7 +36,7 @@ class Contacts extends BaseSql {
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = strip_tags(trim($name));
     }
     /**
      * @return mixed
@@ -51,7 +51,7 @@ class Contacts extends BaseSql {
      */
     public function setTitle($title)
     {
-        $this->title = $title;
+        $this->title = strip_tags(trim($title));
     }
     /**
      * @return mixed
@@ -66,7 +66,7 @@ class Contacts extends BaseSql {
      */
     public function setDetails($details)
     {
-        $this->details = $details;
+        $this->details = strip_tags(trim($details));
     }
 
     /**
