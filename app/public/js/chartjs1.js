@@ -1,79 +1,22 @@
-var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-var randomScalingFactor = function () {
-    return Math.round(Math.random() * 100);
-};
-
 var config = {
-    type: 'line',
+    type: 'pie',
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [{
-            label: "My First dataset",
-            backgroundColor: window.chartColors.red,
-            borderColor: window.chartColors.red,
             data: [
                 randomScalingFactor(),
                 randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor()
             ],
-            fill: false,
-        }, {
-            label: "My Second dataset",
-            fill: false,
-            backgroundColor: window.chartColors.blue,
-            borderColor: window.chartColors.blue,
-            data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor()
+            backgroundColor: [
+                window.chartColors.red,
+                window.chartColors.orange,
             ],
-        }]
+        }],
+        labels: [
+            "Homme",
+            "Femme",
+        ]
     },
     options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'Chart.js Line Chart'
-        },
-        tooltips: {
-            mode: 'index',
-            intersect: false,
-        },
-        hover: {
-            mode: 'nearest',
-            intersect: true
-        },
-        scales: {
-            xAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Month'
-                }
-            }],
-            yAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Value'
-                },
-                ticks: {
-                    min: 0,
-                    max: 100,
-
-                    // forces step size to be 5 units
-                    stepSize: 5
-                }
-            }]
-        }
+        responsive: true
     }
 };

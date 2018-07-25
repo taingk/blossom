@@ -61,8 +61,69 @@ class AdminController {
         header('Location: /back');
     }
 
-    public function dataAction() {
-      
+    public function dataAgeAction() {
+      $oUser = new Users();
+      $aUser = $oUser->select();
+
+      $aData = array();
+      foreach ($aUser as $key => $value) {
+        if($key == 'birthday_date') {
+          $sBirthdayDate = $value['birthday_date'];
+          $sBirthdayDate = new DateTime($sBirthdayDate);
+          $sTodayDate = new DateTime();
+          $sDiff = $sTodayDate->diff($sBirthdayDate);
+          $data[] = $sDiff->y;
+        }
+
+        $aCountBirthday = array();
+        $count1825 = 0;
+        $count2535 = 0;
+        $count3560 = 0;
+        foreach ($data as $value) {
+          if($value > 18 && $value < 25) {
+            $count1825 += 1;
+          }
+          if($value > 25 && $value < 35) {
+            $count2535 += 1;
+          }
+          if($value > 35 && $value < 60) {
+            $count3560 += 1;
+          }
+        }
+        $aCountBirthday["1825"] = $count1825;
+        $aCountBirthday["2535"] = $count2535;
+        $aCountBirthday["3560"] = $count3560;
+      }
+      print(json_encode($aCountBirthday));
+    }
+
+    public function dataSexAction() {
+      $oUser = new Users();
+      $aUser = $oUser->select();
+
+      $aData = array();
+      foreach ($aUser as $key => $value) {
+        if($key == 'sexe') {
+          $aData[] = $value['sexe'];
+        }
+
+        $aCountSexe = array();
+        $countMale = 0;
+        $countFemale = 0;
+
+        foreach ($aData as $value2) {
+          if($value2 == 0) {
+            $countMale += 1;
+          }
+          if($value2   == 1) {
+            $countFemale += 1;
+          }
+        }
+
+        $aCountSexe['female'] = $countFemale;
+        $aCountSexe['male'] = $countMale;
+      }
+      print(json_encode($aCountSexe));
     }
 
 }
