@@ -96,6 +96,18 @@ class CartController {
             $sStatus ? $this->oCart->setStatus(0) : $this->oCart->setStatus(1);                
             $this->oCart->save();
 
+            $oCart = new Carts();
+            $oCart->setId($_GET['id']);
+            $iCart = $oCart->select()[0]['products_id_product'];
+
+            $oProduct = new Products();
+            $oProduct->setId($iCart);
+            $aQuantity = $oProduct->select( array('quantity') );
+            $iQuantity = $aQuantity[0]['quantity'];
+            $iNewQuantity = $iQuantity + 1;
+            $oProduct->setQuantity( $iNewQuantity );
+            $oProduct->save();    
+
             header('location: /front/cart');
             return;
         }
