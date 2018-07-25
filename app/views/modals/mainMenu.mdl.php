@@ -34,7 +34,7 @@
                 <input class="cart-icon" type="submit" name="search" value="" />
             </a>
         </li>
-        <?php if( !empty( $_SESSION )): ?>
+        <?php if ( $_SESSION['id_user'] ): ?>
             <li class="col-xxs-1">
                 <a href="/front/user/profile">
                     Bienvenue, 
