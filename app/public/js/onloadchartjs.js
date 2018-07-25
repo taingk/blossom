@@ -63,31 +63,7 @@ window.onload = function() {
     }));
   };
 
-window.onload = function() {
-    var ctx3 = document.getElementById("canvas3").getContext("2d");
-    fetch('/back/admin/datagender')
-    .then(response => response.json().then(json => {
-      window.myLine = new Chart(ctx2, {
-          type: 'pie',
-          data: {
-              datasets: [{
-                  data: [
-                    json['stats']['male'],
-                    json['stats']['female']
-                  ],
-                  backgroundColor: [
-                      window.chartColors.green,
-                      window.chartColors.blue
-                  ],
-              }],
-              labels: [
-                  "Homme",
-                  "Femme"
-              ]
-          },
-          options: {
-              responsive: true
-          }
-      });
-    }));
-};
+// window.onload = function() {
+//     var ctx3 = document.getElementById("canvas3").getContext("2d");
+//     fetch('')
+// };

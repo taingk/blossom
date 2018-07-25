@@ -125,6 +125,12 @@ class AdminController {
     }
 
     public function dataProductsSoldAction() {
+      $oProduct = new Products();
+      $aProduct = $oProduct->select();
+      foreach ($aProduct as $value) {
+        echo $value['stat'];
+      }
+
 
     }
 

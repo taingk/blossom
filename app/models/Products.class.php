@@ -7,11 +7,12 @@ class Products extends BaseSql {
     protected $description;
     protected $price;
     protected $status;
+    protected $stat;
     protected $quantity;
     protected $max_quantity;
-  
+
     public function __construct() {
-        // On instancie le parent 
+        // On instancie le parent
         parent::__construct();
     }
 
@@ -35,10 +36,14 @@ class Products extends BaseSql {
         $this->price = trim($price);
     }
 
+    public function setStat($stat) {
+      $this->stat = trim($stat);
+    }
+
     public function setQuantity($quantity) {
         $this->quantity = trim($quantity);
     }
-  
+
     public function getQuantity() {
         return $this->quantity;
     }
@@ -46,7 +51,7 @@ class Products extends BaseSql {
     public function setMaxQuantity($max_quantity) {
         $this->max_quantity = trim($max_quantity);
     }
-  
+
     public function getMaxQuantity() {
         return $this->max_quantity;
     }
@@ -75,7 +80,11 @@ class Products extends BaseSql {
     {
         return $this->price;
     }
-  
+
+    public function getStat() {
+      return $this->stat;
+    }
+
     /**
      * @param mixed $status
      */
@@ -88,7 +97,7 @@ class Products extends BaseSql {
     public function getStatus() {
         return $this->status;
     }
-  
+
     public function productForm($sTitle = "", $aCategories) {
         return [
             "config" => [ "method" => "POST", "action" => "", "submit" => "Enregistrer un produit", "class" => "form col-md-5 row", "enctype" => "multipart/form-data", "pageTitle" => $sTitle],

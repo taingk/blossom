@@ -12,7 +12,7 @@
     </section>
 </section>
 
-<section class="row gutters">
+<!-- <section class="row gutters">
     <section class="col-xxs-12 col-lg-5 mainView gutters is-h-centered">
         <h1 class="is-third-color padding-zero">Statistique ventes</h1>
         <hr>
@@ -24,7 +24,7 @@
         <hr>
         <canvas id="canvas4"></canvas>
     </section>
-</section>
+</section> -->
 
 <!-- Chartjs -->
 <script src="/public/js/lib/Chart.bundle.min.js"></script>

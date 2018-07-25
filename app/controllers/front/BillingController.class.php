@@ -10,7 +10,7 @@ class BillingController {
     /*
     * On récupère les informations pour les commandes
     * et on ajoute dans la bdd la commande concernée
-    */ 
+    */
     public function indexAction( $aParams ) {
         $this->oOrder = new Orders();
         $aConfigs = $this->oOrder->checkoutForm();
@@ -21,7 +21,7 @@ class BillingController {
                 $aErrors[] = "Numéro de carte de crédit invalide";
             } else {
                 $aErrors = Validator::checkForm( $aConfigs, $aParams["POST"] );
-                
+
                 if ( empty( $aErrors ) ) {
                     $this->oOrder->setTrackingNumber(bin2hex(openssl_random_pseudo_bytes(6)));
                     $this->oOrder->setUsersIdUsers($_SESSION['id_user']);
@@ -32,13 +32,19 @@ class BillingController {
                     $oCart->setStatus(1);
                     $oCart->setUsersIdUser($_SESSION['id_user']);
                     $aIsUse = $oCart->select();
-                    
+
                     foreach ($aIsUse as $aCarts) {
                         $oC = new Carts();
                         $oC->setId($aCarts['id_cart']);
                         $oC->setStatus(0);
                         $oC->setOrdersIdOrder($iIdOrder);
                         $oC->save();
+
+                        $oProduct = new Products();
+                        $oProduct->setId($aCarts['products_id_product']);
+                        $aProduct = $oProduct->select()[0]['stat'];
+                        $oProduct->setStat($aProduct + 1);
+                        $oProduct->save();
                     }
 
                     $oUser = new Users;
@@ -46,7 +52,7 @@ class BillingController {
                     $aUser = $oUser->select()[0];
 
                     $oMailer = new Mailer();
-                    $oMailer->paymentSuccessfulMail($aUser);    
+                    $oMailer->paymentSuccessfulMail($aUser);
 
                     header('Location: /?payment=true');
                     return;
@@ -63,7 +69,7 @@ class BillingController {
     private function isValid($num) {
         $num = preg_replace('/[^\d]/', '', $num);
         $sum = '';
-    
+
         for ($i = strlen($num) - 1; $i >= 0; -- $i) {
             $sum .= $i & 1 ? $num[$i] : $num[$i] * 2;
         }
