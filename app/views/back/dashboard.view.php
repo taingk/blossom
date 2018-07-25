@@ -6,7 +6,7 @@
     </section>
 
     <section class="col-xxs-12 col-lg-5 mainView gutters is-h-centered">
-        <h1 class="is-third-color padding-zero">Statistique produits - Sexe</h1>
+        <h1 class="is-third-color padding-zero">Statistique utilisateurs - Genre</h1>
         <hr>
         <canvas id="canvas2"></canvas>
     </section>
@@ -32,6 +32,6 @@
 <script src="/public/js/chart.utils.js"></script>
 <!-- <script src="/public/js/chartjs1.js"></script> -->
 <!-- <script src="/public/js/chartjs2.js"></script> -->
-<script src="/public/js/chartjs3.js"></script>
+<!-- <script src="/public/js/chartjs3.js"></script> -->
 <script src="/public/js/chartjs4.js"></script>
 <script src="/public/js/onloadchartjs.js"></script>

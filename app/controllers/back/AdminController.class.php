@@ -124,4 +124,8 @@ class AdminController {
       echo json_encode(["stats" => $aCountSexe]);
     }
 
+    public function dataProductsSoldAction() {
+
+    }
+
 }
