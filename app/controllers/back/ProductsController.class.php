@@ -79,8 +79,8 @@ class ProductsController {
             $this->oProduct->setDescription( $aParams['POST']['description'] );
             $this->oProduct->setPrice( $aParams['POST']['price'] );
             $this->oProduct->setStatus('1');
-            $this->oProduct->setQuantity( $aParams['POST']['quantity'] );
-            $this->oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
+            $this->oProduct->setQuantity( $aParams['POST']['max_quantity'] );
+            $this->oProduct->setMaxQuantity( $aParams['POST']['max_quantity'] );
             $this->oProduct->save();
 
             header('location: /back/products');
@@ -117,8 +117,8 @@ class ProductsController {
             $oProduct->setCategoriesIdCategory( $aParams['POST']['category'] );
             $oProduct->setPrice( $aParams['POST']['price'] );
             $oProduct->setDescription( $aParams['POST']['description'] );
-            $oProduct->setQuantity( $aParams['POST']['quantity'] );
-            $oProduct->setMaxQuantity( $aParams['POST']['quantity'] );
+            $oProduct->setQuantity( $aParams['POST']['max_quantity'] );
+            $oProduct->setMaxQuantity( $aParams['POST']['max_quantity'] );
             $oProduct->save();
 
             header('location: /back/products');
