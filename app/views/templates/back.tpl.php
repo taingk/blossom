@@ -47,7 +47,6 @@
     <!-- JS -->
     <script src="/public/js/iconManager.js"></script>
     <script src="/public/js/sideMenu.js"></script>
-    <script src="/public/js/back/delete.js"></script>
 </body>
 
 </html>

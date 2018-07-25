@@ -61,25 +61,22 @@ class AdminController {
         header('Location: /back');
     }
 
-    public function dataAgeAction() {
+    public function dataageAction() {
       $oUser = new Users();
       $aUser = $oUser->select();
 
       $aData = array();
       foreach ($aUser as $key => $value) {
         if($key == 'birthday_date') {
-          $sBirthdayDate = $value['birthday_date'];
-          $sBirthdayDate = new DateTime($sBirthdayDate);
-          $sTodayDate = new DateTime();
-          $sDiff = $sTodayDate->diff($sBirthdayDate);
-          $data[] = $sDiff->y;
+          $sAge = Helper::getAge($value['birthday_date']);
+          $aData[] = $sAge;
         }
 
         $aCountBirthday = array();
         $count1825 = 0;
         $count2535 = 0;
         $count3560 = 0;
-        foreach ($data as $value) {
+        foreach ($aData as $value) {
           if($value > 18 && $value < 25) {
             $count1825 += 1;
           }
@@ -90,32 +87,33 @@ class AdminController {
             $count3560 += 1;
           }
         }
-        $aCountBirthday["1825"] = $count1825;
-        $aCountBirthday["2535"] = $count2535;
-        $aCountBirthday["3560"] = $count3560;
+        $aCountBirthday["18:25"] = $count1825;
+        $aCountBirthday["25:35"] = $count2535;
+        $aCountBirthday["35:60"] = $count3560;
       }
-      print(json_encode($aCountBirthday));
+      echo json_encode(["stats" => $aCountBirthday]);
     }
 
-    public function dataSexAction() {
+    public function datagenderAction() {
       $oUser = new Users();
       $aUser = $oUser->select();
 
       $aData = array();
       foreach ($aUser as $key => $value) {
         if($key == 'sexe') {
-          $aData[] = $value['sexe'];
+          $sSexe = $value['sexe'];
+          $aData[] = $sSexe;
         }
 
         $aCountSexe = array();
         $countMale = 0;
         $countFemale = 0;
 
-        foreach ($aData as $value2) {
-          if($value2 == 0) {
+        foreach ($aData as $value) {
+          if($value == 0) {
             $countMale += 1;
           }
-          if($value2   == 1) {
+          if($value == 1) {
             $countFemale += 1;
           }
         }
@@ -123,7 +121,7 @@ class AdminController {
         $aCountSexe['female'] = $countFemale;
         $aCountSexe['male'] = $countMale;
       }
-      print(json_encode($aCountSexe));
+      echo json_encode(["stats" => $aCountSexe]);
     }
 
 }

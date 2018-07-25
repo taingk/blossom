@@ -4,7 +4,7 @@ session_start();
 
 function autoloader( $sClass ) {
     $sClass = $sClass . ".class.php";
- 
+
     if ( file_exists( "core/" . $sClass ) ) {
         include "core/" . $sClass;
 
@@ -52,7 +52,7 @@ if ( $sStructure === "back" ) {
     $oToken = new Token();
     $oUser = new Users();
 
-    if ( $sAction === "confirmAction" ) {
+    if ( $sAction === "confirmAction" || $sAction == "dataageAction" || $sAction == "datagenderAction" ) {
         include "controllers/back/" . $sController . ".class.php";
         $oObject = new $sController();
         $oObject->$sAction( $aParams );
@@ -71,7 +71,7 @@ if ( $sStructure === "back" ) {
         return;
     } else if ( $sController === "IndexController" ) {
         $oToken->checkToken();
-        
+
         header('Location: /back/dashboard');
         return;
     }
@@ -81,7 +81,7 @@ if ( $sStructure === "back" ) {
 
 if ( file_exists( "controllers/" . $sStructure . "/" . $sController . ".class.php" ) ) {
     include "controllers/" . $sStructure . "/" . $sController . ".class.php";
-    
+
     if ( class_exists( $sController ) ) {
         $oController = new $sController();
 
