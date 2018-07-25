@@ -8,7 +8,7 @@ function randBgColor($image) {
 function randColor($image) {
     return imagecolorallocate($image, rand(0, 150), rand(0, 150), rand(0, 150));
 }
-$width = 150;
+$width = 200;
 $height= 50;
 $image = imagecreate($width, $height);
 $backgroundColor = imagecolorallocate($image, randBgColor($image), randBgColor($image), randBgColor($image));
@@ -23,7 +23,7 @@ $fonts = glob('../font/*.ttf');
 
 $x = rand(10, 15);
 for ($i = 0; $i < strlen($captcha); $i++) {
-    $size = rand(10, 15);
+    $size = rand(15, 20);
     $angle = rand(-30, 30);
     $y = rand(20, $height - 20);
     $fontKey = rand(0, count($fonts) - 1);

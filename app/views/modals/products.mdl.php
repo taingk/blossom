@@ -21,7 +21,7 @@
             <img src="<?php echo $aImages['path'] ?>" alt="category product" class="first-product-image">
         <?php endforeach;
         else: ?>
-            <img src="/public/img/No-img.png" alt="category product" class="first-product-image">
+            <img src="/public/img/no-img.png" alt="category product" class="first-product-image">
     <?php endif; ?>
     </article>
 
