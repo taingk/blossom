@@ -16,9 +16,13 @@
     ' : '' ; ?>
 
     <article class="col-xxs-12 col-md-5 row container-product-box">
-        <?php foreach ($aConfigs[4]['images'] as $aImages ): ?>
+        <?php if ($aConfigs[4]['images']):
+        foreach ($aConfigs[4]['images'] as $aImages ): ?>
             <img src="<?php echo $aImages['path'] ?>" alt="category product" class="first-product-image">
-        <?php endforeach; ?>
+        <?php endforeach;
+        else: ?>
+            <img src="/public/img/No-img.png" alt="category product" class="first-product-image">
+    <?php endif; ?>
     </article>
 
     <article class="col-xxs-12 col-md-7 is-third-color gutters text-is-left">
