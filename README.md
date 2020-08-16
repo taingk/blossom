@@ -13,11 +13,6 @@ Lien d'accès au site de production [Blossom](https://blossoom.ovh/)
 
 <br>
 
-- Lavan PREPANANTHA <br>
-@lavan350
-
-<br>
-
 - Amandine RIPOLL <br>
 @amandineripoll
 
